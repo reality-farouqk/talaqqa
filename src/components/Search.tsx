@@ -26,23 +26,21 @@ export default function Search() {
     history.replaceState(null, '', p.size ? `?${p}` : location.pathname);
   };
 
-  if (!courses) return <p className="meta">Loading…</p>;
-  if (!courses.length) return <p>Search isn't available offline yet. Open it once while connected.</p>;
-
-  const topics = [...new Map(courses.map((c) => [`${c.track}/${c.subject}`, c.subjectLabel])).entries()];
-  const teachers = [...new Set(courses.map((c) => c.teacher))].sort();
+  const all = courses ?? [];
+  const topics = [...new Map(all.map((c) => [`${c.track}/${c.subject}`, c.subjectLabel])).entries()];
+  const teachers = [...new Set(all.map((c) => c.teacher))].sort();
   const q = norm(f.q.trim());
   const matchesFilters = (c: CatalogCourse) =>
     (!f.topic || `${c.track}/${c.subject}` === f.topic) && (!f.teacher || c.teacher === f.teacher) &&
     (!f.lang || c.lang === f.lang) && (!f.level || c.level === f.level);
-  const pool = courses.filter(matchesFilters);
+  const pool = all.filter(matchesFilters);
   const lessonHits = q ? pool.flatMap((c) => c.lessons.filter((l) => norm(l.title).includes(q)).map((l) => ({ c, l }))) : [];
   // A course also matches when one of its lessons does.
   const courseHits = pool.filter((c) => !q || norm(`${c.title} ${c.summary} ${c.teacher} ${c.subjectLabel}`).includes(q) || lessonHits.some((h) => h.c === c));
 
   const select = (k: keyof Filters, label: string, options: [string, string][]) => (
     <label className="filter">{label}
-      <select value={f[k]} onChange={(e) => set(k, e.target.value)}>
+      <select value={f[k]} onChange={(e) => set(k, e.target.value)} disabled={!courses}>
         <option value="">All</option>
         {options.map(([v, t]) => <option key={v} value={v}>{t}</option>)}
       </select>
@@ -58,11 +56,14 @@ export default function Search() {
       <div className="filters">
         {select('topic', 'Topic', topics)}
         {select('teacher', 'Teacher', teachers.map((t) => [t, t]))}
-        {select('lang', 'Language', [...new Set(courses.map((c) => c.lang))].map((l) => [l, LANGS[l] ?? l]))}
+        {select('lang', 'Language', [...new Set(all.map((c) => c.lang))].map((l) => [l, LANGS[l] ?? l]))}
         {select('level', 'Level', LEVELS.map((l) => [l, cap(l)]))}
       </div>
+      <div className="results">
+      {!courses ? <p className="meta">Loading…</p> : !courses.length ? <p>Search isn't available offline yet. Open it once while connected.</p> : <>
       <p className="meta" role="status">{courseHits.length} {courseHits.length === 1 ? 'course' : 'courses'}{q && `, ${lessonHits.length} lessons`}</p>
-      {courseHits.length > 0 && (
+      {courseHits.length > 0 && (<>
+        <h2 className="sr-only">Courses</h2>
         <ul className="grid">
           {courseHits.map((c) => {
             const yt = c.lessons.find((l) => l.yt)?.yt;
@@ -79,7 +80,7 @@ export default function Search() {
             );
           })}
         </ul>
-      )}
+      </>)}
       {lessonHits.length > 0 && (
         <section aria-labelledby="lh">
           <h2 id="lh">Lessons</h2>
@@ -96,6 +97,8 @@ export default function Search() {
         </section>
       )}
       {!courseHits.length && !lessonHits.length && <p>No results. Try fewer words or clear a filter.</p>}
+      </>}
+      </div>
     </>
   );
 }
