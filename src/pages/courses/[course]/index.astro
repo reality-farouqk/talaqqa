@@ -1,36 +1,74 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import WatchlistButton from '../../../components/WatchlistButton';
-import { getPublishedCourses, flattenLessons, categoryLabel, formatLevel } from '../../../lib/courses';
+import CourseProgress from '../../../components/CourseProgress';
+import LessonChecks from '../../../components/LessonChecks';
+import { getPublishedCourses, flattenLessons, subjectLabel, levelLabel, nextInPath, courseUrl, lessonUrl, dirFor, languageName } from '../../../lib/courses';
+import { getTrack, trackUrl, levelUrl } from '../../../lib/taxonomy';
 
 export async function getStaticPaths() {
-  return (await getPublishedCourses()).map((course) => ({ params: { course: course.id }, props: { course } }));
+  const all = await getPublishedCourses();
+  return all.map((course) => ({
+    params: { course: course.id },
+    props: { course, next: nextInPath(course, all), prereqs: all.filter((c) => course.data.prerequisites.includes(c.id)) }
+  }));
 }
-const { course } = Astro.props;
+const { course, next, prereqs } = Astro.props;
+const track = getTrack(course.data.track)!;
 const d = course.data;
 const lessons = flattenLessons(course);
-const jsonLd = {
+const dir = dirFor(d.language);
+const url = new URL(courseUrl(course.id), Astro.site).href;
+const jsonLd = d.demo ? undefined : {
   '@context': 'https://schema.org', '@type': 'Course',
-  name: d.title, description: d.summary, inLanguage: d.language,
-  provider: { '@type': 'Organization', name: d.source.name, ...(d.source.url ? { sameAs: d.source.url } : {}) }
+  name: d.title, description: d.summary, url, inLanguage: d.language,
+  educationalLevel: levelLabel(d.level), about: subjectLabel(course),
+  coursePrerequisites: prereqs.length ? prereqs.map((c) => c.data.title) : undefined, isAccessibleForFree: true,
+  provider: { '@type': 'Organization', name: d.source.name, ...(d.source.url ? { sameAs: d.source.url } : {}) },
+  hasCourseInstance: { '@type': 'CourseInstance', courseMode: 'Online', courseWorkload: `${lessons.length} video lessons` },
+  offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD', category: 'Free' }
 };
+const firstImage = lessons.find((l) => l.youtube_id)?.youtube_id;
 ---
-<Base title={d.title} description={d.summary} lang={d.language} dir={d.language.startsWith('ar') ? 'rtl' : 'ltr'} jsonLd={jsonLd}>
-  <p class="meta"><a href="/courses">Courses</a> / {categoryLabel(d.category)} · {formatLevel(d.level)}</p>
-  <h1>{d.title}</h1>
-  <p>{d.summary}</p>
-  {d.description && <p>{d.description}</p>}
-  <p class="meta">Taught by {d.source.url ? <a href={d.source.url} rel="noopener">{d.source.name}</a> : d.source.name} · {lessons.length} lessons</p>
+<Base section={trackUrl(track.id)} title={d.title} description={d.summary} jsonLd={jsonLd} noindex={d.demo}
+  image={firstImage ? `https://i.ytimg.com/vi/${firstImage}/hqdefault.jpg` : undefined}
+  breadcrumbs={[{ name: 'Home', href: '/' }, { name: track.label, href: trackUrl(track.id) }, { name: levelLabel(d.level), href: levelUrl(track.id, d.level) }, { name: d.title, href: courseUrl(course.id) }]}>
+  {d.demo && <p class="callout" role="note"><span class="badge">Demo</span> This is a sample outline used to test the site. It has no videos and will be replaced by a real course.</p>}
+  <p class="meta">{track.short} · {subjectLabel(course)} · {levelLabel(d.level)} · {lessons.length} lessons{d.language !== 'en' && ` · Taught in ${languageName(d.language)}`}</p>
+  <div lang={d.language} dir={dir}>
+    <h1>{d.title}</h1>
+    <p class="lede">{d.summary}</p>
+    {d.description && <p class="prose">{d.description}</p>}
+  </div>
+  <div class="source">
+    <span>Taught by <strong dir="auto">{d.source.url ? <a href={d.source.url} rel="noopener">{d.source.name}</a> : d.source.name}</strong></span>
+    {d.source.playlist_url && <a href={d.source.playlist_url} rel="noopener">Original series on YouTube</a>}
+  </div>
+  {prereqs.length > 0 && (
+    <p class="callout">Take first: {prereqs.map((c, i) => <>{i > 0 && ', '}<a href={courseUrl(c.id)} dir="auto">{c.data.title}</a></>)}</p>
+  )}
+  <CourseProgress client:load course={course.id} lessons={lessons.map((l) => ({ slug: l.slug, title: l.title }))} showResume />
   <div class="actions">
-    <a class="btn" href={`/courses/${course.id}/${lessons[0].slug}`}>Start course</a>
+    <a class="btn" href={lessonUrl(course.id, lessons[0].slug)}>Start course</a>
     <WatchlistButton client:load courseSlug={course.id} />
   </div>
-  {d.modules.map((m) => (
-    <section>
-      <h2>{m.title}</h2>
-      <ul class="lesson-list">
-        {m.lessons.map((l) => <li><a href={`/courses/${course.id}/${l.slug}`}>{l.title}</a></li>)}
-      </ul>
+  <div class="lessons" lang={d.language} dir={dir}>
+    {d.modules.map((m) => (
+      <section>
+        <h2>{m.title}</h2>
+        <ol class="lesson-list">
+          {m.lessons.map((l) => (
+            <li><a href={lessonUrl(course.id, l.slug)} data-lesson-key={`${course.id}/${l.slug}`}>{l.title}<span class="sr-status"></span></a></li>
+          ))}
+        </ol>
+      </section>
+    ))}
+  </div>
+  {next && (
+    <section class="note" aria-labelledby="next-h">
+      <h2 id="next-h" class="eyebrow">Next in the {track.label} path</h2>
+      <p><a href={courseUrl(next.id)} dir="auto"><strong>{next.data.title}</strong></a> · {levelLabel(next.data.level)}</p>
     </section>
-  ))}
+  )}
+  <LessonChecks client:idle />
 </Base>

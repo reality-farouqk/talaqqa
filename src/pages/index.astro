@@ -1,14 +1,54 @@
 ---
 import Base from '../layouts/Base.astro';
-import CourseCard from '../components/CourseCard.astro';
+import ContinueCard from '../components/ContinueCard';
 import { SITE } from '../config';
-import { getPublishedCourses } from '../lib/courses';
+import { getPublishedCourses, flattenLessons, courseUrl } from '../lib/courses';
+import { TRACKS, LEVELS, trackUrl, levelUrl } from '../lib/taxonomy';
 const courses = await getPublishedCourses();
+const forIsland = courses.map((c) => ({ id: c.id, title: c.data.title, lang: c.data.language, lessons: flattenLessons(c).map((l) => ({ slug: l.slug, title: l.title })) }));
+const jsonLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: SITE.name, url: new URL('/', Astro.site).href, description: SITE.description };
 ---
-<Base>
-  <h1 style="font-size:clamp(2rem,5vw,3.25rem);max-width:18ch">{SITE.tagline}</h1>
-  <p style="max-width:52ch;color:var(--muted)">Follow structured courses built from public lectures. Save what you want to study and pick up where you left off. Everything here is free.</p>
-  <p><a class="btn" href="/courses">Browse courses</a></p>
-  <h2>Featured courses</h2>
-  <ul class="grid">{courses.map((c) => <li><CourseCard course={c} /></li>)}</ul>
+<Base jsonLd={jsonLd}>
+  <section class="hero">
+    <h1>Learn Arabic and Islam, step by step</h1>
+    <p class="lede">Two structured paths built from public lectures by recognised teachers, from the very basics to advanced study. Free, with no account needed.</p>
+  </section>
+  <ContinueCard client:load courses={forIsland} />
+  <div class="tracks">
+    {TRACKS.map((t) => {
+      const inTrack = courses.filter((c) => c.data.track === t.id);
+      const first = inTrack[0];
+      return (
+        <section class="track" aria-labelledby={`t-${t.id}`}>
+          <p class="track-ar" lang="ar" dir="rtl">{t.arabic}</p>
+          <h2 id={`t-${t.id}`}><a href={trackUrl(t.id)}>{t.label}</a></h2>
+          <p>{t.blurb}</p>
+          <ol class="ladder">
+            {LEVELS.map((l) => {
+              const n = inTrack.filter((c) => c.data.level === l.id).length;
+              return <li><a href={levelUrl(t.id, l.id)}><span>{l.label}</span><span class="meta num">{n ? `${n} ${n === 1 ? 'course' : 'courses'}` : 'Coming soon'}</span></a></li>;
+            })}
+          </ol>
+          <p class="actions">
+            {first && <a class="btn" href={courseUrl(first.id)}>Start at the beginning</a>}
+            <a class="btn ghost" href={trackUrl(t.id)}>See the full path</a>
+          </p>
+        </section>
+      );
+    })}
+  </div>
+  <p class="meta" style="margin-block-start:2rem">Looking for a specific subject? <a href="/courses/">Browse all courses by subject</a>.</p>
 </Base>
+<style>
+  .hero h1 { font-size: clamp(2rem, 6vw, 3.1rem); max-width: 20ch; margin-block: .5rem 1rem; }
+  .tracks { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); margin-block-start: 1.5rem; }
+  .track { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.25rem; display: flex; flex-direction: column; min-width: 0; }
+  .track h2 { margin: 0 0 .5rem; font-size: 1.6rem; }
+  .track h2 a { color: var(--ink); text-decoration: none; }
+  .track > p { margin: 0 0 1rem; }
+  .track .actions { margin-block-start: auto; padding-block-start: 1rem; margin-block-end: 0; }
+  .track-ar { font-family: var(--arabic); color: var(--teal); font-size: 1.15rem; margin: 0; }
+  .ladder { list-style: none; padding: 0; margin: 0; counter-reset: step; border-block-start: 1px solid var(--line); }
+  .ladder a { display: flex; justify-content: space-between; gap: 1rem; align-items: center; min-height: 44px; padding: .5rem .25rem; border-block-end: 1px solid var(--line); text-decoration: none; color: var(--ink); }
+  .ladder a span:first-child::before { counter-increment: step; content: counter(step) ". "; color: var(--muted); font-variant-numeric: tabular-nums; }
+</style>

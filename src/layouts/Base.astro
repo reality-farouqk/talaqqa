@@ -1,82 +1,199 @@
 ---
 import { SITE } from '../config';
-interface Props { title?: string; description?: string; lang?: string; dir?: 'ltr' | 'rtl'; jsonLd?: object; image?: string; }
-const { title, description = SITE.description, lang = 'en', dir = 'ltr', jsonLd, image } = Astro.props;
+import { getPublishedCourses } from '../lib/courses';
+import InstallPrompt from '../components/InstallPrompt';
+import OfflineBanner from '../components/OfflineBanner';
+
+interface Crumb { name: string; href: string; }
+interface Props {
+  title?: string;
+  description?: string;
+  jsonLd?: object | object[];
+  image?: string;
+  noindex?: boolean;
+  breadcrumbs?: Crumb[];
+  ogType?: string;
+  // Nav item to mark as current when the URL alone doesn't say (e.g. a course page's track).
+  section?: string;
+}
+const { title, description = SITE.description, jsonLd, image, noindex = false, breadcrumbs, ogType = 'website', section } = Astro.props;
 const fullTitle = title ? `${title} | ${SITE.name}` : `${SITE.name}: ${SITE.tagline}`;
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL(image ?? '/og-default.png', Astro.site).href;
+const hasDemo = (await getPublishedCourses()).some((c) => c.data.demo);
+
+const ld = [...(Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [])];
+if (breadcrumbs?.length) {
+  ld.push({
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: new URL(c.href, Astro.site).href }))
+  });
+}
+const path = Astro.url.pathname;
+const nav = [
+  { href: '/learn/arabic/', label: 'Arabic' },
+  { href: '/learn/islam/', label: 'Islam' },
+  { href: '/courses/', label: 'All courses' },
+  { href: '/watchlist/', label: 'My courses' }
+];
 ---
 <!doctype html>
-<html lang={lang} dir={dir}>
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
     <link rel="canonical" href={canonical} />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta name="theme-color" content="#0e5a57" />
-    <meta property="og:type" content="website" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="theme-color" content="#0e5a57" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f1716" media="(prefers-color-scheme: dark)" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content={SITE.name} />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:type" content={ogType} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    {image && <meta property="og:image" content={image} />}
-    <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
-    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    {ld.map((o) => <script type="application/ld+json" set:html={JSON.stringify(o)} />)}
   </head>
   <body>
+    <a class="skip" href="#main">Skip to content</a>
+    {hasDemo && (
+      <div class="demo-ribbon" role="note">Preview build: courses marked “Demo” are sample outlines without videos.</div>
+    )}
     <header class="top">
       <a class="brand" href="/">{SITE.name}</a>
       <nav aria-label="Main">
-        <a href="/courses">Courses</a>
-        <a href="/watchlist">Watchlist</a>
+        {nav.map((n) => <a href={n.href} aria-current={(section ? section === n.href : path.startsWith(n.href)) ? 'page' : undefined}>{n.label}</a>)}
       </nav>
     </header>
-    <main><slot /></main>
-    <script is:inline src="/registerSW.js"></script>
+    <OfflineBanner client:idle />
+    <main id="main">
+      {breadcrumbs && breadcrumbs.length > 1 && (
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <ol>
+            {breadcrumbs.map((c, i) => (
+              <li>{i < breadcrumbs.length - 1 ? <a href={c.href} dir="auto">{c.name}</a> : <span aria-current="page" dir="auto">{c.name}</span>}</li>
+            ))}
+          </ol>
+        </nav>
+      )}
+      <slot />
+    </main>
+    <InstallPrompt client:idle />
     <footer class="foot">
-      <p>Videos belong to their creators and play from YouTube. {SITE.name} is an open-source index that links back to the original teachers.</p>
+      <nav aria-label="Footer">
+        <a href="/about/">About</a>
+        <a href="/guidelines/">Content guidelines</a>
+        <a href="/report/">Report a problem / request removal</a>
+        <a href="/privacy/">Privacy</a>
+        <a href={SITE.repo} rel="noopener">Source code</a>
+      </nav>
+      <p>Videos belong to their creators and play from YouTube through the official player. {SITE.name} is a free, open-source index that credits and links back to every teacher.</p>
     </footer>
+    <script is:inline src="/registerSW.js"></script>
   </body>
 </html>
 
 <style is:global>
   :root {
     --paper: #f6f7f5; --ink: #14211f; --muted: #55635f; --line: #d6dcd9;
-    --teal: #0e5a57; --teal-soft: #dcebe8; --gold: #b98a1f; --card: #ffffff;
+    --teal: #0e5a57; --teal-ink: #ffffff; --teal-soft: #dcebe8; --gold: #b98a1f; --gold-soft: #f6ecd2; --card: #ffffff;
+    --danger: #a3362a;
     --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
     --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --arabic: "Noto Naskh Arabic", "Geeza Pro", "Damascus", "Segoe UI", "Arial", sans-serif;
+    --radius: 8px;
+    color-scheme: light;
   }
   @media (prefers-color-scheme: dark) {
-    :root { --paper: #0f1716; --ink: #e8efed; --muted: #9bb0aa; --line: #26332f; --teal: #5cc4bb; --teal-soft: #17302d; --gold: #e0b44d; --card: #162220; }
+    :root { --paper: #0f1716; --ink: #e8efed; --muted: #9bb0aa; --line: #26332f; --teal: #5cc4bb; --teal-ink: #0b1312; --teal-soft: #17302d; --gold: #e0b44d; --gold-soft: #33290f; --card: #162220; --danger: #f0907f; color-scheme: dark; }
   }
   * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
   body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.6 var(--sans); }
-  h1, h2, h3 { font-family: var(--serif); line-height: 1.2; font-weight: 600; }
+  :lang(ar), :lang(fa), :lang(ur) { font-family: var(--arabic); line-height: 1.8; }
+  h1, h2, h3 { font-family: var(--serif); line-height: 1.2; font-weight: 600; text-wrap: balance; }
+  h1:lang(ar), h2:lang(ar), h3:lang(ar) { font-family: var(--arabic); }
   a { color: var(--teal); }
   a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
-  main { max-width: 64rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
-  .top { display: flex; justify-content: space-between; align-items: center; padding: .9rem 1rem; border-bottom: 1px solid var(--line); max-width: 64rem; margin: 0 auto; }
+  img { max-width: 100%; height: auto; }
+  .wrap, main, .top, .foot { max-width: 64rem; margin-inline: auto; padding-inline: max(1rem, env(safe-area-inset-left, 0px)) max(1rem, env(safe-area-inset-right, 0px)); }
+  main { padding-block: 1.25rem 3rem; }
+  .skip { position: absolute; inset-inline-start: 1rem; inset-block-start: -3rem; background: var(--ink); color: var(--paper); padding: .5rem .75rem; border-radius: var(--radius); z-index: 10; }
+  .skip:focus { inset-block-start: 1rem; }
+  .demo-ribbon { background: var(--gold-soft); color: var(--ink); text-align: center; font-size: .85rem; padding: .4rem 1rem; }
+  .offline-banner { background: var(--ink); color: var(--paper); text-align: center; font-size: .9rem; padding: .5rem 1rem; }
+  .top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; padding-block: .75rem; border-block-end: 1px solid var(--line); }
   .brand { font: 600 1.4rem var(--serif); text-decoration: none; color: var(--ink); }
-  .top nav { display: flex; gap: 1.25rem; }
-  .top nav a { text-decoration: none; color: var(--ink); }
-  .foot { max-width: 64rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; color: var(--muted); font-size: .875rem; border-top: 1px solid var(--line); }
-  .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); padding: 0; list-style: none; }
-  .course-card { display: block; padding: 1.1rem; background: var(--card); border: 1px solid var(--line); border-radius: 6px; text-decoration: none; color: var(--ink); height: 100%; }
-  .course-card:hover { border-color: var(--teal); }
-  .course-card h3 { margin: .3rem 0; font-size: 1.15rem; }
+  .top nav { display: flex; gap: .25rem; flex-wrap: wrap; }
+  .top nav a { text-decoration: none; color: var(--ink); padding: .5rem .6rem; border-radius: var(--radius); min-height: 44px; display: inline-flex; align-items: center; }
+  .top nav a[aria-current="page"] { background: var(--teal-soft); }
+  .crumbs ol { list-style: none; display: flex; flex-wrap: wrap; gap: .25rem; padding: 0; margin: 0 0 1rem; font-size: .9rem; color: var(--muted); }
+  .crumbs li + li::before { content: "/"; margin-inline-end: .25rem; color: var(--line); }
+  .foot { padding-block: 1.5rem 3rem; color: var(--muted); font-size: .875rem; border-block-start: 1px solid var(--line); }
+  .foot nav { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin-block-end: .75rem; }
+  .eyebrow { font: 600 .75rem var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 .5rem; }
+  .num { font-variant-numeric: tabular-nums; }
   .meta { color: var(--muted); font-size: .875rem; }
-  .btn { display: inline-block; padding: .55rem 1rem; border-radius: 6px; border: 1px solid var(--teal); background: var(--teal); color: var(--paper); font: inherit; cursor: pointer; text-decoration: none; }
+  .lede { max-width: 60ch; color: var(--muted); font-size: 1.05rem; }
+  .prose { max-width: 65ch; }
+  .prose h2 { margin-block-start: 2rem; }
+  .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); padding: 0; margin: 0; list-style: none; }
+  .grid > li { min-width: 0; }
+  .course-card { display: flex; flex-direction: column; gap: .35rem; padding: 1.1rem; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; color: var(--ink); height: 100%; }
+  .course-card:hover { border-color: var(--teal); }
+  .course-card h3 { margin: 0; font-size: 1.15rem; }
+  .course-card p { margin: 0; flex: 1; }
+  .badge { display: inline-block; font: 600 .7rem var(--sans); letter-spacing: .05em; text-transform: uppercase; padding: .1rem .45rem; border-radius: 999px; background: var(--gold-soft); color: var(--ink); vertical-align: middle; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: .4rem; min-height: 44px; padding: .55rem 1rem; border-radius: var(--radius); border: 1px solid var(--teal); background: var(--teal); color: var(--teal-ink); font: inherit; font-weight: 500; cursor: pointer; text-decoration: none; }
   .btn.ghost { background: transparent; color: var(--teal); }
+  .btn.danger { background: var(--danger); border-color: var(--danger); color: var(--paper); }
+  .btn:disabled { opacity: .6; cursor: default; }
+  .actions { display: flex; gap: .75rem; flex-wrap: wrap; margin-block: 1rem; }
+  .bar { display: block; height: 6px; background: var(--teal-soft); border-radius: 3px; overflow: hidden; }
+  .bar i { display: block; height: 100%; background: var(--teal); }
+  .progress { display: grid; gap: .35rem; margin-block: 1rem; max-width: 28rem; }
+  .progress-row { display: flex; justify-content: space-between; }
   .lesson-list { list-style: none; padding: 0; margin: 0; }
-  .lesson-list li a { display: block; padding: .6rem .75rem; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink); }
+  .lessons { counter-reset: lesson; }
+  .lesson-list li a { display: flex; gap: .75rem; align-items: baseline; padding: .65rem .75rem; min-height: 44px; border-block-end: 1px solid var(--line); text-decoration: none; color: var(--ink); }
+  .lesson-list li a::before { counter-increment: lesson; content: counter(lesson); color: var(--muted); font-size: .85rem; min-width: 1.5rem; font-variant-numeric: tabular-nums; }
+  .lesson-list li a.is-done::before { content: "✓"; color: var(--teal); font-weight: 700; }
   .lesson-list li a[aria-current="page"] { background: var(--teal-soft); font-weight: 600; }
-  .player { position: relative; aspect-ratio: 16 / 9; background: #000; border-radius: 6px; overflow: hidden; }
+  .player { position: relative; aspect-ratio: 16 / 9; max-width: 100%; background: #000; border-radius: var(--radius); overflow: hidden; }
   .player img, .player iframe { width: 100%; height: 100%; border: 0; object-fit: cover; display: block; }
-  .player button.play { position: absolute; inset: 0; width: 100%; background: rgba(0,0,0,.25); border: 0; color: #fff; font: 600 1.1rem var(--sans); cursor: pointer; }
-  .layout { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
-  @media (min-width: 52rem) { .layout { grid-template-columns: 1fr 20rem; } }
-  .pager { display: flex; justify-content: space-between; margin-top: 1rem; gap: 1rem; }
-  .actions { display: flex; gap: .75rem; flex-wrap: wrap; margin: 1rem 0; }
-  @media (prefers-reduced-motion: no-preference) { .course-card { transition: border-color .15s; } }
+  .player button.play { position: absolute; inset: 0; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .5rem; background: rgba(0,0,0,.3); border: 0; color: #fff; font: 600 1.05rem var(--sans); cursor: pointer; }
+  .play-icon { width: 4rem; height: 4rem; border-radius: 50%; background: rgba(0,0,0,.65); position: relative; }
+  .play-icon::after { content: ""; position: absolute; inset-block-start: 50%; inset-inline-start: 54%; transform: translate(-50%, -50%); border-style: solid; border-width: .8rem 0 .8rem 1.3rem; border-color: transparent transparent transparent #fff; }
+  [dir="rtl"] .play-icon::after { transform: translate(50%, -50%); }
+  .player-msg { display: grid; place-items: center; padding: 1.5rem; text-align: center; color: #f2f2f2; background: #1d2a28; }
+  .player-msg p { max-width: 36ch; margin: 0; }
+  .source { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; padding: .75rem 1rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); margin-block: 1rem; }
+  .layout { display: grid; gap: 1.5rem; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 52rem) { .layout { grid-template-columns: minmax(0, 1fr) 20rem; } }
+  .pager { display: flex; justify-content: space-between; margin-block-start: 1.25rem; gap: 1rem; flex-wrap: wrap; }
+  .pager .btn { max-width: 100%; }
+  [dir="rtl"] .flip { display: inline-block; transform: scaleX(-1); }
+  .chips { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: 0 0 1.5rem; list-style: none; }
+  .chips a { display: inline-flex; align-items: center; min-height: 40px; padding: .3rem .85rem; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; color: var(--ink); background: var(--card); }
+  .chips a:hover { border-color: var(--teal); }
+  .continue { margin-block: 1.5rem; }
+  .continue-link { display: grid; gap: .2rem; padding: 1rem 1.1rem; border-radius: var(--radius); background: var(--teal-soft); border: 1px solid var(--teal); text-decoration: none; color: var(--ink); }
+  .continue-title { font: 600 1.2rem var(--serif); }
+  .note { margin-block-start: 2.5rem; padding: 1rem; border: 1px dashed var(--line); border-radius: var(--radius); }
+  .note p { margin: .25rem 0; }
+  .callout { padding: .75rem 1rem; border-radius: var(--radius); background: var(--gold-soft); margin-block: 1rem; }
+  .install { position: fixed; inset-inline: max(.75rem, env(safe-area-inset-left, 0px)); inset-block-end: max(.75rem, env(safe-area-inset-bottom, 0px)); max-width: 30rem; margin-inline: auto; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: .75rem 1rem; box-shadow: 0 6px 24px rgba(0,0,0,.18); z-index: 20; display: grid; gap: .5rem; }
+  .install p { margin: 0; }
+  .install-actions { display: flex; gap: .5rem; justify-content: flex-end; }
+  .sr-only, .sr-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  @media (prefers-reduced-motion: no-preference) { .course-card, .chips a { transition: border-color .15s; } }
 </style>

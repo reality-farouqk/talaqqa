@@ -2,55 +2,78 @@
 import Base from '../../../layouts/Base.astro';
 import LitePlayer from '../../../components/LitePlayer';
 import CompleteButton from '../../../components/CompleteButton';
-import { getPublishedCourses, flattenLessons } from '../../../lib/courses';
+import LessonTracker from '../../../components/LessonTracker';
+import LessonChecks from '../../../components/LessonChecks';
+import { issueUrl } from '../../../config';
+import { getPublishedCourses, flattenLessons, levelLabel, nextInPath, courseUrl, lessonUrl, youtubeWatchUrl, dirFor } from '../../../lib/courses';
+import { getTrack, trackUrl } from '../../../lib/taxonomy';
 
 export async function getStaticPaths() {
   const paths = [];
-  for (const course of await getPublishedCourses()) {
+  const all = await getPublishedCourses();
+  for (const course of all) {
     const lessons = flattenLessons(course);
+    const nextCourse = nextInPath(course, all);
     lessons.forEach((lesson, i) => paths.push({
       params: { course: course.id, lesson: lesson.slug },
-      props: { course, lesson, prev: lessons[i - 1], next: lessons[i + 1] }
+      props: { course, lesson, index: i, total: lessons.length, prev: lessons[i - 1], next: lessons[i + 1], nextCourse }
     }));
   }
   return paths;
 }
-const { course, lesson, prev, next } = Astro.props;
+const { course, lesson, index, total, prev, next, nextCourse } = Astro.props;
+const track = getTrack(course.data.track)!;
 const d = course.data;
 const key = `${course.id}/${lesson.slug}`;
-const desc = lesson.summary ?? `${lesson.title}: lesson from ${d.title} by ${d.source.name}.`;
-const jsonLd = {
+const dir = dirFor(d.language);
+const desc = lesson.summary ?? `Lesson ${index + 1} of ${total} in ${d.title}, taught by ${d.source.name}.`;
+const thumb = lesson.youtube_id ? `https://i.ytimg.com/vi/${lesson.youtube_id}/hqdefault.jpg` : undefined;
+// uploadDate and duration arrive with the YouTube metadata sync (Phase 2).
+const jsonLd = lesson.youtube_id && !d.demo ? {
   '@context': 'https://schema.org', '@type': 'VideoObject',
-  name: lesson.title, description: desc,
-  thumbnailUrl: `https://i.ytimg.com/vi/${lesson.youtube_id}/hqdefault.jpg`,
-  embedUrl: `https://www.youtube-nocookie.com/embed/${lesson.youtube_id}`
-  // TODO: add uploadDate + duration once the metadata sync fills them in.
-};
+  name: lesson.title, description: desc, thumbnailUrl: thumb, inLanguage: d.language,
+  embedUrl: `https://www.youtube-nocookie.com/embed/${lesson.youtube_id}`,
+  url: new URL(lessonUrl(course.id, lesson.slug), Astro.site).href,
+  author: { '@type': 'Organization', name: d.source.name, ...(d.source.url ? { url: d.source.url } : {}) }
+} : undefined;
+const report = issueUrl('broken-video.yml', `Problem with lesson: ${key}`);
 ---
-<Base title={`${lesson.title} · ${d.title}`} description={desc} lang={d.language} dir={d.language.startsWith('ar') ? 'rtl' : 'ltr'} jsonLd={jsonLd} image={jsonLd.thumbnailUrl}>
-  <p class="meta"><a href="/courses">Courses</a> / <a href={`/courses/${course.id}`}>{d.title}</a></p>
+<Base section={trackUrl(track.id)} title={`${lesson.title} · ${d.title}`} description={desc} jsonLd={jsonLd} image={thumb} noindex={d.demo} ogType="video.other"
+  breadcrumbs={[{ name: track.label, href: trackUrl(track.id) }, { name: d.title, href: courseUrl(course.id) }, { name: lesson.title, href: lessonUrl(course.id, lesson.slug) }]}>
+  <LessonTracker client:load course={course.id} lesson={lesson.slug} />
   <div class="layout">
     <article>
-      <LitePlayer client:load youtubeId={lesson.youtube_id} title={lesson.title} start={lesson.start_seconds} end={lesson.end_seconds} lessonKey={key} />
-      <h1>{lesson.title}</h1>
-      <p class="meta">{lesson.moduleTitle} · {d.source.name}</p>
-      {lesson.summary && <p>{lesson.summary}</p>}
+      <LitePlayer client:load youtubeId={lesson.youtube_id} title={lesson.title} start={lesson.start_seconds} end={lesson.end_seconds} />
+      <p class="meta" style="margin-block:.75rem 0">Lesson {index + 1} of {total}{d.demo && <> · <span class="badge">Demo</span></>}</p>
+      <div lang={d.language} dir={dir}>
+        <h1 style="margin-block:.25rem .5rem">{lesson.title}</h1>
+        <p class="meta">{lesson.moduleTitle}</p>
+        {lesson.summary && <p class="prose">{lesson.summary}</p>}
+      </div>
+      <div class="source">
+        <span>Teacher: <strong dir="auto">{d.source.url ? <a href={d.source.url} rel="noopener">{d.source.name}</a> : d.source.name}</strong></span>
+        {lesson.youtube_id && <a href={youtubeWatchUrl(lesson.youtube_id, lesson.start_seconds)} rel="noopener">Watch on YouTube</a>}
+        <a href={report} rel="noopener">Report a problem</a>
+      </div>
       <div class="actions"><CompleteButton client:load lessonKey={key} /></div>
       <nav class="pager" aria-label="Lesson navigation">
-        {prev ? <a class="btn ghost" href={`/courses/${course.id}/${prev.slug}`} rel="prev">Previous</a> : <span />}
-        {next ? <a class="btn" href={`/courses/${course.id}/${next.slug}`} rel="next">Next lesson</a> : <span />}
+        {prev ? <a class="btn ghost" href={lessonUrl(course.id, prev.slug)} rel="prev"><span class="flip" aria-hidden="true">←</span> Previous</a> : <span />}
+        {next ? <a class="btn" href={lessonUrl(course.id, next.slug)} rel="next">Next lesson <span class="flip" aria-hidden="true">→</span></a> : nextCourse
+          ? <a class="btn" href={courseUrl(nextCourse.id)}>Next course: <span dir="auto">{nextCourse.data.title}</span></a>
+          : <a class="btn" href={courseUrl(course.id)}>Back to course</a>}
       </nav>
     </article>
-    <aside aria-label="Course lessons">
-      <h2 style="font-size:1.1rem">{d.title}</h2>
+    <aside class="lessons" aria-labelledby="toc-h" lang={d.language} dir={dir}>
+      <h2 id="toc-h" style="font-size:1.1rem;margin-block-start:0"><a href={courseUrl(course.id)}>{d.title}</a></h2>
       {d.modules.map((m) => (
         <>
           <h3 style="font-size:.95rem;margin:1rem 0 .25rem">{m.title}</h3>
-          <ul class="lesson-list">
-            {m.lessons.map((l) => <li><a href={`/courses/${course.id}/${l.slug}`} aria-current={l.slug === lesson.slug ? 'page' : undefined}>{l.title}</a></li>)}
-          </ul>
+          <ol class="lesson-list">
+            {m.lessons.map((l) => <li><a href={lessonUrl(course.id, l.slug)} data-lesson-key={`${course.id}/${l.slug}`} aria-current={l.slug === lesson.slug ? 'page' : undefined}>{l.title}<span class="sr-status"></span></a></li>)}
+          </ol>
         </>
       ))}
     </aside>
   </div>
+  <LessonChecks client:idle />
 </Base>

@@ -1,16 +1,41 @@
 ---
 import Base from '../../layouts/Base.astro';
 import CourseCard from '../../components/CourseCard.astro';
-import { getPublishedCourses, categoryLabel } from '../../lib/courses';
+import { getPublishedCourses, courseUrl } from '../../lib/courses';
+import { TRACKS, trackUrl } from '../../lib/taxonomy';
 const courses = await getPublishedCourses();
-const cats = [...new Set(courses.map((c) => c.data.category))];
+const jsonLd = {
+  '@context': 'https://schema.org', '@type': 'ItemList',
+  itemListElement: courses.filter((c) => !c.data.demo).map((c, i) => ({ '@type': 'ListItem', position: i + 1, url: new URL(courseUrl(c.id), Astro.site).href }))
+};
+const groups = TRACKS.map((t) => ({
+  track: t,
+  subjects: t.subjects.map((s) => ({ subject: s, courses: courses.filter((c) => c.data.track === t.id && c.data.subject === s.id) })).filter((g) => g.courses.length)
+}));
 ---
-<Base title="All courses" description="Browse free Islamic courses by subject and level.">
-  <h1>Courses</h1>
-  {cats.map((cat) => (
-    <section>
-      <h2>{categoryLabel(cat)}</h2>
-      <ul class="grid">{courses.filter((c) => c.data.category === cat).map((c) => <li><CourseCard course={c} /></li>)}</ul>
+<Base title="All courses by subject" description="Browse every free course by subject: Arabic grammar, reading and Quranic Arabic; Aqeedah, Fiqh, Quran, Hadith, Seerah and more." jsonLd={jsonLd}
+  breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Courses', href: '/courses/' }]}>
+  <h1>All courses</h1>
+  <p class="lede">{courses.length} courses, grouped by subject. To study in order from the basics, follow a path: <a href={trackUrl('arabic')}>Learn Arabic</a> or <a href={trackUrl('islam')}>Learn Islam</a>.</p>
+  {groups.map(({ track, subjects }) => (
+    <section class="trk" aria-labelledby={`h-${track.id}`}>
+      <h2 id={`h-${track.id}`}><a href={trackUrl(track.id)}>{track.short}</a></h2>
+      <nav aria-label={`${track.short} subjects`}><ul class="chips">{subjects.map(({ subject }) => <li><a href={`#${track.id}-${subject.id}`}>{subject.label}</a></li>)}</ul></nav>
+      {subjects.map(({ subject, courses }) => (
+        <section id={`${track.id}-${subject.id}`} class="subj" aria-labelledby={`h-${track.id}-${subject.id}`}>
+          <h3 id={`h-${track.id}-${subject.id}`}>{subject.label} <span class="ar" lang="ar" dir="rtl">{subject.arabic}</span></h3>
+          <p class="meta">{subject.blurb}</p>
+          <ul class="grid">{courses.map((c) => <li><CourseCard course={c} /></li>)}</ul>
+        </section>
+      ))}
     </section>
   ))}
 </Base>
+<style>
+  .trk { margin-block-end: 2.5rem; }
+  .trk > h2 a { color: var(--ink); text-decoration: none; }
+  .subj { scroll-margin-top: 1rem; margin-block-end: 1.75rem; }
+  .subj h3 { margin-block-end: .25rem; font-size: 1.25rem; }
+  .subj > .meta { margin-block: 0 .75rem; }
+  .ar { font-family: var(--arabic); color: var(--muted); font-weight: 400; font-size: 1rem; margin-inline-start: .35rem; }
+</style>

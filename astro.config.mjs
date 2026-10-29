@@ -2,22 +2,38 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import AstroPWA from '@vite-pwa/astro';
+import { readdirSync, readFileSync } from 'node:fs';
 
 // Set SITE_URL in your environment for production (needed for sitemap + canonical URLs).
 const site = process.env.SITE_URL || 'http://localhost:4321';
 
+// Demo courses are kept out of the sitemap (their pages are also noindex).
+const demoCourses = readdirSync('./content/courses')
+  .filter((f) => f.endsWith('.yaml') && /^demo:\s*true\b/m.test(readFileSync(`./content/courses/${f}`, 'utf8')))
+  .map((f) => f.replace(/\.yaml$/, ''));
+const hiddenFromSitemap = ['/watchlist/', '/offline/', '/404/'];
+
 export default defineConfig({
   site,
+  trailingSlash: 'always',
   integrations: [
     react(),
-    sitemap(),
+    sitemap({
+      filter: (page) => {
+        const path = new URL(page).pathname;
+        return !hiddenFromSitemap.includes(path) && !demoCourses.some((id) => path.startsWith(`/courses/${id}/`));
+      }
+    }),
     AstroPWA({
       registerType: 'autoUpdate',
       manifest: {
         name: 'Talaqqa',
         short_name: 'Talaqqa',
         description: 'Free, curated Islamic courses from public sources.',
+        id: '/',
         start_url: '/',
+        scope: '/',
+        categories: ['education', 'books'],
         display: 'standalone',
         lang: 'en',
         dir: 'ltr',
@@ -31,7 +47,8 @@ export default defineConfig({
       },
       workbox: {
         navigateFallback: null,
-        globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
+        // Precache the app shell only; other pages are cached as they are visited.
+        globPatterns: ['**/*.{js,css,svg,woff2}', 'pwa-192.png', 'index.html', 'courses/index.html', 'offline/index.html'],
         runtimeCaching: [
           // Never cache YouTube: iframe, thumbnails of the player, or video.
           {
@@ -44,11 +61,16 @@ export default defineConfig({
             handler: 'CacheFirst',
             options: { cacheName: 'images', expiration: { maxEntries: 120, maxAgeSeconds: 60 * 60 * 24 * 30 } }
           },
-          // Catalog pages: instant load, quiet update.
+          // Pages: fresh when online, the saved copy when offline, else the offline page.
           {
             urlPattern: ({ request }) => request.mode === 'navigate',
-            handler: 'StaleWhileRevalidate',
-            options: { cacheName: 'pages' }
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'pages',
+              networkTimeoutSeconds: 4,
+              expiration: { maxEntries: 200 },
+              precacheFallback: { fallbackURL: '/offline/index.html' }
+            }
           }
         ]
       }

@@ -1,7 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
-import WatchlistView from '../components/WatchlistView';
-import { getPublishedCourses } from '../lib/courses';
-const courses = (await getPublishedCourses()).map((c) => ({ slug: c.id, title: c.data.title, summary: c.data.summary }));
+import MyCourses from '../components/MyCourses';
+import { getPublishedCourses, flattenLessons } from '../lib/courses';
+const courses = (await getPublishedCourses()).map((c) => ({
+  id: c.id, title: c.data.title, summary: c.data.summary, lang: c.data.language, teacher: c.data.source.name,
+  lessons: flattenLessons(c).map((l) => ({ slug: l.slug, title: l.title }))
+}));
 ---
-<Base title="Watchlist" description="Courses you saved to study later."><h1>Watchlist</h1><WatchlistView client:load courses={courses} /></Base>
+<Base title="My courses" description="Courses you saved and your progress, stored on this device." noindex>
+  <h1>My courses</h1>
+  <MyCourses client:load courses={courses} />
+</Base>
