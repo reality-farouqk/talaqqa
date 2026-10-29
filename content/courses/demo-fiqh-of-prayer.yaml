@@ -7,6 +7,10 @@ level: foundations
 order: 2
 language: en
 demo: true
+outcomes:
+  - "Which water is valid for purification"
+  - "Perform wudu step by step"
+  - "The conditions and pillars of the prayer"
 source:
   name: Demo teacher
 modules:

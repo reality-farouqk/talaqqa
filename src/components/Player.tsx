@@ -23,14 +23,31 @@ function loadApi() {
 
 const clock = (t: number) => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}`;
 
-export default function Player({ youtubeId, title, start, end, lessonKey, nextUrl, nextTitle }: Props) {
+// Inside a playlist (?list=id) the next item comes from the playlist instead of the course.
+function playlistNext(lessonKey: string) {
+  const id = new URLSearchParams(location.search).get('list');
+  const list = id && read().playlists.find((p) => p.id === id);
+  if (!list) return undefined;
+  const next = list.items[list.items.indexOf(lessonKey) + 1];
+  return next && { url: `/courses/${next}/?list=${id}`, title: `Next in “${list.title}”` };
+}
+const withPlay = (url: string) => `${url}${url.includes('?') ? '&' : '?'}play`;
+
+export default function Player({ youtubeId, title, start, end, lessonKey, nextUrl: courseNextUrl, nextTitle: courseNextTitle }: Props) {
   const store = useStore();
+  const [upNext, setUpNext] = useState(courseNextUrl ? { url: courseNextUrl, title: courseNextTitle } : undefined);
+  useEffect(() => { const p = playlistNext(lessonKey); if (p) setUpNext(p); }, [lessonKey]);
+  const nextUrl = upNext?.url;
+  const nextTitle = upNext?.title;
   const [active, setActive] = useState(false);
   const [offline, setOffline] = useState(false);
   const [countdown, setCountdown] = useState<number | null>(null);
   const [resumedAt, setResumedAt] = useState(0);
   const mount = useRef<HTMLDivElement>(null);
   const player = useRef<any>(null);
+  // The YouTube callbacks are created once, so they read the latest up-next through a ref.
+  const nextRef = useRef(nextUrl);
+  nextRef.current = nextUrl;
 
   useEffect(() => {
     const update = () => setOffline(!navigator.onLine);
@@ -70,7 +87,7 @@ export default function Player({ youtubeId, title, start, end, lessonKey, nextUr
               savePosition(lessonKey, player.current.getCurrentTime());
             } else if (e.data === YT.PlayerState.ENDED) {
               markDone(lessonKey);
-              if (nextUrl && read().settings.autoNext) setCountdown(COUNTDOWN);
+              if (nextRef.current && read().settings.autoNext) setCountdown(COUNTDOWN);
             }
           }
         }
@@ -81,7 +98,7 @@ export default function Player({ youtubeId, title, start, end, lessonKey, nextUr
 
   useEffect(() => {
     if (countdown === null || !nextUrl) return;
-    if (countdown === 0) { location.href = `${nextUrl}?play`; return; }
+    if (countdown === 0) { location.href = withPlay(nextUrl); return; }
     const t = window.setTimeout(() => setCountdown(countdown - 1), 1000);
     return () => window.clearTimeout(t);
   }, [countdown, nextUrl]);
@@ -111,7 +128,7 @@ export default function Player({ youtubeId, title, start, end, lessonKey, nextUr
             <p className="meta">Up next in {countdown}</p>
             <p className="up-next-title" dir="auto">{nextTitle}</p>
             <p className="actions" style={{ justifyContent: 'center' }}>
-              <a className="btn" href={`${nextUrl}?play`}>Play now</a>
+              <a className="btn" href={withPlay(nextUrl!)}>Play now</a>
               <button type="button" className="btn ghost" onClick={() => setCountdown(null)}>Cancel</button>
             </p>
           </div>

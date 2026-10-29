@@ -55,6 +55,19 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy dist --project-name=talaqqa --branch=${{ github.event_name == 'push' && 'main' || github.head_ref }}
+      # New pages.dev hosts can take a minute to resolve; fail the job if the site never answers.
+      - name: Smoke test
+        if: env.HAS_TOKEN == 'true'
+        env:
+          URL: ${{ steps.pages.outputs.deployment-url }}
+        run: |
+          for i in $(seq 1 12); do
+            code=$(curl -s -o page.html -w '%{http_code}' "$URL/" || true)
+            echo "attempt $i: HTTP $code"
+            if [ "$code" = 200 ] && grep -q 'Talaqqa' page.html; then exit 0; fi
+            sleep 10
+          done
+          echo "::error::$URL did not serve the home page"; exit 1
       - name: Post preview link
         if: env.HAS_TOKEN == 'true' && github.event_name == 'pull_request'
         env:

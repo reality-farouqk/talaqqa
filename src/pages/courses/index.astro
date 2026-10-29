@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import CourseCard from '../../components/CourseCard.astro';
 import { getPublishedCourses, courseUrl } from '../../lib/courses';
-import { TRACKS, trackUrl } from '../../lib/taxonomy';
+import { TRACKS, trackUrl, topicUrl } from '../../lib/taxonomy';
 const courses = await getPublishedCourses();
 const jsonLd = {
   '@context': 'https://schema.org', '@type': 'ItemList',
@@ -23,7 +23,7 @@ const groups = TRACKS.map((t) => ({
       <nav aria-label={`${track.short} subjects`}><ul class="chips">{subjects.map(({ subject }) => <li><a href={`#${track.id}-${subject.id}`}>{subject.label}</a></li>)}</ul></nav>
       {subjects.map(({ subject, courses }) => (
         <section id={`${track.id}-${subject.id}`} class="subj" aria-labelledby={`h-${track.id}-${subject.id}`}>
-          <h3 id={`h-${track.id}-${subject.id}`}>{subject.label} <span class="ar" lang="ar" dir="rtl">{subject.arabic}</span></h3>
+          <h3 id={`h-${track.id}-${subject.id}`}><a href={topicUrl(track.id, subject.id)}>{subject.label}</a> <span class="ar" lang="ar" dir="rtl">{subject.arabic}</span></h3>
           <ul class="grid">{courses.map((c) => <li><CourseCard course={c} /></li>)}</ul>
         </section>
       ))}

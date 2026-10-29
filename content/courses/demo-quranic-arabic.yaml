@@ -8,6 +8,9 @@ order: 1
 prerequisites: [demo-arabic-grammar-1]
 language: en
 demo: true
+outcomes:
+  - "Understand Al-Fatihah word by word"
+  - "Spot common Quranic grammar patterns"
 source:
   name: Demo teacher
 modules:

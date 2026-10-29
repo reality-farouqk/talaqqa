@@ -3,6 +3,7 @@ import Base from '../../../layouts/Base.astro';
 import Thumb from '../../../components/Thumb.astro';
 import Player from '../../../components/Player';
 import CompleteButton from '../../../components/CompleteButton';
+import LessonTools from '../../../components/LessonTools';
 import LessonTracker from '../../../components/LessonTracker';
 import LessonChecks from '../../../components/LessonChecks';
 import { issueUrl } from '../../../config';
@@ -63,6 +64,7 @@ const report = issueUrl('broken-video.yml', `Problem with lesson: ${key}`);
         <a href={report} rel="noopener">Report a problem</a>
       </div>
       <div class="actions"><CompleteButton client:load lessonKey={key} /></div>
+      <LessonTools client:idle lessonKey={key} />
       <nav class="pager" aria-label="Lesson navigation">
         {prev ? <a class="btn ghost" href={lessonUrl(course.id, prev.slug)} rel="prev"><span class="flip" aria-hidden="true">←</span> Previous</a> : <span />}
         {next ? <a class="btn" href={lessonUrl(course.id, next.slug)} rel="next">Next lesson <span class="flip" aria-hidden="true">→</span></a> : nextCourse

@@ -54,3 +54,4 @@ export const getLevel = (id: string) => LEVELS.find((l) => l.id === id);
 export const levelIndex = (id: string) => LEVEL_IDS.indexOf(id as LevelId);
 export const trackUrl = (id: string) => `/learn/${id}/`;
 export const levelUrl = (track: string, level: string) => `/learn/${track}/#${level}`;
+export const topicUrl = (track: string, subject: string) => `/learn/${track}/${subject}/`;

@@ -160,6 +160,8 @@ const nav = [
   .badge { display: inline-block; font: 600 .7rem var(--sans); letter-spacing: .05em; text-transform: uppercase; padding: .1rem .45rem; border-radius: 999px; background: var(--gold-soft); color: var(--ink); vertical-align: middle; }
   .btn { display: inline-flex; align-items: center; justify-content: center; gap: .4rem; min-height: 44px; padding: .55rem 1rem; border-radius: var(--radius); border: 1px solid var(--teal); background: var(--teal); color: var(--teal-ink); font: inherit; font-weight: 500; cursor: pointer; text-decoration: none; }
   .btn.ghost { background: transparent; color: var(--teal); }
+  .btn.big { flex-direction: column; gap: 0; min-height: 52px; font-size: 1.05rem; }
+  .btn-sub { font-size: .8rem; font-weight: 400; opacity: .9; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .btn.danger { background: var(--danger); border-color: var(--danger); color: var(--paper); }
   .btn:disabled { opacity: .6; cursor: default; }
   .actions { display: flex; gap: .75rem; flex-wrap: wrap; margin-block: 1rem; }
@@ -192,6 +194,12 @@ const nav = [
   .controls select { font: inherit; min-height: 36px; padding: .2rem .4rem; border-radius: 6px; border: 1px solid var(--line); background: var(--card); color: var(--ink); }
   .controls input[type="checkbox"] { width: 1.15rem; height: 1.15rem; accent-color: var(--teal); }
   .linkish { background: none; border: 0; padding: 0; font: inherit; color: var(--teal); text-decoration: underline; cursor: pointer; min-height: 44px; }
+  .tools { display: grid; gap: .75rem; margin-block: .5rem 1rem; }
+  .panel { display: grid; gap: .5rem; padding: .75rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); }
+  .panel .row { display: flex; gap: .5rem; }
+  .panel input[type="text"], .panel input:not([type]), .panel textarea { flex: 1; min-width: 0; font: inherit; padding: .5rem .6rem; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); color: var(--ink); }
+  .check { display: flex; align-items: center; gap: .5rem; min-height: 40px; cursor: pointer; }
+  .check input { width: 1.15rem; height: 1.15rem; accent-color: var(--teal); }
   .player-msg { display: grid; place-items: center; padding: 1.5rem; text-align: center; color: #f2f2f2; background: #1d2a28; }
   .player-msg p { max-width: 36ch; margin: 0; }
   .source { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; padding: .75rem 1rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); margin-block: 1rem; }

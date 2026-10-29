@@ -21,6 +21,9 @@ const courses = defineCollection({
       title: z.string().min(1),
       summary: z.string().min(1),
       description: z.string().optional(),
+      // "What you'll learn": short outcome statements shown on the course page.
+      outcomes: z.array(z.string().min(1)).max(8).default([]),
+      featured: z.boolean().default(false),
       track: z.enum(TRACKS.map((t) => t.id) as [string, ...string[]]),
       subject: slug,
       level: z.enum(LEVEL_IDS),

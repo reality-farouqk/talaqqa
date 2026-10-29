@@ -9,6 +9,11 @@ level: beginner
 order: 1
 language: en
 demo: true
+outcomes:
+  - "The setting of Arabia before Islam"
+  - "Key events of the Makkan period"
+  - "How the early Muslims faced opposition"
+featured: true
 source:
   name: Demo teacher
 modules:

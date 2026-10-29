@@ -48,7 +48,7 @@ export default defineConfig({
       workbox: {
         navigateFallback: null,
         // Precache the app shell only; other pages are cached as they are visited.
-        globPatterns: ['**/*.{js,css,svg,woff2}', 'pwa-192.png', 'index.html', 'courses/index.html', 'offline/index.html'],
+        globPatterns: ['**/*.{js,css,svg,woff2}', 'pwa-192.png', 'index.html', 'courses/index.html', 'offline/index.html', 'catalog.json'],
         runtimeCaching: [
           // Never cache YouTube: iframe, thumbnails of the player, or video.
           {

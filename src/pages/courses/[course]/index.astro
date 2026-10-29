@@ -5,7 +5,7 @@ import WatchlistButton from '../../../components/WatchlistButton';
 import CourseProgress from '../../../components/CourseProgress';
 import LessonChecks from '../../../components/LessonChecks';
 import { getPublishedCourses, flattenLessons, subjectLabel, levelLabel, nextInPath, courseUrl, lessonUrl, dirFor, languageName } from '../../../lib/courses';
-import { getTrack, trackUrl, levelUrl } from '../../../lib/taxonomy';
+import { getTrack, trackUrl, topicUrl } from '../../../lib/taxonomy';
 
 export async function getStaticPaths() {
   const all = await getPublishedCourses();
@@ -26,6 +26,7 @@ const jsonLd = d.demo ? undefined : {
   educationalLevel: levelLabel(d.level), about: subjectLabel(course),
   coursePrerequisites: prereqs.length ? prereqs.map((c) => c.data.title) : undefined, isAccessibleForFree: true,
   provider: { '@type': 'Organization', name: d.source.name, ...(d.source.url ? { sameAs: d.source.url } : {}) },
+  teaches: d.outcomes.length ? d.outcomes : undefined,
   hasCourseInstance: { '@type': 'CourseInstance', courseMode: 'Online', courseWorkload: `${lessons.length} video lessons` },
   offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD', category: 'Free' }
 };
@@ -33,38 +34,53 @@ const firstImage = lessons.find((l) => l.youtube_id)?.youtube_id;
 ---
 <Base section={trackUrl(track.id)} title={d.title} description={d.summary} jsonLd={jsonLd} noindex={d.demo}
   image={firstImage ? `https://i.ytimg.com/vi/${firstImage}/hqdefault.jpg` : undefined}
-  breadcrumbs={[{ name: 'Home', href: '/' }, { name: track.label, href: trackUrl(track.id) }, { name: levelLabel(d.level), href: levelUrl(track.id, d.level) }, { name: d.title, href: courseUrl(course.id) }]}>
-  {d.demo && <p class="callout" role="note"><span class="badge">Demo</span> Sample outline, no videos yet.</p>}
-  <p class="meta">{track.short} · {subjectLabel(course)} · {levelLabel(d.level)} · {lessons.length} lessons{d.language !== 'en' && ` · Taught in ${languageName(d.language)}`}</p>
-  <div lang={d.language} dir={dir}>
-    <h1>{d.title}</h1>
-    <p class="lede">{d.summary}</p>
-    {d.description && <p class="prose">{d.description}</p>}
-  </div>
-  <div class="source">
-    <span>Taught by <strong dir="auto">{d.source.url ? <a href={d.source.url} rel="noopener">{d.source.name}</a> : d.source.name}</strong></span>
-    {d.source.playlist_url && <a href={d.source.playlist_url} rel="noopener">Original series on YouTube</a>}
-  </div>
+  breadcrumbs={[{ name: 'Home', href: '/' }, { name: track.label, href: trackUrl(track.id) }, { name: subjectLabel(course), href: topicUrl(track.id, d.subject) }, { name: d.title, href: courseUrl(course.id) }]}>
+  <section class="course-hero">
+    <div class="hero-text" lang={d.language} dir={dir}>
+      <p class="meta">{subjectLabel(course)} · {levelLabel(d.level)}{d.language !== 'en' && ` · ${languageName(d.language)}`} {d.demo && <span class="badge">Demo</span>}</p>
+      <h1>{d.title}</h1>
+      <p class="lede">{d.summary}</p>
+      <p class="meta">Taught by <bdi>{d.source.url ? <a href={d.source.url} rel="noopener">{d.source.name}</a> : d.source.name}</bdi>
+        · {d.modules.length} {d.modules.length === 1 ? 'section' : 'sections'} · {lessons.length} lessons
+        {d.source.playlist_url && <> · <a href={d.source.playlist_url} rel="noopener">Original on YouTube</a></>}</p>
+    </div>
+    <div class="hero-side">
+      <span class="hero-thumb"><Thumb id={firstImage} label={subjectLabel(course)} /></span>
+      <CourseProgress client:load course={course.id} lessons={lessons.map((l) => ({ slug: l.slug, title: l.title }))} />
+      <WatchlistButton client:load courseSlug={course.id} />
+    </div>
+  </section>
+
   {prereqs.length > 0 && (
     <p class="callout">Take first: {prereqs.map((c, i) => <>{i > 0 && ', '}<a href={courseUrl(c.id)} dir="auto">{c.data.title}</a></>)}</p>
   )}
-  <CourseProgress client:load course={course.id} lessons={lessons.map((l) => ({ slug: l.slug, title: l.title }))} showResume />
-  <div class="actions">
-    <a class="btn" href={lessonUrl(course.id, lessons[0].slug)}>▶ Start course</a>
-    <WatchlistButton client:load courseSlug={course.id} />
-  </div>
-  <div class="lessons" lang={d.language} dir={dir}>
-    {d.modules.map((m) => (
-      <section>
-        <h2>{m.title}</h2>
-        <ol class="lesson-list">
-          {m.lessons.map((l) => (
-            <li><a href={lessonUrl(course.id, l.slug)} data-lesson-key={`${course.id}/${l.slug}`}><Thumb id={l.youtube_id} /><span class="lt">{l.title}<span class="sr-status"></span></span></a></li>
-          ))}
-        </ol>
-      </section>
-    ))}
-  </div>
+
+  {d.outcomes.length > 0 && (
+    <section class="learn" aria-labelledby="learn-h" lang={d.language} dir={dir}>
+      <h2 id="learn-h">What you'll learn</h2>
+      <ul>{d.outcomes.map((o) => <li>{o}</li>)}</ul>
+    </section>
+  )}
+
+  <section aria-labelledby="content-h">
+    <h2 id="content-h">Course content</h2>
+    <p class="meta">{d.modules.length} {d.modules.length === 1 ? 'section' : 'sections'} · {lessons.length} lessons</p>
+    <div class="outline lessons" lang={d.language} dir={dir}>
+      {d.modules.map((m, i) => (
+        <details open={i === 0}>
+          <summary><span class="sec-title">{m.title}</span><span class="meta">{m.lessons.length} {m.lessons.length === 1 ? 'lesson' : 'lessons'}</span></summary>
+          <ol class="lesson-list">
+            {m.lessons.map((l) => (
+              <li><a href={lessonUrl(course.id, l.slug)} data-lesson-key={`${course.id}/${l.slug}`}><Thumb id={l.youtube_id} /><span class="lt">{l.title}<span class="sr-status"></span></span></a></li>
+            ))}
+          </ol>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  {d.description && <section class="prose" lang={d.language} dir={dir}><h2>About this course</h2><p>{d.description}</p></section>}
+
   {next && (
     <section class="note" aria-labelledby="next-h">
       <h2 id="next-h" class="eyebrow">Next in the {track.label} path</h2>
@@ -73,3 +89,24 @@ const firstImage = lessons.find((l) => l.youtube_id)?.youtube_id;
   )}
   <LessonChecks client:idle />
 </Base>
+<style>
+  .course-hero { display: grid; gap: 1.25rem; grid-template-columns: minmax(0, 1fr); margin-block-end: 1.5rem; }
+  @media (min-width: 52rem) { .course-hero { grid-template-columns: minmax(0, 1fr) 20rem; align-items: start; } }
+  .course-hero h1 { margin-block: .25rem .5rem; font-size: clamp(1.7rem, 5vw, 2.4rem); }
+  .hero-side { display: grid; gap: .75rem; align-content: start; }
+  .hero-side .progress { margin: 0; max-width: none; }
+  .hero-side :global(.btn) { width: 100%; }
+  .learn { border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.25rem; background: var(--card); margin-block: 1.5rem; }
+  .learn h2 { margin-block-start: 0; font-size: 1.25rem; }
+  .learn ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem 1.5rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
+  .learn li { display: flex; gap: .5rem; }
+  .learn li::before { content: "✓"; color: var(--teal); font-weight: 700; }
+  .outline { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+  .outline details + details { border-block-start: 1px solid var(--line); }
+  .outline summary { display: flex; justify-content: space-between; gap: 1rem; align-items: center; padding: .85rem 1rem; cursor: pointer; background: var(--card); font-weight: 600; min-height: 44px; list-style: none; }
+  .outline summary::-webkit-details-marker { display: none; }
+  .outline summary::after { content: "▾"; color: var(--muted); transition: transform .15s; }
+  .outline details[open] > summary::after { transform: rotate(180deg); }
+  .sec-title { flex: 1; }
+  .outline .lesson-list { padding: .25rem .5rem .5rem; }
+</style>

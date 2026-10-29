@@ -7,6 +7,11 @@ level: foundations
 order: 1
 language: en
 demo: true
+outcomes:
+  - "Recognise all 28 letters in every position"
+  - "Read short and long vowels"
+  - "Read whole words with confidence"
+featured: true
 source:
   name: Demo teacher
 modules:

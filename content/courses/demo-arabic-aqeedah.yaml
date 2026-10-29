@@ -8,6 +8,9 @@ level: foundations
 order: 1
 language: ar
 demo: true
+outcomes:
+  - "أصول العقيدة"
+  - "أركان الإيمان"
 source:
   name: معلم تجريبي
 modules:

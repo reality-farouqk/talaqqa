@@ -1,8 +1,8 @@
 ---
-import Base from '../../layouts/Base.astro';
-import CourseCard from '../../components/CourseCard.astro';
-import { getPublishedCourses, courseUrl } from '../../lib/courses';
-import { TRACKS, LEVELS, trackUrl, type Track } from '../../lib/taxonomy';
+import Base from '../../../layouts/Base.astro';
+import CourseCard from '../../../components/CourseCard.astro';
+import { getPublishedCourses, courseUrl } from '../../../lib/courses';
+import { TRACKS, LEVELS, trackUrl, type Track } from '../../../lib/taxonomy';
 
 export function getStaticPaths() {
   return TRACKS.map((track) => ({ params: { track: track.id }, props: { track } }));

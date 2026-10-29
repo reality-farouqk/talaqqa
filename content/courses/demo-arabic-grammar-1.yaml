@@ -8,6 +8,10 @@ order: 1
 prerequisites: [demo-arabic-reading]
 language: en
 demo: true
+outcomes:
+  - "Tell definite from indefinite nouns"
+  - "Use masculine and feminine forms"
+  - "Build simple nominal sentences"
 source:
   name: Demo teacher
 modules:
