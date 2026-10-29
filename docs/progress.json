@@ -45,6 +45,11 @@
       "title": "Dependency approval: @astrojs/check",
       "detail": "Dev-only package so CI can type-check (astro check). No runtime cost. Everything else in Phase 1 uses what's already installed.",
       "owner": "You"
+    },
+    {
+      "title": "Security: upgrade Astro (major version)",
+      "detail": "npm audit flags a critical advisory on astro <=7.3.1 (we're on 5.x), plus sharp and deepmerge. Most of these hit the dev or SSR server, which a static site doesn't run in production, but we should upgrade before launch. Fixing it means a major Astro upgrade and re-testing; I'd like your OK.",
+      "owner": "You"
     }
   ],
   "phases": [
