@@ -1,23 +1,38 @@
 ---
 import Base from '../layouts/Base.astro';
-import ContinueCard from '../components/ContinueCard';
+import CourseCard from '../components/CourseCard.astro';
+import ContinueRow from '../components/ContinueRow';
 import { SITE } from '../config';
-import { getPublishedCourses, flattenLessons, courseUrl } from '../lib/courses';
-import { TRACKS, LEVELS, trackUrl, levelUrl } from '../lib/taxonomy';
+import { getPublishedCourses, courseUrl } from '../lib/courses';
+import { TRACKS, LEVELS, trackUrl, levelUrl, topicUrl } from '../lib/taxonomy';
 const courses = await getPublishedCourses();
-const forIsland = courses.map((c) => ({ id: c.id, title: c.data.title, lang: c.data.language, lessons: flattenLessons(c).map((l) => ({ slug: l.slug, title: l.title })) }));
-const jsonLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: SITE.name, url: new URL('/', Astro.site).href, description: SITE.description };
+const featured = courses.filter((c) => c.data.featured);
+// Netflix-style rows: all of Arabic in one row, then each Islamic subject.
+const arabic = TRACKS[0];
+const rows = [
+  { title: 'Arabic', href: trackUrl(arabic.id), courses: courses.filter((c) => c.data.track === arabic.id) },
+  ...TRACKS[1].subjects.map((s) => ({ title: s.label, href: topicUrl('islam', s.id), courses: courses.filter((c) => c.data.track === 'islam' && c.data.subject === s.id) }))
+].filter((r) => r.courses.length);
+const jsonLd = {
+  '@context': 'https://schema.org', '@type': 'WebSite', name: SITE.name, url: new URL('/', Astro.site).href, description: SITE.description,
+  potentialAction: { '@type': 'SearchAction', target: `${new URL('/search/', Astro.site).href}?q={q}`, 'query-input': 'required name=q' }
+};
 ---
 <Base jsonLd={jsonLd}>
   <section class="hero">
     <h1>Learn Arabic and Islam, step by step</h1>
-    <p class="lede">Free video courses from trusted teachers, basics to advanced.</p>
+    <form class="search" action="/search/" method="get" role="search">
+      <label for="home-q" class="sr-only">Search courses, lessons and teachers</label>
+      <input id="home-q" name="q" type="search" placeholder="Search courses, lessons, teachers" autocomplete="off" />
+      <button type="submit" class="btn">Search</button>
+    </form>
   </section>
-  <ContinueCard client:load courses={forIsland} />
+
+  <ContinueRow client:load />
+
   <div class="tracks">
     {TRACKS.map((t) => {
       const inTrack = courses.filter((c) => c.data.track === t.id);
-      const first = inTrack[0];
       return (
         <section class="track" aria-labelledby={`t-${t.id}`}>
           <p class="track-ar" lang="ar" dir="rtl">{t.arabic}</p>
@@ -28,26 +43,37 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: SIT
               return <li><a href={levelUrl(t.id, l.id)}><span>{l.label}</span><span class="meta num">{n ? `${n} ${n === 1 ? 'course' : 'courses'}` : 'Coming soon'}</span></a></li>;
             })}
           </ol>
-          <p class="actions">
-            {first && <a class="btn" href={courseUrl(first.id)}>▶ Start</a>}
-            <a class="btn ghost" href={trackUrl(t.id)}>Full path</a>
-          </p>
+          <p class="actions">{inTrack[0] && <a class="btn" href={courseUrl(inTrack[0].id)}>▶ Start</a>}<a class="btn ghost" href={trackUrl(t.id)}>Full path</a></p>
         </section>
       );
     })}
   </div>
-  <p style="margin-block-start:2rem"><a href="/courses/">All courses by subject</a></p>
+
+  {featured.length > 0 && (
+    <section class="row-section" aria-labelledby="f-h">
+      <div class="row-head"><h2 id="f-h">Featured</h2></div>
+      <ul class="row-scroll">{featured.map((c) => <li><CourseCard course={c} /></li>)}</ul>
+    </section>
+  )}
+
+  {rows.map((r, i) => (
+    <section class="row-section" aria-labelledby={`r-${i}`}>
+      <div class="row-head"><h2 id={`r-${i}`}>{r.title}</h2><a href={r.href}>See all</a></div>
+      <ul class="row-scroll">{r.courses.map((c) => <li><CourseCard course={c} /></li>)}</ul>
+    </section>
+  ))}
 </Base>
 <style>
-  .hero h1 { font-size: clamp(2rem, 6vw, 3.1rem); max-width: 20ch; margin-block: .5rem 1rem; }
-  .tracks { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); margin-block-start: 1.5rem; }
+  .hero h1 { font-size: clamp(1.9rem, 6vw, 3rem); max-width: 20ch; margin-block: .5rem 1rem; }
+  .search { display: flex; gap: .5rem; max-width: 36rem; }
+  .search input { flex: 1; min-width: 0; font: inherit; padding: .6rem .8rem; min-height: 44px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); color: var(--ink); }
+  .tracks { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); margin-block: 1.5rem; }
   .track { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.25rem; display: flex; flex-direction: column; min-width: 0; }
   .track h2 { margin: 0 0 .5rem; font-size: 1.6rem; }
   .track h2 a { color: var(--ink); text-decoration: none; }
-  .track h2 + .ladder { margin-block-start: .5rem; }
   .track .actions { margin-block-start: auto; padding-block-start: 1rem; margin-block-end: 0; }
   .track-ar { font-family: var(--arabic); color: var(--teal); font-size: 1.15rem; margin: 0; }
-  .ladder { list-style: none; padding: 0; margin: 0; counter-reset: step; border-block-start: 1px solid var(--line); }
+  .ladder { list-style: none; padding: 0; margin: .5rem 0 0; counter-reset: step; border-block-start: 1px solid var(--line); }
   .ladder a { display: flex; justify-content: space-between; gap: 1rem; align-items: center; min-height: 44px; padding: .5rem .25rem; border-block-end: 1px solid var(--line); text-decoration: none; color: var(--ink); }
   .ladder a span:first-child::before { counter-increment: step; content: counter(step) ". "; color: var(--muted); font-variant-numeric: tabular-nums; }
 </style>

@@ -24,19 +24,20 @@ function loadApi() {
 const clock = (t: number) => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}`;
 
 // Inside a playlist (?list=id) the next item comes from the playlist instead of the course.
+// Returns undefined outside a playlist, null at the playlist's end.
 function playlistNext(lessonKey: string) {
   const id = new URLSearchParams(location.search).get('list');
   const list = id && read().playlists.find((p) => p.id === id);
   if (!list) return undefined;
   const next = list.items[list.items.indexOf(lessonKey) + 1];
-  return next && { url: `/courses/${next}/?list=${id}`, title: `Next in “${list.title}”` };
+  return next ? { url: `/courses/${next}/?list=${id}`, title: `Next in “${list.title}”` } : null;
 }
 const withPlay = (url: string) => `${url}${url.includes('?') ? '&' : '?'}play`;
 
 export default function Player({ youtubeId, title, start, end, lessonKey, nextUrl: courseNextUrl, nextTitle: courseNextTitle }: Props) {
   const store = useStore();
   const [upNext, setUpNext] = useState(courseNextUrl ? { url: courseNextUrl, title: courseNextTitle } : undefined);
-  useEffect(() => { const p = playlistNext(lessonKey); if (p) setUpNext(p); }, [lessonKey]);
+  useEffect(() => { const p = playlistNext(lessonKey); if (p !== undefined) setUpNext(p ?? undefined); }, [lessonKey]);
   const nextUrl = upNext?.url;
   const nextTitle = upNext?.title;
   const [active, setActive] = useState(false);
