@@ -3,7 +3,7 @@
   "tagline": "Free, curated Islamic video courses from public sources",
   "repo": "https://github.com/reality-farouqk/talaqqa",
   "currentPhase": 1,
-  "liveUrl": null,
+  "liveUrl": "https://claude-halaqa-setup-jmv4gh.talaqqa.pages.dev",
   "updated": "2026-10-29",
   "blockers": [
     {
@@ -28,7 +28,7 @@
     },
     {
       "title": "Accounts and services for launch",
-      "detail": "Cloudflare token received. Two ways to deploy: (1) GitHub (no environment change): add repo secrets CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID; the workflow creates the 'talaqqa' Pages project and posts a preview link on each PR. (2) From this session: allow api.cloudflare.com in the environment's network settings and send the Account ID. Also: YouTube key as GitHub secret YOUTUBE_API_KEY, domain, removal email, analytics + error monitor choice.",
+      "detail": "Cloudflare previews work (stable link: https://claude-halaqa-setup-jmv4gh.talaqqa.pages.dev). Still needed for launch: custom domain, removal-request email, OK for Cloudflare Web Analytics, error monitor choice. Hosting question: keep Cloudflare Pages for the site (recommended) and use Render only for the Phase 2 API?",
       "owner": "You"
     },
     {
@@ -109,6 +109,31 @@
           "notes": "public/_headers for Cloudflare Pages; pages tested under the CSP with no violations."
         },
         {
+          "title": "Data model: Postgres schema for Neon (creators, courses, sections, lessons, videos, playlists, watchlist, progress, notes)",
+          "status": "Doing",
+          "notes": "db/0001_init.sql, checked on Postgres 16. Wired in Phase 2."
+        },
+        {
+          "title": "Course page: what you'll learn, expandable outline, Start/Continue",
+          "status": "Doing",
+          "notes": "On the preview."
+        },
+        {
+          "title": "Home: Continue Watching row, category rows, featured, search bar, streak",
+          "status": "Doing",
+          "notes": "On the preview."
+        },
+        {
+          "title": "Playlists (create, rename, reorder, play) and Watch later lessons",
+          "status": "Doing",
+          "notes": "On the device; public sharing needs accounts (Phase 2)."
+        },
+        {
+          "title": "Search and filters (topic, teacher, language, level) + topic pages",
+          "status": "Doing",
+          "notes": "Static index, no new dependency. Lighthouse 100/100/100."
+        },
+        {
           "title": "CI: build + content validation on every PR",
           "status": "Doing",
           "notes": "Runs on PR #1: tests, build + content validation, production content check."
@@ -170,8 +195,8 @@
         },
         {
           "title": "Deploy to Cloudflare Pages with custom domain",
-          "status": "Blocked",
-          "notes": "Workflow ready: PR previews + production on main. Waiting on Cloudflare secrets."
+          "status": "Doing",
+          "notes": "PR previews deploy automatically and pass a smoke test. Production waits for real courses + domain."
         },
         {
           "title": "Analytics (cookieless) and error monitoring",
@@ -456,6 +481,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-10-30",
+      "text": "v1 LMS brief: Postgres schema, Udemy-style course page, topic pages, Netflix-style home with Continue Watching and category rows, playlists, Watch later, notes, search with filters, playlist-aware auto-next, README with creator roadmap. Previews now deploy to Cloudflare on every push."
+    },
     {
       "date": "2026-10-29",
       "text": "YouTube key working. Discovery engine ran on real data: 25 drafts for review. Fixed language/dialect leaks. Deploy workflow now creates the Pages project itself."
