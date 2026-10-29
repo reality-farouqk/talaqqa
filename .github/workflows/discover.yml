@@ -1,0 +1,58 @@
+name: Discover courses
+
+on:
+  schedule:
+    - cron: '17 3 * * 1' # weekly, Monday 03:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency: discover
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run discover
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+      # Every new file must pass the same schema checks as hand-written courses.
+      - run: npm run build
+        env:
+          SITE_URL: https://example.org
+      - name: Publish trusted courses and open a review PR for the rest
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "discovery-bot"
+          git config user.email "discovery-bot@users.noreply.github.com"
+          published=$(grep -l '^status: published' $(git ls-files --others --exclude-standard content/courses) 2>/dev/null || true)
+          drafts=$(grep -l '^status: draft' $(git ls-files --others --exclude-standard content/courses) 2>/dev/null || true)
+          if [ -n "$published" ]; then
+            git add $published
+            git commit -m "content: auto-publish courses from trusted channels"
+            git push origin HEAD:main
+          fi
+          if [ -n "$drafts" ]; then
+            branch="discovery/review-$(date +%Y-%m-%d)"
+            git checkout -b "$branch"
+            git add $drafts
+            git commit -m "content: discovery drafts for review"
+            git push origin "$branch"
+            node -e '
+              const s = require("./discovery-summary.json");
+              const rows = s.results.filter(r => r.file && r.action === "review")
+                .map(r => `| ${r.score} | ${r.title.replace(/\|/g, "/")} | ${r.channel} | ${r.labels.track}/${r.labels.subject}/${r.labels.level} | ${r.videos} | \`${r.file}\` |`);
+              console.log(["Drafts found by the discovery engine. To approve a course, change `status: draft` to `status: published` in its file (adjust track/subject/level if needed). Delete files you reject and add the playlist ID to `blocked_playlists` in `content/discovery/config.json`.", "", "| Score | Series | Channel | Path | Videos | File |", "|---|---|---|---|---|---|", ...rows].join("\n"));
+            ' > "$RUNNER_TEMP/body.md"
+            gh pr create --title "Discovery: $(echo "$drafts" | wc -l) courses to review" --body-file "$RUNNER_TEMP/body.md" --base main --head "$branch"
+          fi
