@@ -33,7 +33,7 @@
     },
     {
       "title": "Accounts and services for launch",
-      "detail": "Needed before release: Cloudflare account access (Pages project + API token as a CI secret), the custom domain, a contact email for removal requests, and approval of Cloudflare Web Analytics (cookieless) and an error monitor (Sentry free tier, or a tiny Cloudflare Worker that logs errors).",
+      "detail": "Deploy workflow is ready (.github/workflows/deploy.yml). It needs: a Cloudflare Pages project named 'talaqqa', repo secrets CLOUDFLARE_API_TOKEN (Pages: Edit) and CLOUDFLARE_ACCOUNT_ID, and repo variable SITE_URL. Then every PR gets a preview link and main deploys to production. Also needed: custom domain, contact email for removals, OK for Cloudflare Web Analytics (cookieless), and an error monitor choice.",
       "owner": "You"
     },
     {
@@ -43,7 +43,7 @@
     },
     {
       "title": "Security: upgrade Astro (major version)",
-      "detail": "npm audit flags a critical advisory on astro <=7.3.1 (we're on 5.x), plus sharp and deepmerge. Most of these hit the dev or SSR server, which a static site doesn't run in production, but we should upgrade before launch. Fixing it means a major Astro upgrade and re-testing; I'd like your OK.",
+      "detail": "Tested in a scratch copy: Astro 5.18.2 → 7.3.8 (3 weeks old, fixes all listed advisories incl. a critical one in image optimisation we don't use) with @astrojs/react 7.0.1. Build, tests, types, CSP and page checks all pass and the service worker is still generated. Catch: @vite-pwa/astro doesn't officially support Astro 6+ yet (installs with --legacy-peer-deps and works). Options: (a) upgrade now, (b) wait for PWA plugin support. Practical risk today is low: static site, no user-written content.",
       "owner": "You"
     }
   ],
@@ -176,7 +176,7 @@
         {
           "title": "Deploy to Cloudflare Pages with custom domain",
           "status": "Blocked",
-          "notes": "Needs Cloudflare access + domain."
+          "notes": "Workflow ready: PR previews + production on main. Waiting on Cloudflare secrets."
         },
         {
           "title": "Analytics (cookieless) and error monitoring",
@@ -186,7 +186,7 @@
         {
           "title": "Phone smoke test, release notes, retrospective",
           "status": "To do",
-          "notes": "On the deployed build only."
+          "notes": "Lighthouse (mobile, local build): Performance 99–100, Accessibility 100, Best Practices 100, SEO 100 on indexable pages (demo pages are noindex on purpose). Real-phone smoke test after deploy."
         }
       ],
       "candidates": [
@@ -461,6 +461,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-10-29",
+      "text": "Lighthouse mobile: 99–100 across the board. Deploy workflow added (Cloudflare Pages previews per PR, production from main). Tested the Astro 7.3.8 security upgrade in a scratch copy; awaiting your decision. Sent a phone walkthrough video."
+    },
     {
       "date": "2026-10-29",
       "text": "GitHub access fixed: branch pushed and PR #1 opened into main. CI now also runs the engine tests."
