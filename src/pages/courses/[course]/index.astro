@@ -4,15 +4,19 @@ import Thumb from '../../../components/Thumb.astro';
 import WatchlistButton from '../../../components/WatchlistButton';
 import CourseProgress from '../../../components/CourseProgress';
 import LessonChecks from '../../../components/LessonChecks';
-import { getPublishedCourses, flattenLessons, subjectLabel, levelLabel, nextInPath, courseUrl, lessonUrl, dirFor, languageName } from '../../../lib/courses';
+import { getPublishedCourses, getDraftCourses, flattenLessons, subjectLabel, levelLabel, nextInPath, courseUrl, lessonUrl, dirFor, languageName } from '../../../lib/courses';
 import { getTrack, trackUrl, topicUrl } from '../../../lib/taxonomy';
 
 export async function getStaticPaths() {
   const all = await getPublishedCourses();
-  return all.map((course) => ({
-    params: { course: course.id },
-    props: { course, next: nextInPath(course, all), prereqs: all.filter((c) => course.data.prerequisites.includes(c.id)) }
-  }));
+  const drafts = (await getDraftCourses()).map((d) => d.course);
+  return [
+    ...all.map((course) => ({
+      params: { course: course.id },
+      props: { course, next: nextInPath(course, all), prereqs: all.filter((c) => course.data.prerequisites.includes(c.id)) }
+    })),
+    ...drafts.map((course) => ({ params: { course: course.id }, props: { course, next: undefined, prereqs: [] } }))
+  ];
 }
 const { course, next, prereqs } = Astro.props;
 const track = getTrack(course.data.track)!;
@@ -20,7 +24,8 @@ const d = course.data;
 const lessons = flattenLessons(course);
 const dir = dirFor(d.language);
 const url = new URL(courseUrl(course.id), Astro.site).href;
-const jsonLd = d.demo ? undefined : {
+const isDraft = d.status === 'draft';
+const jsonLd = d.demo || isDraft ? undefined : {
   '@context': 'https://schema.org', '@type': 'Course',
   name: d.title, description: d.summary, url, inLanguage: d.language,
   educationalLevel: levelLabel(d.level), about: subjectLabel(course),
@@ -32,9 +37,10 @@ const jsonLd = d.demo ? undefined : {
 };
 const firstImage = lessons.find((l) => l.youtube_id)?.youtube_id;
 ---
-<Base section={trackUrl(track.id)} title={d.title} description={d.summary} jsonLd={jsonLd} noindex={d.demo}
+<Base section={trackUrl(track.id)} title={d.title} description={d.summary} jsonLd={jsonLd} noindex={d.demo || isDraft}
   image={firstImage ? `https://i.ytimg.com/vi/${firstImage}/hqdefault.jpg` : undefined}
   breadcrumbs={[{ name: 'Home', href: '/' }, { name: track.label, href: trackUrl(track.id) }, { name: subjectLabel(course), href: topicUrl(track.id, d.subject) }, { name: d.title, href: courseUrl(course.id) }]}>
+  {isDraft && <p class="callout" role="note"><span class="badge">Draft</span> Found by the discovery engine and waiting for approval. Not published. <a href="/review/">All drafts</a></p>}
   <section class="course-hero">
     <div class="hero-text" lang={d.language} dir={dir}>
       <p class="meta">{subjectLabel(course)} · {levelLabel(d.level)}{d.language !== 'en' && ` · ${languageName(d.language)}`} {d.demo && <span class="badge">Demo</span>}</p>

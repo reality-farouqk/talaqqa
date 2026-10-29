@@ -7,11 +7,11 @@ import { readdirSync, readFileSync } from 'node:fs';
 // Set SITE_URL in your environment for production (needed for sitemap + canonical URLs).
 const site = process.env.SITE_URL || 'http://localhost:4321';
 
-// Demo courses are kept out of the sitemap (their pages are also noindex).
+// Demo and draft courses are kept out of the sitemap (their pages are also noindex).
 const demoCourses = readdirSync('./content/courses')
-  .filter((f) => f.endsWith('.yaml') && /^demo:\s*true\b/m.test(readFileSync(`./content/courses/${f}`, 'utf8')))
+  .filter((f) => f.endsWith('.yaml') && /^(demo:\s*true|status:\s*draft)\b/m.test(readFileSync(`./content/courses/${f}`, 'utf8')))
   .map((f) => f.replace(/\.yaml$/, ''));
-const hiddenFromSitemap = ['/watchlist/', '/offline/', '/404/', '/playlists/', '/search/'];
+const hiddenFromSitemap = ['/watchlist/', '/offline/', '/404/', '/playlists/', '/search/', '/review/'];
 
 export default defineConfig({
   site,
@@ -69,7 +69,7 @@ export default defineConfig({
               cacheName: 'pages',
               networkTimeoutSeconds: 4,
               expiration: { maxEntries: 200 },
-              precacheFallback: { fallbackURL: '/offline/index.html' }
+              precacheFallback: { fallbackURL: '/offline/' }
             }
           }
         ]

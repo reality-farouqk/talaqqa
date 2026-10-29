@@ -7,15 +7,16 @@ import LessonTools from '../../../components/LessonTools';
 import LessonTracker from '../../../components/LessonTracker';
 import LessonChecks from '../../../components/LessonChecks';
 import { issueUrl } from '../../../config';
-import { getPublishedCourses, flattenLessons, levelLabel, nextInPath, courseUrl, lessonUrl, youtubeWatchUrl, dirFor } from '../../../lib/courses';
+import { getPublishedCourses, getDraftCourses, flattenLessons, levelLabel, nextInPath, courseUrl, lessonUrl, youtubeWatchUrl, dirFor } from '../../../lib/courses';
 import { getTrack, trackUrl } from '../../../lib/taxonomy';
 
 export async function getStaticPaths() {
   const paths = [];
   const all = await getPublishedCourses();
-  for (const course of all) {
+  const drafts = (await getDraftCourses()).map((d) => d.course);
+  for (const course of [...all, ...drafts]) {
     const lessons = flattenLessons(course);
-    const nextCourse = nextInPath(course, all);
+    const nextCourse = course.data.status === 'draft' ? undefined : nextInPath(course, all);
     lessons.forEach((lesson, i) => paths.push({
       params: { course: course.id, lesson: lesson.slug },
       props: { course, lesson, index: i, total: lessons.length, prev: lessons[i - 1], next: lessons[i + 1], nextCourse }
@@ -36,7 +37,8 @@ const dir = dirFor(d.language);
 const desc = lesson.summary ?? `Lesson ${index + 1} of ${total} in ${d.title}, taught by ${d.source.name}.`;
 const thumb = lesson.youtube_id ? `https://i.ytimg.com/vi/${lesson.youtube_id}/hqdefault.jpg` : undefined;
 // uploadDate and duration arrive with the YouTube metadata sync (Phase 2).
-const jsonLd = lesson.youtube_id && !d.demo ? {
+const isDraft = d.status === 'draft';
+const jsonLd = lesson.youtube_id && !d.demo && !isDraft ? {
   '@context': 'https://schema.org', '@type': 'VideoObject',
   name: lesson.title, description: desc, thumbnailUrl: thumb, inLanguage: d.language,
   embedUrl: `https://www.youtube-nocookie.com/embed/${lesson.youtube_id}`,
@@ -45,7 +47,7 @@ const jsonLd = lesson.youtube_id && !d.demo ? {
 } : undefined;
 const report = issueUrl('broken-video.yml', `Problem with lesson: ${key}`);
 ---
-<Base section={trackUrl(track.id)} title={`${lesson.title} · ${d.title}`} description={desc} jsonLd={jsonLd} image={thumb} noindex={d.demo} ogType="video.other"
+<Base section={trackUrl(track.id)} title={`${lesson.title} · ${d.title}`} description={desc} jsonLd={jsonLd} image={thumb} noindex={d.demo || isDraft} ogType="video.other"
   breadcrumbs={[{ name: track.label, href: trackUrl(track.id) }, { name: d.title, href: courseUrl(course.id) }, { name: lesson.title, href: lessonUrl(course.id, lesson.slug) }]}>
   <LessonTracker client:load course={course.id} lesson={lesson.slug} />
   <div class="layout">

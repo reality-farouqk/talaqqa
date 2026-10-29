@@ -1,8 +1,10 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { readFileSync } from 'node:fs';
 import { TRACKS, getSubject, getLevel, levelIndex } from './taxonomy';
 
 export type Course = CollectionEntry<'courses'>;
 
+const PRODUCTION = process.env.CONTENT_MODE === 'production';
 let cache: Promise<Course[]> | undefined;
 
 export function getPublishedCourses(): Promise<Course[]> {
@@ -36,10 +38,22 @@ function checkCatalog(list: Course[]) {
       }
     }
   }
-  if (process.env.CONTENT_MODE === 'production') {
+  if (PRODUCTION) {
     for (const c of list) if (c.data.demo) errors.push(`${c.id}: demo courses can't be published in a production build`);
   }
   if (errors.length) throw new Error(`Course content check failed:\n- ${errors.join('\n- ')}`);
+}
+
+/**
+ * Draft courses for the maintainer review page, best discovery score first.
+ * Preview builds only: production never builds a draft.
+ */
+export async function getDraftCourses() {
+  if (PRODUCTION) return [];
+  const drafts = await getCollection('courses', (c) => c.data.status === 'draft');
+  return drafts
+    .map((course) => ({ course, score: Number(/score (\d+)\/100/.exec(readFileSync(course.filePath!, 'utf8'))?.[1] ?? 0) }))
+    .sort((a, b) => b.score - a.score || a.course.data.title.localeCompare(b.course.data.title));
 }
 
 export function flattenLessons(course: Course) {
