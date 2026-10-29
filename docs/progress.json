@@ -12,13 +12,13 @@
       "owner": "You"
     },
     {
-      "title": "Approve the Phase 1 backlog and definition of done",
-      "detail": "Phase 1 work starts when you say OK. Reply with changes or 'approved'.",
+      "title": "Discovery engine: three decisions",
+      "detail": "(1) Review queue vs auto-publish: I recommend the engine ranks and drafts courses and you approve each one, as your rules require. (2) Comment sentiment: free bilingual word list, or Claude API (better, small cost, new service + API key). (3) Build it now in Phase 1, or right after launch.",
       "owner": "You"
     },
     {
-      "title": "Approve (or edit) the candidate course list",
-      "detail": "Eight candidates are proposed in chat and listed under Phase 1. None are published until you approve them and I verify every video.",
+      "title": "Approve real courses for launch",
+      "detail": "Candidate list under Phase 1 is now organised by path and level. You can approve these, add your own, or wait for the engine's ranked shortlist.",
       "owner": "You"
     },
     {
@@ -51,9 +51,9 @@
     {
       "id": 1,
       "name": "Launch",
-      "goal": "Real users can browse and study real courses today, with no account.",
-      "status": "Planned",
-      "outcome": "Anyone can open the site on a phone, install it, pick a course, play lessons in order, save courses and see what they finished, all stored on their device.",
+      "goal": "Real users can learn Arabic and Islam step by step, from the basics to advanced, with no account.",
+      "status": "In progress",
+      "outcome": "Anyone can open the site on a phone, pick the Arabic or Islam path, start at Foundations, play lessons in order, and keep their progress on their device.",
       "releaseDate": null,
       "releaseNotes": null,
       "definitionOfDone": [
@@ -71,7 +71,7 @@
         {
           "title": "Read repo, confirm build works",
           "status": "Done",
-          "notes": "npm ci + build OK on master (11 pages, PWA service worker generated)."
+          "notes": "npm ci + build OK on master."
         },
         {
           "title": "Progress tracker (docs/progress.json + artifact)",
@@ -81,22 +81,37 @@
         {
           "title": "Branch setup: main as default, merge starter code",
           "status": "Blocked",
-          "notes": "Needs your OK (see blockers)."
+          "notes": "Needs GitHub push access and your OK."
         },
         {
-          "title": "CI: build, Zod content validation, astro check on every PR",
-          "status": "To do",
-          "notes": "GitHub Actions. Fails the PR on a bad course file."
+          "title": "Curriculum structure: 2 paths × 4 levels × subjects",
+          "status": "Doing",
+          "notes": "Built: Learn Arabic and Learn Islam, Foundations → Advanced, subjects per path, order and prerequisites. Awaiting deploy."
         },
         {
-          "title": "Content checks script: duplicate slugs, duplicate video IDs, required source URL",
-          "status": "To do",
-          "notes": "Node script, no new deps. Extend schema: source.url required, per-lesson channel override, verified_at date."
+          "title": "Demo content to build against (no videos)",
+          "status": "Doing",
+          "notes": "6 demo outlines across both paths incl. one Arabic (RTL). Blocked from production builds."
         },
         {
-          "title": "Shortlist and approve 5 to 10 real courses",
+          "title": "Content discovery engine (rank YouTube series by quality signals)",
           "status": "Blocked",
-          "notes": "Waiting on your approval of the candidates."
+          "notes": "Design proposed; needs your decisions (see blockers)."
+        },
+        {
+          "title": "CI: build + content validation on every PR",
+          "status": "Doing",
+          "notes": "Workflow written. Runs once the branch is pushed."
+        },
+        {
+          "title": "Content checks: schema + duplicate slugs/videos + prerequisites + demo guard",
+          "status": "Doing",
+          "notes": "Built into the build. Real courses require source URL, verified_at and a video ID per lesson."
+        },
+        {
+          "title": "Shortlist and approve real courses",
+          "status": "Blocked",
+          "notes": "Waiting on your approval; the engine can produce the shortlist."
         },
         {
           "title": "Verify every video (exists, public, embeddable, correct teacher)",
@@ -104,44 +119,44 @@
           "notes": "Needs YouTube network access or API key."
         },
         {
-          "title": "Replace sample courses with approved ones",
+          "title": "Replace demo courses with approved ones",
           "status": "To do",
-          "notes": "Remove placeholder IDs AAAAAAAAAAA etc."
+          "notes": ""
         },
         {
-          "title": "UI polish: home, course list by category, course page, lesson page",
-          "status": "To do",
-          "notes": "Mobile-first; progress bar per course; teacher + 'Watch on YouTube' link on every lesson; skip link; focus states; 44px tap targets."
+          "title": "UI: home with paths, path pages by level, catalog by subject, course + lesson pages",
+          "status": "Doing",
+          "notes": "Built and checked at phone width, light + dark. Awaiting deploy."
         },
         {
           "title": "Arabic / RTL readiness",
-          "status": "To do",
-          "notes": "Logical CSS properties (margin-inline etc.), lang/dir per course, mirrored pager arrows, Arabic font fallback."
+          "status": "Doing",
+          "notes": "Logical CSS, lang/dir on course content, Arabic font stack, mirrored arrows. Checked with an Arabic demo course."
         },
         {
           "title": "Device storage: watchlist, mark complete, continue where you left off",
-          "status": "To do",
-          "notes": "One small storage module with a versioned key, so Phase 2 can import it into accounts."
+          "status": "Doing",
+          "notes": "Built and tested in a headless browser. Awaiting deploy."
         },
         {
           "title": "PWA: offline page, offline state for videos, Android install prompt, iOS hint",
-          "status": "To do",
-          "notes": "Navigation fallback to /offline for unvisited pages. YouTube stays NetworkOnly."
+          "status": "Doing",
+          "notes": "Built. Needs a real-phone test on the deployed site."
         },
         {
-          "title": "SEO: sitemap, canonical, OG image, Course + VideoObject JSON-LD, robots",
-          "status": "To do",
-          "notes": "Fix robots.txt sitemap to an absolute URL. uploadDate/duration arrive in Phase 2."
+          "title": "SEO: sitemap, canonical, OG image, Course + VideoObject + Breadcrumb JSON-LD, robots",
+          "status": "Doing",
+          "notes": "Built. Demo pages noindex. VideoObject needs uploadDate (Phase 2 sync) for rich results."
         },
         {
-          "title": "Trust pages: About, Content guidelines, Report a problem / removal, Privacy",
-          "status": "To do",
-          "notes": "Report route: GitHub issue form + email. Privacy: data stays on the device."
+          "title": "Trust pages: About, Content guidelines, Report / removal, Privacy",
+          "status": "Doing",
+          "notes": "Built. Needs a contact email for private removal requests."
         },
         {
-          "title": "Open-source readiness: README, CONTRIBUTING, CODE_OF_CONDUCT, issue templates",
-          "status": "To do",
-          "notes": "Templates: suggest a course, report a broken video, removal request."
+          "title": "Open-source readiness: README, CONTRIBUTING, CODE_OF_CONDUCT, issue + PR templates",
+          "status": "Doing",
+          "notes": "Written. Goes live with the push."
         },
         {
           "title": "Deploy to Cloudflare Pages with custom domain",
@@ -161,68 +176,68 @@
       ],
       "candidates": [
         {
-          "course": "Seerah: the Makkan period",
-          "teacher": "Yasir Qadhi (Memphis Islamic Center)",
-          "category": "seerah",
+          "course": "Madinah Arabic, Book 1",
+          "teacher": "Asif Meherali",
+          "category": "Arabic · grammar",
           "level": "beginner",
           "language": "en",
-          "note": "Opening episodes of his ~100-part Seerah series. The full series is long; I'd split it into courses by period."
+          "note": "Lesson-by-lesson Arabic from zero. Candidate for Learn Arabic level 2."
         },
         {
-          "course": "The Firsts: stories of the early Companions",
-          "teacher": "Omar Suleiman (Yaqeen Institute)",
-          "category": "seerah",
+          "course": "Arabic reading from zero (Qaida)",
+          "teacher": "To find (engine or your pick)",
+          "category": "Arabic · reading",
+          "level": "foundations",
+          "language": "en",
+          "note": "First course of Learn Arabic."
+        },
+        {
+          "course": "Seerah: the Makkan period",
+          "teacher": "Yasir Qadhi (Memphis Islamic Center)",
+          "category": "Islam · seerah",
           "level": "beginner",
           "language": "en",
-          "note": "Short episodes, one Companion each."
+          "note": "Opening episodes of his ~100-part series; split by period."
         },
         {
           "course": "Angels in Your Presence",
           "teacher": "Omar Suleiman (Yaqeen Institute)",
-          "category": "aqeedah",
-          "level": "beginner",
+          "category": "Islam · aqeedah",
+          "level": "foundations",
           "language": "en",
-          "note": "Ramadan series on belief in the angels."
+          "note": "Belief in the angels."
         },
         {
           "course": "Jannah: Home at Last",
           "teacher": "Omar Suleiman (Yaqeen Institute)",
-          "category": "aqeedah",
+          "category": "Islam · aqeedah",
           "level": "beginner",
           "language": "en",
-          "note": "Series on the Hereafter and Paradise."
+          "note": "The Hereafter and Paradise."
         },
         {
           "course": "40 Hadith on Social Justice",
           "teacher": "Omar Suleiman (Yaqeen Institute)",
-          "category": "hadith",
+          "category": "Islam · hadith",
           "level": "beginner",
           "language": "en",
           "note": "One hadith per episode."
         },
         {
-          "course": "Madinah Arabic, Book 1",
-          "teacher": "Asif Meherali",
-          "category": "arabic",
-          "level": "beginner",
-          "language": "en",
-          "note": "Lesson-by-lesson Arabic grammar from zero."
-        },
-        {
           "course": "Fiqh of purification and prayer",
           "teacher": "To choose (your preferred teacher)",
-          "category": "fiqh",
-          "level": "beginner",
+          "category": "Islam · fiqh",
+          "level": "foundations",
           "language": "en",
-          "note": "Needs a teacher whose madhhab and approach you approve."
+          "note": "Needs a teacher whose approach you approve."
         },
         {
-          "course": "An Arabic-language course (RTL)",
-          "teacher": "To choose (your preferred teacher)",
-          "category": "aqeedah",
-          "level": "beginner",
+          "course": "An Arabic-language course",
+          "teacher": "To choose",
+          "category": "Islam · aqeedah",
+          "level": "foundations",
           "language": "ar",
-          "note": "Proves RTL works with real content. Optional for launch."
+          "note": "Real RTL content. Optional for launch."
         }
       ]
     },
@@ -431,6 +446,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-10-29",
+      "text": "Phase 1 started on demo content. Built the curriculum (Learn Arabic and Learn Islam, Foundations → Advanced, subjects), path pages, catalog by subject, on-device progress, PWA offline + install prompt, SEO, trust pages, CI and templates. Proposed the content discovery engine. All still local: GitHub push blocked."
+    },
     {
       "date": "2026-10-29",
       "text": "Tracker committed locally on claude/halaqa-setup-jmv4gh (based on master). Push blocked: GitHub access returns 403."
