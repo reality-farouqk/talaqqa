@@ -1,0 +1,31 @@
+# DEMO COURSE. No videos. Used to build and test the site until real, verified
+# courses are approved. Production builds fail while a demo course is published.
+title: "Demo: Introduction to the Seerah"
+summary: A sample course outline showing how a Seerah course is organised into modules and lessons.
+description: This is demo content. The lessons have no videos yet. A real course from an approved teacher will replace it before launch.
+track: islam
+subject: seerah
+level: beginner
+order: 1
+language: en
+demo: true
+source:
+  name: Demo teacher
+modules:
+  - slug: before-the-prophethood
+    title: Before the Prophethood
+    lessons:
+      - slug: arabia-before-islam
+        title: Arabia before Islam
+        summary: Sample lesson summary. Real summaries describe what the lecture covers.
+      - slug: birth-and-early-life
+        title: Birth and early life
+  - slug: the-makkan-period
+    title: The Makkan Period
+    lessons:
+      - slug: the-first-revelation
+        title: The first revelation
+      - slug: public-preaching
+        title: Public preaching and opposition
+      - slug: the-year-of-sorrow
+        title: The year of sorrow

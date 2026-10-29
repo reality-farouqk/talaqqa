@@ -1,0 +1,26 @@
+# DEMO COURSE (Arabic, right-to-left). No videos. Used to test RTL layout.
+title: "تجريبي: مقدمة في العقيدة"
+summary: مخطط تجريبي لدورة باللغة العربية لاختبار اتجاه الكتابة من اليمين إلى اليسار.
+description: هذا محتوى تجريبي بلا مقاطع فيديو، وسيُستبدل بدورة حقيقية من معلم معتمد قبل الإطلاق.
+track: islam
+subject: aqeedah
+level: foundations
+order: 1
+language: ar
+demo: true
+source:
+  name: معلم تجريبي
+modules:
+  - slug: foundations
+    title: الأصول
+    lessons:
+      - slug: lesson-one
+        title: الدرس الأول
+        summary: ملخص تجريبي للدرس.
+      - slug: lesson-two
+        title: الدرس الثاني
+  - slug: pillars-of-faith
+    title: أركان الإيمان
+    lessons:
+      - slug: lesson-three
+        title: الدرس الثالث

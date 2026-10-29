@@ -1,0 +1,26 @@
+# DEMO COURSE. No videos. See demo-seerah.yaml.
+title: "Demo: Fiqh of Prayer"
+summary: A sample outline for a course on purification and the daily prayers.
+track: islam
+subject: fiqh
+level: foundations
+order: 2
+language: en
+demo: true
+source:
+  name: Demo teacher
+modules:
+  - slug: purification
+    title: Purification
+    lessons:
+      - slug: types-of-water
+        title: Types of water
+      - slug: wudu
+        title: Wudu step by step
+  - slug: the-prayer
+    title: The Prayer
+    lessons:
+      - slug: conditions-of-prayer
+        title: Conditions of the prayer
+      - slug: pillars-of-prayer
+        title: Pillars of the prayer

@@ -1,0 +1,27 @@
+# DEMO COURSE. No videos. See demo-seerah.yaml.
+title: "Demo: Arabic Grammar 1"
+summary: "A sample beginner grammar outline: nouns, pronouns and first sentences."
+track: arabic
+subject: grammar
+level: beginner
+order: 1
+prerequisites: [demo-arabic-reading]
+language: en
+demo: true
+source:
+  name: Demo teacher
+modules:
+  - slug: nouns
+    title: Nouns
+    lessons:
+      - slug: definite-and-indefinite
+        title: Definite and indefinite nouns
+      - slug: masculine-and-feminine
+        title: Masculine and feminine
+  - slug: first-sentences
+    title: First Sentences
+    lessons:
+      - slug: this-and-that
+        title: This and that (hadha, hadhihi)
+      - slug: nominal-sentences
+        title: Nominal sentences
