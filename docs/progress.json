@@ -8,7 +8,7 @@
   "blockers": [
     {
       "title": "Approve launch courses from 25 engine drafts",
-      "detail": "The engine's first real run drafted 25 series (all videos confirmed public + embeddable). Reply with the numbers to publish; I flagged likely re-uploads, Urdu content and unknown channels. Files are in content/courses with status: draft.",
+      "detail": "Watch them on your phone: https://claude-halaqa-setup-jmv4gh.talaqqa.pages.dev/review/ — numbered by score, same as my list. Reply with the numbers to publish.",
       "owner": "You"
     },
     {
@@ -146,7 +146,7 @@
         {
           "title": "Shortlist and approve real courses",
           "status": "Blocked",
-          "notes": "25 engine drafts waiting for your approval."
+          "notes": "25 drafts are watchable on the preview at /review/ (numbered by score). Reply with the numbers to publish."
         },
         {
           "title": "Verify every video (exists, public, embeddable, correct teacher)",
@@ -176,7 +176,7 @@
         {
           "title": "PWA: offline page, offline state for videos, Android install prompt, iOS hint",
           "status": "Doing",
-          "notes": "Built. Needs a real-phone test on the deployed site."
+          "notes": "Tested in Chromium: visited pages offline, offline page for unvisited ones (bug fixed), offline notice on videos, iPhone hint, Android install button. Real-phone test still needed."
         },
         {
           "title": "SEO: sitemap, canonical, OG image, Course + VideoObject + Breadcrumb JSON-LD, robots",
@@ -481,6 +481,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-10-30",
+      "text": "Review page for the 25 drafts on the preview (/review/), playable on a phone. Fixed the offline page not showing for unvisited pages. Tested install prompts (iPhone hint, Android button)."
+    },
     {
       "date": "2026-10-30",
       "text": "v1 LMS brief: Postgres schema, Udemy-style course page, topic pages, Netflix-style home with Continue Watching and category rows, playlists, Watch later, notes, search with filters, playlist-aware auto-next, README with creator roadmap. Previews now deploy to Cloudflare on every push."
