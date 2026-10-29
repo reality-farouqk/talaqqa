@@ -60,3 +60,14 @@ test('course YAML has the fields the schema needs and safe slugs', () => {
   }
   assert.equal(slugify('ab'), '');
 });
+
+test('language and dialect filter', async () => {
+  const { contentMismatch, decodeEntities } = await import('./engine.mjs');
+  assert.equal(contentMismatch({ title: 'EASY TAJWEED COURSE URDU', track: 'islam', lang: 'en', videoLangs: [] }), 'not in English');
+  assert.equal(contentMismatch({ title: 'The Complete Saudi Arabic Course', track: 'arabic', lang: 'en', videoLangs: [] }), 'spoken dialect, not Fusha');
+  assert.equal(contentMismatch({ title: 'Tafsir Juz 30', track: 'islam', lang: 'en', videoLangs: ['id', 'id', 'en'] }), 'audio language is not en');
+  assert.equal(contentMismatch({ title: 'Madinah Arabic Book 1', track: 'arabic', lang: 'en', videoLangs: ['en', undefined] }), null);
+  assert.equal(contentMismatch({ title: 'Imam Al-Nawawi 40 Hadith', track: 'islam', lang: 'en', videoLangs: ['ar', 'ar', 'en'] }), null);
+  assert.equal(contentMismatch({ title: 'Noorani Qaida', track: 'arabic', lang: 'en', videoLangs: ['ml', 'ml'] }), 'audio language is not en');
+  assert.equal(decodeEntities('Sarf &amp; Nahw &quot;1&quot;'), 'Sarf & Nahw "1"');
+});

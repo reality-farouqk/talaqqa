@@ -1,0 +1,47 @@
+# Found by the discovery engine (score 75/100). Every video was confirmed public and embeddable on 2026-10-29.
+title: "The 3 Fundamental Principles | Faris Al-Hammadi"
+summary: "A 10-lesson series by Kareem Ibn Adham."
+track: islam
+subject: aqeedah
+level: beginner
+language: en
+status: draft
+verified_at: 2026-10-29
+source:
+  name: "Kareem Ibn Adham"
+  url: "https://www.youtube.com/channel/UCY3OWMfzs9DJXU8W25okfrA"
+  playlist_url: "https://www.youtube.com/playlist?list=PLr9kLvP0U6BNyANM8KuxOK6UMbtoc4l9D"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: the-3-fundamentals-01-introduction-to-seeking-knowledge
+        title: "The 3 Fundamentals: 01 Introduction to Seeking Knowledge"
+        youtube_id: "e0xMVBSgGOA"
+      - slug: the-3-fundamentals-02-four-matters-you-must-understand
+        title: "The 3 Fundamentals: 02 Four Matters You Must Understand"
+        youtube_id: "thpOWT2_NR8"
+      - slug: the-3-fundamentals-03-knowing-the-messenger
+        title: "The 3 Fundamentals: 03 Knowing The Messenger"
+        youtube_id: "iUv8kFgFXfg"
+      - slug: the-3-fundamentals-04-acting-dawah-patience
+        title: "The 3 Fundamentals: 04 Acting, Dawah & Patience"
+        youtube_id: "59GTTM2dLxI"
+      - slug: the-3-fundamentals-05-the-purpose-of-creation
+        title: "The 3 Fundamentals: 05 The Purpose of Creation"
+        youtube_id: "raT5g2pSujA"
+      - slug: 3-fundamentals-06-polytheism-shirk
+        title: "3 Fundamentals: 06 Polytheism (Shirk)"
+        youtube_id: "ZrnpmLly73s"
+      - slug: 3-fundamentals-07-walaa-baraa
+        title: "3 Fundamentals: 07 Walaa & Baraa"
+        youtube_id: "fhA60_Gc_PI"
+      - slug: 3-fundamentals-08-understanding-tawhid
+        title: "3 Fundamentals: 08 Understanding Tawhid"
+        youtube_id: "Snirqvi-2oY"
+      - slug: 3-fundamentals-09-understanding-shirk
+        title: "3 Fundamentals: 09 Understanding Shirk"
+        youtube_id: "RyixGjFVAkI"
+      - slug: 3-fundamentals-10-the-trial-of-the-grave
+        title: "3 Fundamentals: 10 The Trial of the Grave"
+        youtube_id: "bLuWWo4XcXk"

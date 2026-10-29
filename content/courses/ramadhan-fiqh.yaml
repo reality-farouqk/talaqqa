@@ -1,0 +1,62 @@
+# Found by the discovery engine (score 80/100). Every video was confirmed public and embeddable on 2026-10-29.
+title: "Ramadhan Fiqh"
+summary: "A 14-lesson series by Kermit Hamzah."
+track: islam
+subject: fiqh
+level: intermediate
+language: en
+status: draft
+verified_at: 2026-10-29
+source:
+  name: "Kermit Hamzah"
+  url: "https://www.youtube.com/channel/UC06LTM_oKu4Pwh6I36PdPZA"
+  playlist_url: "https://www.youtube.com/playlist?list=PL10sHa8EneHwXW9P9UqeNaa5BTtUETj-Y"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: fiqh-of-fasting-5-what-invalidates-the-fast
+        title: "Fiqh of Fasting 5 - What Invalidates the Fast"
+        youtube_id: "P8PNsLqhjyc"
+      - slug: fiqh-of-fasting-4-pregnant-or-breastfeeding-women-and-ramada
+        title: "Fiqh of Fasting 4 - Pregnant or Breastfeeding Women and Ramadan"
+        youtube_id: "7RGgUsrq91A"
+      - slug: fiqh-of-fasting-4-pregnant-or-breastfeeding-women-and-ramada-3
+        title: "Fiqh of Fasting 4 - Pregnant or Breastfeeding Women and Ramadan"
+        youtube_id: "7RGgUsrq91A"
+      - slug: fiqh-of-fasting-3-who-is-isn-t-obligated-to-fast
+        title: "Fiqh of Fasting - 3 Who is & isn’t obligated to fast"
+        youtube_id: "VqT5r7qK04c"
+      - slug: buloogh-al-maram-the-book-of-fasting-01-hadeeth-527-529-muha
+        title: "Buloogh al-Maram | The Book of Fasting 01 | Hadeeth 527-529  | Muhammad Tim Humble"
+        youtube_id: "9I7jO19N1NI"
+      - slug: 1-fiqh-of-fasting-moon-sighting
+        title: "1 Fiqh of Fasting - Moon Sighting"
+        youtube_id: "GQeaLzing-M"
+      - slug: 80-fiqh-zad-al-mustaqni-44-prayer-6-prayer-in-congregation-l
+        title: "80 Fiqh {Zād al Mustaqni’ : 44 Prayer - 6 Prayer in Congregation} Leading the Prayer"
+        youtube_id: "OxtyLN-I-bs"
+      - slug: method-of-wudu-hanafi-fiqh-mawlana-mustansir-attari
+        title: "Method of Wudu (Hanafi fiqh): Mawlana Mustansir Attari"
+        youtube_id: "T3Gw9P40oVA"
+      - slug: special-crash-course-zakat-al-fitr-ustadh-abdulrahman-hassan
+        title: "Special Crash Course || Zakat Al Fitr || Ustadh Abdulrahman Hassan & Sons #Ramadan #AMAU"
+        youtube_id: "Ps8knOSw6s8"
+      - slug: must-watch-how-to-maximise-the-last-10-nights-of-ramadan-ama
+        title: "MUST WATCH: How to Maximise the Last 10 Nights of Ramadan || AMAU"
+        youtube_id: "aiqakdVTWOA"
+  - slug: part-2
+    title: "Lessons 11–14"
+    lessons:
+      - slug: must-watch-how-to-maximise-the-last-10-nights-of-ramadan-ama-11
+        title: "MUST WATCH: How to Maximise the Last 10 Nights of Ramadan || AMAU"
+        youtube_id: "aiqakdVTWOA"
+      - slug: ramadan-special-tarawih-8-vs-20-rak-ats-ramadan-tarawih-tara
+        title: "RAMADAN SPECIAL: Tarawih 8 vs 20 Rak'ats || #Ramadan #Tarawih #Taraweeh || The Hot Seat by AMAU"
+        youtube_id: "Qq_8oj-tRzc"
+      - slug: ramadan-special-tarawih-8-vs-20-rak-ats-ramadan-tarawih-tara-13
+        title: "RAMADAN SPECIAL: Tarawih 8 vs 20 Rak'ats || #Ramadan #Tarawih #Taraweeh || The Hot Seat by AMAU"
+        youtube_id: "Qq_8oj-tRzc"
+      - slug: can-you-rebel-against-an-oppressive-muslim-ruler-ikhtilaf-or
+        title: "Can You Rebel Against an Oppressive Muslim Ruler? #Ikhtilaf or #Ijma || The Hot Seat by AMAU"
+        youtube_id: "xrqdKEwkNTI"

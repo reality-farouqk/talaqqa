@@ -1,0 +1,71 @@
+# Found by the discovery engine (score 75/100). Every video was confirmed public and embeddable on 2026-10-29.
+title: "Learn Arabic Morphology & Grammar (Sarf & Nahw) — Free Course | Book Two | Language of Quran"
+summary: "Learn Arabic morphology and grammar for the Quran — a free, structured course in plain English, from the ground up. **Book ..."
+track: arabic
+subject: morphology
+level: intermediate
+language: en
+status: draft
+verified_at: 2026-10-29
+source:
+  name: "The Language of Qur'an"
+  url: "https://www.youtube.com/channel/UCvn_5yg2WQGcr9HCglqV92g"
+  playlist_url: "https://www.youtube.com/playlist?list=PLC2ruw0EUW8AzDHxagY9fxUQZiDunO9Vd"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: language-of-quran-easier-than-english-book-two-playlist
+        title: "Language of Quran Easier than English Book Two Playlist"
+        youtube_id: "Kzc4o0QqeYA"
+      - slug: mapping-arabic-morphology-word-derivation-simplified-bk2-l01
+        title: "Mapping Arabic Morphology: Word Derivation - الصرف Simplified {BK2-L01-P1}"
+        youtube_id: "kh28jIw8zJ0"
+      - slug: mapping-the-essential-parts-words-and-sentences-bk2-l01-p2
+        title: "Mapping the Essential Parts Words and Sentences {BK2-L01-P2}"
+        youtube_id: "G4rgptVpj6Y"
+      - slug: master-arabic-verb-conjugation-al-madi-perfect-tense-explain
+        title: "Master Arabic Verb Conjugation Al-Madi (Perfect Tense) Explained الماضِي. {BK2-L2-P1}"
+        youtube_id: "ifF_dkw_4kc"
+      - slug: master-arabic-verb-perfect-tense-anatomy-of-bk2-l2-p2
+        title: "Master Arabic Verb Perfect Tense, Anatomy of الماضِي. {BK2-L2-P2}"
+        youtube_id: "S33hx87ultg"
+      - slug: demystified-the-doer-in-arabic-verbal-sentences-easy-explana
+        title: "Demystified! The Doer (فاعل) in Arabic Verbal Sentences (Easy Explanation) {BK2-L3-P1}"
+        youtube_id: "DPfDJKkMaXY"
+      - slug: master-the-doer-al-fa-il-in-arabic-verbal-sentences-comprehe
+        title: "Master the Doer (Al-Fa'il) in Arabic Verbal Sentences: Comprehensive Guide {BK2-L3-P2}"
+        youtube_id: "GUYYFdhyUWg"
+      - slug: quranic-arabic-grammar-mastering-the-object-in-arabic-senten
+        title: "Quranic Arabic Grammar: Mastering the Object (المفعول به) in Arabic Sentences {BK2-L4-P1}"
+        youtube_id: "z4511N7QvJo"
+      - slug: quranic-arabic-grammar-mastering-the-object-in-arabic-senten-9
+        title: "Quranic Arabic Grammar: Mastering the Object (المفعول به) in Arabic Sentences Part-Two {BK2-L4-P2}"
+        youtube_id: "ehW3yJKYhRg"
+      - slug: arabic-grammar-simplified-modifying-the-maadi-part-one-bk2-l
+        title: "Arabic Grammar Simplified: Modifying the Maadi الماضي Part-One {BK2-L5-P1}"
+        youtube_id: "Iuxx941RflQ"
+  - slug: part-2
+    title: "Lessons 11–17"
+    lessons:
+      - slug: arabic-grammar-simplified-using-with-maadi-part-two-bk2-l5-p
+        title: "Arabic Grammar Simplified: Using كان with Maadi الماضي Part-Two {BK2-L5-P2}"
+        youtube_id: "DlNax4R3Ne0"
+      - slug: mastering-the-imperfect-tense-verb-book-two-l06-pi
+        title: "Mastering The Imperfect Tense Verb الْمُضَارِع. - Book Two  {L06-PI}"
+        youtube_id: "CeGkTh3jvjs"
+      - slug: mastering-the-scales-of-imperfect-tense-verb-in-jumlah-fayli
+        title: "Mastering The scales of Imperfect Tense Verb الْمُضَارِع. - in Jumlah Fayliyyah {L06-PII}"
+        youtube_id: "GqD-rTT7SFA"
+      - slug: master-arabic-sarf-morphology-the-six-baabs-you-must-learn-l
+        title: "Master Arabic Sarf  Morphology - The SIX Baabs You Must Learn {L07}"
+        youtube_id: "OlX9ly_6Eik"
+      - slug: master-arabic-grammar-modifying-mudari-the-imperfect-verb-si
+        title: "Master Arabic Grammar: Modifying Mudari (المضارع) | The Imperfect Verb Simplified [L08]"
+        youtube_id: "UI0RM2dDYjw"
+      - slug: learn-the-moods-of-al-mudari-raf-nasb-and-jazm-simplified-l0
+        title: "Learn the Moods of Al-Mudari: Raf', Nasb, and Jazm Simplified [L09-P1]"
+        youtube_id: "hFyIf5cCZL4"
+      - slug: mudari-mansub-explained-how-lan-an-and-kay-change-arabic-ver
+        title: "Mudari Mansub Explained – How Lan, An and Kay Change Arabic Verbs"
+        youtube_id: "utUxVRldPNU"

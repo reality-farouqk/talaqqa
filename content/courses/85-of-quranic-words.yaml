@@ -1,0 +1,101 @@
+# Found by the discovery engine (score 94/100). Every video was confirmed public and embeddable on 2026-10-29.
+title: "85% of Quranic Words"
+summary: "Share and Help us spread the Message of 85% of Quranic Words series by Dr Abdul Azeez Abdulraheem."
+track: arabic
+subject: quranic-arabic
+level: intermediate
+language: en
+status: draft
+verified_at: 2026-10-29
+source:
+  name: "FreeQuranEducation"
+  url: "https://www.youtube.com/channel/UCNdUFOtzSx3FS71pHkQLxhQ"
+  playlist_url: "https://www.youtube.com/playlist?list=PLwNeHLk_z0aRJ1HWRBQF0dFNPXdSK4YDq"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: 85-of-quranic-words-episode-21
+        title: "85% of Quranic Words - Episode 21"
+        youtube_id: "5yyxIPyYX64"
+      - slug: master-85-of-qur-anic-vocabulary-with-ease
+        title: "Master 85% of Qur'anic Vocabulary with Ease"
+        youtube_id: "vmWxPzfB3I0"
+      - slug: 85-of-quranic-words-episode-20
+        title: "85% of Quranic Words - Episode 20"
+        youtube_id: "KBAn7XSzvgI"
+      - slug: 85-of-quranic-words-episode-19
+        title: "85% of Quranic Words - Episode 19"
+        youtube_id: "Lq00jWMzKjE"
+      - slug: 85-of-quranic-words-episode-18
+        title: "85% of Quranic Words - Episode 18"
+        youtube_id: "cpDVXbaissM"
+      - slug: 85-of-quranic-words-episode-16
+        title: "85% of Quranic Words - Episode 16"
+        youtube_id: "c8ZlAvlvrb0"
+      - slug: 85-of-quranic-words-episode-15
+        title: "85% of Quranic Words - Episode 15"
+        youtube_id: "QlWRqNH6daU"
+      - slug: 85-of-quranic-words-episode-14
+        title: "85% of Quranic Words - Episode 14"
+        youtube_id: "U7coaf9AcaI"
+      - slug: 85-of-quranic-words-episodes-1-12
+        title: "85% of Quranic Words (Episodes 1-12)"
+        youtube_id: "u4St_RcFy7g"
+      - slug: 85-of-quranic-words-episode-13
+        title: "85% of Quranic Words - Episode 13"
+        youtube_id: "1obM-IVlS9E"
+  - slug: part-2
+    title: "Lessons 11–20"
+    lessons:
+      - slug: 85-of-quranic-words-episode-12
+        title: "85% of Quranic Words - Episode 12"
+        youtube_id: "MAfRQS8xse8"
+      - slug: 85-of-quranic-words-episode-11
+        title: "85% of Quranic Words - Episode 11"
+        youtube_id: "jSlzvGwnUKA"
+      - slug: 85-of-quranic-words-compilation-episode-1-10
+        title: "85% of Quranic Words - Compilation Episode 1-10"
+        youtube_id: "Zxmhzg1NkHo"
+      - slug: 85-of-quranic-words-episode-10
+        title: "85% of Quranic Words - Episode 10"
+        youtube_id: "c2oMl_BOeLA"
+      - slug: 85-of-quranic-words-episode-9
+        title: "85% of Quranic Words - Episode 9"
+        youtube_id: "tp5USSNnxTk"
+      - slug: 85-of-quranic-words-episode-8
+        title: "85% of Quranic Words - Episode 8"
+        youtube_id: "sI28y8LzQnY"
+      - slug: 85-of-quranic-words-episode-7
+        title: "85% of Quranic Words - Episode 7"
+        youtube_id: "u0S4DE5KA20"
+      - slug: 85-of-quranic-words-episode-1-6
+        title: "85% of Quranic Words (Episode 1-6)"
+        youtube_id: "9mIFTG52xhM"
+      - slug: 85-of-quranic-words-episode-6
+        title: "85% of Quranic Words - Episode 6"
+        youtube_id: "j1Kpdd3ah20"
+      - slug: 85-of-quranic-words-episode-5
+        title: "85% of Quranic Words - Episode 5"
+        youtube_id: "XQU75Sj7Ses"
+  - slug: part-3
+    title: "Lessons 21–26"
+    lessons:
+      - slug: 85-of-quranic-words-episode-4
+        title: "85% of Quranic Words - Episode 4"
+        youtube_id: "K1yq6_Pytlw"
+      - slug: 85-of-quranic-words-first-3-episodes
+        title: "85% of Quranic Words (First 3 Episodes)"
+        youtube_id: "XNfgxqsbA4M"
+      - slug: 85-of-quranic-words-episode-3
+        title: "85% of Quranic Words - Episode 3"
+        youtube_id: "ZPvF6jocsJw"
+      - slug: 85-of-quranic-words-episode-2
+        title: "85% of Quranic Words - Episode 2"
+        youtube_id: "_UDzzUmM6WU"
+      - slug: 85-of-quranic-words-episode-1
+        title: "85% of Quranic Words - Episode 1"
+        youtube_id: "x8ErX6lb3sM"
+      - slug: the-simple-words-that-cover-85-of-the-quran
+        title: "The Simple Words that Cover 85% of the Quran"
+        youtube_id: "3d-biXPGCe8"

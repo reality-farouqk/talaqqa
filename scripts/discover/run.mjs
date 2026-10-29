@@ -2,7 +2,7 @@
 // Trusted channels above the bar are published; the rest become drafts for review.
 // Usage: YOUTUBE_API_KEY=... node scripts/discover/run.mjs   (writes a summary to discovery-summary.json)
 import { readFileSync, readdirSync, writeFileSync, existsSync } from 'node:fs';
-import { classify, scorePlaylist, decide, toCourseYaml, slugify } from './engine.mjs';
+import { classify, scorePlaylist, decide, toCourseYaml, slugify, contentMismatch, decodeEntities } from './engine.mjs';
 
 const KEY = process.env.YOUTUBE_API_KEY;
 if (!KEY) { console.error('YOUTUBE_API_KEY is not set'); process.exit(1); }
@@ -76,7 +76,7 @@ async function gatherPlaylists() {
     const r = await yt('search', { part: 'snippet', type: 'playlist', q: seed.q, maxResults: 10, relevanceLanguage: seed.lang });
     for (const item of r.items) {
       const id = item.id.playlistId;
-      if (!found.has(id)) found.set(id, { id, title: item.snippet.title, description: item.snippet.description, channelId: item.snippet.channelId, channelTitle: item.snippet.channelTitle, prior: seed, lang: seed.lang });
+      if (!found.has(id)) found.set(id, { id, title: decodeEntities(item.snippet.title), description: decodeEntities(item.snippet.description), channelId: item.snippet.channelId, channelTitle: decodeEntities(item.snippet.channelTitle), prior: seed, lang: seed.lang });
     }
   }
   for (const channelId of trusted) {
@@ -106,14 +106,16 @@ for (const p of playlists) {
     const labels = classify(p.title, p.prior);
     const videos = await videoDetails(await playlistVideoIds(p.id));
     const usable = videos.filter((v) => v.embeddable && v.public);
-    const comments = usable.length >= 3 ? await sampleComments(usable) : [];
-    const scored = scorePlaylist(videos, comments);
+    const mismatch = labels && contentMismatch({ title: p.title, track: labels.track, lang: p.lang ?? 'en', videoLangs: usable.map((v) => v.lang) });
+    // Skip the comment calls (quota) when the playlist is already ruled out.
+    const comments = usable.length >= 3 && !mismatch ? await sampleComments(usable) : [];
+    const scored = mismatch ? { score: 0, reason: mismatch } : scorePlaylist(videos, comments);
     const action = decide({ score: scored.score, classified: !!labels, trusted: trusted.has(p.channelId) }, config);
     results.push({ playlist: p.id, title: p.title, channel: p.channelTitle, channelId: p.channelId, labels, score: scored.score, reason: scored.reason, action, videos: usable.length });
     if (action === 'skip') continue;
     const r = results.at(-1);
     r.file = `${COURSES}/${uniqueFileName(p.title, p.id)}.yaml`;
-    r.pending = { playlist: { id: p.id, title: p.title, description: p.description ?? '' }, channel: { id: p.channelId, title: p.channelTitle }, videos: usable, labels, language: usable[0].lang?.slice(0, 2) || p.lang || 'en', score: scored.score };
+    r.pending = { playlist: { id: p.id, title: p.title, description: p.description ?? '' }, channel: { id: p.channelId, title: p.channelTitle }, videos: usable, labels, language: p.lang ?? usable[0].lang?.slice(0, 2) ?? 'en', score: scored.score };
   } catch (err) {
     console.error(`Playlist ${p.id} failed: ${err.message}`);
     results.push({ playlist: p.id, title: p.title, action: 'error', error: err.message });

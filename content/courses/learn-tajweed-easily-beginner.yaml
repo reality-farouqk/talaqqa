@@ -1,0 +1,92 @@
+# Found by the discovery engine (score 77/100). Every video was confirmed public and embeddable on 2026-10-29.
+title: "Learn Tajweed Easily (Beginner)"
+summary: "A 23-lesson series by Arabic 101."
+track: islam
+subject: quran
+level: beginner
+language: en
+status: draft
+verified_at: 2026-10-29
+source:
+  name: "Arabic 101"
+  url: "https://www.youtube.com/channel/UCEcQu_9GNDiGU_vqjVZXj3Q"
+  playlist_url: "https://www.youtube.com/playlist?list=PL6TlMIZ5ylgqM4Uuu7iAhIeuSdF0v9yxo"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: too-many-tajweed-rules-here-s-the-ultimate-solution-arabic10
+        title: "TOO MANY Tajweed Rules? Here's the ultimate solution - Arabic101 - Tajweed series"
+        youtube_id: "kklrHE85hHE"
+      - slug: what-do-the-symbols-in-quran-mean-arabic-101
+        title: "What do the symbols in Quran mean? - Arabic 101"
+        youtube_id: "meQsEM3V2m8"
+      - slug: what-do-the-symbols-in-quran-mean-part-ii-advanced-arabic101
+        title: "What do the symbols in Quran mean? - PART II (ADVANCED) - Arabic101"
+        youtube_id: "IOXzx2H5cT8"
+      - slug: what-do-the-symbols-in-quran-mean-for-urdu-turkish-mus-haf-a
+        title: "What do the symbols in Quran mean? For Urdu + Turkish Mus'haf - Arabic 101"
+        youtube_id: "48KSABnA0D8"
+      - slug: how-to-properly-stop-resume-in-longer-aya-s-in-the-holy-qura
+        title: "How to PROPERLY stop/ resume in longer Aya's in the Holy Quran - Arabic 101"
+        youtube_id: "j3AR6-BThPU"
+      - slug: madd-in-quran-made-easy-arabic-101
+        title: "Madd (مد) in Quran MADE EASY - Arabic 101"
+        youtube_id: "Q737ZCSbC_g"
+      - slug: how-to-pronounce-hamza-wasl-vs-hamza-qat-in-the-holy-quran-a
+        title: "How to pronounce Hamza Wasl (همزة وصل) VS. Hamza Qat' (همزة قطع) in the Holy Quran - Arabic 101"
+        youtube_id: "iS31xI9JF2k"
+      - slug: how-to-properly-pronounce-the-word-allah-in-the-holy-quran-a
+        title: "How to PROPERLY pronounce the word (Allah) in the Holy Quran - Arabic 101"
+        youtube_id: "0paH22-NvzU"
+      - slug: learn-the-quranic-noon-sakinah-in-10-minutes-arabic101
+        title: "Learn the Quranic Noon Sakinah (نون ساكنه) in 10 MINUTES - Arabic101"
+        youtube_id: "hy8V7CsxaQk"
+      - slug: how-to-properly-pronounce-meem-sakinah-in-the-holy-quran-lea
+        title: "How to PROPERLY pronounce Meem (م) sakinah in the holy Quran? - Learn Tajweed - Arabic 101"
+        youtube_id: "MAvDrZgWRTs"
+  - slug: part-2
+    title: "Lessons 11–20"
+    lessons:
+      - slug: how-to-deal-with-letters-with-no-tashkeel-in-the-holy-quran
+        title: "How to deal with Letters with NO TASHKEEL in the Holy Quran - Arabic101 - Tajweed series"
+        youtube_id: "4g61PiwOQ2E"
+      - slug: quranic-qalqala-echoing-sounds-explained-tajweed-series-arab
+        title: "Quranic Qalqala (Echoing sounds) Explained - القلقلة - Tajweed series - Arabic 101"
+        youtube_id: "thu6eZ-AeOA"
+      - slug: rules-of-in-the-holy-quran-made-simple-tajweed-series-arabic
+        title: "Rules of (ر) in the Holy Quran - made simple - Tajweed Series - Arabic 101"
+        youtube_id: "-Uc5vkrTYnU"
+      - slug: letter-fusion-in-the-holy-quran-tajweed-series-arabic-101
+        title: "Letter FUSION in the Holy Quran - Tajweed series - Arabic 101"
+        youtube_id: "NOCKyEcgW7U"
+      - slug: the-secrets-of-the-separated-letters-in-the-quran-how-to-rec
+        title: "The SECRETS of the SEPARATED LETTERS in the Quran & How to recite them Properly - Tajweed series"
+        youtube_id: "6_gKg6PByOI"
+      - slug: read-any-difficult-word-in-the-quran-using-this-sukoon-metho
+        title: "Read ANY difficult word in the Quran using THIS 'Sukoon method' | Arabic101"
+        youtube_id: "kYti7Fa6Azc"
+      - slug: you-ll-never-be-confused-with-this-letter-combination-after
+        title: "You'll never be confused with this letter combination after watching this | Arabic101"
+        youtube_id: "FxcIjAnbUVM"
+      - slug: never-start-reciting-after-this-word-in-the-quran-arabic101
+        title: "NEVER start reciting after this word in the Quran | Arabic101"
+        youtube_id: "MaKZ3ZAE6gU"
+      - slug: the-seven-ahrof-the-ten-qira-aat-of-quran-explained-arabic10
+        title: "The SEVEN Ahrof & the TEN Qira'aat of Quran - EXPLAINED! - Arabic101"
+        youtube_id: "8hj7u0F3yEg"
+      - slug: without-all-these-four-your-qur-an-recitation-is-rejected-ar
+        title: "WithOUT all these FOUR, your Qur'an recitation IS REJECTED | Arabic101"
+        youtube_id: "-WsxJ3bIPys"
+  - slug: part-3
+    title: "Lessons 21–23"
+    lessons:
+      - slug: you-must-learn-these-symbols-if-you-use-this-mushaf-arabic10
+        title: "You MUST learn these symbols, if you use this Mushaf? | Arabic101"
+        youtube_id: "02vVE5uMqqw"
+      - slug: you-ll-never-forget-the-rules-of-after-learning-this-one-rul
+        title: "You'll NEVER Forget the rules of  ر  , After learning THIS ONE RULE | Arabic101"
+        youtube_id: "G8ZGHfCCjgc"
+      - slug: understanding-mushaf-differences-a-beginner-s-guide-arabic10
+        title: "Understanding Mushaf Differences – A Beginner’s Guide | Arabic101"
+        youtube_id: "h5JZIkzG3Hw"

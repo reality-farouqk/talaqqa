@@ -1,0 +1,53 @@
+# Found by the discovery engine (score 81/100). Every video was confirmed public and embeddable on 2026-10-29.
+title: "Read & Understand Quranic Arabic from 0% - 50% (Stage ONE)"
+summary: "After following this course, you will have learned around 50% of the Qur'an in shaa Allah. Use this book to help yourself organize ..."
+track: arabic
+subject: reading
+level: foundations
+language: en
+status: draft
+verified_at: 2026-10-29
+source:
+  name: "Arabic 101"
+  url: "https://www.youtube.com/channel/UCEcQu_9GNDiGU_vqjVZXj3Q"
+  playlist_url: "https://www.youtube.com/playlist?list=PL6TlMIZ5ylgrYBl5c2LGoc1iwTPyYMMYH"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: 7-steps-to-read-understand-the-holy-quran-in-arabic-a-step-b
+        title: "7 STEPS to READ & UNDERSTAND the Holy Quran in Arabic - A step-by-step GUIDE - Arabic 101"
+        youtube_id: "IuiTV5SEeGw"
+      - slug: learn-50-of-the-holy-quran-with-this-frequency-list-lesson-1
+        title: "Learn 50% of the Holy Quran with THIS Frequency list -  Lesson 1 | Arabic 101"
+        youtube_id: "mChh2WwT4Tk"
+      - slug: learn-50-of-the-holy-quran-with-this-frequency-list-lesson-2
+        title: "Learn 50% of the Holy Quran with THIS Frequency list -  Lesson 2 | Arabic 101"
+        youtube_id: "TYLmLq2b0gk"
+      - slug: learn-50-of-the-holy-quran-with-this-frequency-list-lesson-3
+        title: "Learn 50% of the Holy Quran with THIS Frequency list -  Lesson 3 | Arabic 101"
+        youtube_id: "ed6-eLXrVL4"
+      - slug: learn-50-of-the-holy-quran-with-this-frequency-list-lesson-4
+        title: "Learn 50% of the Holy Quran with THIS Frequency list -  Lesson 4 | Arabic 101"
+        youtube_id: "szx4eT_0lig"
+      - slug: learn-50-of-the-holy-quran-with-this-frequency-list-lesson-5
+        title: "Learn 50% of the Holy Quran with THIS Frequency list -  Lesson 5 | Arabic 101"
+        youtube_id: "7jUAvRa9BUw"
+      - slug: learn-50-of-the-holy-quran-with-this-frequency-list-lesson-6
+        title: "Learn 50% of the Holy Quran with THIS Frequency list -  Lesson 6 | Arabic 101"
+        youtube_id: "FNx0DnjyH1E"
+      - slug: learn-50-of-the-holy-quran-with-this-frequency-list-lesson-7
+        title: "Learn 50% of the Holy Quran with THIS Frequency list -  Lesson 7 | Arabic 101"
+        youtube_id: "du6O1THwL9M"
+      - slug: the-most-flexible-word-in-the-holy-quran-understand-the-qura
+        title: "The most FLEXIBLE word in the Holy Quran - Understand the Quran Series - Arabic 101"
+        youtube_id: "dkWyIzr8u58"
+      - slug: avoid-this-common-mistake-learn-how-to-understand-pronounce
+        title: "Avoid THIS common mistake & learn how to understand/ pronounce ما  in the Holy Quran - Arabic101"
+        youtube_id: "_nX9E2IdS-I"
+  - slug: part-2
+    title: "Lessons 11–11"
+    lessons:
+      - slug: how-to-use-memrise-to-learn-understand-the-noble-quran
+        title: "How to use Memrise to Learn & UNDERSTAND the Noble Quran"
+        youtube_id: "0EGhggysALM"

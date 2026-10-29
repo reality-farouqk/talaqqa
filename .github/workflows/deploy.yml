@@ -40,6 +40,14 @@ jobs:
         env:
           SITE_URL: ${{ vars.SITE_URL || 'https://talaqqa.pages.dev' }}
           CONTENT_MODE: ${{ github.event_name == 'push' && 'production' || '' }}
+      # First run only: create the Pages project. Fails harmlessly once it exists.
+      - if: env.HAS_TOKEN == 'true'
+        continue-on-error: true
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages project create talaqqa --production-branch=main
       - id: pages
         if: env.HAS_TOKEN == 'true'
         uses: cloudflare/wrangler-action@v3

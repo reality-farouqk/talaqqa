@@ -1,0 +1,41 @@
+# Found by the discovery engine (score 74/100). Every video was confirmed public and embeddable on 2026-10-29.
+title: "سلسلة شرح متن الآجرومية - للشيخ سالم القحطاني"
+summary: "A 8-lesson series by قناة الشيخ سالم القحطاني."
+track: arabic
+subject: grammar
+level: intermediate
+language: ar
+status: draft
+verified_at: 2026-10-29
+source:
+  name: "قناة الشيخ سالم القحطاني"
+  url: "https://www.youtube.com/channel/UCyE5AnO0BgNPO8BJ-mUuFCg"
+  playlist_url: "https://www.youtube.com/playlist?list=PL1B4LPaEGJi4GAwpC88O1RaznC9_0_6Fy"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: lesson-1
+        title: "(1) شرح متن الآجرومية - للشيخ سالم القحطاني"
+        youtube_id: "3GbIwtSZNH0"
+      - slug: lesson-2
+        title: "(2) شرح متن الآجرومية - للشيخ سالم القحطاني"
+        youtube_id: "ncPw4KRqzwI"
+      - slug: lesson-3
+        title: "(3) شرح متن الآجرومية - للشيخ سالم القحطاني"
+        youtube_id: "UOoj7DfV1xc"
+      - slug: lesson-4
+        title: "(4) شرح متن الآجرومية للشيخ سالم القحطاني"
+        youtube_id: "xyaYW5j06fo"
+      - slug: lesson-5
+        title: "(5) شرح متن الآجرومية - للشيخ سالم القحطاني"
+        youtube_id: "aFDTNrUjSO0"
+      - slug: lesson-6
+        title: "(6) شرح متن الآجرومية - للشيخ سالم القحطاني"
+        youtube_id: "2XtnpwixPlI"
+      - slug: lesson-7
+        title: "(7) شرح متن الآجرومية - للشيخ سالم القحطاني"
+        youtube_id: "zeLf75macXw"
+      - slug: lesson-8
+        title: "(8 والأخير ) شرح متن الآجرومية - للشيخ سالم القحطاني"
+        youtube_id: "bnSYx6QwKcI"

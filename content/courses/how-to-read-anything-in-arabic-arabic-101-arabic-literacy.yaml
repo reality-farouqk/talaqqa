@@ -1,0 +1,44 @@
+# Found by the discovery engine (score 77/100). Every video was confirmed public and embeddable on 2026-10-29.
+title: "How to READ anything in Arabic - Arabic 101 -Arabic Literacy"
+summary: "The Arabic alphabet - in-depth, interactive explanation should be your first step to learn how to read & write Arabic texts. It is also ..."
+track: arabic
+subject: reading
+level: foundations
+language: en
+status: draft
+verified_at: 2026-10-29
+source:
+  name: "Arabic 101"
+  url: "https://www.youtube.com/channel/UCEcQu_9GNDiGU_vqjVZXj3Q"
+  playlist_url: "https://www.youtube.com/playlist?list=PL6TlMIZ5ylgpLYKU_z1YxdAAw7wrTWvcQ"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: learn-arabic-alphabet-in-less-than-3-minutes-arabic-101
+        title: "Learn Arabic Alphabet in LESS THAN 3 MINUTES - Arabic 101"
+        youtube_id: "j9BwXWpzB1Y"
+      - slug: how-to-read-arabic-the-alphabet-lesson-1-arabic-101
+        title: "How to READ ARABIC? - The alphabet - Lesson 1 - Arabic 101"
+        youtube_id: "c-7SVieC_04"
+      - slug: how-to-read-arabic-the-alphabet-lesson-2-arabic-101
+        title: "How to READ ARABIC? - The alphabet - Lesson 2 - Arabic 101"
+        youtube_id: "1AT7IMLcA58"
+      - slug: how-to-read-arabic-the-alphabet-lesson-3-arabic-101
+        title: "How to READ ARABIC? - The alphabet - Lesson 3 - Arabic 101"
+        youtube_id: "8pfQg26vfaA"
+      - slug: how-to-read-arabic-the-alphabet-lesson-4-arabic-101
+        title: "How to READ ARABIC? - The alphabet - Lesson 4 - Arabic 101"
+        youtube_id: "LTwCmA6AjdI"
+      - slug: how-many-can-you-guess-arabic-alphabet-animal-themed
+        title: "How many can you guess?? Arabic alphabet - animal-themed"
+        youtube_id: "jOtx72twv6Y"
+      - slug: how-good-is-your-arabic-a-challenge-for-arabic-learners
+        title: "How good is your Arabic? - A challenge for Arabic learners"
+        youtube_id: "xsKb2lS8q7o"
+      - slug: how-to-write-arabic-letters-properly-arabic101
+        title: "How to write Arabic letters properly | Arabic101"
+        youtube_id: "jyc7h5FoD5s"
+      - slug: is-the-arabic-alphabet-28-or-29-letters-arabic101
+        title: "Is the Arabic alphabet 28 or 29 letters? | Arabic101"
+        youtube_id: "JLee5VQvdIo"

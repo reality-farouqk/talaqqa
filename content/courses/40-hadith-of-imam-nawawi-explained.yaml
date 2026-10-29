@@ -1,0 +1,101 @@
+# Found by the discovery engine (score 74/100). Every video was confirmed public and embeddable on 2026-10-29.
+title: "40 HADITH of Imam Nawawi Explained"
+summary: "The 40 Hadith Imam NAWAWI. This is a series of lessons explaining the famous book of Hadith, الأربعون في مباني الإسلام وقواعد ..."
+track: islam
+subject: hadith
+level: beginner
+language: en
+status: draft
+verified_at: 2026-10-29
+source:
+  name: "MasjidRibat"
+  url: "https://www.youtube.com/channel/UCnzKGLxxwGvSSn5J85U_aOg"
+  playlist_url: "https://www.youtube.com/playlist?list=PLExCKwROz20Gvqgqqxz72twXKdRYjhihH"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: 1-explanation-of-the-40-hadith-introduction
+        title: "1 Explanation of the 40 Hadith: Introduction"
+        youtube_id: "iZk9VcYl-Es"
+      - slug: 2-explanation-of-the-40-hadith-hadith-1
+        title: "2 Explanation of the 40 Hadith: Hadith 1"
+        youtube_id: "JkKJ14uEKx0"
+      - slug: 3-explanation-of-the-40-hadith-hadith-2-part-1
+        title: "3 Explanation of the 40 Hadith: Hadith 2 (part 1)"
+        youtube_id: "Wjkp0_Ux2mE"
+      - slug: 4-explanation-of-the-40-hadith-hadith-2-part-2
+        title: "4 Explanation of the 40 Hadith: Hadith 2 (part 2)"
+        youtube_id: "haoAnkGy3Po"
+      - slug: 5-explaination-40-hadith-hadith-3
+        title: "5 Explaination 40 Hadith : Hadith 3"
+        youtube_id: "nYAmcCv-0qk"
+      - slug: 6-explaination-40-hadith-hadith-4
+        title: "6 Explaination 40 Hadith: Hadith 4"
+        youtube_id: "oRvXGAAVmeU"
+      - slug: 7-explaination-40-hadith-hadith-5
+        title: "7 Explaination 40 Hadith: Hadith 5"
+        youtube_id: "dRBHa-M_u6I"
+      - slug: 8-explaination-40-hadith-hadith-6
+        title: "8 Explaination 40 Hadith: Hadith 6"
+        youtube_id: "6C0J577Mhhk"
+      - slug: 9-explaination-40-hadith-hadith-7-8
+        title: "9 Explaination 40 Hadith: Hadith 7 - 8"
+        youtube_id: "EdWZNqqCxQA"
+      - slug: 10-explaination-40-hadith-hadith-9
+        title: "10 Explaination 40 Hadith : Hadith 9"
+        youtube_id: "2RdXCTGifGM"
+  - slug: part-2
+    title: "Lessons 11–20"
+    lessons:
+      - slug: 11-explaination-of-40-hadith-hadith-10-11
+        title: "11 Explaination of 40 Hadith: Hadith 10 - 11"
+        youtube_id: "SmQ52Rg3UG8"
+      - slug: 12-explaination-of-40-hadith-hadith-12-13
+        title: "12 Explaination of 40 Hadith : Hadith 12 - 13"
+        youtube_id: "GyHgad4A-Rs"
+      - slug: 13-explaination-of-40hadith-hadith-14-16
+        title: "13 Explaination of 40Hadith : Hadith 14 - 16"
+        youtube_id: "h4n4D0ipcsk"
+      - slug: 14-explaination-40-hadith-hadith-17-18
+        title: "14 Explaination 40 Hadith : Hadith 17 - 18"
+        youtube_id: "b00Vh4MKePM"
+      - slug: 15-explaination-of-40-hadith-hadith-19
+        title: "15 Explaination of 40 Hadith : Hadith # 19"
+        youtube_id: "MktuyXYwRGs"
+      - slug: 16-explaination-of-40-hadith-hadith-20-22
+        title: "16 Explaination Of 40 Hadith : Hadith 20 - 22"
+        youtube_id: "dOrXfEwsUrQ"
+      - slug: 17-explanation-of-40-hadith-hadith-23
+        title: "17 Explanation of 40 Hadith: Hadith 23"
+        youtube_id: "pGZETmidqqA"
+      - slug: 18-explaination-40-hadith-hadith-24a
+        title: "18 Explaination 40 Hadith : Hadith 24a"
+        youtube_id: "GbcVdHKqxH8"
+      - slug: 19-explanation-of-40-hadith-hadith-24b-25
+        title: "19 Explanation of 40 Hadith : Hadith 24b - 25"
+        youtube_id: "fuKC8DMUMTQ"
+      - slug: 20-explaination-40-hadith-hadith-26-27
+        title: "20 Explaination 40 Hadith : Hadith # 26 - 27"
+        youtube_id: "8GPmSebLkmg"
+  - slug: part-3
+    title: "Lessons 21–26"
+    lessons:
+      - slug: 21-explaination-40-hadith-hadith-28
+        title: "21 Explaination 40 Hadith : Hadith 28"
+        youtube_id: "-PJnsQ6T0V0"
+      - slug: 23-explaination-40-hadith-hadith-33-34
+        title: "23 Explaination 40 Hadith : Hadith 33 - 34"
+        youtube_id: "zMsarIXcDPg"
+      - slug: explaination-40-hadith-hadith-35
+        title: "Explaination 40 Hadith : Hadith 35"
+        youtube_id: "2m2XcLGqaO4"
+      - slug: explanation-40-hadith-hadith-38
+        title: "Explanation 40 Hadith : Hadith 38"
+        youtube_id: "bS-KOB4aBBw"
+      - slug: explanation-40-hadith-hadith-39-40
+        title: "Explanation 40 Hadith : Hadith 39 - 40"
+        youtube_id: "3qXvsLak5FM"
+      - slug: explaination-40-hadith-hadith-41-42
+        title: "Explaination 40 Hadith: Hadith 41 - 42"
+        youtube_id: "HEqtIEjIoZM"

@@ -25,6 +25,24 @@ const SUBJECT_WORDS = [
   ['islam', 'tazkiyah', /\b(tazkiyah|purification of the heart|character|akhlaq)\b|التزكية|الأخلاق/i]
 ];
 
+const OTHER_LANGUAGE = /\b(urdu|hindi|bangla|bengali|indonesia|bahasa|ustadz|melayu|malay|t[üu]rk[çc]e|turkish|fran[çc]ais|swahili|hausa|somali|pashto|persian|farsi)\b|اردو/i;
+const DIALECT = /\b(saudi|egyptian|levantine|moroccan|gulf|khaleeji|darija|dialect|ammiyy?a)\b/i;
+
+/** Why a playlist is outside what we teach, or null if it fits. `lang` is the language we searched in. */
+export function contentMismatch({ title, track, lang, videoLangs }) {
+  if (track === 'arabic' && DIALECT.test(title)) return 'spoken dialect, not Fusha';
+  if (lang === 'en' && OTHER_LANGUAGE.test(title)) return 'not in English';
+  // English lectures are often tagged Arabic because they quote the Quran, so allow 'ar' for English searches.
+  const allowed = lang === 'en' ? ['en', 'ar'] : [lang];
+  const tagged = videoLangs.filter(Boolean);
+  if (tagged.length && tagged.filter((l) => !allowed.some((a) => l.startsWith(a))).length / tagged.length > 0.5) return `audio language is not ${lang}`;
+  return null;
+}
+
+const ENTITIES = { '&amp;': '&', '&quot;': '"', '&#39;': "'", '&lt;': '<', '&gt;': '>' };
+/** Search results come back HTML-escaped. */
+export const decodeEntities = (s) => s.replace(/&(amp|quot|#39|lt|gt);/g, (m) => ENTITIES[m]);
+
 /** Best guess of { track, subject, level } from a title, or null if unsure. `prior` comes from the seed query. */
 export function classify(text, prior) {
   const subject = SUBJECT_WORDS.find(([, , re]) => re.test(text));

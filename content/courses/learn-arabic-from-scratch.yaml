@@ -1,0 +1,56 @@
+# Found by the discovery engine (score 75/100). Every video was confirmed public and embeddable on 2026-10-29.
+title: "Learn Arabic from scratch"
+summary: "Learn arabic with asmae : the Ultimate crash course for absolute beginners Welcome to our dedicated playlist for absolute ..."
+track: arabic
+subject: reading
+level: foundations
+language: en
+status: draft
+verified_at: 2026-10-29
+source:
+  name: "Learn Arabic with Asmae"
+  url: "https://www.youtube.com/channel/UCqGbQn5wValHtuhkHdslzkQ"
+  playlist_url: "https://www.youtube.com/playlist?list=PLr_tqbGZylgY_ZGOgGO2KlCLknUPA8g4w"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: learn-arabic-from-scratch-lesson-1-the-speaking-course-for-a
+        title: "Learn Arabic from scratch : Lesson 1 - The Speaking Course for Absolute Beginners"
+        youtube_id: "NapGLT3WFX8"
+      - slug: learn-arabic-from-scratch-lesson-2-the-speaking-course-for-a
+        title: "Learn Arabic from scratch : Lesson 2 - The Speaking Course for Absolute Beginners"
+        youtube_id: "vZYV5tTIZTI"
+      - slug: learn-arabic-from-scratch-lesson-3-the-speaking-course-for-a
+        title: "Learn Arabic from scratch : Lesson 3 - The Speaking Course for Absolute Beginners"
+        youtube_id: "OrQZZPKeqNM"
+      - slug: learn-arabic-from-scratch-lesson-4-the-speaking-course-for-a
+        title: "Learn Arabic from scratch : Lesson 4 - The Speaking Course for Absolute Beginners"
+        youtube_id: "NjJ3fvqDTi4"
+      - slug: learn-arabic-from-scratch-lesson-5-the-speaking-course-for-a
+        title: "Learn Arabic from scratch : Lesson 5 - The Speaking Course for Absolute Beginners"
+        youtube_id: "q6koiC3tXSw"
+      - slug: learn-arabic-from-scratch-lesson-6-the-speaking-course-for-a
+        title: "Learn Arabic from scratch : Lesson 6 - The Speaking Course for Absolute Beginners"
+        youtube_id: "f_0Hf-SZOPw"
+      - slug: learn-arabic-from-scratch-lesson-7-the-speaking-course-for-a
+        title: "Learn Arabic from scratch : Lesson 7 - The Speaking Course for Absolute Beginners"
+        youtube_id: "f-rEj7EQmYI"
+      - slug: learn-arabic-from-scratch-lesson-8-the-speaking-course-for-a
+        title: "Learn Arabic from scratch : Lesson 8 - The Speaking Course for Absolute Beginners"
+        youtube_id: "xN_4GxmZwc0"
+      - slug: learn-arabic-from-scratch-lesson-9-the-speaking-course-for-a
+        title: "Learn Arabic from scratch : Lesson 9 - The Speaking Course for Absolute Beginners"
+        youtube_id: "yfu6BkIHcJo"
+      - slug: learn-arabic-from-scratch-lesson-11-the-speaking-course-for
+        title: "Learn Arabic from scratch : Lesson 11 - The Speaking Course for Absolute Beginners"
+        youtube_id: "gl88KeHSXrs"
+  - slug: part-2
+    title: "Lessons 11–12"
+    lessons:
+      - slug: arabic-conversations-for-beginners-100-basic-arabic-phrases
+        title: "Arabic Conversations for Beginners | +100 Basic Arabic Phrases To Know"
+        youtube_id: "IJTtZmy0j0A"
+      - slug: learn-to-speak-arabic-step-by-step-the-secret-to-mastering-m
+        title: "Learn to speak Arabic step by step: The secret to mastering Modern Standard Arabic(MSA)"
+        youtube_id: "JGTy7fLhfgE"
