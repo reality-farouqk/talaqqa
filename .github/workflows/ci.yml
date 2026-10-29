@@ -15,6 +15,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: npm test
       # Builds every page and validates every course file (Zod schema + catalog checks).
       - run: npm run build
         env:

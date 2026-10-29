@@ -7,13 +7,8 @@
   "updated": "2026-10-29",
   "blockers": [
     {
-      "title": "I can't push to GitHub (403)",
-      "detail": "Push to reality-farouqk/talaqqa was refused. Fix: reconnect GitHub at https://claude.ai/connect-github and make sure the Claude GitHub App is installed on the talaqqa repo. The tracker commit is ready locally and goes up once access works.",
-      "owner": "You"
-    },
-    {
-      "title": "Engine: YouTube API key + trusted channels",
-      "detail": "Add a YouTube Data API v3 key as the GitHub secret YOUTUBE_API_KEY (free, Google Cloud console). List the channels you trust for auto-publishing in content/discovery/config.json (trusted_channels, YouTube channel IDs starting with UC). Until you add channels, everything goes to the review PR.",
+      "title": "Review and merge PR #1 into main",
+      "detail": "https://github.com/reality-farouqk/talaqqa/pull/1 brings the starter (from master) and all Phase 1 work into main. After merging, you can delete the master branch. Also still missing: db/0001_init.sql (needed in Phase 2).",
       "owner": "You"
     },
     {
@@ -22,13 +17,13 @@
       "owner": "You"
     },
     {
-      "title": "YouTube is blocked from my build environment",
-      "detail": "I can't open youtube.com or the Data API, so I can't verify video IDs. Fix: allow youtube.com, www.youtube-nocookie.com, i.ytimg.com and www.googleapis.com in the session's network settings, and add a YouTube Data API key as a secret. Alternative: send me the playlist links and I verify them once access is allowed.",
+      "title": "Trusted channels for auto-publish",
+      "detail": "List the YouTube channel IDs (start with UC) you trust in content/discovery/config.json → trusted_channels. Until then, everything the engine finds goes to a review PR.",
       "owner": "You"
     },
     {
-      "title": "Starter code is on 'master'; 'main' holds only a README",
-      "detail": "Your brief says 'main stays deployable'. Proposal: make main the default branch and merge master into it in the first Phase 1 PR. Also: db/0001_init.sql is not in the repo (db/README.md says to add it). Please commit it or send it.",
+      "title": "YouTube Data API key",
+      "detail": "The YouTube Data API is now reachable from my environment; it only needs a key. Create a free YouTube Data API v3 key in Google Cloud and (1) add it as the GitHub secret YOUTUBE_API_KEY for the weekly engine, and (2) add it to this environment's secrets so I can verify videos and run the engine for the launch courses.",
       "owner": "You"
     },
     {
@@ -85,8 +80,8 @@
         },
         {
           "title": "Branch setup: main as default, merge starter code",
-          "status": "Blocked",
-          "notes": "Needs GitHub push access and your OK."
+          "status": "Doing",
+          "notes": "Pushed. PR #1 into main is open as a draft; CI runs build, tests and content checks."
         },
         {
           "title": "Curriculum structure: 2 paths × 4 levels × subjects",
@@ -121,7 +116,7 @@
         {
           "title": "CI: build + content validation on every PR",
           "status": "Doing",
-          "notes": "Workflow written. Runs once the branch is pushed."
+          "notes": "Runs on PR #1: tests, build + content validation, production content check."
         },
         {
           "title": "Content checks: schema + duplicate slugs/videos + prerequisites + demo guard",
@@ -466,6 +461,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-10-29",
+      "text": "GitHub access fixed: branch pushed and PR #1 opened into main. CI now also runs the engine tests."
+    },
     {
       "date": "2026-10-29",
       "text": "Added the discovery engine (your choices: trusted teachers auto-publish, free word-list sentiment, built now). Video-first redesign. Player with speed, autoplay, auto-next, resume. Security headers. Applied your engineering guidelines: no new dependencies, timeouts, env-only secrets, tests."
