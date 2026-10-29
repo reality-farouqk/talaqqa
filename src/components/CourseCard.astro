@@ -1,0 +1,11 @@
+---
+import { categoryLabel, formatLevel, flattenLessons, type Course } from '../lib/courses';
+const { course } = Astro.props as { course: Course };
+const n = flattenLessons(course).length;
+---
+<a class="course-card" href={`/courses/${course.id}`}>
+  <span class="meta">{categoryLabel(course.data.category)} · {formatLevel(course.data.level)}</span>
+  <h3>{course.data.title}</h3>
+  <p>{course.data.summary}</p>
+  <span class="meta">{course.data.source.name} · {n} {n === 1 ? 'lesson' : 'lessons'}</span>
+</a>

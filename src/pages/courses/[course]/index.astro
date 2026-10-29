@@ -1,0 +1,36 @@
+---
+import Base from '../../../layouts/Base.astro';
+import WatchlistButton from '../../../components/WatchlistButton';
+import { getPublishedCourses, flattenLessons, categoryLabel, formatLevel } from '../../../lib/courses';
+
+export async function getStaticPaths() {
+  return (await getPublishedCourses()).map((course) => ({ params: { course: course.id }, props: { course } }));
+}
+const { course } = Astro.props;
+const d = course.data;
+const lessons = flattenLessons(course);
+const jsonLd = {
+  '@context': 'https://schema.org', '@type': 'Course',
+  name: d.title, description: d.summary, inLanguage: d.language,
+  provider: { '@type': 'Organization', name: d.source.name, ...(d.source.url ? { sameAs: d.source.url } : {}) }
+};
+---
+<Base title={d.title} description={d.summary} lang={d.language} dir={d.language.startsWith('ar') ? 'rtl' : 'ltr'} jsonLd={jsonLd}>
+  <p class="meta"><a href="/courses">Courses</a> / {categoryLabel(d.category)} · {formatLevel(d.level)}</p>
+  <h1>{d.title}</h1>
+  <p>{d.summary}</p>
+  {d.description && <p>{d.description}</p>}
+  <p class="meta">Taught by {d.source.url ? <a href={d.source.url} rel="noopener">{d.source.name}</a> : d.source.name} · {lessons.length} lessons</p>
+  <div class="actions">
+    <a class="btn" href={`/courses/${course.id}/${lessons[0].slug}`}>Start course</a>
+    <WatchlistButton client:load courseSlug={course.id} />
+  </div>
+  {d.modules.map((m) => (
+    <section>
+      <h2>{m.title}</h2>
+      <ul class="lesson-list">
+        {m.lessons.map((l) => <li><a href={`/courses/${course.id}/${l.slug}`}>{l.title}</a></li>)}
+      </ul>
+    </section>
+  ))}
+</Base>

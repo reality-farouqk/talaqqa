@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /watchlist
+Sitemap: /sitemap-index.xml

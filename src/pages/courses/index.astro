@@ -1,0 +1,16 @@
+---
+import Base from '../../layouts/Base.astro';
+import CourseCard from '../../components/CourseCard.astro';
+import { getPublishedCourses, categoryLabel } from '../../lib/courses';
+const courses = await getPublishedCourses();
+const cats = [...new Set(courses.map((c) => c.data.category))];
+---
+<Base title="All courses" description="Browse free Islamic courses by subject and level.">
+  <h1>Courses</h1>
+  {cats.map((cat) => (
+    <section>
+      <h2>{categoryLabel(cat)}</h2>
+      <ul class="grid">{courses.filter((c) => c.data.category === cat).map((c) => <li><CourseCard course={c} /></li>)}</ul>
+    </section>
+  ))}
+</Base>

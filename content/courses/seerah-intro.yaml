@@ -1,0 +1,32 @@
+# SAMPLE COURSE. The YouTube IDs below are PLACEHOLDERS. Replace them with real,
+# embeddable video IDs before publishing (the 11 characters after "v=" in a YouTube URL).
+title: Introduction to the Seerah
+summary: A beginner-friendly walk through the life of the Prophet ﷺ, from Makkah to Madinah.
+description: This sample course shows how a course file is structured. Replace the placeholder videos with real lessons from a scholar you want to feature, and keep the attribution accurate.
+category: seerah
+level: beginner
+language: en
+status: published
+source:
+  name: Sample Scholar (replace me)
+  url: https://example.org
+modules:
+  - slug: before-the-prophethood
+    title: Before the Prophethood
+    lessons:
+      - slug: arabia-before-islam
+        title: Arabia before Islam
+        youtube_id: AAAAAAAAAAA
+        summary: The social and religious setting of the Arabian Peninsula.
+      - slug: birth-and-early-life
+        title: Birth and early life
+        youtube_id: BBBBBBBBBBB
+  - slug: the-makkan-period
+    title: The Makkan Period
+    lessons:
+      - slug: the-first-revelation
+        title: The first revelation
+        youtube_id: CCCCCCCCCCC
+      - slug: public-preaching
+        title: Public preaching and opposition
+        youtube_id: DDDDDDDDDDD

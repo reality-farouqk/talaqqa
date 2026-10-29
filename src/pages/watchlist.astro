@@ -1,0 +1,7 @@
+---
+import Base from '../layouts/Base.astro';
+import WatchlistView from '../components/WatchlistView';
+import { getPublishedCourses } from '../lib/courses';
+const courses = (await getPublishedCourses()).map((c) => ({ slug: c.id, title: c.data.title, summary: c.data.summary }));
+---
+<Base title="Watchlist" description="Courses you saved to study later."><h1>Watchlist</h1><WatchlistView client:load courses={courses} /></Base>

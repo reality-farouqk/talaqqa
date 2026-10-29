@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import CourseCard from '../components/CourseCard.astro';
+import { SITE } from '../config';
+import { getPublishedCourses } from '../lib/courses';
+const courses = await getPublishedCourses();
+---
+<Base>
+  <h1 style="font-size:clamp(2rem,5vw,3.25rem);max-width:18ch">{SITE.tagline}</h1>
+  <p style="max-width:52ch;color:var(--muted)">Follow structured courses built from public lectures. Save what you want to study and pick up where you left off. Everything here is free.</p>
+  <p><a class="btn" href="/courses">Browse courses</a></p>
+  <h2>Featured courses</h2>
+  <ul class="grid">{courses.map((c) => <li><CourseCard course={c} /></li>)}</ul>
+</Base>

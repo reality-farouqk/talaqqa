@@ -1,0 +1,82 @@
+---
+import { SITE } from '../config';
+interface Props { title?: string; description?: string; lang?: string; dir?: 'ltr' | 'rtl'; jsonLd?: object; image?: string; }
+const { title, description = SITE.description, lang = 'en', dir = 'ltr', jsonLd, image } = Astro.props;
+const fullTitle = title ? `${title} | ${SITE.name}` : `${SITE.name}: ${SITE.tagline}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang={lang} dir={dir}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#0e5a57" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {image && <meta property="og:image" content={image} />}
+    <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body>
+    <header class="top">
+      <a class="brand" href="/">{SITE.name}</a>
+      <nav aria-label="Main">
+        <a href="/courses">Courses</a>
+        <a href="/watchlist">Watchlist</a>
+      </nav>
+    </header>
+    <main><slot /></main>
+    <script is:inline src="/registerSW.js"></script>
+    <footer class="foot">
+      <p>Videos belong to their creators and play from YouTube. {SITE.name} is an open-source index that links back to the original teachers.</p>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --paper: #f6f7f5; --ink: #14211f; --muted: #55635f; --line: #d6dcd9;
+    --teal: #0e5a57; --teal-soft: #dcebe8; --gold: #b98a1f; --card: #ffffff;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --paper: #0f1716; --ink: #e8efed; --muted: #9bb0aa; --line: #26332f; --teal: #5cc4bb; --teal-soft: #17302d; --gold: #e0b44d; --card: #162220; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.6 var(--sans); }
+  h1, h2, h3 { font-family: var(--serif); line-height: 1.2; font-weight: 600; }
+  a { color: var(--teal); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+  main { max-width: 64rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+  .top { display: flex; justify-content: space-between; align-items: center; padding: .9rem 1rem; border-bottom: 1px solid var(--line); max-width: 64rem; margin: 0 auto; }
+  .brand { font: 600 1.4rem var(--serif); text-decoration: none; color: var(--ink); }
+  .top nav { display: flex; gap: 1.25rem; }
+  .top nav a { text-decoration: none; color: var(--ink); }
+  .foot { max-width: 64rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; color: var(--muted); font-size: .875rem; border-top: 1px solid var(--line); }
+  .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); padding: 0; list-style: none; }
+  .course-card { display: block; padding: 1.1rem; background: var(--card); border: 1px solid var(--line); border-radius: 6px; text-decoration: none; color: var(--ink); height: 100%; }
+  .course-card:hover { border-color: var(--teal); }
+  .course-card h3 { margin: .3rem 0; font-size: 1.15rem; }
+  .meta { color: var(--muted); font-size: .875rem; }
+  .btn { display: inline-block; padding: .55rem 1rem; border-radius: 6px; border: 1px solid var(--teal); background: var(--teal); color: var(--paper); font: inherit; cursor: pointer; text-decoration: none; }
+  .btn.ghost { background: transparent; color: var(--teal); }
+  .lesson-list { list-style: none; padding: 0; margin: 0; }
+  .lesson-list li a { display: block; padding: .6rem .75rem; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink); }
+  .lesson-list li a[aria-current="page"] { background: var(--teal-soft); font-weight: 600; }
+  .player { position: relative; aspect-ratio: 16 / 9; background: #000; border-radius: 6px; overflow: hidden; }
+  .player img, .player iframe { width: 100%; height: 100%; border: 0; object-fit: cover; display: block; }
+  .player button.play { position: absolute; inset: 0; width: 100%; background: rgba(0,0,0,.25); border: 0; color: #fff; font: 600 1.1rem var(--sans); cursor: pointer; }
+  .layout { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
+  @media (min-width: 52rem) { .layout { grid-template-columns: 1fr 20rem; } }
+  .pager { display: flex; justify-content: space-between; margin-top: 1rem; gap: 1rem; }
+  .actions { display: flex; gap: .75rem; flex-wrap: wrap; margin: 1rem 0; }
+  @media (prefers-reduced-motion: no-preference) { .course-card { transition: border-color .15s; } }
+</style>

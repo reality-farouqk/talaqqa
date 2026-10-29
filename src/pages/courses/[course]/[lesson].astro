@@ -1,0 +1,56 @@
+---
+import Base from '../../../layouts/Base.astro';
+import LitePlayer from '../../../components/LitePlayer';
+import CompleteButton from '../../../components/CompleteButton';
+import { getPublishedCourses, flattenLessons } from '../../../lib/courses';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const course of await getPublishedCourses()) {
+    const lessons = flattenLessons(course);
+    lessons.forEach((lesson, i) => paths.push({
+      params: { course: course.id, lesson: lesson.slug },
+      props: { course, lesson, prev: lessons[i - 1], next: lessons[i + 1] }
+    }));
+  }
+  return paths;
+}
+const { course, lesson, prev, next } = Astro.props;
+const d = course.data;
+const key = `${course.id}/${lesson.slug}`;
+const desc = lesson.summary ?? `${lesson.title}: lesson from ${d.title} by ${d.source.name}.`;
+const jsonLd = {
+  '@context': 'https://schema.org', '@type': 'VideoObject',
+  name: lesson.title, description: desc,
+  thumbnailUrl: `https://i.ytimg.com/vi/${lesson.youtube_id}/hqdefault.jpg`,
+  embedUrl: `https://www.youtube-nocookie.com/embed/${lesson.youtube_id}`
+  // TODO: add uploadDate + duration once the metadata sync fills them in.
+};
+---
+<Base title={`${lesson.title} · ${d.title}`} description={desc} lang={d.language} dir={d.language.startsWith('ar') ? 'rtl' : 'ltr'} jsonLd={jsonLd} image={jsonLd.thumbnailUrl}>
+  <p class="meta"><a href="/courses">Courses</a> / <a href={`/courses/${course.id}`}>{d.title}</a></p>
+  <div class="layout">
+    <article>
+      <LitePlayer client:load youtubeId={lesson.youtube_id} title={lesson.title} start={lesson.start_seconds} end={lesson.end_seconds} lessonKey={key} />
+      <h1>{lesson.title}</h1>
+      <p class="meta">{lesson.moduleTitle} · {d.source.name}</p>
+      {lesson.summary && <p>{lesson.summary}</p>}
+      <div class="actions"><CompleteButton client:load lessonKey={key} /></div>
+      <nav class="pager" aria-label="Lesson navigation">
+        {prev ? <a class="btn ghost" href={`/courses/${course.id}/${prev.slug}`} rel="prev">Previous</a> : <span />}
+        {next ? <a class="btn" href={`/courses/${course.id}/${next.slug}`} rel="next">Next lesson</a> : <span />}
+      </nav>
+    </article>
+    <aside aria-label="Course lessons">
+      <h2 style="font-size:1.1rem">{d.title}</h2>
+      {d.modules.map((m) => (
+        <>
+          <h3 style="font-size:.95rem;margin:1rem 0 .25rem">{m.title}</h3>
+          <ul class="lesson-list">
+            {m.lessons.map((l) => <li><a href={`/courses/${course.id}/${l.slug}`} aria-current={l.slug === lesson.slug ? 'page' : undefined}>{l.title}</a></li>)}
+          </ul>
+        </>
+      ))}
+    </aside>
+  </div>
+</Base>
