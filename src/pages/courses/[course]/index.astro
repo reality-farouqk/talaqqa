@@ -1,5 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import Thumb from '../../../components/Thumb.astro';
 import WatchlistButton from '../../../components/WatchlistButton';
 import CourseProgress from '../../../components/CourseProgress';
 import LessonChecks from '../../../components/LessonChecks';
@@ -33,7 +34,7 @@ const firstImage = lessons.find((l) => l.youtube_id)?.youtube_id;
 <Base section={trackUrl(track.id)} title={d.title} description={d.summary} jsonLd={jsonLd} noindex={d.demo}
   image={firstImage ? `https://i.ytimg.com/vi/${firstImage}/hqdefault.jpg` : undefined}
   breadcrumbs={[{ name: 'Home', href: '/' }, { name: track.label, href: trackUrl(track.id) }, { name: levelLabel(d.level), href: levelUrl(track.id, d.level) }, { name: d.title, href: courseUrl(course.id) }]}>
-  {d.demo && <p class="callout" role="note"><span class="badge">Demo</span> This is a sample outline used to test the site. It has no videos and will be replaced by a real course.</p>}
+  {d.demo && <p class="callout" role="note"><span class="badge">Demo</span> Sample outline, no videos yet.</p>}
   <p class="meta">{track.short} · {subjectLabel(course)} · {levelLabel(d.level)} · {lessons.length} lessons{d.language !== 'en' && ` · Taught in ${languageName(d.language)}`}</p>
   <div lang={d.language} dir={dir}>
     <h1>{d.title}</h1>
@@ -49,7 +50,7 @@ const firstImage = lessons.find((l) => l.youtube_id)?.youtube_id;
   )}
   <CourseProgress client:load course={course.id} lessons={lessons.map((l) => ({ slug: l.slug, title: l.title }))} showResume />
   <div class="actions">
-    <a class="btn" href={lessonUrl(course.id, lessons[0].slug)}>Start course</a>
+    <a class="btn" href={lessonUrl(course.id, lessons[0].slug)}>▶ Start course</a>
     <WatchlistButton client:load courseSlug={course.id} />
   </div>
   <div class="lessons" lang={d.language} dir={dir}>
@@ -58,7 +59,7 @@ const firstImage = lessons.find((l) => l.youtube_id)?.youtube_id;
         <h2>{m.title}</h2>
         <ol class="lesson-list">
           {m.lessons.map((l) => (
-            <li><a href={lessonUrl(course.id, l.slug)} data-lesson-key={`${course.id}/${l.slug}`}>{l.title}<span class="sr-status"></span></a></li>
+            <li><a href={lessonUrl(course.id, l.slug)} data-lesson-key={`${course.id}/${l.slug}`}><Thumb id={l.youtube_id} /><span class="lt">{l.title}<span class="sr-status"></span></span></a></li>
           ))}
         </ol>
       </section>

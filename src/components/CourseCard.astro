@@ -1,12 +1,14 @@
 ---
-import { subjectLabel, levelLabel, flattenLessons, courseUrl, dirFor, languageName, type Course } from '../lib/courses';
+import Thumb from './Thumb.astro';
+import { subjectLabel, levelLabel, flattenLessons, courseUrl, dirFor, type Course } from '../lib/courses';
 const { course } = Astro.props as { course: Course };
 const d = course.data;
-const n = flattenLessons(course).length;
+const lessons = flattenLessons(course);
 ---
 <a class="course-card" href={courseUrl(course.id)}>
-  <span class="meta">{subjectLabel(course)} · {levelLabel(d.level)}{d.language !== 'en' && ` · ${languageName(d.language)}`} {d.demo && <span class="badge">Demo</span>}</span>
-  <h3 lang={d.language} dir={dirFor(d.language)}>{d.title}</h3>
-  <p lang={d.language} dir={dirFor(d.language)}>{d.summary}</p>
-  <span class="meta"><bdi>{d.source.name}</bdi> · {n} {n === 1 ? 'lesson' : 'lessons'}</span>
+  <span class="card-thumb"><Thumb id={lessons.find((l) => l.youtube_id)?.youtube_id} label={subjectLabel(course)} /><span class="count">{lessons.length} videos</span></span>
+  <span class="card-body">
+    <h3 lang={d.language} dir={dirFor(d.language)}>{d.title}</h3>
+    <span class="meta"><bdi>{d.source.name}</bdi> · {levelLabel(d.level)} {d.demo && <span class="badge">Demo</span>}</span>
+  </span>
 </a>

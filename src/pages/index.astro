@@ -11,7 +11,7 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: SIT
 <Base jsonLd={jsonLd}>
   <section class="hero">
     <h1>Learn Arabic and Islam, step by step</h1>
-    <p class="lede">Two structured paths built from public lectures by recognised teachers, from the very basics to advanced study. Free, with no account needed.</p>
+    <p class="lede">Free video courses from trusted teachers, basics to advanced.</p>
   </section>
   <ContinueCard client:load courses={forIsland} />
   <div class="tracks">
@@ -22,7 +22,6 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: SIT
         <section class="track" aria-labelledby={`t-${t.id}`}>
           <p class="track-ar" lang="ar" dir="rtl">{t.arabic}</p>
           <h2 id={`t-${t.id}`}><a href={trackUrl(t.id)}>{t.label}</a></h2>
-          <p>{t.blurb}</p>
           <ol class="ladder">
             {LEVELS.map((l) => {
               const n = inTrack.filter((c) => c.data.level === l.id).length;
@@ -30,14 +29,14 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: SIT
             })}
           </ol>
           <p class="actions">
-            {first && <a class="btn" href={courseUrl(first.id)}>Start at the beginning</a>}
-            <a class="btn ghost" href={trackUrl(t.id)}>See the full path</a>
+            {first && <a class="btn" href={courseUrl(first.id)}>▶ Start</a>}
+            <a class="btn ghost" href={trackUrl(t.id)}>Full path</a>
           </p>
         </section>
       );
     })}
   </div>
-  <p class="meta" style="margin-block-start:2rem">Looking for a specific subject? <a href="/courses/">Browse all courses by subject</a>.</p>
+  <p style="margin-block-start:2rem"><a href="/courses/">All courses by subject</a></p>
 </Base>
 <style>
   .hero h1 { font-size: clamp(2rem, 6vw, 3.1rem); max-width: 20ch; margin-block: .5rem 1rem; }
@@ -45,7 +44,7 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: SIT
   .track { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.25rem; display: flex; flex-direction: column; min-width: 0; }
   .track h2 { margin: 0 0 .5rem; font-size: 1.6rem; }
   .track h2 a { color: var(--ink); text-decoration: none; }
-  .track > p { margin: 0 0 1rem; }
+  .track h2 + .ladder { margin-block-start: .5rem; }
   .track .actions { margin-block-start: auto; padding-block-start: 1rem; margin-block-end: 0; }
   .track-ar { font-family: var(--arabic); color: var(--teal); font-size: 1.15rem; margin: 0; }
   .ladder { list-style: none; padding: 0; margin: 0; counter-reset: step; border-block-start: 1px solid var(--line); }

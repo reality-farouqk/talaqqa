@@ -66,7 +66,7 @@ const nav = [
   <body>
     <a class="skip" href="#main">Skip to content</a>
     {hasDemo && (
-      <div class="demo-ribbon" role="note">Preview build: courses marked “Demo” are sample outlines without videos.</div>
+      <div class="demo-ribbon" role="note">Preview: “Demo” courses have no videos yet.</div>
     )}
     <header class="top">
       <a class="brand" href="/">{SITE.name}</a>
@@ -96,7 +96,7 @@ const nav = [
         <a href="/privacy/">Privacy</a>
         <a href={SITE.repo} rel="noopener">Source code</a>
       </nav>
-      <p>Videos belong to their creators and play from YouTube through the official player. {SITE.name} is a free, open-source index that credits and links back to every teacher.</p>
+      <p>Videos belong to their creators and play from YouTube.</p>
     </footer>
     <script is:inline src="/registerSW.js"></script>
   </body>
@@ -148,10 +148,15 @@ const nav = [
   .prose h2 { margin-block-start: 2rem; }
   .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); padding: 0; margin: 0; list-style: none; }
   .grid > li { min-width: 0; }
-  .course-card { display: flex; flex-direction: column; gap: .35rem; padding: 1.1rem; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; color: var(--ink); height: 100%; }
+  .course-card { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; text-decoration: none; color: var(--ink); height: 100%; }
   .course-card:hover { border-color: var(--teal); }
-  .course-card h3 { margin: 0; font-size: 1.15rem; }
-  .course-card p { margin: 0; flex: 1; }
+  .card-thumb { position: relative; display: block; }
+  .card-thumb .thumb { width: 100%; border-radius: 0; }
+  .count { position: absolute; inset-block-end: .5rem; inset-inline-end: .5rem; background: rgba(0,0,0,.78); color: #fff; font-size: .75rem; padding: .1rem .45rem; border-radius: 4px; }
+  .card-body { display: grid; gap: .25rem; padding: .75rem .9rem .9rem; }
+  .course-card h3 { margin: 0; font-size: 1.05rem; }
+  .thumb { display: block; aspect-ratio: 16 / 9; width: 100%; max-width: 100%; object-fit: cover; border-radius: 6px; background: var(--teal-soft); }
+  .thumb-empty { display: grid; place-items: center; color: var(--teal); font: 600 .9rem var(--sans); text-align: center; padding: .5rem; }
   .badge { display: inline-block; font: 600 .7rem var(--sans); letter-spacing: .05em; text-transform: uppercase; padding: .1rem .45rem; border-radius: 999px; background: var(--gold-soft); color: var(--ink); vertical-align: middle; }
   .btn { display: inline-flex; align-items: center; justify-content: center; gap: .4rem; min-height: 44px; padding: .55rem 1rem; border-radius: var(--radius); border: 1px solid var(--teal); background: var(--teal); color: var(--teal-ink); font: inherit; font-weight: 500; cursor: pointer; text-decoration: none; }
   .btn.ghost { background: transparent; color: var(--teal); }
@@ -164,8 +169,11 @@ const nav = [
   .progress-row { display: flex; justify-content: space-between; }
   .lesson-list { list-style: none; padding: 0; margin: 0; }
   .lessons { counter-reset: lesson; }
-  .lesson-list li a { display: flex; gap: .75rem; align-items: baseline; padding: .65rem .75rem; min-height: 44px; border-block-end: 1px solid var(--line); text-decoration: none; color: var(--ink); }
-  .lesson-list li a::before { counter-increment: lesson; content: counter(lesson); color: var(--muted); font-size: .85rem; min-width: 1.5rem; font-variant-numeric: tabular-nums; }
+  .lesson-list li a { display: flex; gap: .75rem; align-items: center; padding: .5rem; min-height: 44px; border-radius: 6px; text-decoration: none; color: var(--ink); }
+  .lesson-list li a:hover { background: var(--teal-soft); }
+  .lesson-list li a::before { counter-increment: lesson; content: counter(lesson); color: var(--muted); font-size: .85rem; min-width: 1.25rem; text-align: center; font-variant-numeric: tabular-nums; }
+  .lesson-list .thumb { width: 7.5rem; flex: none; }
+  .lesson-list .lt { min-width: 0; }
   .lesson-list li a.is-done::before { content: "✓"; color: var(--teal); font-weight: 700; }
   .lesson-list li a[aria-current="page"] { background: var(--teal-soft); font-weight: 600; }
   .player { position: relative; aspect-ratio: 16 / 9; max-width: 100%; background: #000; border-radius: var(--radius); overflow: hidden; }
@@ -174,6 +182,16 @@ const nav = [
   .play-icon { width: 4rem; height: 4rem; border-radius: 50%; background: rgba(0,0,0,.65); position: relative; }
   .play-icon::after { content: ""; position: absolute; inset-block-start: 50%; inset-inline-start: 54%; transform: translate(-50%, -50%); border-style: solid; border-width: .8rem 0 .8rem 1.3rem; border-color: transparent transparent transparent #fff; }
   [dir="rtl"] .play-icon::after { transform: translate(50%, -50%); }
+  .yt-mount { position: absolute; inset: 0; }
+  .up-next { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; gap: .25rem; padding: 1rem; background: rgba(0,0,0,.82); color: #fff; }
+  .up-next p { margin: 0; }
+  .up-next .meta { color: #cfd8d6; }
+  .up-next-title { font: 600 1.15rem var(--serif); }
+  .controls { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.1rem; padding-block: .6rem; font-size: .9rem; }
+  .controls label { display: inline-flex; align-items: center; gap: .35rem; min-height: 44px; cursor: pointer; }
+  .controls select { font: inherit; min-height: 36px; padding: .2rem .4rem; border-radius: 6px; border: 1px solid var(--line); background: var(--card); color: var(--ink); }
+  .controls input[type="checkbox"] { width: 1.15rem; height: 1.15rem; accent-color: var(--teal); }
+  .linkish { background: none; border: 0; padding: 0; font: inherit; color: var(--teal); text-decoration: underline; cursor: pointer; min-height: 44px; }
   .player-msg { display: grid; place-items: center; padding: 1.5rem; text-align: center; color: #f2f2f2; background: #1d2a28; }
   .player-msg p { max-width: 36ch; margin: 0; }
   .source { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; padding: .75rem 1rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); margin-block: 1rem; }
