@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # Builds every page and validates every course file (Zod schema + catalog checks).
+      - run: npm run build
+        env:
+          SITE_URL: https://example.org
+      # Fails while demo courses are published. Informational until real courses land.
+      - name: Production content check
+        run: npm run build
+        continue-on-error: true
+        env:
+          SITE_URL: https://example.org
+          CONTENT_MODE: production

@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Content guidelines
+    url: https://github.com/reality-farouqk/talaqqa/blob/main/CONTRIBUTING.md#content-guidelines
+    about: Read these before suggesting a course.
