@@ -12,8 +12,8 @@
       "owner": "You"
     },
     {
-      "title": "Discovery engine: three decisions",
-      "detail": "(1) Review queue vs auto-publish: I recommend the engine ranks and drafts courses and you approve each one, as your rules require. (2) Comment sentiment: free bilingual word list, or Claude API (better, small cost, new service + API key). (3) Build it now in Phase 1, or right after launch.",
+      "title": "Engine: YouTube API key + trusted channels",
+      "detail": "Add a YouTube Data API v3 key as the GitHub secret YOUTUBE_API_KEY (free, Google Cloud console). List the channels you trust for auto-publishing in content/discovery/config.json (trusted_channels, YouTube channel IDs starting with UC). Until you add channels, everything goes to the review PR.",
       "owner": "You"
     },
     {
@@ -95,8 +95,23 @@
         },
         {
           "title": "Content discovery engine (rank YouTube series by quality signals)",
-          "status": "Blocked",
-          "notes": "Design proposed; needs your decisions (see blockers)."
+          "status": "Doing",
+          "notes": "Built and unit-tested (7 tests): YouTube search per path/subject/level, scoring (views, like rate, EN/AR comment sentiment, completion, structure), trusted channels auto-publish at 70+, rest drafted into a weekly review PR. Needs a YouTube API key + your trusted channel list to run."
+        },
+        {
+          "title": "Player: speed, autoplay, auto-next, resume, auto-complete",
+          "status": "Doing",
+          "notes": "Built on YouTube's official IFrame API; tested with a stand-in API. Quality + captions use YouTube's own ⚙ menu (sites can't set quality). Needs a real-phone test."
+        },
+        {
+          "title": "Video-first UI: thumbnails on cards and lesson lists, shorter copy",
+          "status": "Doing",
+          "notes": "Built. Thumbnails appear once real videos are in."
+        },
+        {
+          "title": "Security headers (CSP, HSTS, nosniff, referrer, permissions)",
+          "status": "Doing",
+          "notes": "public/_headers for Cloudflare Pages; pages tested under the CSP with no violations."
         },
         {
           "title": "CI: build + content validation on every PR",
@@ -446,6 +461,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-10-29",
+      "text": "Added the discovery engine (your choices: trusted teachers auto-publish, free word-list sentiment, built now). Video-first redesign. Player with speed, autoplay, auto-next, resume. Security headers. Applied your engineering guidelines: no new dependencies, timeouts, env-only secrets, tests."
+    },
     {
       "date": "2026-10-29",
       "text": "Phase 1 started on demo content. Built the curriculum (Learn Arabic and Learn Islam, Foundations → Advanced, subjects), path pages, catalog by subject, on-device progress, PWA offline + install prompt, SEO, trust pages, CI and templates. Proposed the content discovery engine. All still local: GitHub push blocked."
