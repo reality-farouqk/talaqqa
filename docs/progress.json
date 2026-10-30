@@ -4,11 +4,11 @@
   "repo": "https://github.com/reality-farouqk/talaqqa",
   "currentPhase": 1,
   "liveUrl": "https://claude-halaqa-setup-jmv4gh.talaqqa.pages.dev",
-  "updated": "2026-10-29",
+  "updated": "2026-10-30",
   "blockers": [
     {
-      "title": "Approve launch courses from 25 engine drafts",
-      "detail": "Watch them on your phone: https://claude-halaqa-setup-jmv4gh.talaqqa.pages.dev/review/ — numbered by score, same as my list. Reply with the numbers to publish.",
+      "title": "Merge PR #1 to go live",
+      "detail": "Demo content is gone and the production build passes, so merging PR #1 into main deploys the site to https://talaqqa.pages.dev automatically. Review the 15 courses on the preview first if you want.",
       "owner": "You"
     },
     {
@@ -39,6 +39,11 @@
     {
       "title": "Security: upgrade Astro (major version)",
       "detail": "Tested in a scratch copy: Astro 5.18.2 → 7.3.8 (3 weeks old, fixes all listed advisories incl. a critical one in image optimisation we don't use) with @astrojs/react 7.0.1. Build, tests, types, CSP and page checks all pass and the service worker is still generated. Catch: @vite-pwa/astro doesn't officially support Astro 6+ yet (installs with --legacy-peer-deps and works). Options: (a) upgrade now, (b) wait for PWA plugin support. Practical risk today is low: static site, no user-written content.",
+      "owner": "You"
+    },
+    {
+      "title": "Content gaps",
+      "detail": "No real course yet for Aqeedah, Seerah or Tazkiyah, and none at Advanced level. The weekly engine run will propose more; tell me any teachers you want and I'll search for them first.",
       "owner": "You"
     }
   ],
@@ -145,18 +150,18 @@
         },
         {
           "title": "Shortlist and approve real courses",
-          "status": "Blocked",
-          "notes": "25 drafts are watchable on the preview at /review/ (numbered by score). Reply with the numbers to publish."
+          "status": "Doing",
+          "notes": "Owner asked for automatic picks: 15 published by stated rules (own channel, path language, structured series, recognised teacher/academy); 10 rejected and blocked. Live on the preview; Done once in production."
         },
         {
           "title": "Verify every video (exists, public, embeddable, correct teacher)",
           "status": "Doing",
-          "notes": "Engine confirms every video is public and embeddable through the Data API; teacher/channel check is part of your approval."
+          "notes": "All 15 courses re-checked through the YouTube API on 2026-10-30: every video public and embeddable."
         },
         {
           "title": "Replace demo courses with approved ones",
-          "status": "To do",
-          "notes": ""
+          "status": "Doing",
+          "notes": "Demo courses removed; production build passes."
         },
         {
           "title": "UI: home with paths, path pages by level, catalog by subject, course + lesson pages",
@@ -481,6 +486,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-10-30",
+      "text": "Published 15 real courses (owner asked for automatic selection), removed all demo content, production build passes. Engine now orders newest-first playlists, drops duplicates and compilations. Fixed a phone overflow on search."
+    },
     {
       "date": "2026-10-30",
       "text": "Review page for the 25 drafts on the preview (/review/), playable on a phone. Fixed the offline page not showing for unvisited pages. Tested install prompts (iPhone hint, Android button)."
