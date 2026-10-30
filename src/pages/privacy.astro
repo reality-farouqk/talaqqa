@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config';
+---
+<Base title="Privacy" description={`How ${SITE.name} handles your data: your progress stays on your device.`} breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Privacy', href: '/privacy/' }]}>
+  <div class="prose">
+    <h1>Privacy</h1>
+    <p class="lede">Short version: your watchlist and progress stay on your device. We don't have accounts, and we don't collect personal data.</p>
+    <h2>What is stored on your device</h2>
+    <p>Your watchlist, completed lessons and the last lesson you opened are saved in your browser's local storage, so the site can show your progress. This data never leaves your device. You can clear it from <a href="/watchlist/">My courses</a> or by clearing your browser data.</p>
+    <p>If you install the app, your browser also keeps copies of pages you've visited so they open offline. Videos are never stored.</p>
+    <h2>YouTube</h2>
+    <p>Lessons use YouTube's privacy-enhanced player (youtube-nocookie.com), and the player loads only when you press play. Lesson thumbnails are loaded from YouTube's image servers. Once a video plays, YouTube's own <a href="https://policies.google.com/privacy" rel="noopener">privacy policy</a> applies.</p>
+    <h2>Analytics</h2>
+    <p>We plan to use privacy-friendly, cookieless analytics that count page visits without identifying you. This page will name the tool before it is switched on.</p>
+    <h2>Questions</h2>
+    <p>Ask on our <a href="/report/">contact page</a>.</p>
+    <p class="meta">Last updated: 29 October 2026.</p>
+  </div>
+</Base>

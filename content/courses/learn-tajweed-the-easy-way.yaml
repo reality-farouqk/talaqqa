@@ -1,0 +1,120 @@
+# Found by the discovery engine (score 88/100). Every video was confirmed public and embeddable on 2026-10-30.
+title: "Learn Tajweed The Easy Way"
+summary: "An animated tajweed course: the letters, where they come from, and the main rules, practised on short surahs."
+track: islam
+subject: quran
+level: foundations
+order: 1
+language: en
+status: published
+verified_at: 2026-10-30
+source:
+  name: "FreeQuranEducation"
+  url: "https://www.youtube.com/channel/UCNdUFOtzSx3FS71pHkQLxhQ"
+  playlist_url: "https://www.youtube.com/playlist?list=PLwNeHLk_z0aSekqYqJdRtuYS74rcGXoWF"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: lesson-1a-introduction-learn-tajweed-the-easy-way
+        title: "Lesson – 1A | Introduction | Learn Tajweed – the Easy Way"
+        youtube_id: "xuwRT8Q5dOI"
+      - slug: lesson-1b-introduction-learn-tajweed-the-easy-way
+        title: "Lesson – 1B | Introduction | Learn Tajweed – the Easy Way"
+        youtube_id: "R0M9paW-cR4"
+      - slug: lesson-2a-letters-maa-baa-learn-tajweed-the-easy-way-read-qu
+        title: "Lesson – 2A | Letters Maa & Baa | Learn Tajweed – the Easy Way | Read Quran with Tajweed"
+        youtube_id: "yncZZpD53ww"
+      - slug: lesson-2b-practice-for-learn-tajweed-the-easy-way
+        title: "Lesson – 2B | Practice for اَعُوْذُ بِاللهِ | Learn Tajweed – the Easy Way"
+        youtube_id: "mCckY7bp7Sk"
+      - slug: lesson-3a-letters-waa-faa-learn-tajweed-the-easy-way
+        title: "Lesson 3A | Letters Waa & Faa | Learn Tajweed the Easy Way"
+        youtube_id: "SS13ApsjqP0"
+      - slug: first-5-lessons-of-tajweed-made-easy
+        title: "First 5 Lessons of Tajweed Made Easy"
+        youtube_id: "5foU9E0-CLI"
+      - slug: lesson-3b-practice-for-learn-tajweed-the-easy-way
+        title: "Lesson – 3B | Practice for مِنَ الشَّيْطٰنِ الرَّجِيْم | Learn Tajweed – the Easy Way"
+        youtube_id: "ASY_yYZQNOc"
+      - slug: lesson-4a-letter-tha-learn-tajweed-the-easy-way
+        title: "Lesson – 4A | Letter Tha | Learn Tajweed – the Easy Way"
+        youtube_id: "6EC7BDdUduc"
+      - slug: lesson-4b-practice-for-learn-tajweed-the-easy-way
+        title: "Lesson – 4B | Practice for بِسْمِ اللهِ۔۔۔ | Learn Tajweed – the Easy Way"
+        youtube_id: "VlD-Ac_GDnU"
+      - slug: lesson-5a-makhraj-of-learn-tajweed-the-easy-way
+        title: "Lesson – 5A | Makhraj of ذ | Learn Tajweed – the Easy Way"
+        youtube_id: "csobve2tZrQ"
+  - slug: part-2
+    title: "Lessons 11–20"
+    lessons:
+      - slug: lesson-5b-practice-for-learn-tajweed-the-easy-way
+        title: "Lesson – 5B | Practice for اَلْحَمْدُ لِلهِ رَبِّ۔۔۔ | Learn Tajweed – the Easy Way"
+        youtube_id: "2MUyYmND2D8"
+      - slug: lesson-6a-makhraj-of-learn-tajweed-the-easy-way
+        title: "Lesson – 6A | Makhraj of ظ | Learn Tajweed – the Easy Way"
+        youtube_id: "HnnKF86vQnA"
+      - slug: lesson-6b-practice-for-learn-tajweed-the-easy-way
+        title: "Lesson – 6B | Practice for اَلرَّحْمٰنِ۔۔۔الدِّيْنِ | Learn Tajweed – the Easy Way"
+        youtube_id: "PvkV_usIflU"
+      - slug: lesson-7a-makhraj-of-learn-tajweed-the-easy-way
+        title: "Lesson – 7A | Makhraj of ت، د، ط | Learn Tajweed – the Easy Way"
+        youtube_id: "S8qgrWaYAWg"
+      - slug: lesson-7b-practice-for-learn-tajweed-the-easy-way
+        title: "Lesson – 7B | Practice for اِيَّاكَ نَعْبُدُ۔۔۔ | Learn Tajweed – the Easy Way"
+        youtube_id: "Q2IZ36GuU38"
+      - slug: lesson-8a-makhraj-of-learn-tajweed-the-easy-way
+        title: "Lesson – 8A | Makhraj of ز، س، ص | Learn Tajweed – the Easy Way"
+        youtube_id: "DCXnbZL6xPc"
+      - slug: lesson-8b-practice-for-learn-tajweed-the-easy-way
+        title: "Lesson – 8B | Practice for اِهْدِنَا الصِّرَاط۔۔۔ | Learn Tajweed – the Easy Way"
+        youtube_id: "hFsQKksPdR4"
+      - slug: lesson-9a-makhraj-of-learn-tajweed-the-easy-way
+        title: "Lesson – 9A | Makhraj of ل، ن، ر | Learn Tajweed – the Easy Way"
+        youtube_id: "E_bs4BzJAzk"
+      - slug: lesson-9b-practice-for-learn-tajweed-the-easy-way
+        title: "Lesson – 9B | Practice for صِرَاطَ۔۔۔عَلَيْهِمْ | Learn Tajweed – the Easy Way"
+        youtube_id: "Wu86iLXHmrc"
+      - slug: lesson-10a-makhraj-of-learn-tajweed-the-easy-way
+        title: "Lesson – 10A | Makhraj of ج، ش، ي | Learn Tajweed – the Easy Way"
+        youtube_id: "Y_sPMZ5CGhE"
+  - slug: part-3
+    title: "Lessons 21–30"
+    lessons:
+      - slug: lesson-10b-practice-for-learn-tajweed-the-easy-way
+        title: "Lesson – 10B | Practice for غَيْرِ الْمَغْضُوْبِ۔۔۔ | Learn Tajweed – the Easy Way"
+        youtube_id: "sMh-paDU6c4"
+      - slug: lesson-11a-makhraj-of-learn-tajweed-the-easy-way
+        title: "Lesson – 11A | Makhraj of ض | Learn Tajweed – the Easy Way"
+        youtube_id: "UEVnpNaMs38"
+      - slug: lesson-11b-practice-for-al-kaafiroon-1-2-learn-tajweed-the-e
+        title: "Lesson – 11B | Practice for Al-Kaafiroon 1-2 | Learn Tajweed – the Easy Way"
+        youtube_id: "K6-bMVQZ6yw"
+      - slug: lesson-12a-makhraj-of-learn-tajweed-the-easy-way
+        title: "Lesson – 12A | Makhraj of ك، ق | Learn Tajweed – the Easy Way"
+        youtube_id: "HPrLzN6PlqQ"
+      - slug: lesson-12b-practice-for-al-kafiron-3-4-learn-tajweed-the-eas
+        title: "Lesson – 12B | Practice for Al-Kafiron, 3-4 | Learn Tajweed – the Easy Way"
+        youtube_id: "kBgM9Pn4yJ0"
+      - slug: lesson-13a-makhraj-of-learn-tajweed-the-easy-way
+        title: "Lesson – 13A | Makhraj of ء، ه | Learn Tajweed – the Easy Way"
+        youtube_id: "OKR2leLpfTM"
+      - slug: lesson-13b-practice-for-al-kafiron-5-6-learn-tajweed-the-eas
+        title: "Lesson – 13B | Practice for Al-Kafiron, 5-6 | Learn Tajweed – the Easy Way"
+        youtube_id: "k0JFUSjj_Sg"
+      - slug: lesson-14a-makhraj-of-learn-tajweed-the-easy-way
+        title: "Lesson – 14A | Makhraj of ع | Learn Tajweed – the Easy Way"
+        youtube_id: "-Hb7V6rvXdk"
+      - slug: lesson-14b-practice-for-al-ikhlas-1-2-learn-tajweed-the-easy
+        title: "Lesson – 14B | Practice for Al-Ikhlas: 1-2 | Learn Tajweed – the Easy Way"
+        youtube_id: "CkwPGWg78OU"
+      - slug: lesson-15a-makhraj-of-learn-tajweed-the-easy-way
+        title: "Lesson – 15A | Makhraj of ح | Learn Tajweed – the Easy Way"
+        youtube_id: "J73zookBs-c"
+  - slug: part-4
+    title: "Lessons 31–31"
+    lessons:
+      - slug: lesson-15b-practice-for-al-ikhlas-3-4-learn-tajweed-the-easy
+        title: "Lesson – 15B | Practice for Al-Ikhlas: 3-4 | Learn Tajweed – the Easy Way"
+        youtube_id: "PpG0iRr9E2E"

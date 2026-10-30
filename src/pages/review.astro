@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import Thumb from '../components/Thumb.astro';
+import { getDraftCourses, flattenLessons, subjectLabel, levelLabel, courseUrl, languageName } from '../lib/courses';
+import { getTrack } from '../lib/taxonomy';
+const drafts = await getDraftCourses();
+---
+<Base title="Courses to review" description="Draft courses waiting for maintainer approval." noindex>
+  <h1>Courses to review</h1>
+  <p class="lede">Found by the discovery engine. Open one to watch it, then reply with the numbers to publish. Drafts never appear in production builds.</p>
+  {drafts.length ? (
+    <ol class="review">
+      {drafts.map(({ course, score }) => {
+        const d = course.data;
+        const lessons = flattenLessons(course);
+        return (
+          <li>
+            <a href={courseUrl(course.id)} class="review-card">
+              <Thumb id={lessons[0]?.youtube_id} label={subjectLabel(course)} />
+              <span class="review-body">
+                <strong lang={d.language} dir="auto">{d.title}</strong>
+                <span class="meta"><bdi>{d.source.name}</bdi> · {lessons.length} videos</span>
+                <span class="meta">{getTrack(d.track)!.short} · {subjectLabel(course)} · {levelLabel(d.level)}{d.language !== 'en' && ` · ${languageName(d.language)}`} · score {score}</span>
+              </span>
+            </a>
+          </li>
+        );
+      })}
+    </ol>
+  ) : <p>Nothing to review.</p>}
+</Base>
+<style>
+  .review { padding-inline-start: 1.75rem; display: grid; gap: .75rem; }
+  .review li::marker { font-weight: 700; color: var(--muted); }
+  .review-card { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: .75rem; align-items: center; text-decoration: none; color: var(--ink); padding: .5rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); }
+  .review-body { display: grid; gap: .15rem; min-width: 0; }
+</style>

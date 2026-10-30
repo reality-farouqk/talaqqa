@@ -1,0 +1,154 @@
+<title>Talaqqa Progress</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,650&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+  /* Layout: one reading column, a ledger of phases; blockers pinned at the top, changelog at the end. */
+  :root {
+    --paper: #f5f6f3; --card: #ffffff; --ink: #14211f; --muted: #56645f; --line: #d8dedb;
+    --teal: #0e5a57; --teal-soft: #dcebe8; --gold: #9a7314; --gold-soft: #f6ecd2;
+    --done: #2f6b3a; --done-soft: #e1efe2; --doing: #1d5a8c; --doing-soft: #dfeaf5;
+    --blocked: #a3362a; --blocked-soft: #f6e0dc; --todo: #6a716e; --todo-soft: #eceeed;
+    --display: "Literata", "Iowan Old Style", Georgia, serif;
+    --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --paper: #0f1716; --card: #152120; --ink: #e6eeec; --muted: #9db1ab; --line: #263431;
+    --teal: #63c6bc; --teal-soft: #173230; --gold: #e2b955; --gold-soft: #33290f;
+    --done: #7fcf8c; --done-soft: #1a3220; --doing: #8ebfeb; --doing-soft: #18293a;
+    --blocked: #f0907f; --blocked-soft: #3a1d18; --todo: #a7b0ad; --todo-soft: #222c2a; color-scheme: dark } }
+  :root[data-theme="dark"] {
+    --paper: #0f1716; --card: #152120; --ink: #e6eeec; --muted: #9db1ab; --line: #263431;
+    --teal: #63c6bc; --teal-soft: #173230; --gold: #e2b955; --gold-soft: #33290f;
+    --done: #7fcf8c; --done-soft: #1a3220; --doing: #8ebfeb; --doing-soft: #18293a;
+    --blocked: #f0907f; --blocked-soft: #3a1d18; --todo: #a7b0ad; --todo-soft: #222c2a; color-scheme: dark }
+  body { background: var(--paper); color: var(--ink); font: 15px/1.55 var(--body); }
+  .wrap { max-width: 52rem; margin: 0 auto; padding-block: 1.5rem 4rem;
+    padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+    display: grid; gap: 2rem; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 650; line-height: 1.2; text-wrap: balance; margin: 0; }
+  a { color: var(--teal); }
+  a:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+  .eyebrow { font: 600 .72rem var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+
+  header { display: grid; gap: 1rem; }
+  header h1 { font-size: clamp(1.9rem, 6vw, 2.6rem); }
+  .tag { color: var(--muted); margin: 0; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: .75rem; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: .8rem 1rem; display: grid; gap: .2rem; min-width: 0; }
+  .stat b { font: 650 1.25rem var(--display); overflow-wrap: anywhere; }
+  .meter { height: 6px; background: var(--todo-soft); border-radius: 3px; overflow: hidden; }
+  .meter i { display: block; height: 100%; background: var(--teal); }
+
+  .blockers { background: var(--blocked-soft); border: 1px solid color-mix(in srgb, var(--blocked) 35%, transparent); border-radius: 8px; padding: 1rem; display: grid; gap: .75rem; }
+  .blockers h2 { font-size: 1.15rem; color: var(--blocked); }
+  .blockers ol { margin: 0; padding-inline-start: 1.25rem; display: grid; gap: .7rem; }
+  .blockers li p { margin: .15rem 0 0; color: var(--ink); opacity: .85; }
+  .owner { font: 600 .7rem var(--body); letter-spacing: .06em; text-transform: uppercase; color: var(--blocked); margin-inline-start: .4rem; }
+
+  .phase { background: var(--card); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .phase > summary { list-style: none; cursor: pointer; padding: 1rem; display: grid; grid-template-columns: auto 1fr auto; gap: .25rem 1rem; align-items: baseline; }
+  .phase > summary::-webkit-details-marker { display: none; }
+  .phase-no { font: 500 1.6rem var(--mono); color: var(--teal); grid-row: span 2; }
+  .phase h2 { font-size: 1.25rem; }
+  .phase .goal { grid-column: 2 / 4; color: var(--muted); margin: 0; min-width: 0; }
+  .phase[open] > summary { border-bottom: 1px solid var(--line); }
+  .phase-body { padding: 1rem; display: grid; gap: 1.25rem; }
+  .phase-body h3 { font: 600 .78rem var(--body); letter-spacing: .07em; text-transform: uppercase; color: var(--muted); margin-bottom: .4rem; }
+  .phase-body p { margin: 0; }
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: .75rem; }
+
+  .pill { display: inline-block; font: 600 .72rem var(--body); letter-spacing: .03em; padding: .15rem .55rem; border-radius: 999px; white-space: nowrap; }
+  .s-Done, .s-Released { background: var(--done-soft); color: var(--done); }
+  .s-Doing, .s-In-progress { background: var(--doing-soft); color: var(--doing); }
+  .s-Blocked { background: var(--blocked-soft); color: var(--blocked); }
+  .s-To-do, .s-Planned { background: var(--todo-soft); color: var(--todo); }
+
+  .tasks { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .tasks li { display: grid; grid-template-columns: 6rem 1fr; gap: .2rem .75rem; padding: .6rem 0; border-bottom: 1px solid var(--line); }
+  .tasks li > div { min-width: 0; }
+  .tasks .t { font-weight: 500; }
+  .tasks .n { color: var(--muted); font-size: .88rem; }
+  .tally { color: var(--muted); font-size: .85rem; margin-bottom: .5rem; }
+  ul.dod { margin: 0; padding-inline-start: 1.2rem; display: grid; gap: .3rem; }
+
+  .cands { display: grid; gap: .6rem; }
+  .cand { border: 1px dashed var(--line); border-radius: 6px; padding: .6rem .8rem; background: var(--gold-soft); min-width: 0; }
+  .cand b { font-family: var(--display); font-weight: 650; }
+  .cand .m { color: var(--muted); font-size: .85rem; }
+
+  .log { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }
+  .log li { display: grid; grid-template-columns: 6.5rem 1fr; gap: .75rem; }
+  .log li > span:last-child { min-width: 0; }
+  .err { color: var(--blocked); }
+  @media (max-width: 30rem) {
+    .tasks li { grid-template-columns: 1fr; }
+    .log li { grid-template-columns: 1fr; gap: 0; }
+    .phase > summary { grid-template-columns: auto 1fr; }
+    .phase > summary .pill { grid-column: 2; justify-self: start; }
+    .phase .goal { grid-column: 1 / 3; }
+  }
+</style>
+
+<div class="wrap" id="app"><p class="eyebrow">Loading progress…</p></div>
+
+<script>
+(function () {
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const pill = (s) => `<span class="pill s-${esc(String(s).replace(/\s+/g, '-'))}">${esc(s)}</span>`;
+  const fmtDate = (d) => d ? new Date(d + 'T00:00:00').toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }) : '—';
+
+  function render(p) {
+    const all = p.phases.flatMap((ph) => ph.tasks);
+    const done = all.filter((t) => t.status === 'Done').length;
+    const pct = all.length ? Math.round((done / all.length) * 100) : 0;
+    const cur = p.phases.find((ph) => ph.id === p.currentPhase) || p.phases[0];
+    const live = p.liveUrl ? `<a href="${esc(p.liveUrl)}">${esc(p.liveUrl.replace(/^https?:\/\//, ''))}</a>` : '<span style="color:var(--muted)">Not released yet</span>';
+
+    const head = `<header>
+      <div><p class="eyebrow">Development progress · updated <span class="num">${esc(fmtDate(p.updated))}</span></p>
+      <h1>${esc(p.project)}</h1><p class="tag">${esc(p.tagline)} · <a href="${esc(p.repo)}">Source on GitHub</a></p></div>
+      <div class="stats">
+        <div class="stat"><span class="eyebrow">Current phase</span><b>${esc(cur.id)}. ${esc(cur.name)}</b>${pill(cur.status)}</div>
+        <div class="stat"><span class="eyebrow">Overall complete</span><b class="num">${pct}%</b><div class="meter" role="img" aria-label="${pct}% of all tasks done"><i style="width:${pct}%"></i></div><span class="tally">${done} of ${all.length} tasks done</span></div>
+        <div class="stat"><span class="eyebrow">Latest release</span><b style="font-size:1rem">${live}</b></div>
+      </div></header>`;
+
+    const blockers = p.blockers.length ? `<section class="blockers" aria-labelledby="bl"><h2 id="bl">Blocked / needs your decision (${p.blockers.length})</h2><ol>${
+      p.blockers.map((b) => `<li><strong>${esc(b.title)}</strong><span class="owner">${esc(b.owner)}</span><p>${esc(b.detail)}</p></li>`).join('')
+    }</ol></section>` : '';
+
+    const phases = p.phases.map((ph) => {
+      const d = ph.tasks.filter((t) => t.status === 'Done').length;
+      const cands = ph.candidates ? `<div><h3>Candidate courses (awaiting your approval; videos not yet verified)</h3><div class="cands">${
+        ph.candidates.map((c) => `<div class="cand"><b>${esc(c.course)}</b><div>${esc(c.teacher)}</div><div class="m">${esc(c.category)} · ${esc(c.level)} · <span lang="${esc(c.language)}">${esc(c.language)}</span> — ${esc(c.note)}</div></div>`).join('')
+      }</div></div>` : '';
+      return `<details class="phase" ${ph.id === p.currentPhase ? 'open' : ''}>
+        <summary><span class="phase-no">${ph.id}</span><h2>${esc(ph.name)}</h2>${pill(ph.status)}<p class="goal">${esc(ph.goal)}</p></summary>
+        <div class="phase-body">
+          <div class="facts">
+            <div><h3>Target outcome for users</h3><p>${esc(ph.outcome)}</p></div>
+            <div><h3>Release</h3><p>${esc(fmtDate(ph.releaseDate))}</p>${ph.releaseNotes ? `<p style="margin-top:.4rem">${esc(ph.releaseNotes)}</p>` : '<p style="color:var(--muted);margin-top:.2rem">Release notes written at release.</p>'}</div>
+          </div>
+          <div><h3>Tasks</h3><p class="tally num">${d} / ${ph.tasks.length} done</p><ul class="tasks">${
+            ph.tasks.map((t) => `<li><div>${pill(t.status)}</div><div><div class="t">${esc(t.title)}</div>${t.notes ? `<div class="n">${esc(t.notes)}</div>` : ''}</div></li>`).join('')
+          }</ul></div>
+          <div><h3>Definition of done</h3><ul class="dod">${ph.definitionOfDone.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>
+          ${cands}
+        </div></details>`;
+    }).join('');
+
+    const log = `<section><h2 style="font-size:1.25rem;margin-bottom:.75rem">Changelog</h2><ul class="log">${
+      p.changelog.slice().sort((a, b) => b.date.localeCompare(a.date)).map((c) => `<li><span class="num" style="color:var(--muted)">${esc(fmtDate(c.date))}</span><span>${esc(c.text)}</span></li>`).join('')
+    }</ul></section>`;
+
+    document.getElementById('app').innerHTML = head + blockers + `<section style="display:grid;gap:.75rem"><h2 class="eyebrow" style="font-family:var(--body)">Phases</h2>${phases}</section>` + log;
+  }
+
+  fetch('progress.json', { cache: 'no-store' })
+    .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(render)
+    .catch(() => { document.getElementById('app').innerHTML = '<p class="err">Could not load progress.json. Open this page from a web server next to docs/progress.json.</p>'; });
+})();
+</script>

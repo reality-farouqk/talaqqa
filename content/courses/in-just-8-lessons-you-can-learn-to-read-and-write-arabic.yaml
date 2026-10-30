@@ -1,0 +1,43 @@
+# Found by the discovery engine (score 77/100). Every video was confirmed public and embeddable on 2026-10-30.
+title: "In just 8 lessons, you can learn to read and write Arabic"
+summary: "Dr Imran Alawiye's Fast Track course: learn to read and write the Arabic script in eight lessons."
+track: arabic
+subject: reading
+level: foundations
+order: 1
+featured: true
+language: en
+status: published
+verified_at: 2026-10-30
+source:
+  name: "Imran Alawiye"
+  url: "https://www.youtube.com/channel/UCEmWUZanVYXEzZXYDHzD-iA"
+  playlist_url: "https://www.youtube.com/playlist?list=PLWl0zRDk50wKgPaMbjzzF4MhDWIi5YRRc"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: in-just-8-lessons-you-can-learn-to-read-arabic-with-dr-imran
+        title: "In just 8 lessons, you can learn to read Arabic with Dr Imran Alawiye, Episode 1"
+        youtube_id: "wYbFCKVBQiU"
+      - slug: in-just-8-lessons-you-can-learn-to-read-arabic-with-dr-imran-2
+        title: "In just 8 lessons, you can learn to read Arabic with Dr Imran Alawiye, Episode 2"
+        youtube_id: "yaeqo_Sg85U"
+      - slug: in-just-8-lessons-you-can-learn-to-read-arabic-with-dr-imran-3
+        title: "In just 8 lessons, you can learn to read Arabic with Dr Imran Alawiye, Episode 3"
+        youtube_id: "GZEr-RJ7nCE"
+      - slug: in-just-8-lessons-you-can-learn-to-read-arabic-with-dr-imran-4
+        title: "In just 8 lessons, you can learn to read Arabic with Dr Imran Alawiye, Episode 4"
+        youtube_id: "cTY4xXMykvM"
+      - slug: in-just-8-lessons-you-can-learn-to-read-arabic-with-dr-imran-5
+        title: "In just 8 lessons, you can learn to read Arabic with Dr Imran Alawiye, Episode 5"
+        youtube_id: "qdzZRwCsVME"
+      - slug: in-just-8-lessons-you-can-learn-to-read-arabic-with-dr-imran-6
+        title: "In just 8 lessons, you can learn to read Arabic with Dr Imran Alawiye, Episode 6"
+        youtube_id: "l0Zxx77qejY"
+      - slug: in-just-8-lessons-you-can-learn-to-read-arabic-with-dr-imran-7
+        title: "In just 8 lessons, you can learn to read Arabic with Dr Imran Alawiye, Episode 7"
+        youtube_id: "VtFwdJyJans"
+      - slug: in-just-8-lessons-you-can-learn-to-read-arabic-with-dr-imran-8
+        title: "In just 8 lessons, you can learn to read Arabic with Dr Imran Alawiye, Episode 8"
+        youtube_id: "FtEl4Vytnf8"

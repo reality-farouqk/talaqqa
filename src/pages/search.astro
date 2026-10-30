@@ -1,0 +1,9 @@
+---
+import Base from '../layouts/Base.astro';
+import Search from '../components/Search';
+---
+<Base title="Search" description="Search free Islamic and Arabic courses by topic, teacher, language and level." noindex>
+  <h1>Search</h1>
+  <Search client:load />
+  <noscript><p>Search needs JavaScript. You can still <a href="/courses/">browse all courses by subject</a>.</p></noscript>
+</Base>

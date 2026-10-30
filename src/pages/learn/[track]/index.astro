@@ -1,0 +1,46 @@
+---
+import Base from '../../../layouts/Base.astro';
+import CourseCard from '../../../components/CourseCard.astro';
+import { getPublishedCourses, courseUrl } from '../../../lib/courses';
+import { TRACKS, LEVELS, trackUrl, type Track } from '../../../lib/taxonomy';
+
+export function getStaticPaths() {
+  return TRACKS.map((track) => ({ params: { track: track.id }, props: { track } }));
+}
+const { track } = Astro.props as { track: Track };
+const courses = (await getPublishedCourses()).filter((c) => c.data.track === track.id);
+const real = courses.filter((c) => !c.data.demo);
+const jsonLd = real.length ? {
+  '@context': 'https://schema.org', '@type': 'ItemList', name: track.label,
+  itemListElement: real.map((c, i) => ({ '@type': 'ListItem', position: i + 1, url: new URL(courseUrl(c.id), Astro.site).href }))
+} : undefined;
+---
+<Base title={track.label} description={`${track.blurb} A free, structured path from foundations to advanced.`} jsonLd={jsonLd}
+  breadcrumbs={[{ name: 'Home', href: '/' }, { name: track.label, href: trackUrl(track.id) }]}>
+  <p class="track-ar" lang="ar" dir="rtl">{track.arabic}</p>
+  <h1 style="margin-block-start:.25rem">{track.label}</h1>
+  <p class="lede">{track.blurb}</p>
+  <nav aria-label="Levels"><ul class="chips">{LEVELS.map((l, i) => <li><a href={`#${l.id}`}>{i + 1}. {l.label}</a></li>)}</ul></nav>
+  <ol class="levels">
+    {LEVELS.map((l) => {
+      const inLevel = courses.filter((c) => c.data.level === l.id);
+      return (
+        <li id={l.id} class="level" aria-labelledby={`h-${l.id}`}>
+          <h2 id={`h-${l.id}`}>{l.label}</h2>
+          {inLevel.length
+            ? <ol class="grid">{inLevel.map((c) => <li><CourseCard course={c} /></li>)}</ol>
+            : <p class="empty">Coming soon.</p>}
+        </li>
+      );
+    })}
+  </ol>
+</Base>
+<style>
+  .track-ar { font-family: var(--arabic); color: var(--teal); font-size: 1.2rem; margin: 0; }
+  .levels { list-style: none; padding: 0; margin: 0; counter-reset: lvl; display: grid; gap: 2rem; }
+  .level { scroll-margin-top: 1rem; border-inline-start: 3px solid var(--teal-soft); padding-inline-start: 1rem; }
+  .level h2 { margin: 0; }
+  .level h2::before { counter-increment: lvl; content: "Level " counter(lvl) " · "; color: var(--muted); font-family: var(--sans); font-size: .9rem; font-weight: 500; }
+  .level h2 { margin-block-end: 1rem; }
+  .empty { color: var(--muted); padding: .75rem 1rem; border: 1px dashed var(--line); border-radius: var(--radius); }
+</style>

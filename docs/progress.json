@@ -1,0 +1,530 @@
+{
+  "project": "Talaqqa",
+  "tagline": "Free, curated Islamic video courses from public sources",
+  "repo": "https://github.com/reality-farouqk/talaqqa",
+  "currentPhase": 1,
+  "liveUrl": "https://claude-halaqa-setup-jmv4gh.talaqqa.pages.dev",
+  "updated": "2026-10-30",
+  "blockers": [
+    {
+      "title": "Merge PR #1 to go live",
+      "detail": "Demo content is gone and the production build passes, so merging PR #1 into main deploys the site to https://talaqqa.pages.dev automatically. Review the 15 courses on the preview first if you want.",
+      "owner": "You"
+    },
+    {
+      "title": "Review and merge PR #1 into main",
+      "detail": "https://github.com/reality-farouqk/talaqqa/pull/1 brings the starter (from master) and all Phase 1 work into main. After merging, you can delete the master branch. Also still missing: db/0001_init.sql (needed in Phase 2).",
+      "owner": "You"
+    },
+    {
+      "title": "Trusted channels for auto-publish",
+      "detail": "List the YouTube channel IDs (start with UC) you trust in content/discovery/config.json → trusted_channels. Until then, everything the engine finds goes to a review PR.",
+      "owner": "You"
+    },
+    {
+      "title": "Name: Talaqqa or Halaqa?",
+      "detail": "The code, manifest and LICENSE say 'Talaqqa'; the brief says 'Halaqa'. I'll keep Talaqqa unless you say otherwise.",
+      "owner": "You"
+    },
+    {
+      "title": "Accounts and services for launch",
+      "detail": "Cloudflare previews work (stable link: https://claude-halaqa-setup-jmv4gh.talaqqa.pages.dev). Still needed for launch: custom domain, removal-request email, OK for Cloudflare Web Analytics, error monitor choice. Hosting question: keep Cloudflare Pages for the site (recommended) and use Render only for the Phase 2 API?",
+      "owner": "You"
+    },
+    {
+      "title": "Dependency approval: @astrojs/check",
+      "detail": "Dev-only package so CI can type-check (astro check). No runtime cost. Everything else in Phase 1 uses what's already installed.",
+      "owner": "You"
+    },
+    {
+      "title": "Security: upgrade Astro (major version)",
+      "detail": "Tested in a scratch copy: Astro 5.18.2 → 7.3.8 (3 weeks old, fixes all listed advisories incl. a critical one in image optimisation we don't use) with @astrojs/react 7.0.1. Build, tests, types, CSP and page checks all pass and the service worker is still generated. Catch: @vite-pwa/astro doesn't officially support Astro 6+ yet (installs with --legacy-peer-deps and works). Options: (a) upgrade now, (b) wait for PWA plugin support. Practical risk today is low: static site, no user-written content.",
+      "owner": "You"
+    },
+    {
+      "title": "Content gaps",
+      "detail": "No real course yet for Aqeedah, Seerah or Tazkiyah, and none at Advanced level. The weekly engine run will propose more; tell me any teachers you want and I'll search for them first.",
+      "owner": "You"
+    }
+  ],
+  "phases": [
+    {
+      "id": 1,
+      "name": "Launch",
+      "goal": "Real users can learn Arabic and Islam step by step, from the basics to advanced, with no account.",
+      "status": "In progress",
+      "outcome": "Anyone can open the site on a phone, pick the Arabic or Islam path, start at Foundations, play lessons in order, and keep their progress on their device.",
+      "releaseDate": null,
+      "releaseNotes": null,
+      "definitionOfDone": [
+        "Live on the real domain over HTTPS, deployed by CI from main.",
+        "5 to 10 approved courses; every video ID verified as real, public and embeddable; every lesson credits the teacher and links to the original.",
+        "Phone smoke test passes on the deployed build: install the PWA (Android prompt, iOS hint), play a lesson, mark complete, save to watchlist, 'continue where you left off', go offline and browse visited pages, see the offline notice on a lesson.",
+        "Lighthouse (mobile) on home, course and lesson pages: Performance 90+, Accessibility 95+, SEO 100, Best Practices 95+.",
+        "Valid sitemap, canonical tags, Open Graph, Course and VideoObject JSON-LD (Rich Results Test passes).",
+        "An Arabic (RTL) test page renders without layout breaks.",
+        "About, Content guidelines, Report a problem / request removal, and Privacy pages are live and linked in the footer.",
+        "README, CONTRIBUTING, LICENSE, CODE_OF_CONDUCT, issue templates, CI (build + content validation + type check) green on main.",
+        "You have approved the content and said 'launch'."
+      ],
+      "tasks": [
+        {
+          "title": "Read repo, confirm build works",
+          "status": "Done",
+          "notes": "npm ci + build OK on master."
+        },
+        {
+          "title": "Progress tracker (docs/progress.json + artifact)",
+          "status": "Done",
+          "notes": "This page."
+        },
+        {
+          "title": "Branch setup: main as default, merge starter code",
+          "status": "Doing",
+          "notes": "Pushed. PR #1 into main is open as a draft; CI runs build, tests and content checks."
+        },
+        {
+          "title": "Curriculum structure: 2 paths × 4 levels × subjects",
+          "status": "Doing",
+          "notes": "Built: Learn Arabic and Learn Islam, Foundations → Advanced, subjects per path, order and prerequisites. Awaiting deploy."
+        },
+        {
+          "title": "Demo content to build against (no videos)",
+          "status": "Doing",
+          "notes": "6 demo outlines across both paths incl. one Arabic (RTL). Blocked from production builds."
+        },
+        {
+          "title": "Content discovery engine (rank YouTube series by quality signals)",
+          "status": "Doing",
+          "notes": "Ran for real: 197 playlists scored, 25 drafted for review. Added language + dialect filters after the first run let Urdu/Indonesian/Saudi-dialect series through."
+        },
+        {
+          "title": "Player: speed, autoplay, auto-next, resume, auto-complete",
+          "status": "Doing",
+          "notes": "Built on YouTube's official IFrame API; tested with a stand-in API. Quality + captions use YouTube's own ⚙ menu (sites can't set quality). Needs a real-phone test."
+        },
+        {
+          "title": "Video-first UI: thumbnails on cards and lesson lists, shorter copy",
+          "status": "Doing",
+          "notes": "Built. Thumbnails appear once real videos are in."
+        },
+        {
+          "title": "Security headers (CSP, HSTS, nosniff, referrer, permissions)",
+          "status": "Doing",
+          "notes": "public/_headers for Cloudflare Pages; pages tested under the CSP with no violations."
+        },
+        {
+          "title": "Data model: Postgres schema for Neon (creators, courses, sections, lessons, videos, playlists, watchlist, progress, notes)",
+          "status": "Doing",
+          "notes": "db/0001_init.sql, checked on Postgres 16. Wired in Phase 2."
+        },
+        {
+          "title": "Course page: what you'll learn, expandable outline, Start/Continue",
+          "status": "Doing",
+          "notes": "On the preview."
+        },
+        {
+          "title": "Home: Continue Watching row, category rows, featured, search bar, streak",
+          "status": "Doing",
+          "notes": "On the preview."
+        },
+        {
+          "title": "Playlists (create, rename, reorder, play) and Watch later lessons",
+          "status": "Doing",
+          "notes": "On the device; public sharing needs accounts (Phase 2)."
+        },
+        {
+          "title": "Search and filters (topic, teacher, language, level) + topic pages",
+          "status": "Doing",
+          "notes": "Static index, no new dependency. Lighthouse 100/100/100."
+        },
+        {
+          "title": "CI: build + content validation on every PR",
+          "status": "Doing",
+          "notes": "Runs on PR #1: tests, build + content validation, production content check."
+        },
+        {
+          "title": "Content checks: schema + duplicate slugs/videos + prerequisites + demo guard",
+          "status": "Doing",
+          "notes": "Built into the build. Real courses require source URL, verified_at and a video ID per lesson."
+        },
+        {
+          "title": "Shortlist and approve real courses",
+          "status": "Doing",
+          "notes": "Owner asked for automatic picks: 15 published by stated rules (own channel, path language, structured series, recognised teacher/academy); 10 rejected and blocked. Live on the preview; Done once in production."
+        },
+        {
+          "title": "Verify every video (exists, public, embeddable, correct teacher)",
+          "status": "Doing",
+          "notes": "All 15 courses re-checked through the YouTube API on 2026-10-30: every video public and embeddable."
+        },
+        {
+          "title": "Replace demo courses with approved ones",
+          "status": "Doing",
+          "notes": "Demo courses removed; production build passes."
+        },
+        {
+          "title": "UI: home with paths, path pages by level, catalog by subject, course + lesson pages",
+          "status": "Doing",
+          "notes": "Built and checked at phone width, light + dark. Awaiting deploy."
+        },
+        {
+          "title": "Arabic / RTL readiness",
+          "status": "Doing",
+          "notes": "Logical CSS, lang/dir on course content, Arabic font stack, mirrored arrows. Checked with an Arabic demo course."
+        },
+        {
+          "title": "Device storage: watchlist, mark complete, continue where you left off",
+          "status": "Doing",
+          "notes": "Built and tested in a headless browser. Awaiting deploy."
+        },
+        {
+          "title": "PWA: offline page, offline state for videos, Android install prompt, iOS hint",
+          "status": "Doing",
+          "notes": "Tested in Chromium: visited pages offline, offline page for unvisited ones (bug fixed), offline notice on videos, iPhone hint, Android install button. Real-phone test still needed."
+        },
+        {
+          "title": "SEO: sitemap, canonical, OG image, Course + VideoObject + Breadcrumb JSON-LD, robots",
+          "status": "Doing",
+          "notes": "Built. Demo pages noindex. VideoObject needs uploadDate (Phase 2 sync) for rich results."
+        },
+        {
+          "title": "Trust pages: About, Content guidelines, Report / removal, Privacy",
+          "status": "Doing",
+          "notes": "Built. Needs a contact email for private removal requests."
+        },
+        {
+          "title": "Open-source readiness: README, CONTRIBUTING, CODE_OF_CONDUCT, issue + PR templates",
+          "status": "Doing",
+          "notes": "Written. Goes live with the push."
+        },
+        {
+          "title": "Deploy to Cloudflare Pages with custom domain",
+          "status": "Doing",
+          "notes": "PR previews deploy automatically and pass a smoke test. Production waits for real courses + domain."
+        },
+        {
+          "title": "Analytics (cookieless) and error monitoring",
+          "status": "Blocked",
+          "notes": "Needs your choice of tools."
+        },
+        {
+          "title": "Phone smoke test, release notes, retrospective",
+          "status": "To do",
+          "notes": "Lighthouse (mobile, local build): Performance 99–100, Accessibility 100, Best Practices 100, SEO 100 on indexable pages (demo pages are noindex on purpose). Real-phone smoke test after deploy."
+        }
+      ],
+      "candidates": [
+        {
+          "course": "Madinah Arabic, Book 1",
+          "teacher": "Asif Meherali",
+          "category": "Arabic · grammar",
+          "level": "beginner",
+          "language": "en",
+          "note": "Lesson-by-lesson Arabic from zero. Candidate for Learn Arabic level 2."
+        },
+        {
+          "course": "Arabic reading from zero (Qaida)",
+          "teacher": "To find (engine or your pick)",
+          "category": "Arabic · reading",
+          "level": "foundations",
+          "language": "en",
+          "note": "First course of Learn Arabic."
+        },
+        {
+          "course": "Seerah: the Makkan period",
+          "teacher": "Yasir Qadhi (Memphis Islamic Center)",
+          "category": "Islam · seerah",
+          "level": "beginner",
+          "language": "en",
+          "note": "Opening episodes of his ~100-part series; split by period."
+        },
+        {
+          "course": "Angels in Your Presence",
+          "teacher": "Omar Suleiman (Yaqeen Institute)",
+          "category": "Islam · aqeedah",
+          "level": "foundations",
+          "language": "en",
+          "note": "Belief in the angels."
+        },
+        {
+          "course": "Jannah: Home at Last",
+          "teacher": "Omar Suleiman (Yaqeen Institute)",
+          "category": "Islam · aqeedah",
+          "level": "beginner",
+          "language": "en",
+          "note": "The Hereafter and Paradise."
+        },
+        {
+          "course": "40 Hadith on Social Justice",
+          "teacher": "Omar Suleiman (Yaqeen Institute)",
+          "category": "Islam · hadith",
+          "level": "beginner",
+          "language": "en",
+          "note": "One hadith per episode."
+        },
+        {
+          "course": "Fiqh of purification and prayer",
+          "teacher": "To choose (your preferred teacher)",
+          "category": "Islam · fiqh",
+          "level": "foundations",
+          "language": "en",
+          "note": "Needs a teacher whose approach you approve."
+        },
+        {
+          "course": "An Arabic-language course",
+          "teacher": "To choose",
+          "category": "Islam · aqeedah",
+          "level": "foundations",
+          "language": "ar",
+          "note": "Real RTL content. Optional for launch."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Data and accounts",
+      "goal": "Reliable catalog data and progress that follows the user across devices.",
+      "status": "Planned",
+      "outcome": "Sign in on two devices and see the same progress, watchlist and enrollments.",
+      "releaseDate": null,
+      "releaseNotes": null,
+      "definitionOfDone": [
+        "A user signs in on two devices and sees the same progress.",
+        "Weekly job flags dead or private videos and opens an issue.",
+        "Duration and upload date show on pages and in structured data."
+      ],
+      "tasks": [
+        {
+          "title": "Connect Neon and run db/0001_init.sql",
+          "status": "To do",
+          "notes": "Migration file still missing from repo."
+        },
+        {
+          "title": "Sync script: upsert YAML courses into Postgres",
+          "status": "To do",
+          "notes": ""
+        },
+        {
+          "title": "YouTube metadata fetch in batches of 50 IDs",
+          "status": "To do",
+          "notes": "Title, duration, thumbnail, availability."
+        },
+        {
+          "title": "Weekly job: flag dead or private videos",
+          "status": "To do",
+          "notes": "GitHub Actions schedule."
+        },
+        {
+          "title": "Duration + upload date on pages and JSON-LD",
+          "status": "To do",
+          "notes": ""
+        },
+        {
+          "title": "Hono API on Cloudflare Workers",
+          "status": "To do",
+          "notes": ""
+        },
+        {
+          "title": "Better Auth sign up / sign in, guest browsing kept",
+          "status": "To do",
+          "notes": ""
+        },
+        {
+          "title": "Sync progress, watchlist, enrollments with offline queue",
+          "status": "To do",
+          "notes": ""
+        },
+        {
+          "title": "Import on-device data into the new account",
+          "status": "To do",
+          "notes": ""
+        },
+        {
+          "title": "Continue watching + per-course progress",
+          "status": "To do",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Study tools",
+      "goal": "Help people find the right course and study it well.",
+      "status": "Planned",
+      "outcome": "Search and filter the catalog, take notes at timestamps, test understanding, follow a path, earn a certificate.",
+      "releaseDate": null,
+      "releaseNotes": null,
+      "definitionOfDone": [
+        "To be agreed before the phase starts."
+      ],
+      "tasks": [
+        {
+          "title": "Search with Pagefind",
+          "status": "To do",
+          "notes": ""
+        },
+        {
+          "title": "Filters: topic, level, language, duration",
+          "status": "To do",
+          "notes": ""
+        },
+        {
+          "title": "Timestamped notes",
+          "status": "To do",
+          "notes": ""
+        },
+        {
+          "title": "Module quizzes (JSON/YAML contributions)",
+          "status": "To do",
+          "notes": ""
+        },
+        {
+          "title": "Learning paths",
+          "status": "To do",
+          "notes": ""
+        },
+        {
+          "title": "Certificates of completion",
+          "status": "To do",
+          "notes": ""
+        },
+        {
+          "title": "Opt-in study reminders",
+          "status": "To do",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Community and depth",
+      "goal": "Deeper study and a moderated community around each course.",
+      "status": "Planned",
+      "outcome": "Transcripts, translations, full Arabic UI, reviews, Q&A, cohorts and seasonal collections.",
+      "releaseDate": null,
+      "releaseNotes": null,
+      "definitionOfDone": [
+        "To be agreed before the phase starts."
+      ],
+      "tasks": [
+        {
+          "title": "Transcripts and subtitles",
+          "status": "To do",
+          "notes": ""
+        },
+        {
+          "title": "Community translations",
+          "status": "To do",
+          "notes": ""
+        },
+        {
+          "title": "Full Arabic / RTL UI",
+          "status": "To do",
+          "notes": ""
+        },
+        {
+          "title": "Ratings and reviews",
+          "status": "To do",
+          "notes": ""
+        },
+        {
+          "title": "Per-lesson Q&A with moderation tools",
+          "status": "To do",
+          "notes": ""
+        },
+        {
+          "title": "Study cohorts",
+          "status": "To do",
+          "notes": ""
+        },
+        {
+          "title": "Seasonal collections (e.g. Ramadan)",
+          "status": "To do",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Creators",
+      "goal": "Teachers publish and manage their own courses.",
+      "status": "Planned",
+      "outcome": "Verified creators submit courses through a review queue and see how learners use them.",
+      "releaseDate": null,
+      "releaseNotes": null,
+      "definitionOfDone": [
+        "To be agreed before the phase starts."
+      ],
+      "tasks": [
+        {
+          "title": "Creator accounts",
+          "status": "To do",
+          "notes": ""
+        },
+        {
+          "title": "Course submission + review queue",
+          "status": "To do",
+          "notes": ""
+        },
+        {
+          "title": "Verified badges",
+          "status": "To do",
+          "notes": ""
+        },
+        {
+          "title": "Creator dashboards",
+          "status": "To do",
+          "notes": ""
+        },
+        {
+          "title": "Optional creator-hosted video via a video host",
+          "status": "To do",
+          "notes": "Never raw storage."
+        }
+      ]
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-10-30",
+      "text": "Published 15 real courses (owner asked for automatic selection), removed all demo content, production build passes. Engine now orders newest-first playlists, drops duplicates and compilations. Fixed a phone overflow on search."
+    },
+    {
+      "date": "2026-10-30",
+      "text": "Review page for the 25 drafts on the preview (/review/), playable on a phone. Fixed the offline page not showing for unvisited pages. Tested install prompts (iPhone hint, Android button)."
+    },
+    {
+      "date": "2026-10-30",
+      "text": "v1 LMS brief: Postgres schema, Udemy-style course page, topic pages, Netflix-style home with Continue Watching and category rows, playlists, Watch later, notes, search with filters, playlist-aware auto-next, README with creator roadmap. Previews now deploy to Cloudflare on every push."
+    },
+    {
+      "date": "2026-10-29",
+      "text": "YouTube key working. Discovery engine ran on real data: 25 drafts for review. Fixed language/dialect leaks. Deploy workflow now creates the Pages project itself."
+    },
+    {
+      "date": "2026-10-29",
+      "text": "Lighthouse mobile: 99–100 across the board. Deploy workflow added (Cloudflare Pages previews per PR, production from main). Tested the Astro 7.3.8 security upgrade in a scratch copy; awaiting your decision. Sent a phone walkthrough video."
+    },
+    {
+      "date": "2026-10-29",
+      "text": "GitHub access fixed: branch pushed and PR #1 opened into main. CI now also runs the engine tests."
+    },
+    {
+      "date": "2026-10-29",
+      "text": "Added the discovery engine (your choices: trusted teachers auto-publish, free word-list sentiment, built now). Video-first redesign. Player with speed, autoplay, auto-next, resume. Security headers. Applied your engineering guidelines: no new dependencies, timeouts, env-only secrets, tests."
+    },
+    {
+      "date": "2026-10-29",
+      "text": "Phase 1 started on demo content. Built the curriculum (Learn Arabic and Learn Islam, Foundations → Advanced, subjects), path pages, catalog by subject, on-device progress, PWA offline + install prompt, SEO, trust pages, CI and templates. Proposed the content discovery engine. All still local: GitHub push blocked."
+    },
+    {
+      "date": "2026-10-29",
+      "text": "Tracker committed locally on claude/halaqa-setup-jmv4gh (based on master). Push blocked: GitHub access returns 403."
+    },
+    {
+      "date": "2026-10-29",
+      "text": "Read the repo (starter is on the master branch). Build passes. Created this tracker and proposed the Phase 1 backlog and course candidates."
+    }
+  ]
+}

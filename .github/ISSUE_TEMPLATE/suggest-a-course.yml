@@ -1,0 +1,45 @@
+name: Suggest a course
+description: Propose a lecture series to add as a course.
+title: "Course suggestion: "
+labels: ["course-suggestion"]
+body:
+  - type: input
+    id: teacher
+    attributes:
+      label: Teacher or channel
+      placeholder: Name of the teacher and the YouTube channel
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Playlist or channel link
+      placeholder: https://www.youtube.com/playlist?list=...
+    validations:
+      required: true
+  - type: dropdown
+    id: track
+    attributes:
+      label: Learning path
+      options: [Learn Arabic, Learn Islam]
+    validations:
+      required: true
+  - type: dropdown
+    id: level
+    attributes:
+      label: Level
+      options: [Foundations, Beginner, Intermediate, Advanced, Not sure]
+    validations:
+      required: true
+  - type: input
+    id: language
+    attributes:
+      label: Language of the lectures
+      placeholder: English, Arabic, ...
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is this worth including?
+      description: Who is it for, and how is it structured?
+    validations:
+      required: true
