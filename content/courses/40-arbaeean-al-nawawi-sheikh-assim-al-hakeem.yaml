@@ -1,12 +1,14 @@
-# Found by the discovery engine (score 75/100). Every video was confirmed public and embeddable on 2026-10-29.
-title: "40 Arbaeean Al Nawawi {Sheikh Assim Al Hakeem}"
-summary: "A 41-lesson series by Sheikh Assim Al Hakeem."
+# Found by the discovery engine (score 75/100). Every video was confirmed public and embeddable on 2026-10-30.
+title: "Imam an-Nawawi's 40 Hadith"
+summary: "Sheikh Assim Al Hakeem explains Imam an-Nawawi's Forty Hadith, one hadith at a time."
 track: islam
 subject: hadith
 level: beginner
+order: 1
+featured: true
 language: en
-status: draft
-verified_at: 2026-10-29
+status: published
+verified_at: 2026-10-30
 source:
   name: "Sheikh Assim Al Hakeem"
   url: "https://www.youtube.com/channel/UCF5lHNabkArxQkUoHC5E7dQ"
@@ -144,9 +146,3 @@ modules:
       - slug: the-life-of-the-imam-al-nawawi
         title: "The life of the imam Al-Nawawi"
         youtube_id: "Ez7Guw9l28g"
-  - slug: part-5
-    title: "Lessons 41–41"
-    lessons:
-      - slug: lesson-41
-        title: "أنواع الوحي - المحاضرة 6 - السيرة النبوية - الشيخ عاصم الحكيم"
-        youtube_id: "dWjUVU1TcN8"

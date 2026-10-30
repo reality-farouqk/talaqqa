@@ -1,12 +1,13 @@
-# Found by the discovery engine (score 81/100). Every video was confirmed public and embeddable on 2026-10-29.
+# Found by the discovery engine (score 81/100). Every video was confirmed public and embeddable on 2026-10-30.
 title: "Read & Understand Quranic Arabic from 0% - 50% (Stage ONE)"
-summary: "After following this course, you will have learned around 50% of the Qur'an in shaa Allah. Use this book to help yourself organize ..."
+summary: "Learn the Quran's most frequent words with a frequency list, stage one of the course."
 track: arabic
-subject: reading
-level: foundations
+subject: quranic-arabic
+level: beginner
+order: 1
 language: en
-status: draft
-verified_at: 2026-10-29
+status: published
+verified_at: 2026-10-30
 source:
   name: "Arabic 101"
   url: "https://www.youtube.com/channel/UCEcQu_9GNDiGU_vqjVZXj3Q"

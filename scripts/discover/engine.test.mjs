@@ -71,3 +71,19 @@ test('language and dialect filter', async () => {
   assert.equal(contentMismatch({ title: 'Noorani Qaida', track: 'arabic', lang: 'en', videoLangs: ['ml', 'ml'] }), 'audio language is not en');
   assert.equal(decodeEntities('Sarf &amp; Nahw &quot;1&quot;'), 'Sarf & Nahw "1"');
 });
+
+test('lesson order: keep, reverse or sort; drop duplicates', async () => {
+  const { orderLessons, lessonNumber, contentMismatch } = await import('./engine.mjs');
+  const t = (titles) => titles.map((title, i) => ({ id: `id${i}`, title }));
+  const titles = (vs) => vs.map((v) => v.title);
+  assert.equal(lessonNumber('85% of Quranic Words - Episode 21'), 21);
+  assert.equal(lessonNumber('001 Tafseer Surat An-naba Part 1'), 1);
+  assert.equal(lessonNumber('Master 85% of Qur\'anic Vocabulary'), null);
+  assert.deepEqual(titles(orderLessons(t(['Fiqh Course || Ep-3', 'Fiqh Course || Ep-2', 'Fiqh Course || Ep-1']))), ['Fiqh Course || Ep-1', 'Fiqh Course || Ep-2', 'Fiqh Course || Ep-3']);
+  assert.deepEqual(titles(orderLessons(t(['001 An-naba Part 1', '002 An-naba Part 2', '003 An-naba part 3', '004 An-naziat Part 1']))), ['001 An-naba Part 1', '002 An-naba Part 2', '003 An-naba part 3', '004 An-naziat Part 1']);
+  assert.deepEqual(titles(orderLessons(t(['Intro', 'Lesson 3', 'Lesson 1', 'Lesson 2']))), ['Intro', 'Lesson 1', 'Lesson 2', 'Lesson 3']);
+  assert.equal(orderLessons([{ id: 'a', title: 'x' }, { id: 'a', title: 'x' }]).length, 1);
+  assert.deepEqual(titles(orderLessons(t(['Episode 1', 'Episode 2', 'Compilation Episode 1-2', 'Episode 3', 'Full Course (Lesson 1-3)']))), ['Episode 1', 'Episode 2', 'Episode 3']);
+  assert.deepEqual(titles(orderLessons(t(['Hadith 39-40', 'Hadith 41 - 42', 'Hadith 43']))), ['Hadith 39-40', 'Hadith 41 - 42', 'Hadith 43']);
+  assert.equal(contentMismatch({ title: 'Noorani Qaida All Lessons', description: 'Learn with Tajweed in Urdu Hindi', track: 'arabic', lang: 'en', videoLangs: [] }), 'not in English');
+});

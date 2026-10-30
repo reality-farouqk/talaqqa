@@ -2,7 +2,7 @@
 // Trusted channels above the bar are published; the rest become drafts for review.
 // Usage: YOUTUBE_API_KEY=... node scripts/discover/run.mjs   (writes a summary to discovery-summary.json)
 import { readFileSync, readdirSync, writeFileSync, existsSync } from 'node:fs';
-import { classify, scorePlaylist, decide, toCourseYaml, slugify, contentMismatch, decodeEntities } from './engine.mjs';
+import { classify, scorePlaylist, decide, toCourseYaml, slugify, contentMismatch, decodeEntities, orderLessons } from './engine.mjs';
 
 const KEY = process.env.YOUTUBE_API_KEY;
 if (!KEY) { console.error('YOUTUBE_API_KEY is not set'); process.exit(1); }
@@ -105,8 +105,8 @@ for (const p of playlists) {
   try {
     const labels = classify(p.title, p.prior);
     const videos = await videoDetails(await playlistVideoIds(p.id));
-    const usable = videos.filter((v) => v.embeddable && v.public);
-    const mismatch = labels && contentMismatch({ title: p.title, track: labels.track, lang: p.lang ?? 'en', videoLangs: usable.map((v) => v.lang) });
+    const usable = orderLessons(videos.filter((v) => v.embeddable && v.public));
+    const mismatch = labels && contentMismatch({ title: p.title, description: p.description, track: labels.track, lang: p.lang ?? 'en', videoLangs: usable.map((v) => v.lang) });
     // Skip the comment calls (quota) when the playlist is already ruled out.
     const comments = usable.length >= 3 && !mismatch ? await sampleComments(usable) : [];
     const scored = mismatch ? { score: 0, reason: mismatch } : scorePlaylist(videos, comments);

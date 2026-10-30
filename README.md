@@ -13,7 +13,7 @@ A free, open-source video library for learning Arabic and Islam, from the founda
 - **PWA**: installable, offline shell, visited pages work offline, video never cached.
 - **SEO**: static pages, sitemap, canonical URLs, Open Graph, Course / VideoObject / Breadcrumb / CollectionPage JSON-LD.
 
-Progress, playlists, notes and the watchlist are stored on the device for now. Accounts and sync arrive in Phase 2 (`db/0001_init.sql` already has the tables).
+The catalog starts with 15 courses chosen from the discovery engine's first run. Progress, playlists, notes and the watchlist are stored on the device for now. Accounts and sync arrive in Phase 2 (`db/0001_init.sql` already has the tables).
 
 ## Run it
 

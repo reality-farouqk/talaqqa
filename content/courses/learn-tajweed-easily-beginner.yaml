@@ -1,12 +1,13 @@
-# Found by the discovery engine (score 77/100). Every video was confirmed public and embeddable on 2026-10-29.
+# Found by the discovery engine (score 77/100). Every video was confirmed public and embeddable on 2026-10-30.
 title: "Learn Tajweed Easily (Beginner)"
-summary: "A 23-lesson series by Arabic 101."
+summary: "Beginner tajweed: the symbols in the Mushaf and the core rules of recitation."
 track: islam
 subject: quran
 level: beginner
+order: 1
 language: en
-status: draft
-verified_at: 2026-10-29
+status: published
+verified_at: 2026-10-30
 source:
   name: "Arabic 101"
   url: "https://www.youtube.com/channel/UCEcQu_9GNDiGU_vqjVZXj3Q"

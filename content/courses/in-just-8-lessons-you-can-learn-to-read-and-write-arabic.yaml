@@ -1,12 +1,14 @@
-# Found by the discovery engine (score 77/100). Every video was confirmed public and embeddable on 2026-10-29.
+# Found by the discovery engine (score 77/100). Every video was confirmed public and embeddable on 2026-10-30.
 title: "In just 8 lessons, you can learn to read and write Arabic"
-summary: "Fast Track to reading and writing Arabic adopts an innovative approach to teaching the skills of reading and writing Arabic to ..."
+summary: "Dr Imran Alawiye's Fast Track course: learn to read and write the Arabic script in eight lessons."
 track: arabic
 subject: reading
 level: foundations
+order: 1
+featured: true
 language: en
-status: draft
-verified_at: 2026-10-29
+status: published
+verified_at: 2026-10-30
 source:
   name: "Imran Alawiye"
   url: "https://www.youtube.com/channel/UCEmWUZanVYXEzZXYDHzD-iA"

@@ -1,12 +1,14 @@
-# Found by the discovery engine (score 75/100). Every video was confirmed public and embeddable on 2026-10-29.
+# Found by the discovery engine (score 75/100). Every video was confirmed public and embeddable on 2026-10-30.
 title: "Tafseer Juz Amma | Ustadh Muhammad Tim Humble"
-summary: "A 10-lesson series by AMAU."
+summary: "Ustadh Muhammad Tim Humble explains Al-Fatihah and the surahs of Juz 'Amma."
 track: islam
 subject: quran
 level: intermediate
+order: 2
+featured: true
 language: en
-status: draft
-verified_at: 2026-10-29
+status: published
+verified_at: 2026-10-30
 source:
   name: "AMAU"
   url: "https://www.youtube.com/channel/UCmTqZ28TaM7V_g7uJVuBAMw"

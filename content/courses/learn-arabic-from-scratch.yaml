@@ -1,12 +1,13 @@
-# Found by the discovery engine (score 75/100). Every video was confirmed public and embeddable on 2026-10-29.
+# Found by the discovery engine (score 75/100). Every video was confirmed public and embeddable on 2026-10-30.
 title: "Learn Arabic from scratch"
-summary: "Learn arabic with asmae : the Ultimate crash course for absolute beginners Welcome to our dedicated playlist for absolute ..."
+summary: "A speaking course for absolute beginners: everyday Arabic words and phrases, lesson by lesson."
 track: arabic
-subject: reading
-level: foundations
+subject: vocabulary
+level: beginner
+order: 1
 language: en
-status: draft
-verified_at: 2026-10-29
+status: published
+verified_at: 2026-10-30
 source:
   name: "Learn Arabic with Asmae"
   url: "https://www.youtube.com/channel/UCqGbQn5wValHtuhkHdslzkQ"

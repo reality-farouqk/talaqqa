@@ -29,9 +29,9 @@ const OTHER_LANGUAGE = /\b(urdu|hindi|bangla|bengali|indonesia|bahasa|ustadz|mel
 const DIALECT = /\b(saudi|egyptian|levantine|moroccan|gulf|khaleeji|darija|dialect|ammiyy?a)\b/i;
 
 /** Why a playlist is outside what we teach, or null if it fits. `lang` is the language we searched in. */
-export function contentMismatch({ title, track, lang, videoLangs }) {
+export function contentMismatch({ title, description = '', track, lang, videoLangs }) {
   if (track === 'arabic' && DIALECT.test(title)) return 'spoken dialect, not Fusha';
-  if (lang === 'en' && OTHER_LANGUAGE.test(title)) return 'not in English';
+  if (lang === 'en' && OTHER_LANGUAGE.test(`${title} ${description}`)) return 'not in English';
   // English lectures are often tagged Arabic because they quote the Quran, so allow 'ar' for English searches.
   const allowed = lang === 'en' ? ['en', 'ar'] : [lang];
   const tagged = videoLangs.filter(Boolean);
@@ -87,6 +87,33 @@ export function scorePlaylist(videos, comments) {
 export function decide({ score, classified, trusted }, config) {
   if (!classified || score < config.review.min_score) return 'skip';
   return trusted && score >= config.auto_publish.min_score ? 'publish' : 'review';
+}
+
+// Lesson number from a title: a leading number, then "Ep 3" / "Lesson 3" / "Part 3" / "#3", then any number. Never "85%".
+const NUMBER_PATTERNS = [/^\W*(\d{1,3})(?![\d%])/, /\b(?:ep(?:isode)?|lesson|part|day|session)\s*[-.:#]?\s*(\d{1,3})(?![\d%])/i, /#\s*(\d{1,3})(?![\d%])/, /(\d{1,3})(?![\d%])/];
+export function lessonNumber(title) {
+  for (const re of NUMBER_PATTERNS) { const m = re.exec(title); if (m) return Number(m[1]); }
+  return null;
+}
+
+/**
+ * Playlists are often newest-first. Keep the order if numbered titles mostly go up,
+ * reverse it if they mostly go down, otherwise sort by number. Duplicate videos are dropped.
+ */
+const COMPILATION = /\b(compilation|full course|all (episodes|lessons))\b|\b(episodes?|lessons?)\s*\d{1,3}\s*[-–]\s*\d{1,3}\b/i;
+
+export function orderLessons(videos) {
+  const unique = videos.filter((v, i) => videos.findIndex((w) => w.id === v.id) === i);
+  // Compilations repeat lessons that are already in the playlist.
+  const singles = unique.filter((v) => !COMPILATION.test(v.title));
+  if (singles.length >= 3 && singles.length < unique.length) return orderLessons(singles);
+  const nums = unique.map((v) => lessonNumber(v.title)).filter((n) => n !== null);
+  if (nums.length < unique.length * 0.6 || nums.length < 2) return unique;
+  const pairs = nums.slice(1).map((n, i) => Math.sign(n - nums[i]));
+  if (pairs.filter((d) => d >= 0).length / pairs.length >= 0.8) return unique;
+  if (pairs.filter((d) => d <= 0).length / pairs.length >= 0.8) return [...unique].reverse();
+  // Unnumbered items (usually an introduction) go first; sort is stable for equal numbers.
+  return [...unique].sort((a, b) => (lessonNumber(a.title) ?? -1) - (lessonNumber(b.title) ?? -1));
 }
 
 export function slugify(text) {
