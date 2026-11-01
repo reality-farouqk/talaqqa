@@ -1,0 +1,8 @@
+---
+import Base from '../layouts/Base.astro';
+import Playlists from '../components/Playlists';
+---
+<Base title="Playlists" description="Your playlists, stored on this device." noindex section="/watchlist/">
+  <h1>Playlists</h1>
+  <Playlists client:load />
+</Base>

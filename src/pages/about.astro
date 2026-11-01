@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config';
+---
+<Base title="About" description={`What ${SITE.name} is, how courses are chosen, and how it is run.`} breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'About', href: '/about/' }]}>
+  <div class="prose">
+    <h1>About {SITE.name}</h1>
+    <p class="lede">{SITE.name} turns publicly available Islamic lectures into structured courses you can follow lesson by lesson, for free.</p>
+    <h2>How it works</h2>
+    <p>Many teachers have published excellent lecture series on YouTube, but they can be hard to follow in order. We organise those series into courses with modules and lessons, and give you a simple way to save courses, mark lessons complete and pick up where you left off.</p>
+    <p>Every video plays from YouTube through its official embedded player. We never download, copy or edit videos, and every lesson names its teacher and links to the original.</p>
+    <h2>Who chooses the courses</h2>
+    <p>Courses come only from teachers and channels approved by the project maintainers. We follow published <a href="/guidelines/">content guidelines</a> and check every video before it is added. Anyone can suggest a course, but nothing is published without review.</p>
+    <h2>Free and open source</h2>
+    <p>{SITE.name} has no ads, no paywall and no account requirement. The code and course files are open source on <a href={SITE.repo} rel="noopener">GitHub</a>, so anyone can see how it works or help improve it.</p>
+    <h2>Teachers and creators</h2>
+    <p>If you are a teacher whose lectures appear here and you want a change or a removal, use the <a href="/report/">report a problem / request removal</a> page. We act on removal requests from creators quickly and without argument.</p>
+  </div>
+</Base>

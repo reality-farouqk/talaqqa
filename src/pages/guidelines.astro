@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE, issueUrl } from '../config';
+---
+<Base title="Content guidelines" description={`How ${SITE.name} selects, credits and checks courses.`} breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Content guidelines', href: '/guidelines/' }]}>
+  <div class="prose">
+    <h1>Content guidelines</h1>
+    <p class="lede">These rules decide what can be added to {SITE.name}. They apply to maintainers and contributors alike.</p>
+    <h2>What we include</h2>
+    <ul>
+      <li>Structured lecture series from recognised teachers and channels approved by the maintainers.</li>
+      <li>Courses with a clear order that a learner can follow, from beginner to advanced.</li>
+      <li>Accurate, neutral titles and summaries that describe what each lesson covers.</li>
+    </ul>
+    <h2>How we use videos</h2>
+    <ul>
+      <li>Videos play only through YouTube's official embedded player (youtube-nocookie.com).</li>
+      <li>We never download, re-host, cut, strip ads from, or play audio-only versions of any video.</li>
+      <li>Every video is checked by a maintainer to be real, public, embeddable and correctly attributed before it is published.</li>
+      <li>We do not include videos whose creators have disabled embedding or asked not to be included.</li>
+    </ul>
+    <h2>Credit</h2>
+    <ul>
+      <li>Every course names its teacher or channel and links to the original source.</li>
+      <li>Every lesson shows the teacher's name and a link to watch it on YouTube.</li>
+    </ul>
+    <h2>Suggesting a course</h2>
+    <p>Open a <a href={issueUrl('suggest-a-course.yml')} rel="noopener">course suggestion</a> on GitHub with the teacher, the playlist link and why it is worth including. Maintainers review every suggestion against these guidelines.</p>
+    <h2>Problems and removals</h2>
+    <p>If a video is broken, wrongly credited or should not be here, please <a href="/report/">tell us</a>. Creator removal requests are honoured.</p>
+  </div>
+</Base>

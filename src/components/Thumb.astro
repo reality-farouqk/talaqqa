@@ -1,0 +1,8 @@
+---
+// Video thumbnail from YouTube's image server, or a plain tile when there is no video yet.
+interface Props { id?: string; label?: string; }
+const { id, label = '' } = Astro.props;
+---
+{id
+  ? <img class="thumb" src={`https://i.ytimg.com/vi/${id}/mqdefault.jpg`} alt="" width="320" height="180" loading="lazy" decoding="async" />
+  : <span class="thumb thumb-empty" aria-hidden="true">{label}</span>}

@@ -1,0 +1,8 @@
+---
+import Base from '../layouts/Base.astro';
+import MyCourses from '../components/MyCourses';
+---
+<Base title="My courses" description="Your courses, saved lessons and playlists, stored on this device." noindex>
+  <h1>My courses</h1>
+  <MyCourses client:load />
+</Base>

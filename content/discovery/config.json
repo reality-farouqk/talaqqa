@@ -1,0 +1,273 @@
+{
+  "$comment": "Settings for the discovery engine (scripts/discover). Channels are YouTube channel IDs (start with UC). Only the maintainer adds trusted channels.",
+  "auto_publish": {
+    "min_score": 70,
+    "max_new_courses_per_run": 3
+  },
+  "review": {
+    "min_score": 45,
+    "max_candidates": 25
+  },
+  "trusted_channels": [],
+  "blocked_channels": [],
+  "seeds": [
+    {
+      "track": "arabic",
+      "subject": "reading",
+      "level": "foundations",
+      "lang": "en",
+      "q": "learn to read arabic from zero full course"
+    },
+    {
+      "track": "arabic",
+      "subject": "reading",
+      "level": "foundations",
+      "lang": "en",
+      "q": "noorani qaida lessons"
+    },
+    {
+      "track": "arabic",
+      "subject": "grammar",
+      "level": "beginner",
+      "lang": "en",
+      "q": "madinah arabic book 1 lessons"
+    },
+    {
+      "track": "arabic",
+      "subject": "grammar",
+      "level": "intermediate",
+      "lang": "en",
+      "q": "ajurrumiyyah explanation english"
+    },
+    {
+      "track": "arabic",
+      "subject": "grammar",
+      "level": "intermediate",
+      "lang": "ar",
+      "q": "شرح متن الآجرومية"
+    },
+    {
+      "track": "arabic",
+      "subject": "morphology",
+      "level": "intermediate",
+      "lang": "en",
+      "q": "arabic sarf morphology course"
+    },
+    {
+      "track": "arabic",
+      "subject": "vocabulary",
+      "level": "beginner",
+      "lang": "en",
+      "q": "arabic vocabulary conversation course beginners"
+    },
+    {
+      "track": "arabic",
+      "subject": "quranic-arabic",
+      "level": "intermediate",
+      "lang": "en",
+      "q": "quranic arabic course word by word"
+    },
+    {
+      "track": "arabic",
+      "subject": "balagha",
+      "level": "advanced",
+      "lang": "en",
+      "q": "balagha arabic rhetoric course"
+    },
+    {
+      "track": "islam",
+      "subject": "aqeedah",
+      "level": "foundations",
+      "lang": "en",
+      "q": "aqeedah for beginners course"
+    },
+    {
+      "track": "islam",
+      "subject": "aqeedah",
+      "level": "beginner",
+      "lang": "en",
+      "q": "three fundamental principles explanation"
+    },
+    {
+      "track": "islam",
+      "subject": "aqeedah",
+      "level": "beginner",
+      "lang": "ar",
+      "q": "شرح الأصول الثلاثة"
+    },
+    {
+      "track": "islam",
+      "subject": "fiqh",
+      "level": "foundations",
+      "lang": "en",
+      "q": "fiqh of purification and prayer course"
+    },
+    {
+      "track": "islam",
+      "subject": "fiqh",
+      "level": "intermediate",
+      "lang": "en",
+      "q": "fiqh of fasting zakat course"
+    },
+    {
+      "track": "islam",
+      "subject": "quran",
+      "level": "foundations",
+      "lang": "en",
+      "q": "tajweed course for beginners"
+    },
+    {
+      "track": "islam",
+      "subject": "quran",
+      "level": "intermediate",
+      "lang": "en",
+      "q": "tafsir juz amma series"
+    },
+    {
+      "track": "islam",
+      "subject": "hadith",
+      "level": "beginner",
+      "lang": "en",
+      "q": "40 hadith nawawi explanation series"
+    },
+    {
+      "track": "islam",
+      "subject": "seerah",
+      "level": "beginner",
+      "lang": "en",
+      "q": "seerah of the prophet series"
+    },
+    {
+      "track": "islam",
+      "subject": "tazkiyah",
+      "level": "beginner",
+      "lang": "en",
+      "q": "purification of the heart series"
+    },
+    {
+      "track": "islam",
+      "subject": "usul",
+      "level": "advanced",
+      "lang": "en",
+      "q": "usul al fiqh course"
+    },
+    {
+      "track": "islam",
+      "subject": "seerah",
+      "level": "beginner",
+      "lang": "en",
+      "q": "seerah of the prophet muhammad lecture series"
+    },
+    {
+      "track": "islam",
+      "subject": "seerah",
+      "level": "beginner",
+      "lang": "en",
+      "q": "life of the prophet muhammad series english"
+    },
+    {
+      "track": "islam",
+      "subject": "seerah",
+      "level": "intermediate",
+      "lang": "en",
+      "q": "yasir qadhi seerah series"
+    },
+    {
+      "track": "islam",
+      "subject": "seerah",
+      "level": "beginner",
+      "lang": "ar",
+      "q": "السيرة النبوية سلسلة دروس"
+    },
+    {
+      "track": "islam",
+      "subject": "aqeedah",
+      "level": "foundations",
+      "lang": "en",
+      "q": "pillars of iman lecture series"
+    },
+    {
+      "track": "islam",
+      "subject": "aqeedah",
+      "level": "foundations",
+      "lang": "en",
+      "q": "tawheed explained series english"
+    },
+    {
+      "track": "islam",
+      "subject": "aqeedah",
+      "level": "intermediate",
+      "lang": "en",
+      "q": "kitab at tawheed explanation english"
+    },
+    {
+      "track": "islam",
+      "subject": "aqeedah",
+      "level": "advanced",
+      "lang": "en",
+      "q": "aqeedah al wasitiyyah explanation english"
+    },
+    {
+      "track": "islam",
+      "subject": "tazkiyah",
+      "level": "beginner",
+      "lang": "en",
+      "q": "diseases of the heart lecture series"
+    },
+    {
+      "track": "islam",
+      "subject": "tazkiyah",
+      "level": "beginner",
+      "lang": "en",
+      "q": "tazkiyah purification of the soul series"
+    },
+    {
+      "track": "islam",
+      "subject": "hadith",
+      "level": "advanced",
+      "lang": "en",
+      "q": "mustalah al hadith course english"
+    },
+    {
+      "track": "islam",
+      "subject": "quran",
+      "level": "advanced",
+      "lang": "en",
+      "q": "uloom al quran course english"
+    },
+    {
+      "track": "arabic",
+      "subject": "grammar",
+      "level": "advanced",
+      "lang": "ar",
+      "q": "شرح قطر الندى"
+    }
+  ],
+  "blocked_playlists": [
+    "PL0OPMgYY8xTgxxUj7Khvojy0uzSl9U0TQ",
+    "PL10sHa8EneHwXW9P9UqeNaa5BTtUETj-Y",
+    "PL54tsaxKeZjP3ZXGyP3HpgPY3b4SqNrI_",
+    "PL58uXU4ojWjXaIIVC9jGCR-YSAC9a-9LE",
+    "PL83A449092F8A3CBF",
+    "PL9uyRQTMUugnhcyoYrftuShw_4_ZzW03l",
+    "PL9yoH6BhAHRS2PWU8AQKiucY41i1vdbh6",
+    "PLATApN30c4aLXpHzO1GkEb9H0CeXaJFy9",
+    "PLDGAumsXqBwEJ9hRtE48xWfnPm7Gz5g-y",
+    "PLEKFPVjrJzHtDC6WjhKs8Yl0gTiw5fpti",
+    "PLJNcPTDlc1FJ9R-HMc5mIS2oyPVVxTExO",
+    "PLN76dtMDwzxtblbi76EVKdgcYtmejf1X_",
+    "PLQ0pybkP23tor6Ff5M8BoP1ORKjf2f7n2",
+    "PLUbGxXvC8t7HCQfvPDimKTdv6RqTEnbjZ",
+    "PLWIRFDFSWZPt2M_3AIMo23V52uy8lk59f",
+    "PLa4RNTLB5f-tnV8iZmeAmsWhRjv0lCpLb",
+    "PLgonzZSfpsdDHSJZ0G6FSYrx90tGPcb_Y",
+    "PLjWLf8ygS3IdTCWVaW-aXbEhSL0ainedo",
+    "PLlZazEh_c4nScNCvGBn8OEf6ujk-sDUpg",
+    "PLndNqDBdnPz9IUUvzTgAEXsRtnHmxIKcQ",
+    "PLr9kLvP0U6BNyANM8KuxOK6UMbtoc4l9D",
+    "PLsr1ERsR7y1kOVVtHDU1RHm65IXk1mbWW",
+    "PLwNeHLk_z0aR_X5f_j1htLg5SqIHcC8B1",
+    "PLxQ71pF_GAtHJYlz6c2VsmbKdDiBVuEVQ",
+    "PLzA5zQ9IRypzGcjYsgaFfp6s33dTvABqT"
+  ]
+}

@@ -1,0 +1,28 @@
+name: Request removal (creators)
+description: You created content shown on the site and want it removed or changed.
+title: "Removal request: "
+labels: ["removal-request"]
+body:
+  - type: markdown
+    attributes:
+      value: We honour removal requests from creators. This issue is public; if you'd rather write privately, use the email on the site's Report page once it is listed.
+  - type: input
+    id: channel
+    attributes:
+      label: Your channel or name
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: Which courses or videos?
+      description: Links to pages on the site or to the YouTube videos.
+    validations:
+      required: true
+  - type: dropdown
+    id: action
+    attributes:
+      label: What would you like?
+      options: [Remove everything of mine, Remove specific videos, Change the credit or description]
+    validations:
+      required: true

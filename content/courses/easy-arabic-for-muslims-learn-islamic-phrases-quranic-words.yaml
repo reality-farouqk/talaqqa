@@ -1,0 +1,69 @@
+# Found by the discovery engine (score 70/100). Every video was confirmed public and embeddable on 2026-11-01.
+title: "Easy Arabic for Muslims"
+summary: "Everyday Islamic phrases and Quranic words, one phrase per lesson, with meaning and message."
+track: arabic
+subject: vocabulary
+level: beginner
+order: 2
+language: en
+status: published
+verified_at: 2026-11-01
+source:
+  name: "The Language of Qur'an"
+  url: "https://www.youtube.com/channel/UCvn_5yg2WQGcr9HCglqV92g"
+  playlist_url: "https://www.youtube.com/playlist?list=PLC2ruw0EUW8CyjfYY5V2qvag_nz8T3CHN"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: auzubillah-billah-meaning-and-message-easy-everyday-arabic-e
+        title: "Auzubillah billah meaning and message | Easy everyday Arabic {EA01-L01} اَعُوْذُ بِاللهِ"
+        youtube_id: "nd3TOgz5xQk"
+      - slug: bismillahir-rahmanir-rahim-learn-the-meaning-and-message-ea0
+        title: "Bismillahir Rahmanir Rahim - learn the meaning and message {EA01-L02) بسم الله الرحمان الرحيم"
+        youtube_id: "UODBsz_qXXQ"
+      - slug: la-ilaha-illallah-learn-meaning-and-message-amazingly-simple
+        title: "La ilaha illallah  - Learn meaning and message Amazingly simple way [EA-L03]"
+        youtube_id: "R2wT88qBIic"
+      - slug: subhanallah-alhamdulillah-allahu-akbar-learn-meaning-message
+        title: "Subhanallah Alhamdulillah Allahu akbar - Learn meaning & message, Easy Everyday Arabic {EA-L04}"
+        youtube_id: "eG8DlCrsFQg"
+      - slug: la-hawla-wala-quwwata-illa-billah-amazingly-easy-to-learn-ar
+        title: "La hawla wala quwwata illa billah Amazingly Easy to learn Arabic {EA-L05}"
+        youtube_id: "bR8bOchl4bc"
+      - slug: assalamualaikum-waalaikumsalam-meaning-and-message-ea-l06
+        title: "Assalamualaikum waalaikumsalam  meaning and message {EA-L06}"
+        youtube_id: "jVDJf0fupPk"
+      - slug: kalima-la-ilaha-illallah-muhammadur-rasulullah-kalima-ea01-l
+        title: "Kalima: La ilaha illallah Muhammadur Rasulullah - Kalima {EA01-L07}"
+        youtube_id: "PjB8TrHXDlw"
+      - slug: kalima-shahadat-word-by-word-meaning-and-message-ea01-l08
+        title: "Kalima shahadat: word by word meaning and message {EA01-L08}"
+        youtube_id: "yXxQMI0VBQE"
+      - slug: meaning-of-sallallahu-alaihi-wasallam-ea01-l09
+        title: "Meaning of sallallahu alaihi wasallam {EA01-L09}"
+        youtube_id: "U8LuWDFF8z4"
+      - slug: meaning-of-radiya-allahu-anhu-ea01-l10-may-allah-be-pleased
+        title: "Meaning of radiya Allahu Anhu {EA01-L10} May Allah be pleased with him"
+        youtube_id: "Fq6uEBEHYVU"
+  - slug: part-2
+    title: "Lessons 11–16"
+    lessons:
+      - slug: inna-lillahi-wa-inna-ilayhi-raji-un-learn-meaning-and-messag
+        title: "inna lillahi wa inna ilayhi raji'un, Learn meaning and message {EA01-L11}"
+        youtube_id: "kgQ4-hytEp8"
+      - slug: jazaak-allaahu-khayran-meaning-message-ea01-l12
+        title: "Jazaak Allaahu Khayran, meaning & message {EA01-L12}"
+        youtube_id: "NW03oE2_Whg"
+      - slug: insha-allah-meaning-message-of-ea01-l13a
+        title: "Insha Allah إِنْ شَاءَ اللهُ  meaning & message of {EA01-L13a}"
+        youtube_id: "WXALTNyiH5Y"
+      - slug: masha-allah-meaning-message-ea01-l13b
+        title: "Masha Allah  مَا شَاءَ الله meaning & message {EA01-L13b}"
+        youtube_id: "T_EIrkiGAlc"
+      - slug: astagfirullah-meaning-message-forgiveness-of-allah-ea01-l13c
+        title: "Astagfirullah أَسْتَغْفِرُ الله meaning & message, forgiveness of Allah {EA01-L13c}"
+        youtube_id: "9pCuMhnYcxA"
+      - slug: rabbi-zidni-ilmaa-o-my-lord-increase-me-in-knowledge-ea0-l14
+        title: "Rabbi Zidni Ilmaa | O my Lord, increase me in Knowledge {EA0-L14} most Powerful Dua"
+        youtube_id: "b4uXY68d0T8"

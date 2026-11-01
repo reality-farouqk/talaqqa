@@ -1,0 +1,39 @@
+# Found by the discovery engine (score 71/100). Every video was confirmed public and embeddable on 2026-11-01.
+title: "Pillars of Eeman (Faith)"
+summary: "Dr Bilal Philips explains the pillars of faith, from belief in Allah and the angels to belief in divine decree."
+track: islam
+subject: aqeedah
+level: foundations
+order: 1
+language: en
+status: published
+verified_at: 2026-11-01
+source:
+  name: "Bilal Philips"
+  url: "https://www.youtube.com/channel/UCk1-R7Mmzd7iikof378dcuA"
+  playlist_url: "https://www.youtube.com/playlist?list=PL0siBcQqUbDetvjkMhgSmv3Bu-jU1aZ8z"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: belief-in-allah
+        title: "Belief in Allah"
+        youtube_id: "mYA_PpKQmnQ"
+      - slug: belief-in-angels-part-1
+        title: "Belief in Angels - Part 1"
+        youtube_id: "hQ7VoP5RTQ4"
+      - slug: belief-in-angels-part-2
+        title: "Belief in Angels - Part 2"
+        youtube_id: "q9IL3YhTPE4"
+      - slug: belief-in-the-books-dr-bilal-philips-hd
+        title: "Belief in the Books - Dr. Bilal Philips [HD]"
+        youtube_id: "JJ1YUPyWqdg"
+      - slug: belief-in-the-messengers-dr-bilal-philips-hd
+        title: "Belief in the Messengers - Dr. Bilal Philips [HD]"
+        youtube_id: "MRq4_DCvqTI"
+      - slug: belief-in-the-last-day-dr-bilal-philips-hd
+        title: "Belief in the Last Day - Dr. Bilal Philips [HD]"
+        youtube_id: "uKRwz3jdWt4"
+      - slug: belief-in-the-divine-destiny-al-qadr
+        title: "Belief in the Divine Destiny (al-Qadr)"
+        youtube_id: "P9dZVY4xW1c"

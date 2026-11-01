@@ -1,0 +1,27 @@
+name: Report a broken video or a problem
+description: A video won't play, is wrongly credited, or something else is wrong.
+labels: ["broken-video"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Course and lesson
+      description: Paste the page link or the course/lesson name.
+    validations:
+      required: true
+  - type: dropdown
+    id: problem
+    attributes:
+      label: What's wrong?
+      options:
+        - The video won't play or is unavailable
+        - Wrong video for this lesson
+        - Wrong teacher or credit
+        - Mistake in the title or summary
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details

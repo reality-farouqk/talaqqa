@@ -1,0 +1,90 @@
+# Found by the discovery engine (score 74/100). Every video was confirmed public and embeddable on 2026-11-01.
+title: "Branches of Faith"
+summary: "Dr Yasir Qadhi explains the hadith of the branches of faith and how to increase iman, in 22 parts."
+track: islam
+subject: aqeedah
+level: beginner
+order: 1
+language: en
+status: published
+verified_at: 2026-11-01
+source:
+  name: "Memphis Islamic Center (MIC)"
+  url: "https://www.youtube.com/channel/UC-V496kekrz5-ihBeHvWCGA"
+  playlist_url: "https://www.youtube.com/playlist?list=PLYOnU0Yk8VGaZxtE6nCkhTduYzy1H-Knt"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: branches-of-faith-pt-1-blessings-and-benefits-of-this-hadith
+        title: "Branches of Faith - Pt.1 - Blessings and Benefits of this hadith - Sh. Dr. Yasir Qadhi"
+        youtube_id: "Gi1W8p3SeNE"
+      - slug: branches-of-faith-pt-2-metaphor-of-eman-as-a-tree-sh-dr-yasi
+        title: "Branches of Faith - Pt.2 - Metaphor of Eman as a Tree - Sh. Dr. Yasir Qadhi"
+        youtube_id: "obPbGcF4avg"
+      - slug: branches-of-faith-pt-3-tasting-the-sweetness-of-eman-sh-dr-y
+        title: "Branches of Faith - Pt.3 - Tasting the Sweetness of Eman - Sh. Dr. Yasir Qadhi"
+        youtube_id: "RnyfKD1X2ks"
+      - slug: branches-of-faith-pt-4-ayat-an-noor-light-upon-light-sh-dr-y
+        title: "Branches of Faith - Pt.4 - Ayat An-Noor (Light upon Light) - Sh. Dr. Yasir Qadhi"
+        youtube_id: "xy_Eq6LvLrg"
+      - slug: branches-of-faith-pt-5-what-is-eman-sh-dr-yasir-qadhi
+        title: "Branches of Faith - Pt.5 - What is Eman? - Sh. Dr. Yasir Qadhi"
+        youtube_id: "WtUPMaGbONY"
+      - slug: branches-of-faith-pt-6-eman-vs-islam-what-is-the-difference
+        title: "Branches of Faith - Pt.6 -  Eman vs. Islam, what is the difference? - Sh. Dr. Yasir Qadhi"
+        youtube_id: "IGFpCDhVgr0"
+      - slug: branches-of-faith-pt-7-levels-of-eman-fasik-muslim-muhsin-sh
+        title: "Branches of Faith - Pt.7 -  Levels of Eman (Fasik, Muslim, Muhsin)  - Sh. Dr. Yasir Qadhi"
+        youtube_id: "ffrWQEQukNE"
+      - slug: branches-of-faith-pt-8-blessings-and-meaning-of-the-kalimah
+        title: "Branches of Faith - Pt.8 - Blessings and Meaning of the Kalimah - Sh. Dr. Yasir Qadhi"
+        youtube_id: "2UZQQexFGYo"
+      - slug: branches-of-faith-pt-9-names-attributes-of-allah-sh-dr-yasir
+        title: "Branches of Faith - Pt.9 - Names & Attributes of Allah  - Sh. Dr. Yasir Qadhi"
+        youtube_id: "p_dtyUrfqMU"
+      - slug: branches-of-faith-pt-10-belief-in-angels-sh-dr-yasir-qadhi
+        title: "Branches of Faith - Pt.10 - Belief in Angels  - Sh. Dr. Yasir Qadhi"
+        youtube_id: "_tr3Y2US2mw"
+  - slug: part-2
+    title: "Lessons 11–20"
+    lessons:
+      - slug: branches-of-faith-pt-11-belief-in-prophets-holy-books-sh-dr
+        title: "Branches of Faith - Pt.11 - Belief in Prophets & Holy Books  - Sh. Dr. Yasir Qadhi"
+        youtube_id: "JmVjuCkqicU"
+      - slug: branches-of-faith-pt-12-belief-in-the-day-of-judgement-sh-dr
+        title: "Branches of Faith - Pt.12 - Belief in the Day of Judgement - Sh. Dr. Yasir Qadhi"
+        youtube_id: "kaclumGUT5E"
+      - slug: branches-of-faith-pt-13-belief-in-qadr-predestination-sh-dr
+        title: "Branches of Faith - Pt.13 - Belief in Qadr (Predestination) - Sh. Dr. Yasir Qadhi"
+        youtube_id: "d2SwI_pNIII"
+      - slug: branches-of-faith-pt-14-loving-allah-sh-dr-yasir-qadhi
+        title: "Branches of Faith - Pt.14 - Loving Allah  - Sh. Dr. Yasir Qadhi"
+        youtube_id: "l50iVM47doU"
+      - slug: branches-of-faith-pt-15-hayah-modesty-sh-dr-yasir-qadhi
+        title: "Branches of Faith - Pt.15 - Hayah (Modesty)  - Sh. Dr. Yasir Qadhi"
+        youtube_id: "hc_4ihZ1Y4E"
+      - slug: branches-of-faith-pt-16-wudu-ablution-sh-dr-yasir-qadhi
+        title: "Branches of Faith - Pt.16 - Wudu (Ablution)  - Sh. Dr. Yasir Qadhi"
+        youtube_id: "YD-Mtx7qx0k"
+      - slug: branches-of-faith-pt-17-fear-hope-in-allah-sh-dr-yasir-qadhi
+        title: "Branches of Faith - Pt.17 - Fear & Hope in Allah - Sh. Dr. Yasir Qadhi"
+        youtube_id: "P6uAZu0Opts"
+      - slug: branches-of-faith-pt-18-first-10-branches-sh-dr-yasir-qadhi
+        title: "Branches of Faith - Pt.18 - First 10 branches - Sh. Dr. Yasir Qadhi"
+        youtube_id: "8FIVYl3qBpo"
+      - slug: branches-of-faith-pt-19-second-10-branches-sh-dr-yasir-qadhi
+        title: "Branches of Faith - Pt.19 - Second 10 branches - Sh. Dr. Yasir Qadhi"
+        youtube_id: "Z197NM4X9JM"
+      - slug: branches-of-faith-pt-20-various-fruits-benefits-of-eman-sh-d
+        title: "Branches of Faith - Pt.20 - Various Fruits (benefits) of Eman - Sh. Dr. Yasir Qadhi"
+        youtube_id: "SqBrV72DQvs"
+  - slug: part-3
+    title: "Lessons 21–22"
+    lessons:
+      - slug: branches-of-faith-pt-21-various-fruits-benefits-of-eman-part
+        title: "Branches of Faith - Pt.21 - Various Fruits (benefits) of Eman Part 2 - Sh. Dr. Yasir Qadhi"
+        youtube_id: "uXxdKc3cXv4"
+      - slug: branches-of-faith-pt-22-how-to-increase-eman-sh-dr-yasir-qad
+        title: "Branches of Faith - Pt.22 - How to Increase Eman  - Sh. Dr. Yasir Qadhi"
+        youtube_id: "yDfS0nshg-g"

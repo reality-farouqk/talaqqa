@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE, issueUrl } from '../config';
+---
+<Base title="Report a problem or request removal" description="Report a broken video or wrong information, or ask for your content to be removed." breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Report a problem', href: '/report/' }]}>
+  <div class="prose">
+    <h1>Report a problem or request removal</h1>
+    <p class="lede">Tell us about broken videos, wrong credits or mistakes, or ask for your content to be removed.</p>
+
+    <h2>I'm the creator and want my content removed</h2>
+    <p>We remove content at the creator's request. Tell us which channel or videos are yours and we will take them down, usually within a few days.</p>
+    <p class="actions"><a class="btn" href={issueUrl('removal-request.yml', 'Removal request')} rel="noopener">Request removal on GitHub</a></p>
+    {SITE.contactEmail
+      ? <p>Prefer email? Write to <strong>{SITE.contactEmail}</strong>. Requests sent by email stay private.</p>
+      : <p class="meta">A private email address for removal requests will be added before launch.</p>}
+
+    <h2>A video is broken or something is wrong</h2>
+    <p>Use the <strong>Report a problem</strong> link under any lesson, or open a report here. Include the course and lesson if you can.</p>
+    <p class="actions"><a class="btn ghost" href={issueUrl('broken-video.yml')} rel="noopener">Report a broken video</a></p>
+
+    <h2>Suggest a course</h2>
+    <p>Know a lecture series that should be here? <a href={issueUrl('suggest-a-course.yml')} rel="noopener">Suggest it</a> and we'll review it against our <a href="/guidelines/">content guidelines</a>.</p>
+    <p class="meta">Reports on GitHub are public and need a free GitHub account.</p>
+  </div>
+</Base>

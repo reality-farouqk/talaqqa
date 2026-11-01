@@ -1,0 +1,36 @@
+# Found by the discovery engine (score 81/100). Every video was confirmed public and embeddable on 2026-11-01.
+title: "Tazkiyatun Nafs"
+summary: "Ustadh Muhammad Tim Humble on the soul, its kinds and how it changes."
+track: islam
+subject: tazkiyah
+level: intermediate
+order: 1
+language: en
+status: published
+verified_at: 2026-11-01
+source:
+  name: "AMAU"
+  url: "https://www.youtube.com/channel/UCmTqZ28TaM7V_g7uJVuBAMw"
+  playlist_url: "https://www.youtube.com/playlist?list=PL2dRQaGGWZOA547mVTq3Ibh6JTuIU51KD"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: brand-new-series-1-what-kind-of-soul-do-you-have-ustadh-muha
+        title: "Brand New Series || #1 What Kind of Soul Do You Have? || Ustadh Muhammad Tim Humble #AMAU #Tazkiyah"
+        youtube_id: "pGXFqVkKi0U"
+      - slug: 2-what-is-your-soul-ustadh-muhammad-tim-humble-amau
+        title: "#2: What is Your Soul? || Ustadh Muhammad Tim Humble || AMAU"
+        youtube_id: "k3xjw21vraY"
+      - slug: 3-when-will-you-change-ustadh-muhammad-tim-humble-amau
+        title: "#3: When Will You Change? || Ustadh Muhammad Tim Humble || AMAU"
+        youtube_id: "HJnqKlpU3AM"
+      - slug: 4-do-you-know-allah-ustadh-muhammad-tim-humble-amau
+        title: "#4: Do You Know Allah? || Ustadh Muhammad Tim Humble || AMAU"
+        youtube_id: "RXhhSnU0Sos"
+      - slug: 5-are-you-struggling-to-repent-from-sins-ustadh-muhammad-tim
+        title: "#5 Are You Struggling To Repent From Sins? || Ustadh Muhammad Tim Humble #amau"
+        youtube_id: "EqGqCnMUqXs"
+      - slug: 6-are-you-a-zaahid-ustadh-muhammad-tim-humble-amau
+        title: "#6 Are You A Zaahid? || Ustadh Muhammad Tim Humble #amau"
+        youtube_id: "V9i_PadJ52g"
