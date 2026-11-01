@@ -4,7 +4,7 @@
   "repo": "https://github.com/reality-farouqk/talaqqa",
   "currentPhase": 1,
   "liveUrl": "https://claude-halaqa-setup-jmv4gh.talaqqa.pages.dev",
-  "updated": "2026-10-30",
+  "updated": "2026-11-01",
   "blockers": [
     {
       "title": "Merge PR #1 to go live",
@@ -43,7 +43,7 @@
     },
     {
       "title": "Content gaps",
-      "detail": "No real course yet for Aqeedah, Seerah or Tazkiyah, and none at Advanced level. The weekly engine run will propose more; tell me any teachers you want and I'll search for them first.",
+      "detail": "Seerah, Aqeedah and Tazkiyah now have courses. Still thin: Advanced level (only Arabic grammar candidates in Arabic so far) and Aqeedah at intermediate. The weekly engine run keeps searching; name any teachers you want prioritised.",
       "owner": "You"
     }
   ],
@@ -151,7 +151,7 @@
         {
           "title": "Shortlist and approve real courses",
           "status": "Doing",
-          "notes": "Owner asked for automatic picks: 15 published by stated rules (own channel, path language, structured series, recognised teacher/academy); 10 rejected and blocked. Live on the preview; Done once in production."
+          "notes": "25 courses published by stated rules (own channel or institution, path language, structured series, recognised teacher), 25 rejected and blocked. Live on the preview; Done once in production."
         },
         {
           "title": "Verify every video (exists, public, embeddable, correct teacher)",
@@ -486,6 +486,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-01",
+      "text": "Filled content gaps: 10 more courses (Seerah, Aqeedah, Tazkiyah, intermediate Fiqh and Quran). 25 courses total; every home category row now has real content."
+    },
     {
       "date": "2026-10-30",
       "text": "Published 15 real courses (owner asked for automatic selection), removed all demo content, production build passes. Engine now orders newest-first playlists, drops duplicates and compilations. Fixed a phone overflow on search."
