@@ -334,12 +334,12 @@
         {
           "title": "API with Hono",
           "status": "Doing",
-          "notes": "Built: /api/health, /api/me/items (paginated, Zod-validated, last-write-wins), /api/me/export, DELETE /api/me. Same-origin + JSON checks on writes; user always from the session. Off until DATABASE_URL is set."
+          "notes": "Built: /api/health, /api/me/items (paginated, Zod-validated, last-write-wins), /api/me/export, DELETE /api/me. Same-origin + JSON checks on writes; user always from the session. Off until DATABASE_URL is set. Merged and deployed to production (PR #7); answers \"accounts_unavailable\" until the database is connected."
         },
         {
           "title": "Accounts with Better Auth",
           "status": "Doing",
-          "notes": "Email + password, Google when keys are set, httpOnly secure cookies, DB-backed rate limits (5 sign-in tries/min). Tested with Better Auth in memory; goes live with Neon."
+          "notes": "Email + password, Google when keys are set, httpOnly secure cookies, DB-backed rate limits (5 sign-in tries/min). Tested with Better Auth in memory; goes live with Neon. Deployed; switched off until Neon is connected."
         },
         {
           "title": "Sync progress, watchlist, playlists, notes",
@@ -507,6 +507,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-01",
+      "text": "Accounts and sync API merged and deployed to production (switched off until the database is connected). The deploy's player check now ignores YouTube's own errors behind its bot check for CI runners; real visitors are unaffected."
+    },
     {
       "date": "2026-11-01",
       "text": "Accounts and sync API built and tested without waiting for the database: Hono + Better Auth on Cloudflare, last-write-wins sync of learner data, export and deletion, CSRF and ownership checks, rate limits; migrations with a runner; CI runs API tests on real Postgres. Turns on when DATABASE_URL is set."
