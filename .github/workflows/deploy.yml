@@ -68,6 +68,15 @@ jobs:
             sleep 10
           done
           echo "::error::$URL did not serve the home page"; exit 1
+      # Real browser check that a lesson's YouTube player loads (catches CSP or embed problems).
+      - name: Player smoke test
+        if: env.HAS_TOKEN == 'true'
+        env:
+          URL: ${{ steps.pages.outputs.deployment-url }}
+        run: |
+          npm install --no-save playwright@1.49.1
+          npx playwright install --with-deps chromium
+          node scripts/smoke-player.mjs "$URL"
       - name: Post preview link
         if: env.HAS_TOKEN == 'true' && github.event_name == 'pull_request'
         env:
