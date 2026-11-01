@@ -7,6 +7,11 @@
   "updated": "2026-11-01",
   "blockers": [
     {
+      "title": "Launch details",
+      "detail": "(1) Turn on Web Analytics: Cloudflare dashboard → Workers & Pages → talaqqa → Metrics → Web Analytics → Enable. (2) Custom domain name (and whether it's on your Cloudflare account). (3) An email for private removal requests.",
+      "owner": "You"
+    },
+    {
       "title": "Trusted channels for auto-publish",
       "detail": "List the YouTube channel IDs (start with UC) you trust in content/discovery/config.json → trusted_channels. Until then, everything the engine finds goes to a review PR.",
       "owner": "You"
@@ -14,11 +19,6 @@
     {
       "title": "Name: Talaqqa or Halaqa?",
       "detail": "The code, manifest and LICENSE say 'Talaqqa'; the brief says 'Halaqa'. I'll keep Talaqqa unless you say otherwise.",
-      "owner": "You"
-    },
-    {
-      "title": "Accounts and services for launch",
-      "detail": "Cloudflare previews work (stable link: https://claude-halaqa-setup-jmv4gh.talaqqa.pages.dev). Still needed for launch: custom domain, removal-request email, OK for Cloudflare Web Analytics, error monitor choice. Hosting question: keep Cloudflare Pages for the site (recommended) and use Render only for the Phase 2 API?",
       "owner": "You"
     },
     {
@@ -190,8 +190,8 @@
         },
         {
           "title": "Analytics (cookieless) and error monitoring",
-          "status": "Blocked",
-          "notes": "Needs your choice of tools."
+          "status": "Doing",
+          "notes": "Approved: Cloudflare Web Analytics (owner flips the Pages toggle; CSP ready). Error logger: /api/errors Pages Function + 5-per-page client reporter, no personal data; logs in Cloudflare real-time logs."
         },
         {
           "title": "Phone smoke test, release notes, retrospective",
@@ -471,6 +471,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-01",
+      "text": "Analytics and error monitoring: CSP + privacy page ready for Cloudflare Web Analytics; built a small error logger on Cloudflare Pages Functions (no new service or dependency)."
+    },
     {
       "date": "2026-11-01",
       "text": "Astro 7.3.8 security upgrade merged (PR #2). Owner confirmed videos play on their phone."
