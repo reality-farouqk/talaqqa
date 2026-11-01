@@ -1,12 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import { createPlaylist, saveNote, togglePlaylistItem, toggleSavedLesson, useStore } from '../lib/storage';
+import Icon from './Icon';
 
 // Save for later, add to playlist and private notes for one lesson. All stored on the device.
-export default function LessonTools({ lessonKey }: { lessonKey: string }) {
+export default function LessonTools({ lessonKey, title }: { lessonKey: string; title: string }) {
   const s = useStore();
   const [panel, setPanel] = useState<'playlists' | 'notes' | null>(null);
   const [newTitle, setNewTitle] = useState('');
   const [note, setNote] = useState('');
+  const [copied, setCopied] = useState(false);
   const loaded = useRef(false);
 
   useEffect(() => {
@@ -23,13 +25,20 @@ export default function LessonTools({ lessonKey }: { lessonKey: string }) {
   const saved = s.savedLessons.includes(lessonKey);
   const inLists = s.playlists.filter((p) => p.items.includes(lessonKey)).length;
   const toggle = (p: 'playlists' | 'notes') => setPanel(panel === p ? null : p);
+  // Phone share sheet when available, otherwise copy the link.
+  const share = async () => {
+    const url = location.origin + location.pathname;
+    if (navigator.share) { await navigator.share({ title, url }).catch(() => {}); return; }
+    await navigator.clipboard?.writeText(url).then(() => { setCopied(true); setTimeout(() => setCopied(false), 2000); }, () => {});
+  };
 
   return (
     <div className="tools">
-      <div className="actions" style={{ margin: 0 }}>
-        <button type="button" className={saved ? 'btn' : 'btn ghost'} aria-pressed={saved} onClick={() => toggleSavedLesson(lessonKey)}>{saved ? '✓ Saved' : 'Watch later'}</button>
-        <button type="button" className="btn ghost" aria-expanded={panel === 'playlists'} onClick={() => toggle('playlists')}>＋ Playlist{inLists > 0 && ` (${inLists})`}</button>
-        <button type="button" className="btn ghost" aria-expanded={panel === 'notes'} onClick={() => toggle('notes')}>Notes{s.notes[lessonKey] && ' •'}</button>
+      <div className="tool-buttons">
+        <button type="button" className="chip-btn" aria-pressed={saved} onClick={() => toggleSavedLesson(lessonKey)}><Icon name="bookmark" /> {saved ? 'Saved' : 'Watch later'}</button>
+        <button type="button" className="chip-btn" aria-expanded={panel === 'playlists'} onClick={() => toggle('playlists')}><Icon name="plus" /> Playlist{inLists > 0 && ` (${inLists})`}</button>
+        <button type="button" className="chip-btn" aria-expanded={panel === 'notes'} onClick={() => toggle('notes')}><Icon name="notes" /> Notes{s.notes[lessonKey] && ' •'}</button>
+        <button type="button" className="chip-btn" onClick={share}><Icon name="share" /> {copied ? 'Link copied' : 'Share'}</button>
       </div>
       {panel === 'playlists' && (
         <div className="panel">

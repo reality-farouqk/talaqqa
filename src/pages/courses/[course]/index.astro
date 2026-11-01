@@ -100,8 +100,16 @@ const firstImage = lessons.find((l) => l.youtube_id)?.youtube_id;
   @media (min-width: 52rem) { .course-hero { grid-template-columns: minmax(0, 1fr) 20rem; align-items: start; } }
   .course-hero h1 { margin-block: .25rem .5rem; font-size: clamp(1.7rem, 5vw, 2.4rem); }
   .hero-side { display: grid; gap: .75rem; align-content: start; }
-  .hero-side .progress { margin: 0; max-width: none; }
+  .hero-side :global(.progress) { margin: 0; max-width: none; }
+  .hero-side > * { min-width: 0; }
   .hero-side :global(.btn) { width: 100%; }
+  /* Phones: Start/Continue stays reachable in a bar above the tab bar (Udemy/Coursera pattern). */
+  @media (max-width: 48rem) {
+    .hero-side :global(.progress) { position: fixed; inset-inline: 0; inset-block-end: calc(60px + env(safe-area-inset-bottom, 0px)); z-index: 25;
+      padding: .6rem max(1rem, env(safe-area-inset-right, 0px)) .6rem max(1rem, env(safe-area-inset-left, 0px)); background: var(--card); border-block-start: 1px solid var(--line); box-shadow: 0 -4px 16px rgba(0,0,0,.08); }
+    .hero-side :global(.progress .meta) { display: none; }
+    :global(main) { padding-block-end: 6rem; }
+  }
   .learn { border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.25rem; background: var(--card); margin-block: 1.5rem; }
   .learn h2 { margin-block-start: 0; font-size: 1.25rem; }
   .learn ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem 1.5rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
