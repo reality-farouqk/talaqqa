@@ -136,6 +136,8 @@
           }</ul></div>
           <div><h3>Definition of done</h3><ul class="dod">${ph.definitionOfDone.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>
           ${cands}
+          ${ph.retrospective ? `<div><h3>Retrospective</h3><div class="facts">${[['What went well', ph.retrospective.wentWell], ['What to change', ph.retrospective.change], ['Cut or moved', ph.retrospective.cut]]
+            .map(([h, items]) => `<div><p class="eyebrow" style="margin:0 0 .3rem">${h}</p><ul class="dod">${items.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>`).join('')}</div></div>` : ''}
         </div></details>`;
     }).join('');
 

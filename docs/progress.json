@@ -7,6 +7,11 @@
   "updated": "2026-11-01",
   "blockers": [
     {
+      "title": "Approve the Phase 2 plan",
+      "detail": "Backlog and definition of done are under Phase 2. Decisions needed: (1) API hosting: Cloudflare Pages Functions (recommended) or Render; (2) sign-in method: email + password and Google (recommended) vs adding email magic links (needs an email service); (3) new dependencies: hono, better-auth, @neondatabase/serverless, zod; (4) a Neon account: create a project and add DATABASE_URL as a secret.",
+      "owner": "You"
+    },
+    {
       "title": "Launch details",
       "detail": "(1) Turn on Web Analytics: Cloudflare dashboard → Workers & Pages → talaqqa → Metrics → Web Analytics → Enable. (2) Custom domain name (and whether it's on your Cloudflare account). (3) An email for private removal requests.",
       "owner": "You"
@@ -14,16 +19,6 @@
     {
       "title": "Trusted channels for auto-publish",
       "detail": "List the YouTube channel IDs (start with UC) you trust in content/discovery/config.json → trusted_channels. Until then, everything the engine finds goes to a review PR.",
-      "owner": "You"
-    },
-    {
-      "title": "Name: Talaqqa or Halaqa?",
-      "detail": "The code, manifest and LICENSE say 'Talaqqa'; the brief says 'Halaqa'. I'll keep Talaqqa unless you say otherwise.",
-      "owner": "You"
-    },
-    {
-      "title": "Dependency approval: @astrojs/check",
-      "detail": "Dev-only package so CI can type-check (astro check). No runtime cost. Everything else in Phase 1 uses what's already installed.",
       "owner": "You"
     },
     {
@@ -39,8 +34,8 @@
       "goal": "Real users can learn Arabic and Islam step by step, from the basics to advanced, with no account.",
       "status": "In progress",
       "outcome": "Anyone can open the site on a phone, pick the Arabic or Islam path, start at Foundations, play lessons in order, and keep their progress on their device.",
-      "releaseDate": null,
-      "releaseNotes": null,
+      "releaseDate": "2026-11-01",
+      "releaseNotes": "v0.1 public beta at https://talaqqa.pages.dev: Learn Arabic and Learn Islam paths (Foundations → Advanced), 25 curated courses from recognised teachers and institutions, YouTube player with speed, autoplay, auto-next and resume, progress, Watch later, playlists and notes on the device, search with filters, installable PWA with offline pages, SEO (sitemap, structured data), trust pages, error logging, security headers, CI with a real-browser player check.",
       "definitionOfDone": [
         "Live on the real domain over HTTPS, deployed by CI from main.",
         "5 to 10 approved courses; every video ID verified as real, public and embeddable; every lesson credits the teacher and links to the original.",
@@ -70,18 +65,18 @@
         },
         {
           "title": "Curriculum structure: 2 paths × 4 levels × subjects",
-          "status": "Doing",
+          "status": "Done",
           "notes": "Built: Learn Arabic and Learn Islam, Foundations → Advanced, subjects per path, order and prerequisites. Awaiting deploy."
         },
         {
           "title": "Demo content to build against (no videos)",
-          "status": "Doing",
-          "notes": "6 demo outlines across both paths incl. one Arabic (RTL). Blocked from production builds."
+          "status": "Done",
+          "notes": "Used to build the site; replaced by real courses and removed."
         },
         {
           "title": "Content discovery engine (rank YouTube series by quality signals)",
-          "status": "Doing",
-          "notes": "Ran for real: 197 playlists scored, 25 drafted for review. Added language + dialect filters after the first run let Urdu/Indonesian/Saudi-dialect series through."
+          "status": "Done",
+          "notes": "Ran on real data (2 runs, 25 courses published). Weekly job on main."
         },
         {
           "title": "Player: speed, autoplay, auto-next, resume, auto-complete",
@@ -90,97 +85,97 @@
         },
         {
           "title": "Video-first UI: thumbnails on cards and lesson lists, shorter copy",
-          "status": "Doing",
+          "status": "Done",
           "notes": "Built. Thumbnails appear once real videos are in."
         },
         {
           "title": "Security headers (CSP, HSTS, nosniff, referrer, permissions)",
-          "status": "Doing",
+          "status": "Done",
           "notes": "public/_headers for Cloudflare Pages; pages tested under the CSP with no violations."
         },
         {
           "title": "Data model: Postgres schema for Neon (creators, courses, sections, lessons, videos, playlists, watchlist, progress, notes)",
-          "status": "Doing",
-          "notes": "db/0001_init.sql, checked on Postgres 16. Wired in Phase 2."
+          "status": "Done",
+          "notes": "Schema checked on Postgres 16; wired in Phase 2."
         },
         {
           "title": "Course page: what you'll learn, expandable outline, Start/Continue",
-          "status": "Doing",
+          "status": "Done",
           "notes": "On the preview."
         },
         {
           "title": "Home: Continue Watching row, category rows, featured, search bar, streak",
-          "status": "Doing",
+          "status": "Done",
           "notes": "On the preview."
         },
         {
           "title": "Playlists (create, rename, reorder, play) and Watch later lessons",
-          "status": "Doing",
+          "status": "Done",
           "notes": "On the device; public sharing needs accounts (Phase 2)."
         },
         {
           "title": "Search and filters (topic, teacher, language, level) + topic pages",
-          "status": "Doing",
+          "status": "Done",
           "notes": "Static index, no new dependency. Lighthouse 100/100/100."
         },
         {
           "title": "CI: build + content validation on every PR",
-          "status": "Doing",
+          "status": "Done",
           "notes": "Runs on PR #1: tests, build + content validation, production content check."
         },
         {
           "title": "Content checks: schema + duplicate slugs/videos + prerequisites + demo guard",
-          "status": "Doing",
+          "status": "Done",
           "notes": "Built into the build. Real courses require source URL, verified_at and a video ID per lesson."
         },
         {
           "title": "Shortlist and approve real courses",
-          "status": "Doing",
-          "notes": "25 courses published by stated rules (own channel or institution, path language, structured series, recognised teacher), 25 rejected and blocked. Live on the preview; Done once in production."
+          "status": "Done",
+          "notes": "25 courses published by stated rules; 25 rejected and blocked."
         },
         {
           "title": "Verify every video (exists, public, embeddable, correct teacher)",
-          "status": "Doing",
+          "status": "Done",
           "notes": "All 15 courses re-checked through the YouTube API on 2026-10-30: every video public and embeddable."
         },
         {
           "title": "Replace demo courses with approved ones",
-          "status": "Doing",
+          "status": "Done",
           "notes": "Demo courses removed; production build passes."
         },
         {
           "title": "UI: home with paths, path pages by level, catalog by subject, course + lesson pages",
-          "status": "Doing",
+          "status": "Done",
           "notes": "Built and checked at phone width, light + dark. Awaiting deploy."
         },
         {
           "title": "Arabic / RTL readiness",
-          "status": "Doing",
-          "notes": "Logical CSS, lang/dir on course content, Arabic font stack, mirrored arrows. Checked with an Arabic demo course."
+          "status": "Done",
+          "notes": "Live with Arabic-language courses (e.g. Ajurrumiyyah)."
         },
         {
           "title": "Device storage: watchlist, mark complete, continue where you left off",
-          "status": "Doing",
+          "status": "Done",
           "notes": "Built and tested in a headless browser. Awaiting deploy."
         },
         {
           "title": "PWA: offline page, offline state for videos, Android install prompt, iOS hint",
           "status": "Doing",
-          "notes": "Tested in Chromium: visited pages offline, offline page for unvisited ones (bug fixed), offline notice on videos, iPhone hint, Android install button. Real-phone test still needed."
+          "notes": "Live; checks pass in CI and locally. Owner to confirm on a phone: install the app and browse offline."
         },
         {
           "title": "SEO: sitemap, canonical, OG image, Course + VideoObject + Breadcrumb JSON-LD, robots",
-          "status": "Doing",
+          "status": "Done",
           "notes": "Built. Demo pages noindex. VideoObject needs uploadDate (Phase 2 sync) for rich results."
         },
         {
           "title": "Trust pages: About, Content guidelines, Report / removal, Privacy",
           "status": "Doing",
-          "notes": "Built. Needs a contact email for private removal requests."
+          "notes": "Live. Waiting on a private email address for removal requests."
         },
         {
           "title": "Open-source readiness: README, CONTRIBUTING, CODE_OF_CONDUCT, issue + PR templates",
-          "status": "Doing",
+          "status": "Done",
           "notes": "Written. Goes live with the push."
         },
         {
@@ -200,8 +195,8 @@
         },
         {
           "title": "UI pass: mobile app patterns (tab bar, sticky player, action chips, sticky CTA)",
-          "status": "Doing",
-          "notes": "Patterns from YouTube, Udemy/Coursera, Spotify/Duolingo. Checked at phone + desktop, light + dark; Lighthouse a11y 100. Live once PR #4 merges."
+          "status": "Done",
+          "notes": "Live; Lighthouse accessibility 100."
         }
       ],
       "candidates": [
@@ -269,71 +264,102 @@
           "language": "ar",
           "note": "Real RTL content. Optional for launch."
         }
-      ]
+      ],
+      "retrospective": {
+        "wentWell": [
+          "Shipping in small PRs with CI and a preview per PR made every merge low-risk.",
+          "The discovery engine turned course sourcing from manual work into a review step.",
+          "A real-browser player check now runs on every deploy, so a broken player is caught before users see it."
+        ],
+        "change": [
+          "Videos broke for returning visitors because the service worker routed YouTube through our CSP; I misread the first warning signs as an environment problem. Treat every console error in tests as real until proven otherwise.",
+          "Test with the same headers and service worker as production from the start.",
+          "Read real playlist data before trusting engine output (lesson order, compilations, re-uploads all needed fixes)."
+        ],
+        "cut": [
+          "Custom domain and removal email move to the start of Phase 2 if not provided before.",
+          "Advanced-level content waits for the weekly engine runs and your teacher suggestions."
+        ]
+      }
     },
     {
       "id": 2,
       "name": "Data and accounts",
-      "goal": "Reliable catalog data and progress that follows the user across devices.",
+      "goal": "Reliable catalog data, and progress that follows the learner across devices.",
       "status": "Planned",
-      "outcome": "Sign in on two devices and see the same progress, watchlist and enrollments.",
+      "outcome": "Sign in on a phone and a laptop and see the same progress, watchlist, playlists and notes. Lessons show real durations, and dead videos are caught automatically.",
       "releaseDate": null,
       "releaseNotes": null,
       "definitionOfDone": [
-        "A user signs in on two devices and sees the same progress.",
-        "Weekly job flags dead or private videos and opens an issue.",
-        "Duration and upload date show on pages and in structured data."
+        "A learner signs in on two devices and sees the same progress, watchlist, playlists and notes.",
+        "Guests can still browse and learn without an account; their device data imports on first sign-in.",
+        "Offline changes sync when the device is back online, without duplicates.",
+        "Lesson pages show real durations; VideoObject passes the Rich Results Test.",
+        "The weekly job flags dead or private videos and opens an issue.",
+        "Auth is rate-limited, cookies are httpOnly + Secure, every API route enforces ownership; tests cover this.",
+        "Privacy page updated; account deletion works.",
+        "Deployed to production and smoke-tested on a phone."
       ],
       "tasks": [
         {
           "title": "Connect Neon and run db/0001_init.sql",
           "status": "To do",
-          "notes": "Migration file still missing from repo."
+          "notes": "Pooled connection string as a Cloudflare + GitHub secret. Migrations run from CI, never by hand."
         },
         {
-          "title": "Sync script: upsert YAML courses into Postgres",
+          "title": "Sync script: course files → Postgres",
           "status": "To do",
-          "notes": ""
+          "notes": "Upsert courses, sections, lessons and videos by slug on every merge to main. Course files stay the source of truth."
         },
         {
-          "title": "YouTube metadata fetch in batches of 50 IDs",
+          "title": "YouTube metadata in batches of 50",
           "status": "To do",
-          "notes": "Title, duration, thumbnail, availability."
+          "notes": "Duration, upload date, thumbnail, availability via videos.list (1 quota unit per 50 videos)."
         },
         {
-          "title": "Weekly job: flag dead or private videos",
+          "title": "Weekly dead-video check",
           "status": "To do",
-          "notes": "GitHub Actions schedule."
+          "notes": "Flags private/removed/unembeddable videos, opens one GitHub issue listing them, hides them from lesson pages."
         },
         {
-          "title": "Duration + upload date on pages and JSON-LD",
+          "title": "Duration + upload date on pages and VideoObject",
           "status": "To do",
-          "notes": ""
+          "notes": "Lesson and course pages; makes VideoObject eligible for Google rich results."
         },
         {
-          "title": "Hono API on Cloudflare Workers",
+          "title": "API with Hono",
           "status": "To do",
-          "notes": ""
+          "notes": "On Cloudflare Pages Functions (same domain as the site). Zod-validated inputs, consistent errors, paginated lists."
         },
         {
-          "title": "Better Auth sign up / sign in, guest browsing kept",
+          "title": "Accounts with Better Auth",
           "status": "To do",
-          "notes": ""
+          "notes": "Sign up / sign in; guest browsing unchanged. httpOnly secure cookies, rate-limited auth routes, CSRF protection."
         },
         {
-          "title": "Sync progress, watchlist, enrollments with offline queue",
+          "title": "Sync progress, watchlist, playlists, notes",
           "status": "To do",
-          "notes": ""
+          "notes": "Local-first: device storage stays the source while offline; a queue syncs when back online (last write wins per item)."
         },
         {
-          "title": "Import on-device data into the new account",
+          "title": "Import device data on first sign-in",
           "status": "To do",
-          "notes": ""
+          "notes": "Merges what is already on the device into the new account."
         },
         {
-          "title": "Continue watching + per-course progress",
+          "title": "Account deletion and data export",
           "status": "To do",
-          "notes": ""
+          "notes": "Required by NDPA/GDPR; deletes all per-user rows."
+        },
+        {
+          "title": "Public playlists",
+          "status": "To do",
+          "notes": "Share link for playlists marked public (needs accounts)."
+        },
+        {
+          "title": "Tests for auth, permissions and sync",
+          "status": "To do",
+          "notes": "Every API route checks the signed-in user owns the data (no IDOR)."
         }
       ]
     },
@@ -476,6 +502,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-01",
+      "text": "Phase 1 v0.1 released at https://talaqqa.pages.dev with release notes and retrospective. Phase 2 plan proposed for approval."
+    },
     {
       "date": "2026-11-01",
       "text": "UI pass: bottom tab bar on phones, sticky video with scrolling lesson list, icon action chips with Share, sticky Continue bar on course pages, subject chips on home. Fixed a desktop lesson layout bug, the install banner hidden behind the tab bar, and a layout shift on My courses."
