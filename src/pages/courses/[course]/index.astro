@@ -6,6 +6,7 @@ import CourseProgress from '../../../components/CourseProgress';
 import LessonChecks from '../../../components/LessonChecks';
 import { getPublishedCourses, getDraftCourses, flattenLessons, subjectLabel, levelLabel, nextInPath, courseUrl, lessonUrl, dirFor, languageName } from '../../../lib/courses';
 import { getTrack, trackUrl, topicUrl } from '../../../lib/taxonomy';
+import { totalLength, isoDuration, videoMeta } from '../../../lib/videos';
 
 export async function getStaticPaths() {
   const all = await getPublishedCourses();
@@ -32,10 +33,11 @@ const jsonLd = d.demo || isDraft ? undefined : {
   coursePrerequisites: prereqs.length ? prereqs.map((c) => c.data.title) : undefined, isAccessibleForFree: true,
   provider: { '@type': 'Organization', name: d.source.name, ...(d.source.url ? { sameAs: d.source.url } : {}) },
   teaches: d.outcomes.length ? d.outcomes : undefined,
-  hasCourseInstance: { '@type': 'CourseInstance', courseMode: 'Online', courseWorkload: `${lessons.length} video lessons` },
+  hasCourseInstance: { '@type': 'CourseInstance', courseMode: 'Online', courseWorkload: isoDuration(lessons.reduce((s, l) => s + (videoMeta(l.youtube_id)?.duration ?? 0), 0)) ?? `${lessons.length} video lessons` },
   offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD', category: 'Free' }
 };
 const firstImage = lessons.find((l) => l.youtube_id)?.youtube_id;
+const length = totalLength(lessons.map((l) => l.youtube_id));
 ---
 <Base section={trackUrl(track.id)} title={d.title} description={d.summary} jsonLd={jsonLd} noindex={d.demo || isDraft}
   image={firstImage ? `https://i.ytimg.com/vi/${firstImage}/hqdefault.jpg` : undefined}
@@ -47,7 +49,7 @@ const firstImage = lessons.find((l) => l.youtube_id)?.youtube_id;
       <h1>{d.title}</h1>
       <p class="lede">{d.summary}</p>
       <p class="meta">Taught by <bdi>{d.source.url ? <a href={d.source.url} rel="noopener">{d.source.name}</a> : d.source.name}</bdi>
-        · {d.modules.length} {d.modules.length === 1 ? 'section' : 'sections'} · {lessons.length} lessons
+        · {d.modules.length} {d.modules.length === 1 ? 'section' : 'sections'} · {lessons.length} lessons{length && ` · ${length}`}
         {d.source.playlist_url && <> · <a href={d.source.playlist_url} rel="noopener">Original on YouTube</a></>}</p>
     </div>
     <div class="hero-side">
@@ -74,7 +76,7 @@ const firstImage = lessons.find((l) => l.youtube_id)?.youtube_id;
     <div class="outline lessons" lang={d.language} dir={dir}>
       {d.modules.map((m, i) => (
         <details open={i === 0}>
-          <summary><span class="sec-title">{m.title}</span><span class="meta">{m.lessons.length} {m.lessons.length === 1 ? 'lesson' : 'lessons'}</span></summary>
+          <summary><span class="sec-title">{m.title}</span><span class="meta">{m.lessons.length} {m.lessons.length === 1 ? 'lesson' : 'lessons'}{totalLength(m.lessons.map((l) => l.youtube_id)) && ` · ${totalLength(m.lessons.map((l) => l.youtube_id))}`}</span></summary>
           <ol class="lesson-list">
             {m.lessons.map((l) => (
               <li><a href={lessonUrl(course.id, l.slug)} data-lesson-key={`${course.id}/${l.slug}`}><Thumb id={l.youtube_id} /><span class="lt">{l.title}<span class="sr-status"></span></span></a></li>

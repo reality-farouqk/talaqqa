@@ -3,3 +3,4 @@ node_modules/
 dist/
 .env
 discovery-summary.json
+metadata-report.md
