@@ -16,8 +16,12 @@ page.on('pageerror', (e) => problems.push(`page error: ${e.message}`));
 await page.exposeFunction('reportCsp', (v) => problems.push(`CSP blocked ${v}`));
 await page.addInitScript(() => document.addEventListener('securitypolicyviolation', (e) => window.reportCsp(`${e.violatedDirective}: ${e.blockedURI}`)));
 
+// Visit once so the service worker installs and controls the page, like a returning visitor.
+await page.goto(`${base}/`, { waitUntil: 'networkidle' });
+await page.evaluate(() => navigator.serviceWorker?.ready);
 console.log(`Opening ${url}`);
 await page.goto(url, { waitUntil: 'networkidle' });
+console.log(`Service worker in control: ${await page.evaluate(() => !!navigator.serviceWorker?.controller)}`);
 if (await page.locator('button.play').count()) await page.click('button.play');
 let ok = false;
 try {
@@ -30,6 +34,8 @@ try {
   else ok = true;
 } catch (err) {
   problems.push(`player did not load: ${err.message.split('\n')[0]}`);
+  const frame = await (await page.$('.player iframe'))?.contentFrame();
+  if (frame) problems.push(`player shows: ${(await frame.locator('body').innerText().catch(() => '')).replace(/\s+/g, ' ').slice(0, 300) || '(nothing)'}`);
 }
 console.log(problems.length ? problems.join('\n') : 'No problems found.');
 await browser.close();

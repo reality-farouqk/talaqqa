@@ -49,21 +49,17 @@ export default defineConfig({
         navigateFallback: null,
         // Precache the app shell only; other pages are cached as they are visited.
         globPatterns: ['**/*.{js,css,svg,woff2}', 'pwa-192.png', 'index.html', 'courses/index.html', 'offline/index.html', 'catalog.json'],
+        // Only our own origin goes through the service worker. YouTube (player, thumbnails, video) is
+        // never routed or cached here: the browser fetches it directly, so our CSP can't block it.
         runtimeCaching: [
-          // Never cache YouTube: iframe, thumbnails of the player, or video.
           {
-            urlPattern: ({ url }) => /(^|\.)(youtube|youtube-nocookie|ytimg|googlevideo)\.com$/.test(url.hostname),
-            handler: 'NetworkOnly'
-          },
-          // Images (e.g. covers served from R2): cache-first with expiry.
-          {
-            urlPattern: ({ request }) => request.destination === 'image',
+            urlPattern: ({ request, sameOrigin }) => sameOrigin && request.destination === 'image',
             handler: 'CacheFirst',
             options: { cacheName: 'images', expiration: { maxEntries: 120, maxAgeSeconds: 60 * 60 * 24 * 30 } }
           },
           // Pages: fresh when online, the saved copy when offline, else the offline page.
           {
-            urlPattern: ({ request }) => request.mode === 'navigate',
+            urlPattern: ({ request, sameOrigin }) => sameOrigin && request.mode === 'navigate',
             handler: 'NetworkFirst',
             options: {
               cacheName: 'pages',
