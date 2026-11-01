@@ -3,19 +3,9 @@
   "tagline": "Free, curated Islamic video courses from public sources",
   "repo": "https://github.com/reality-farouqk/talaqqa",
   "currentPhase": 1,
-  "liveUrl": "https://claude-halaqa-setup-jmv4gh.talaqqa.pages.dev",
+  "liveUrl": "https://talaqqa.pages.dev",
   "updated": "2026-11-01",
   "blockers": [
-    {
-      "title": "Merge PR #1 to go live",
-      "detail": "Demo content is gone and the production build passes, so merging PR #1 into main deploys the site to https://talaqqa.pages.dev automatically. Review the 15 courses on the preview first if you want.",
-      "owner": "You"
-    },
-    {
-      "title": "Review and merge PR #1 into main",
-      "detail": "https://github.com/reality-farouqk/talaqqa/pull/1 brings the starter (from master) and all Phase 1 work into main. After merging, you can delete the master branch. Also still missing: db/0001_init.sql (needed in Phase 2).",
-      "owner": "You"
-    },
     {
       "title": "Trusted channels for auto-publish",
       "detail": "List the YouTube channel IDs (start with UC) you trust in content/discovery/config.json → trusted_channels. Until then, everything the engine finds goes to a review PR.",
@@ -37,8 +27,8 @@
       "owner": "You"
     },
     {
-      "title": "Security: upgrade Astro (major version)",
-      "detail": "Tested in a scratch copy: Astro 5.18.2 → 7.3.8 (3 weeks old, fixes all listed advisories incl. a critical one in image optimisation we don't use) with @astrojs/react 7.0.1. Build, tests, types, CSP and page checks all pass and the service worker is still generated. Catch: @vite-pwa/astro doesn't officially support Astro 6+ yet (installs with --legacy-peer-deps and works). Options: (a) upgrade now, (b) wait for PWA plugin support. Practical risk today is low: static site, no user-written content.",
+      "title": "Security: Astro upgrade in PR #2",
+      "detail": "Astro 5.18.2 → 7.3.8 fixes all critical/high advisories. Tested: build, tests, types, CSP, offline, install prompts. Merge PR #2 after CI is green.",
       "owner": "You"
     },
     {
@@ -80,8 +70,8 @@
         },
         {
           "title": "Branch setup: main as default, merge starter code",
-          "status": "Doing",
-          "notes": "Pushed. PR #1 into main is open as a draft; CI runs build, tests and content checks."
+          "status": "Done",
+          "notes": "PR #1 merged into main on 2026-11-01."
         },
         {
           "title": "Curriculum structure: 2 paths × 4 levels × subjects",
@@ -201,7 +191,7 @@
         {
           "title": "Deploy to Cloudflare Pages with custom domain",
           "status": "Doing",
-          "notes": "PR previews deploy automatically and pass a smoke test. Production waits for real courses + domain."
+          "notes": "Live at https://talaqqa.pages.dev (production deploy + player smoke test pass). Custom domain still to add."
         },
         {
           "title": "Analytics (cookieless) and error monitoring",
@@ -486,6 +476,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-01",
+      "text": "Launched: PR #1 merged, production live at https://talaqqa.pages.dev. Fixed videos not loading for returning visitors (service worker routed YouTube through itself and our CSP blocked it); added a real-browser player check to every deploy. Astro security upgrade opened as PR #2."
+    },
     {
       "date": "2026-11-01",
       "text": "Filled content gaps: 10 more courses (Seerah, Aqeedah, Tazkiyah, intermediate Fiqh and Quran). 25 courses total; every home category row now has real content."
