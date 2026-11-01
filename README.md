@@ -38,6 +38,7 @@ Copy `.env.example` to `.env` for local settings. Production builds use `SITE_UR
 | Database (Phase 2) | Neon Postgres, `db/0001_init.sql` | Courses, sections, lessons, videos, creators, playlists, watchlist, progress, notes. |
 | Hosting | Cloudflare Pages (`.github/workflows/deploy.yml`) | Free static hosting with PR previews. |
 | Discovery | `scripts/discover/` + weekly workflow | Finds and scores YouTube series; drafts go to a review PR. |
+| Video metadata | `scripts/metadata.mjs` + weekly workflow | Durations, upload dates and availability for every lesson video, cached in `content/meta/videos.json`; unavailable videos are reported in one GitHub issue. |
 
 ### Project structure
 

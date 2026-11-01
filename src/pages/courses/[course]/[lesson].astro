@@ -9,6 +9,7 @@ import LessonChecks from '../../../components/LessonChecks';
 import { issueUrl } from '../../../config';
 import { getPublishedCourses, getDraftCourses, flattenLessons, levelLabel, nextInPath, courseUrl, lessonUrl, youtubeWatchUrl, dirFor } from '../../../lib/courses';
 import { getTrack, trackUrl } from '../../../lib/taxonomy';
+import { videoMeta, isPlayable, isoDuration } from '../../../lib/videos';
 
 export async function getStaticPaths() {
   const paths = [];
@@ -38,10 +39,16 @@ const desc = lesson.summary ?? `Lesson ${index + 1} of ${total} in ${d.title}, t
 const thumb = lesson.youtube_id ? `https://i.ytimg.com/vi/${lesson.youtube_id}/hqdefault.jpg` : undefined;
 // uploadDate and duration arrive with the YouTube metadata sync (Phase 2).
 const isDraft = d.status === 'draft';
-const jsonLd = lesson.youtube_id && !d.demo && !isDraft ? {
+const meta = videoMeta(lesson.youtube_id);
+const playable = !lesson.youtube_id || isPlayable(lesson.youtube_id);
+const minutes = meta?.duration ? Math.max(1, Math.round(meta.duration / 60)) : 0;
+const uploaded = meta?.published ? new Date(meta.published).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' }) : '';
+const jsonLd = lesson.youtube_id && playable && !d.demo && !isDraft ? {
   '@context': 'https://schema.org', '@type': 'VideoObject',
   name: lesson.title, description: desc, thumbnailUrl: thumb, inLanguage: d.language,
   embedUrl: `https://www.youtube-nocookie.com/embed/${lesson.youtube_id}`,
+  ...(meta?.published && { uploadDate: meta.published }),
+  ...(meta?.duration && { duration: isoDuration(meta.duration) }),
   url: new URL(lessonUrl(course.id, lesson.slug), Astro.site).href,
   author: { '@type': 'Organization', name: d.source.name, ...(d.source.url ? { url: d.source.url } : {}) }
 } : undefined;
@@ -52,13 +59,15 @@ const report = issueUrl('broken-video.yml', `Problem with lesson: ${key}`);
   <LessonTracker client:load course={course.id} lesson={lesson.slug} />
   <div class="watch">
     <div class="watch-player">
-      <Player client:load youtubeId={lesson.youtube_id} title={lesson.title} start={lesson.start_seconds} end={lesson.end_seconds} lessonKey={key}
-        nextUrl={upNext?.url} nextTitle={upNext?.title} />
+      {playable
+        ? <Player client:load youtubeId={lesson.youtube_id} title={lesson.title} start={lesson.start_seconds} end={lesson.end_seconds} lessonKey={key}
+            nextUrl={upNext?.url} nextTitle={upNext?.title} />
+        : <div class="player player-msg" role="note"><p><strong>This video is no longer available on YouTube.</strong> We've been notified and will replace it. {upNext && <a href={upNext.url}>Skip to the next lesson</a>}</p></div>}
     </div>
     <article class="watch-info">
       <div lang={d.language} dir={dir}>
         <h1 class="lesson-title">{lesson.title}</h1>
-        <p class="meta">Lesson {index + 1} of {total} · {lesson.moduleTitle}{d.demo && <> · <span class="badge">Demo</span></>}</p>
+        <p class="meta">Lesson {index + 1} of {total}{minutes > 0 && ` · ${minutes} min`}{uploaded && ` · ${uploaded}`} · {lesson.moduleTitle}{d.demo && <> · <span class="badge">Demo</span></>}</p>
       </div>
       <div class="action-row">
         <CompleteButton client:load lessonKey={key} />

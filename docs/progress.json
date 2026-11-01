@@ -7,8 +7,13 @@
   "updated": "2026-11-01",
   "blockers": [
     {
-      "title": "Approve the Phase 2 plan",
-      "detail": "Backlog and definition of done are under Phase 2. Decisions needed: (1) API hosting: Cloudflare Pages Functions (recommended) or Render; (2) sign-in method: email + password and Google (recommended) vs adding email magic links (needs an email service); (3) new dependencies: hono, better-auth, @neondatabase/serverless, zod; (4) a Neon account: create a project and add DATABASE_URL as a secret.",
+      "title": "Neon database connection",
+      "detail": "Create a free Neon project (region near your users, e.g. Frankfurt aws-eu-central-1), copy the pooled connection string, and add it as DATABASE_URL in GitHub (Settings → Secrets → Actions) and Cloudflare (Workers & Pages → talaqqa → Settings → Variables and Secrets, encrypted). Needed before accounts and sync.",
+      "owner": "You"
+    },
+    {
+      "title": "Google sign-in app (later in Phase 2)",
+      "detail": "I'll send exact steps when I reach sign-in: a Google Cloud OAuth client with the site as redirect URL, then GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET as Cloudflare secrets.",
       "owner": "You"
     },
     {
@@ -286,7 +291,7 @@
       "id": 2,
       "name": "Data and accounts",
       "goal": "Reliable catalog data, and progress that follows the learner across devices.",
-      "status": "Planned",
+      "status": "In progress",
       "outcome": "Sign in on a phone and a laptop and see the same progress, watchlist, playlists and notes. Lessons show real durations, and dead videos are caught automatically.",
       "releaseDate": null,
       "releaseNotes": null,
@@ -313,18 +318,18 @@
         },
         {
           "title": "YouTube metadata in batches of 50",
-          "status": "To do",
-          "notes": "Duration, upload date, thumbnail, availability via videos.list (1 quota unit per 50 videos)."
+          "status": "Doing",
+          "notes": "scripts/metadata.mjs: 599 videos in 12 API calls; cached in content/meta/videos.json (read at build time). Loaded into Postgres once Neon is connected."
         },
         {
           "title": "Weekly dead-video check",
-          "status": "To do",
-          "notes": "Flags private/removed/unembeddable videos, opens one GitHub issue listing them, hides them from lesson pages."
+          "status": "Doing",
+          "notes": "Weekly workflow: refreshes metadata, redeploys, keeps one issue listing unavailable videos (closes it when fixed). Lesson pages show \"no longer available\" instead of a broken player."
         },
         {
           "title": "Duration + upload date on pages and VideoObject",
-          "status": "To do",
-          "notes": "Lesson and course pages; makes VideoObject eligible for Google rich results."
+          "status": "Doing",
+          "notes": "Duration badges on thumbnails, lesson length + upload date, course and section totals, VideoObject uploadDate + duration, Course courseWorkload."
         },
         {
           "title": "API with Hono",
@@ -502,6 +507,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-01",
+      "text": "Phase 2 approved (Cloudflare API, email+password and Google sign-in, hono / better-auth / Neon driver / zod). First increment: YouTube metadata for all 599 lesson videos, durations and upload dates on pages and structured data, weekly dead-video check. Fixed: weekly jobs' pushes never triggered a deploy."
+    },
     {
       "date": "2026-11-01",
       "text": "Phase 1 v0.1 released at https://talaqqa.pages.dev with release notes and retrospective. Phase 2 plan proposed for approval."
