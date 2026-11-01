@@ -7,6 +7,11 @@
   "updated": "2026-11-01",
   "blockers": [
     {
+      "title": "Launch details",
+      "detail": "(1) Turn on Web Analytics: Cloudflare dashboard → Workers & Pages → talaqqa → Metrics → Web Analytics → Enable. (2) Custom domain name (and whether it's on your Cloudflare account). (3) An email for private removal requests.",
+      "owner": "You"
+    },
+    {
       "title": "Trusted channels for auto-publish",
       "detail": "List the YouTube channel IDs (start with UC) you trust in content/discovery/config.json → trusted_channels. Until then, everything the engine finds goes to a review PR.",
       "owner": "You"
@@ -17,18 +22,8 @@
       "owner": "You"
     },
     {
-      "title": "Accounts and services for launch",
-      "detail": "Cloudflare previews work (stable link: https://claude-halaqa-setup-jmv4gh.talaqqa.pages.dev). Still needed for launch: custom domain, removal-request email, OK for Cloudflare Web Analytics, error monitor choice. Hosting question: keep Cloudflare Pages for the site (recommended) and use Render only for the Phase 2 API?",
-      "owner": "You"
-    },
-    {
       "title": "Dependency approval: @astrojs/check",
       "detail": "Dev-only package so CI can type-check (astro check). No runtime cost. Everything else in Phase 1 uses what's already installed.",
-      "owner": "You"
-    },
-    {
-      "title": "Security: Astro upgrade in PR #2",
-      "detail": "Astro 5.18.2 → 7.3.8 fixes all critical/high advisories. Tested: build, tests, types, CSP, offline, install prompts. Merge PR #2 after CI is green.",
       "owner": "You"
     },
     {
@@ -90,8 +85,8 @@
         },
         {
           "title": "Player: speed, autoplay, auto-next, resume, auto-complete",
-          "status": "Doing",
-          "notes": "Built on YouTube's official IFrame API; tested with a stand-in API. Quality + captions use YouTube's own ⚙ menu (sites can't set quality). Needs a real-phone test."
+          "status": "Done",
+          "notes": "Works on the live site; owner confirmed playback on a phone. Every deploy runs a real-browser player check."
         },
         {
           "title": "Video-first UI: thumbnails on cards and lesson lists, shorter copy",
@@ -195,13 +190,13 @@
         },
         {
           "title": "Analytics (cookieless) and error monitoring",
-          "status": "Blocked",
-          "notes": "Needs your choice of tools."
+          "status": "Doing",
+          "notes": "Approved: Cloudflare Web Analytics (owner flips the Pages toggle; CSP ready). Error logger: /api/errors Pages Function + 5-per-page client reporter, no personal data; logs in Cloudflare real-time logs."
         },
         {
           "title": "Phone smoke test, release notes, retrospective",
-          "status": "To do",
-          "notes": "Lighthouse (mobile, local build): Performance 99–100, Accessibility 100, Best Practices 100, SEO 100 on indexable pages (demo pages are noindex on purpose). Real-phone smoke test after deploy."
+          "status": "Doing",
+          "notes": "Owner confirmed lessons play on their phone (2026-11-01). Still to do on the phone: install the app, save to watchlist, offline check; then release notes + retrospective."
         }
       ],
       "candidates": [
@@ -476,6 +471,14 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-01",
+      "text": "Analytics and error monitoring: CSP + privacy page ready for Cloudflare Web Analytics; built a small error logger on Cloudflare Pages Functions (no new service or dependency)."
+    },
+    {
+      "date": "2026-11-01",
+      "text": "Astro 7.3.8 security upgrade merged (PR #2). Owner confirmed videos play on their phone."
+    },
     {
       "date": "2026-11-01",
       "text": "Launched: PR #1 merged, production live at https://talaqqa.pages.dev. Fixed videos not loading for returning visitors (service worker routed YouTube through itself and our CSP blocked it); added a real-browser player check to every deploy. Astro security upgrade opened as PR #2."
