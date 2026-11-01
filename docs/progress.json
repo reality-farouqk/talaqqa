@@ -27,11 +27,6 @@
       "owner": "You"
     },
     {
-      "title": "Security: Astro upgrade in PR #2",
-      "detail": "Astro 5.18.2 → 7.3.8 fixes all critical/high advisories. Tested: build, tests, types, CSP, offline, install prompts. Merge PR #2 after CI is green.",
-      "owner": "You"
-    },
-    {
       "title": "Content gaps",
       "detail": "Seerah, Aqeedah and Tazkiyah now have courses. Still thin: Advanced level (only Arabic grammar candidates in Arabic so far) and Aqeedah at intermediate. The weekly engine run keeps searching; name any teachers you want prioritised.",
       "owner": "You"
@@ -90,8 +85,8 @@
         },
         {
           "title": "Player: speed, autoplay, auto-next, resume, auto-complete",
-          "status": "Doing",
-          "notes": "Built on YouTube's official IFrame API; tested with a stand-in API. Quality + captions use YouTube's own ⚙ menu (sites can't set quality). Needs a real-phone test."
+          "status": "Done",
+          "notes": "Works on the live site; owner confirmed playback on a phone. Every deploy runs a real-browser player check."
         },
         {
           "title": "Video-first UI: thumbnails on cards and lesson lists, shorter copy",
@@ -200,8 +195,8 @@
         },
         {
           "title": "Phone smoke test, release notes, retrospective",
-          "status": "To do",
-          "notes": "Lighthouse (mobile, local build): Performance 99–100, Accessibility 100, Best Practices 100, SEO 100 on indexable pages (demo pages are noindex on purpose). Real-phone smoke test after deploy."
+          "status": "Doing",
+          "notes": "Owner confirmed lessons play on their phone (2026-11-01). Still to do on the phone: install the app, save to watchlist, offline check; then release notes + retrospective."
         }
       ],
       "candidates": [
@@ -476,6 +471,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-01",
+      "text": "Astro 7.3.8 security upgrade merged (PR #2). Owner confirmed videos play on their phone."
+    },
     {
       "date": "2026-11-01",
       "text": "Launched: PR #1 merged, production live at https://talaqqa.pages.dev. Fixed videos not loading for returning visitors (service worker routed YouTube through itself and our CSP blocked it); added a real-browser player check to every deploy. Astro security upgrade opened as PR #2."
