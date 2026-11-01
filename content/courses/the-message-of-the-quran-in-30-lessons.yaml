@@ -1,0 +1,114 @@
+# Found by the discovery engine (score 71/100). Every video was confirmed public and embeddable on 2026-11-01.
+title: "The Message of The Quran in 30 Lessons"
+summary: "Dr Yasir Qadhi summarises the message of the Quran, one juz per lesson."
+track: islam
+subject: quran
+level: intermediate
+order: 4
+language: en
+status: published
+verified_at: 2026-11-01
+source:
+  name: "Yasir Qadhi"
+  url: "https://www.youtube.com/channel/UClUa7-iHJNKEM2e_zWYSPQg"
+  playlist_url: "https://www.youtube.com/playlist?list=PLYZxc42QNctUnn09Of4rBuakQhu-Q2qpc"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: the-message-of-the-quran-part-1-surah-baqarah-shaykh-dr-yasi
+        title: "The Message of The Quran - Part 1: Surah Baqarah | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "1gdi1W_HSRk"
+      - slug: the-message-of-the-quran-part-2-surah-baqarah-shaykh-dr-yasi
+        title: "The Message of The Quran - Part 2: Surah Baqarah | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "9LQxHMeerGY"
+      - slug: the-message-of-the-quran-part-3-surah-ale-imran-shaykh-dr-ya
+        title: "The Message of The Quran - Part 3: Surah Ale-Imrān | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "YTd-OI7rwBk"
+      - slug: the-message-of-the-quran-part-4-surah-an-nisa-shaykh-dr-yasi
+        title: "The Message of The Quran - Part 4: Surah An-Nisa | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "zaOQTbwsjl0"
+      - slug: the-message-of-the-quran-part-5-surah-al-ma-idah-shaykh-dr-y
+        title: "The Message of The Quran - Part 5: Surah al-Mā`idah | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "V6ApHagClXo"
+      - slug: the-message-of-the-quran-part-6-surah-al-an-am-shaykh-dr-yas
+        title: "The Message of The Quran - Part 6: Surah al-An'ām | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "cyuD3Q27UrA"
+      - slug: the-message-of-the-quran-part-7-surah-al-a-raf-shaykh-dr-yas
+        title: "The Message of The Quran - Part 7: Surah al-A’rāf | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "6qoe7GUVEhw"
+      - slug: the-message-of-the-quran-part-8-surah-al-anfal-shaykh-dr-yas
+        title: "The Message of The Quran - Part 8: Surah al-Anfāl | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "Dx_Xxz0bHtA"
+      - slug: the-message-of-the-quran-part-9-surah-at-tawbah-shaykh-dr-ya
+        title: "The Message of The Quran - Part 9: Surah At-Tawbah| Shaykh Dr. Yasir Qadhi"
+        youtube_id: "bwCb4VecrrY"
+      - slug: the-message-of-the-quran-part-10-surah-yunus-surah-hud-shayk
+        title: "The Message of The Quran - Part 10: Surah Yūnus & Surah Hūd | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "eyG6x2csDjk"
+  - slug: part-2
+    title: "Lessons 11–20"
+    lessons:
+      - slug: the-message-of-the-quran-part-11-surah-yusuf-shaykh-dr-yasir
+        title: "The Message of The Quran - Part 11: Surah Yusuf | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "1EyeYFOz1_I"
+      - slug: the-message-of-the-quran-part-12-surah-al-ra-d-and-surah-ibr
+        title: "The Message of The Quran - Part 12: Surah Al-Ra`d and Surah Ibrahīm | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "4_riV_tFuUM"
+      - slug: the-message-of-the-quran-part-13-surah-al-hijr-and-surah-al
+        title: "The Message of The Quran - Part 13: Surah Al-Ḥijr and Surah Al-Naḥl | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "Msv452RpPqw"
+      - slug: the-message-of-the-quran-part-14-surah-al-isra-and-surah-al
+        title: "The Message of The Quran - Part 14: Surah Al-Isrā` and Surah Al-Kahf | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "87e5zEf2tOs"
+      - slug: the-message-of-the-quran-part-15-surah-maryam-and-surah-ta-h
+        title: "The Message of The Quran - Part 15: Surah Maryam and Surah Ṭā Hā | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "YLjg_TNpVNU"
+      - slug: the-message-of-the-quran-part-16-surah-al-anbiya-and-surah-a
+        title: "The Message of The Quran - Part 16: Surah Al-Anbiyā' and Surah Al-Ḥajj | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "Q3JwCaEFevQ"
+      - slug: the-message-of-the-quran-part-17-surah-al-mu-minun-and-surah
+        title: "The Message of The Quran - Part 17: Surah Al-Mu'minūn and Surah Al-Nūr | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "1nppjN1I4Iw"
+      - slug: the-message-of-the-quran-part-18-surah-al-furqan-and-surah-a
+        title: "The Message of The Quran - Part 18: Surah Al-Furqān and Surah Al-Shu`arā | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "F1LbKkgLvCk"
+      - slug: the-message-of-the-quran-part-19-surah-an-naml-surah-al-qasa
+        title: "The Message of The Quran - Part 19: Surah An-Naml, Surah Al-Qaṣaṣ, & Surah Al-`Ankabūt"
+        youtube_id: "p5xGg8ujaBM"
+      - slug: the-message-of-the-quran-part-20-surah-al-rum-luqman-and-al
+        title: "The Message of The Quran - Part 20: Surah al-Rūm, Luqmān and al-Sajda | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "BysPcwbRbxg"
+  - slug: part-3
+    title: "Lessons 21–30"
+    lessons:
+      - slug: the-message-of-the-quran-part-21-surah-al-ahzab-surah-saba-s
+        title: "The Message of The Quran - Part 21: Surah Al-Aḥzāb, Surah Saba` & Surah Fāṭir | Shaykh Yasir Qadhi"
+        youtube_id: "wSutW9SXUDU"
+      - slug: the-message-of-the-quran-part-22-surah-ya-sin-surah-as-saffa
+        title: "The Message of The Quran - Part 22: Surah Ya-Sīn, Surah As-Ṣāffāt and Surah Ṣād | Shaykh Yasir Qadhi"
+        youtube_id: "_F2BERnGio8"
+      - slug: the-message-of-the-quran-part-23-surah-al-zumr-ghafir-and-fu
+        title: "The Message of The Quran - Part 23: Surah al-Zumr, Ghāfir, and Fuṣṣilat | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "RSqynUAgzpY"
+      - slug: the-message-of-the-quran-part-24-surahs-shura-zukhruf-dukhan
+        title: "The Message of The Quran - Part 24: Surahs Shūra, Zukhruf, Dukhān & Jāthiya | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "-8ALDXauYa4"
+      - slug: the-message-of-the-quran-part-25-surahs-ahqaf-muhammad-fath
+        title: "The Message of The Quran - Part 25: Surahs Aḥqāf, Muḥammad, Fatḥ, Ḥujurāt, Qāf & Dhāriyāt"
+        youtube_id: "oDH_3esxxiU"
+      - slug: the-message-of-the-quran-part-26-surahs-tur-najm-qamar-rahma
+        title: "The Message of The Quran - Part 26: Surahs Ṭūr, Najm, Qamar, Raḥmān, Wāq`iah, and Ḥadīd"
+        youtube_id: "ksEyW1PVBgU"
+      - slug: the-message-of-the-quran-part-27-surah-al-mujadilah-tahrim-2
+        title: "The Message of The Quran - Part 27: Surah al-Mujādilah - Taḥrīm (28th Juz) | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "AFPBubr-8i4"
+      - slug: the-message-of-the-quran-part-28-surahs-mulk-mursalat-juz-29
+        title: "The Message of The Quran - Part 28: Surahs Mulk-Mursalāt (Juz 29) | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "2OlDGRw8KfA"
+      - slug: the-message-of-the-quran-part-29-surahs-naba-to-ghashiyya-30
+        title: "The Message of The Quran - Part 29: Surahs Naba` to Ghāshiyya(30th Juz - Pt. 1) | Shaykh Yasir Qadhi"
+        youtube_id: "vJBdXDD7he4"
+      - slug: the-message-of-the-quran-part-30-surah-al-fajr-to-an-nas-30t
+        title: "The Message of The Quran - Part 30: Surah Al Fajr to An-Nas (30th Juz - Pt. 2) | Shaykh Yasir Qadhi"
+        youtube_id: "PhUq4Ibnbrs"
