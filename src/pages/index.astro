@@ -26,6 +26,7 @@ const jsonLd = {
       <input id="home-q" name="q" type="search" placeholder="Search courses, lessons, teachers" autocomplete="off" />
       <button type="submit" class="btn">Search</button>
     </form>
+    <nav aria-label="Subjects"><ul class="chips scroll">{rows.map((r) => <li><a href={r.href}>{r.title}</a></li>)}</ul></nav>
   </section>
 
   <ContinueRow client:load />

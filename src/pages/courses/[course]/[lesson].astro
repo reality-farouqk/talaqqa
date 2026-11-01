@@ -50,23 +50,26 @@ const report = issueUrl('broken-video.yml', `Problem with lesson: ${key}`);
 <Base section={trackUrl(track.id)} title={`${lesson.title} · ${d.title}`} description={desc} jsonLd={jsonLd} image={thumb} noindex={d.demo || isDraft} ogType="video.other"
   breadcrumbs={[{ name: track.label, href: trackUrl(track.id) }, { name: d.title, href: courseUrl(course.id) }, { name: lesson.title, href: lessonUrl(course.id, lesson.slug) }]}>
   <LessonTracker client:load course={course.id} lesson={lesson.slug} />
-  <div class="layout">
-    <article>
+  <div class="watch">
+    <div class="watch-player">
       <Player client:load youtubeId={lesson.youtube_id} title={lesson.title} start={lesson.start_seconds} end={lesson.end_seconds} lessonKey={key}
         nextUrl={upNext?.url} nextTitle={upNext?.title} />
-      <p class="meta" style="margin-block:.75rem 0">Lesson {index + 1} of {total}{d.demo && <> · <span class="badge">Demo</span></>}</p>
+    </div>
+    <article class="watch-info">
       <div lang={d.language} dir={dir}>
-        <h1 style="margin-block:.25rem .5rem">{lesson.title}</h1>
-        <p class="meta">{lesson.moduleTitle}</p>
-        {lesson.summary && <p class="prose">{lesson.summary}</p>}
+        <h1 class="lesson-title">{lesson.title}</h1>
+        <p class="meta">Lesson {index + 1} of {total} · {lesson.moduleTitle}{d.demo && <> · <span class="badge">Demo</span></>}</p>
+      </div>
+      <div class="action-row">
+        <CompleteButton client:load lessonKey={key} />
+        <LessonTools client:idle lessonKey={key} title={lesson.title} />
       </div>
       <div class="source">
-        <span>Teacher: <strong dir="auto">{d.source.url ? <a href={d.source.url} rel="noopener">{d.source.name}</a> : d.source.name}</strong></span>
-        {lesson.youtube_id && <a href={youtubeWatchUrl(lesson.youtube_id, lesson.start_seconds)} rel="noopener">Watch on YouTube</a>}
-        <a href={report} rel="noopener">Report a problem</a>
+        <span class="avatar" aria-hidden="true">{d.source.name.trim().charAt(0)}</span>
+        <span class="source-name"><strong dir="auto">{d.source.url ? <a href={d.source.url} rel="noopener">{d.source.name}</a> : d.source.name}</strong>
+          <span class="meta">{lesson.youtube_id && <><a href={youtubeWatchUrl(lesson.youtube_id, lesson.start_seconds)} rel="noopener">Watch on YouTube</a> · </>}<a href={report} rel="noopener">Report a problem</a></span></span>
       </div>
-      <div class="actions"><CompleteButton client:load lessonKey={key} /></div>
-      <LessonTools client:idle lessonKey={key} />
+      {lesson.summary && <p class="prose" lang={d.language} dir={dir}>{lesson.summary}</p>}
       <nav class="pager" aria-label="Lesson navigation">
         {prev ? <a class="btn ghost" href={lessonUrl(course.id, prev.slug)} rel="prev"><span class="flip" aria-hidden="true">←</span> Previous</a> : <span />}
         {next ? <a class="btn" href={lessonUrl(course.id, next.slug)} rel="next">Next lesson <span class="flip" aria-hidden="true">→</span></a> : nextCourse
@@ -74,8 +77,9 @@ const report = issueUrl('broken-video.yml', `Problem with lesson: ${key}`);
           : <a class="btn" href={courseUrl(course.id)}>Back to course</a>}
       </nav>
     </article>
-    <aside class="lessons" aria-labelledby="toc-h" lang={d.language} dir={dir}>
-      <h2 id="toc-h" style="font-size:1.1rem;margin-block-start:0"><a href={courseUrl(course.id)}>{d.title}</a></h2>
+    <aside class="watch-list lessons" aria-labelledby="toc-h" lang={d.language} dir={dir}>
+      <p class="eyebrow">Course content</p>
+      <h2 id="toc-h" class="toc-title"><a href={courseUrl(course.id)}>{d.title}</a></h2>
       {d.modules.map((m) => (
         <>
           <h3 style="font-size:.95rem;margin:1rem 0 .25rem">{m.title}</h3>

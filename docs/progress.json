@@ -197,6 +197,11 @@
           "title": "Phone smoke test, release notes, retrospective",
           "status": "Doing",
           "notes": "Owner confirmed lessons play on their phone (2026-11-01). Still to do on the phone: install the app, save to watchlist, offline check; then release notes + retrospective."
+        },
+        {
+          "title": "UI pass: mobile app patterns (tab bar, sticky player, action chips, sticky CTA)",
+          "status": "Doing",
+          "notes": "Patterns from YouTube, Udemy/Coursera, Spotify/Duolingo. Checked at phone + desktop, light + dark; Lighthouse a11y 100. Live once PR #4 merges."
         }
       ],
       "candidates": [
@@ -471,6 +476,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-01",
+      "text": "UI pass: bottom tab bar on phones, sticky video with scrolling lesson list, icon action chips with Share, sticky Continue bar on course pages, subject chips on home. Fixed a desktop lesson layout bug, the install banner hidden behind the tab bar, and a layout shift on My courses."
+    },
     {
       "date": "2026-11-01",
       "text": "Analytics and error monitoring: CSP + privacy page ready for Cloudflare Web Analytics; built a small error logger on Cloudflare Pages Functions (no new service or dependency)."
