@@ -1,0 +1,57 @@
+# Found by the discovery engine (score 70/100). Every video was confirmed public and embeddable on 2026-11-01.
+title: "The Risalah of Ibn Abi Zayd (Maliki fiqh)"
+summary: "Dr Abdullah bin Hamid Ali teaches the Risalah of Ibn Abi Zayd al-Qayrawani, the classic primer of Maliki law, lesson by lesson."
+track: islam
+subject: fiqh
+level: advanced
+order: 1
+language: en
+status: published
+verified_at: 2026-11-01
+source:
+  name: "Lamppost Education Initiative"
+  url: "https://www.youtube.com/channel/UCrs9Fqlcx0wLIWUrp14ib5w"
+  playlist_url: "https://www.youtube.com/playlist?list=PLG_EfYMC-img"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: the-risalah-of-ibn-abi-zayd-lesson-1-on-creed-part-1
+        title: "The Risālah of Ibn Abī  Zayd: Lesson 1 on Creed (Part 1)"
+        youtube_id: "Dcn9LxH1vqA"
+      - slug: risalah-of-ibn-abi-zayd-al-qayrawani-lesson-2-creed-part-2
+        title: "Risālah of Ibn Abī Zayd Al-Qayrawānī: Lesson 2 (Creed: Part 2)"
+        youtube_id: "9BOHmCm-Bak"
+      - slug: risalah-of-ibn-abi-zayd-al-qayrawani-lesson-3-creed-part-3
+        title: "Risālah of Ibn Abī  Zayd al-Qayrawānī: Lesson 3 (Creed, Part 3)"
+        youtube_id: "yDkyBqTHkkE"
+      - slug: risalah-of-ibn-abi-zayd-al-qayrawani-lesson-4-purification-l
+        title: "Risālah of Ibn Abī Zayd al-Qayrawānī: Lesson 4 (Purification Lesson 1)"
+        youtube_id: "LvSTTWwd7jk"
+      - slug: risalah-of-ibn-abi-zayd-al-qayrawani-lesson-5-purification-l
+        title: "Risālah of Ibn Abī  Zayd al-Qayrawānī: Lesson 5 (Purification: Lesson 2)"
+        youtube_id: "T9Vbh6IIqtE"
+      - slug: risalah-ibn-abi-zayd-al-qayrawani-lesson-6-part-3-of-purific
+        title: "Risālah Ibn Abī  Zayd Al-Qayrawānī: Lesson 6 (Part 3 of Purification)"
+        youtube_id: "3MfFN2MajRM"
+      - slug: risalah-ibn-abi-zayd-al-qayrawani-lesson-7-part-4-of-purific
+        title: "Risālah Ibn Abī  Zayd al-Qayrawānī: Lesson 7 (Part 4 of Purification)"
+        youtube_id: "tIQPIAPgrqw"
+      - slug: risalah-ibn-abi-zayd-al-qayrawani-lesson-8-wiping-footgear-t
+        title: "Risālah Ibn Abī  Zayd Al-Qayrawānī: Lesson 8 (Wiping Footgear & The Compulsory Prayer)"
+        youtube_id: "9IwZQcEmeWM"
+      - slug: risalah-ibn-abi-zayd-al-qayrawani-lesson-9-the-maliki-adhan
+        title: "Risālah Ibn Abī Zayd al-Qayrawānī: Lesson 9 (The Mālikī Adhān, Iqāmah, and Prayer)"
+        youtube_id: "MDX0svvVNfE"
+      - slug: risalah-ibn-abi-zayd-al-qayrawani-lesson-10-recitation-durin
+        title: "Risālah Ibn Abī Zayd Al-Qayrawānī: Lesson 10 (Recitation During Prayer & Leadership)"
+        youtube_id: "sPQizLbGdkk"
+  - slug: part-2
+    title: "Lessons 11–12"
+    lessons:
+      - slug: risalah-of-ibn-abi-zayd-al-qayrawani-lesson-11-sajdah-al-sah
+        title: "Risālah of Ibn Abi Zayd al-Qayrawānī: Lesson 11 (Sajdah al-Sahw and Other Matters)"
+        youtube_id: "KvySkrebk1o"
+      - slug: risalah-ibn-abi-zayd-al-qayrawani-lesson-12-making-up-prayer
+        title: "Risālah Ibn Abī Zayd Al-Qayrawānī: Lesson 12 (Making Up Prayers)"
+        youtube_id: "cglpg6kPOHs"

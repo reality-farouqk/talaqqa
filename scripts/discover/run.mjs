@@ -9,6 +9,8 @@ if (!KEY) { console.error('YOUTUBE_API_KEY is not set'); process.exit(1); }
 
 const COURSES = 'content/courses';
 const config = JSON.parse(readFileSync('content/discovery/config.json', 'utf8'));
+// Optional: DISCOVER_LEVEL=advanced runs only that level's searches (saves API quota for targeted runs).
+if (process.env.DISCOVER_LEVEL) config.seeds = config.seeds.filter((s) => s.level === process.env.DISCOVER_LEVEL);
 const trusted = new Set(config.trusted_channels.map((c) => c.id ?? c));
 const blocked = new Set([...config.blocked_channels, ...(config.blocked_playlists ?? [])]);
 const today = new Date().toISOString().slice(0, 10);
