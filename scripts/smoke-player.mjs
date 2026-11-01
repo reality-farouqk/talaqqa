@@ -11,7 +11,10 @@ const url = `${base}/courses/${course.id}/${course.lessons.find((l) => l.yt).slu
 const browser = await chromium.launch();
 const page = await browser.newPage();
 const problems = [];
-page.on('console', (m) => m.type() === 'error' && problems.push(`console: ${m.text()}`));
+// Only errors about our own origin count: YouTube's frame logs its own failures (e.g. the 403 behind
+// its bot check), and blocked cross-origin requests are caught by the CSP listener below.
+const ours = (u) => { try { return !u || new URL(u).origin === new URL(base).origin; } catch { return true; } };
+page.on('console', (m) => m.type() === 'error' && ours(m.location().url) && problems.push(`console: ${m.text()} (${m.location().url})`));
 page.on('pageerror', (e) => problems.push(`page error: ${e.message}`));
 await page.exposeFunction('reportCsp', (v) => problems.push(`CSP blocked ${v}`));
 await page.addInitScript(() => document.addEventListener('securitypolicyviolation', (e) => window.reportCsp(`${e.violatedDirective}: ${e.blockedURI}`)));
