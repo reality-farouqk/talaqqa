@@ -1,0 +1,42 @@
+# Found by the discovery engine (score 62/100). Every video was confirmed public and embeddable on 2026-11-01.
+title: "Explanation of al-'Aqidah at-Tahawiyyah"
+summary: "Ustadh Muhammad Tim Humble explains Imam at-Tahawi's creed in 8 lessons, recorded at Newcastle Central Mosque."
+track: islam
+subject: aqeedah
+level: advanced
+order: 1
+language: en
+status: published
+verified_at: 2026-11-01
+source:
+  name: "Newcastle Central Mosque"
+  url: "https://www.youtube.com/channel/UCo5b9nI_hLRjJCP2weKE4SQ"
+  playlist_url: "https://www.youtube.com/playlist?list=PLgDm80WVgLr1-A9t2JRVAs0Z4BRMFCQan"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: explanation-of-aqeedah-at-tahawiyyah-lesson-1-ustadh-muhamma
+        title: "Explanation of Aqeedah At Tahawiyyah | Lesson 1 | Ustadh Muhammad Tim Humble"
+        youtube_id: "XP-aAR9G2JI"
+      - slug: explanation-of-aqeedah-at-tahawiyyah-lesson-2-ustadh-muhamma
+        title: "Explanation of Aqeedah At Tahawiyyah | Lesson 2 | Ustadh Muhammad Tim Humble"
+        youtube_id: "9TaejtPCHuY"
+      - slug: explanation-of-aqeedah-at-tahawiyyah-lesson-3-ustadh-muhamma
+        title: "Explanation of Aqeedah At Tahawiyyah | Lesson 3 | Ustadh Muhammad Tim Humble"
+        youtube_id: "CmjgAj-H0tk"
+      - slug: explanation-of-aqeedah-at-tahawiyyah-lesson-4-ustadh-muhamma
+        title: "Explanation of Aqeedah At Tahawiyyah | Lesson 4 | Ustadh Muhammad Tim Humble"
+        youtube_id: "_7q8H55DSGk"
+      - slug: explanation-of-aqeedah-at-tahawiyyah-lesson-5-ustadh-muhamma
+        title: "Explanation of Aqeedah At Tahawiyyah | Lesson 5 | Ustadh Muhammad Tim Humble"
+        youtube_id: "NygD7liaA84"
+      - slug: explanation-of-aqeedah-at-tahawiyyah-lesson-6-ustadh-muhamma
+        title: "Explanation of Aqeedah At Tahawiyyah | Lesson 6 | Ustadh Muhammad Tim Humble"
+        youtube_id: "8t1PGRFLt5A"
+      - slug: explanation-of-aqeedah-at-tahawiyyah-lesson-7-ustadh-muhamma
+        title: "Explanation of Aqeedah At Tahawiyyah | Lesson 7 | Ustadh Muhammad Tim Humble"
+        youtube_id: "hoTMDIuHl38"
+      - slug: explanation-of-aqeedah-at-tahawiyyah-lesson-8-ustadh-muhamma
+        title: "Explanation of Aqeedah At Tahawiyyah | Lesson 8 | Ustadh Muhammad Tim Humble"
+        youtube_id: "nf-avTfi3Nw"

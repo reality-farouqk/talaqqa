@@ -241,33 +241,107 @@
       "level": "advanced",
       "lang": "ar",
       "q": "شرح قطر الندى"
+    },
+    {
+      "track": "islam",
+      "subject": "aqeedah",
+      "level": "advanced",
+      "lang": "en",
+      "q": "aqeedah tahawiyyah explanation english series"
+    },
+    {
+      "track": "islam",
+      "subject": "usul",
+      "level": "advanced",
+      "lang": "en",
+      "q": "usul al fiqh explained english lecture series"
+    },
+    {
+      "track": "islam",
+      "subject": "hadith",
+      "level": "advanced",
+      "lang": "en",
+      "q": "mustalah al hadith explained english"
+    },
+    {
+      "track": "islam",
+      "subject": "quran",
+      "level": "advanced",
+      "lang": "en",
+      "q": "ulum al quran lecture series english"
+    },
+    {
+      "track": "islam",
+      "subject": "quran",
+      "level": "advanced",
+      "lang": "en",
+      "q": "tafsir surah al baqarah full series english"
+    },
+    {
+      "track": "islam",
+      "subject": "fiqh",
+      "level": "advanced",
+      "lang": "en",
+      "q": "fiqh of zakat and hajj detailed course english"
+    },
+    {
+      "track": "arabic",
+      "subject": "grammar",
+      "level": "advanced",
+      "lang": "en",
+      "q": "alfiyyah ibn malik explanation english"
+    },
+    {
+      "track": "arabic",
+      "subject": "balagha",
+      "level": "advanced",
+      "lang": "en",
+      "q": "arabic rhetoric balagha course english"
     }
   ],
   "blocked_playlists": [
     "PL0OPMgYY8xTgxxUj7Khvojy0uzSl9U0TQ",
     "PL10sHa8EneHwXW9P9UqeNaa5BTtUETj-Y",
+    "PL1CLOsk17N6IvahtEAFJLTmb35iGJS0bw",
     "PL54tsaxKeZjP3ZXGyP3HpgPY3b4SqNrI_",
     "PL58uXU4ojWjXaIIVC9jGCR-YSAC9a-9LE",
+    "PL5zDnvJ7Rqki6ZGL66XSIG2x1buPySIDO",
+    "PL7mtFVc-mZ_oew4cCNuLYT_Eg40IzpnZe",
     "PL83A449092F8A3CBF",
     "PL9uyRQTMUugnhcyoYrftuShw_4_ZzW03l",
     "PL9yoH6BhAHRS2PWU8AQKiucY41i1vdbh6",
     "PLATApN30c4aLXpHzO1GkEb9H0CeXaJFy9",
+    "PLB1_h06YGESJOklRpiVLn6S4qsk4azOrZ",
+    "PLB9jrKbzhQq22ZA9GPfSvgpkK3GEr8-8s",
     "PLDGAumsXqBwEJ9hRtE48xWfnPm7Gz5g-y",
     "PLEKFPVjrJzHtDC6WjhKs8Yl0gTiw5fpti",
     "PLJNcPTDlc1FJ9R-HMc5mIS2oyPVVxTExO",
     "PLN76dtMDwzxtblbi76EVKdgcYtmejf1X_",
+    "PLOmgyQDfIFcM-SiWiWVbQ89c1xw62aKb9",
     "PLQ0pybkP23tor6Ff5M8BoP1ORKjf2f7n2",
     "PLUbGxXvC8t7HCQfvPDimKTdv6RqTEnbjZ",
+    "PLUhUQZnx8aftocRt76LxzmQaYtNe7jGsf",
+    "PLVgajDTQTjHYEGF2IRJ14QSJ6gMGlplbA",
     "PLWIRFDFSWZPt2M_3AIMo23V52uy8lk59f",
+    "PLWcE3bV3PyuP-WnyusYMlIPqg7qVZSOIm",
+    "PLYl-JKXdmsBMCjsCy8ERqwKG5ZHVhU3fR",
+    "PL_hgr4u8837dKR95jdxsEoHlE0cXDtA1G",
     "PLa4RNTLB5f-tnV8iZmeAmsWhRjv0lCpLb",
+    "PLaKZJq08bZsPHt50RCAFBzhjk28aCFO6k",
+    "PLdgHrXZm8HpNP3juMnjlJsm4sfml4rUhU",
+    "PLe_BD17Gi9ANGImWKxYmYDBoGkRO76uvg",
     "PLgonzZSfpsdDHSJZ0G6FSYrx90tGPcb_Y",
+    "PLgpPOIQ2eEw1gWK6vsiS6LQjvLNDx273l",
     "PLjWLf8ygS3IdTCWVaW-aXbEhSL0ainedo",
+    "PLkFSxXxvt6F4mkqUhBA1URsCcNJazGUPO",
     "PLlZazEh_c4nScNCvGBn8OEf6ujk-sDUpg",
     "PLndNqDBdnPz9IUUvzTgAEXsRtnHmxIKcQ",
     "PLr9kLvP0U6BNyANM8KuxOK6UMbtoc4l9D",
     "PLsr1ERsR7y1kOVVtHDU1RHm65IXk1mbWW",
     "PLwNeHLk_z0aR_X5f_j1htLg5SqIHcC8B1",
     "PLxQ71pF_GAtHJYlz6c2VsmbKdDiBVuEVQ",
-    "PLzA5zQ9IRypzGcjYsgaFfp6s33dTvABqT"
+    "PLxae24ZRVSi_EnKlqXRWJbgjNghx_NWC9",
+    "PLzA5zQ9IRypzGcjYsgaFfp6s33dTvABqT",
+    "PLzF43sG237xgQrLlR4g6v1dM67N5M2v-P"
   ]
 }

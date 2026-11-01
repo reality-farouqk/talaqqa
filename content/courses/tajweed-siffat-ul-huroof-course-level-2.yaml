@@ -1,0 +1,36 @@
+# Found by the discovery engine (score 67/100). Every video was confirmed public and embeddable on 2026-11-01.
+title: "Tajweed: Characteristics of the Letters (Level 2)"
+summary: "An advanced tajweed course on the characteristics (sifat) of the Arabic letters."
+track: islam
+subject: quran
+level: advanced
+order: 2
+language: en
+status: published
+verified_at: 2026-11-01
+source:
+  name: "Uloom Academy UK"
+  url: "https://www.youtube.com/channel/UCSv3pFnug40LJD6D7_jO_9A"
+  playlist_url: "https://www.youtube.com/playlist?list=PLT1h3k9QUgAXJxH6dbGeeilROoZiFIpNp"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: tajweed-advanced-sifat-ul-huroof-course-level-2-lesson-1
+        title: "Tajweed Advanced - Sifat-ul-Huroof Course (Level-2)- Lesson 1"
+        youtube_id: "k2e0Dn1MPto"
+      - slug: tajweed-advanced-sifat-ul-huroof-course-level-2-lesson-2
+        title: "Tajweed Advanced - Sifat-ul-Huroof Course (Level-2) - Lesson 2"
+        youtube_id: "uQIm5UKz4-8"
+      - slug: tajweed-advanced-sifat-ul-huroof-course-level-2-lesson-3
+        title: "Tajweed Advanced - Sifat-ul-Huroof Course (Level-2) - Lesson 3"
+        youtube_id: "rCH83lud01U"
+      - slug: tajweed-advanced-sifat-ul-huroof-course-level-2-lesson-4
+        title: "Tajweed Advanced - Sifat-ul-Huroof Course (Level-2) - Lesson 4"
+        youtube_id: "6tOmmsWvSvo"
+      - slug: tajweed-advanced-sifat-ul-huroof-course-level-2-lesson-5
+        title: "Tajweed Advanced - Sifat-ul-Huroof Course (Level-2) - Lesson 5"
+        youtube_id: "U4pF3a0urSI"
+      - slug: sifaat-al-huroof-final-lesson
+        title: "Sifaat al Huroof - Final Lesson"
+        youtube_id: "g5Ku_dTK4Do"

@@ -1,0 +1,69 @@
+# Found by the discovery engine (score 80/100). Every video was confirmed public and embeddable on 2026-11-01.
+title: "Reflections on Surat Al-Baqarah"
+summary: "Nouman Ali Khan reflects on passages of Surat Al-Baqarah in 16 short lessons."
+track: islam
+subject: quran
+level: intermediate
+order: 5
+language: en
+status: published
+verified_at: 2026-11-01
+source:
+  name: "Nouman Ali Khan - Official - Bayyinah"
+  url: "https://www.youtube.com/channel/UCRtiU-lpcBSi-ipFKyfIkug"
+  playlist_url: "https://www.youtube.com/playlist?list=PLutdSTmJ7bALJZ9CTIAoEwtdUBcHgua3C"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: approaching-the-quran-with-humility-ramadan-exclusive-nouman
+        title: "Approaching the Quran with Humility - Ramadan Exclusive - Nouman Ali Khan"
+        youtube_id: "Um7450eiQZU"
+      - slug: giving-charity-to-allah-ramadan-exclusive-nouman-ali-khan
+        title: "Giving Charity to Allah - Ramadan Exclusive - Nouman Ali Khan"
+        youtube_id: "RLzhbiEA1T4"
+      - slug: verses-in-context-ramadan-exclusive-nouman-ali-khan
+        title: "Verses in Context - Ramadan Exclusive - Nouman Ali Khan"
+        youtube_id: "NeGuErm2oGU"
+      - slug: most-powerful-examples-revealed-ramadan-exclusive-nouman-ali
+        title: "Most Powerful Examples Revealed - Ramadan Exclusive - Nouman Ali Khan"
+        youtube_id: "YO0__r_Ef28"
+      - slug: iman-vs-islam-ramadan-exclusive-nouman-ali-khan
+        title: "Iman vs. Islam - Ramadan Exclusive - Nouman Ali Khan"
+        youtube_id: "BMOH9R12Ync"
+      - slug: the-diseased-heart-ramadan-exclusive-nouman-ali-khan
+        title: "The Diseased Heart - Ramadan Exclusive - Nouman Ali Khan"
+        youtube_id: "d34OXppaU2E"
+      - slug: the-ultimate-fools-ramadan-exclusive-nouman-ali-khan
+        title: "The Ultimate Fools - Ramadan Exclusive - Nouman Ali Khan"
+        youtube_id: "sGlq7ir3PQs"
+      - slug: deaf-dumb-and-blind-ramadan-exclusive-nouman-ali-khan
+        title: "Deaf, Dumb and Blind - Ramadan Exclusive - Nouman Ali Khan"
+        youtube_id: "yRe-AjCjF3w"
+      - slug: allah-s-love-for-humanity-ramadan-exclusive-nouman-ali-khan
+        title: "Allah’s Love for Humanity - Ramadan Exclusive - Nouman Ali Khan"
+        youtube_id: "KSDNqCklw3M"
+      - slug: the-challenge-of-the-quran-ramadan-exclusive-nouman-ali-khan
+        title: "The Challenge of the Quran - Ramadan Exclusive - Nouman Ali Khan"
+        youtube_id: "OkOGY95_IVs"
+  - slug: part-2
+    title: "Lessons 11–16"
+    lessons:
+      - slug: finding-our-way-back-to-allah-ramadan-exclusive-nouman-ali-k
+        title: "Finding our Way Back to Allah - Ramadan Exclusive - Nouman Ali Khan"
+        youtube_id: "rHYe18FTxRA"
+      - slug: one-muslim-convert-and-the-story-of-adam-ramadan-exclusive-n
+        title: "One Muslim Convert and the Story of Adam - Ramadan Exclusive - Nouman Ali Khan"
+        youtube_id: "xtaReR83uI0"
+      - slug: the-true-meaning-of-tasbeeh-ramadan-exclusive-nouman-ali-kha
+        title: "The True Meaning of Tasbeeh - Ramadan Exclusive - Nouman Ali Khan"
+        youtube_id: "OWtxCoGoEUs"
+      - slug: the-pride-before-the-fall-ramadan-exclusive-nouman-ali-khan
+        title: "The Pride Before the Fall - Ramadan Exclusive - Nouman Ali Khan"
+        youtube_id: "xeenLjvoOks"
+      - slug: heal-your-heart-with-the-quran-ramadan-exclusive-nouman-ali
+        title: "Heal Your Heart with the Quran - Ramadan Exclusive - Nouman Ali Khan"
+        youtube_id: "Bqglo3sETvA"
+      - slug: no-fear-or-sadness-in-their-hearts-ramadan-exclusive-nouman
+        title: "No Fear or Sadness in their Hearts - Ramadan Exclusive - Nouman Ali Khan"
+        youtube_id: "aBp78r61oDU"

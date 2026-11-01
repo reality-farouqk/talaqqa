@@ -1,0 +1,48 @@
+# Found by the discovery engine (score 64/100). Every video was confirmed public and embeddable on 2026-11-01.
+title: "Tafsir of Surat Al-Baqarah"
+summary: "Taimiyyah Zubair's tafsir of Surat Al-Baqarah in 10 parts, covering all 286 verses."
+track: islam
+subject: quran
+level: advanced
+order: 1
+language: en
+status: published
+verified_at: 2026-11-01
+source:
+  name: "Taimiyyah Zubair"
+  url: "https://www.youtube.com/channel/UCJ3mOfgzY76_2g-UeXj2XfQ"
+  playlist_url: "https://www.youtube.com/playlist?list=PL5YuxmQcBQgK3rV80uljH12xXmKPtXyNw"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: tafsir-surah-al-baqarah-part-1-introduction-2-1-39-taimiyyah
+        title: "Tafsir Surah al Baqarah (Part 1: Introduction, 2:1-39) - Taimiyyah Zubair"
+        youtube_id: "YFJottLtj9A"
+      - slug: tafsir-surah-al-baqarah-part-2-2-40-74-taimiyyah-zubair
+        title: "Tafsir Surah al Baqarah (Part 2: 2:40-74) - Taimiyyah Zubair"
+        youtube_id: "2fGkj8DYeuY"
+      - slug: tafsir-surah-al-baqarah-part-3-2-75-103-taimiyyah-zubair
+        title: "Tafsir Surah al Baqarah (Part 3: 2:75-103) - Taimiyyah Zubair"
+        youtube_id: "UqO99PmOD_8"
+      - slug: tafsir-surah-al-baqarah-part-4-2-104-141-taimiyyah-zubair
+        title: "Tafsir Surah al Baqarah (Part 4: 2:104-141) - Taimiyyah Zubair"
+        youtube_id: "OGcHft4yWEo"
+      - slug: tafsir-surah-al-baqarah-part-5-2-142-171-taimiyyah-zubair
+        title: "Tafsir Surah al Baqarah (Part 5: 2:142-171) - Taimiyyah Zubair"
+        youtube_id: "mwS2YG1oUAw"
+      - slug: tafsir-surah-al-baqarah-part-6-2-172-193-taimiyyah-zubair
+        title: "Tafsir Surah al Baqarah (Part 6: 2:172-193) - Taimiyyah Zubair"
+        youtube_id: "UEjoIjl5Ipw"
+      - slug: tafsir-surah-al-baqarah-part-7-2-194-223-taimiyyah-zubair
+        title: "Tafsir Surah al Baqarah (Part 7: 2:194-223) - Taimiyyah Zubair"
+        youtube_id: "q6IaO4ZoWqI"
+      - slug: tafsir-surah-al-baqarah-part-8-2-224-252-taimiyyah-zubair
+        title: "Tafsir Surah al Baqarah (Part 8: 2:224-252) - Taimiyyah Zubair"
+        youtube_id: "8pF-per1ipA"
+      - slug: tafsir-surah-al-baqarah-part-9-2-253-266-taimiyyah-zubair
+        title: "Tafsir Surah al Baqarah (Part 9: 2:253-266) - Taimiyyah Zubair"
+        youtube_id: "rrg4jihLA0A"
+      - slug: tafsir-surah-al-baqarah-part-10-2-267-286-taimiyyah-zubair
+        title: "Tafsir Surah al Baqarah (Part 10: 2:267-286) - Taimiyyah Zubair"
+        youtube_id: "MqVlN3GUkfw"

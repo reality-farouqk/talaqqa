@@ -28,7 +28,7 @@
     },
     {
       "title": "Content gaps",
-      "detail": "Seerah, Aqeedah and Tazkiyah now have courses. Still thin: Advanced level (only Arabic grammar candidates in Arabic so far) and Aqeedah at intermediate. The weekly engine run keeps searching; name any teachers you want prioritised.",
+      "detail": "Advanced level now has courses in both paths (Tahawiyyah x2, Risalah of Ibn Abi Zayd, Tafsir of Al-Baqarah, advanced tajweed, Qatr al-Nada). Thinnest areas now: advanced Hadith and Usul. Name teachers you want prioritised.",
       "owner": "You"
     }
   ],
@@ -507,6 +507,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-01",
+      "text": "Filled the Advanced level: 7 more courses (32 total, 703 videos, all playable). 18 candidates rejected and blocked (other languages, re-uploads, vlogs, recitation-only, unknown channels)."
+    },
     {
       "date": "2026-11-01",
       "text": "Phase 2 approved (Cloudflare API, email+password and Google sign-in, hono / better-auth / Neon driver / zod). First increment: YouTube metadata for all 599 lesson videos, durations and upload dates on pages and structured data, weekly dead-video check. Fixed: weekly jobs' pushes never triggered a deploy."
