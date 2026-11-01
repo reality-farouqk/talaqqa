@@ -72,10 +72,15 @@ jobs:
         if: env.HAS_TOKEN == 'true'
         env:
           URL: ${{ steps.pages.outputs.deployment-url }}
+        # Functions on a new deployment can come online a few seconds after its static files.
         run: |
-          code=$(curl -s -o /dev/null -w '%{http_code}' -X POST "$URL/api/errors" -d '{"message":"deploy check"}')
-          echo "POST /api/errors: HTTP $code"
-          [ "$code" = 204 ] || { echo "::error::error endpoint returned $code"; exit 1; }
+          for i in $(seq 1 6); do
+            code=$(curl -s -o /dev/null -w '%{http_code}' -X POST "$URL/api/errors" -d '{"message":"deploy check"}' || true)
+            echo "attempt $i: POST /api/errors HTTP $code"
+            [ "$code" = 204 ] && exit 0
+            sleep 10
+          done
+          echo "::error::error endpoint never answered 204"; exit 1
       # Real browser check that a lesson's YouTube player loads (catches CSP or embed problems).
       - name: Player smoke test
         if: env.HAS_TOKEN == 'true'
