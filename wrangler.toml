@@ -1,0 +1,7 @@
+# Cloudflare Pages settings used by `wrangler pages deploy` (see .github/workflows/deploy.yml).
+# Secrets (DATABASE_URL, BETTER_AUTH_SECRET, GOOGLE_CLIENT_*) are set in the Cloudflare dashboard.
+name = "talaqqa"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-10-01"
+# Better Auth uses node:async_hooks and node:crypto.
+compatibility_flags = ["nodejs_compat"]

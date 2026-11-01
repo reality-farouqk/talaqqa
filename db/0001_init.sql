@@ -1,8 +1,7 @@
 -- Talaqqa schema for Neon Postgres (Phase 2 wires it in; the site reads content/courses/*.yaml until then).
 -- Course files stay the source of truth for curated content: a sync script upserts them by slug.
--- User tables (accounts, sessions) are created by Better Auth; user_id below is its text id.
+-- Accounts and per-user data are in 0002_accounts.sql.
 
-begin;
 
 -- Who owns a course. Today one "talaqqa" curator; later, creators submitting their own courses.
 create table creators (
@@ -114,62 +113,3 @@ create table lesson_slugs (
   primary key (course_id, slug)
 );
 
--- Per-user data. Every query filters by user_id taken from the session, never from the client.
-create table playlists (
-  id          bigint generated always as identity primary key,
-  user_id     text not null,
-  title       text not null check (length(title) between 1 and 120),
-  description text check (length(description) <= 1000),
-  visibility  text not null default 'private' check (visibility in ('private', 'unlisted', 'public')),
-  share_slug  text unique,                     -- set when made unlisted/public
-  created_at  timestamptz not null default now(),
-  updated_at  timestamptz not null default now()
-);
-create index playlists_user on playlists (user_id);
-
-create table playlist_items (
-  playlist_id  bigint not null references playlists(id) on delete cascade,
-  lesson_id    bigint not null references lessons(id) on delete cascade,
-  position     int not null,
-  added_at     timestamptz not null default now(),
-  primary key (playlist_id, lesson_id),
-  unique (playlist_id, position) deferrable initially deferred
-);
-
--- Watch later: a whole course or a single lesson.
-create table watchlist_items (
-  user_id    text not null,
-  course_id  bigint references courses(id) on delete cascade,
-  lesson_id  bigint references lessons(id) on delete cascade,
-  added_at   timestamptz not null default now(),
-  check ((course_id is null) <> (lesson_id is null))
-);
-create unique index watchlist_course on watchlist_items (user_id, course_id) where course_id is not null;
-create unique index watchlist_lesson on watchlist_items (user_id, lesson_id) where lesson_id is not null;
-
-create table lesson_progress (
-  user_id          text not null,
-  lesson_id        bigint not null references lessons(id) on delete cascade,
-  position_seconds int not null default 0 check (position_seconds >= 0),
-  completed_at     timestamptz,
-  updated_at       timestamptz not null default now(),  -- last write wins when syncing offline changes
-  primary key (user_id, lesson_id)
-);
-create index lesson_progress_recent on lesson_progress (user_id, updated_at desc);
-
-create table lesson_notes (
-  user_id     text not null,
-  lesson_id   bigint not null references lessons(id) on delete cascade,
-  body        text not null check (length(body) <= 20000),
-  updated_at  timestamptz not null default now(),
-  primary key (user_id, lesson_id)
-);
-
--- Light daily nudge: one row per day the user finished at least one lesson.
-create table study_days (
-  user_id  text not null,
-  day      date not null,
-  primary key (user_id, day)
-);
-
-commit;

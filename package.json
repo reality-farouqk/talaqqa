@@ -9,16 +9,20 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "test": "node --test scripts/discover/*.test.mjs",
+    "test": "node --test scripts/discover/*.test.mjs src/api/*.test.ts",
     "discover": "node scripts/discover/run.mjs"
   },
   "dependencies": {
     "@astrojs/react": "~7.0.1",
     "@astrojs/sitemap": "^3.7.4",
+    "@neondatabase/serverless": "1.2.0",
     "@vite-pwa/astro": "^1.0.0",
     "astro": "~7.3.8",
+    "better-auth": "1.7.10",
+    "hono": "4.13.13",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "zod": "4.6.7"
   },
   "devDependencies": {
     "@types/react": "^19.0.0",

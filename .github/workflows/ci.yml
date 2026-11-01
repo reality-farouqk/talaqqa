@@ -8,6 +8,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Real Postgres for the API tests (same SQL as production).
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports: ['5432:5432']
+        options: --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      PG_TEST_URL: postgresql://postgres:postgres@localhost:5432/postgres
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -15,6 +25,10 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Apply migrations
+        run: scripts/migrate.sh
+        env:
+          DATABASE_URL: ${{ env.PG_TEST_URL }}
       - run: npm test
       # Builds every page and validates every course file (Zod schema + catalog checks).
       - run: npm run build

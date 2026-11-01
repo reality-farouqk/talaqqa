@@ -8,7 +8,7 @@
   "blockers": [
     {
       "title": "Neon database connection",
-      "detail": "Create a free Neon project (region near your users, e.g. Frankfurt aws-eu-central-1), copy the pooled connection string, and add it as DATABASE_URL in GitHub (Settings → Secrets → Actions) and Cloudflare (Workers & Pages → talaqqa → Settings → Variables and Secrets, encrypted). Needed before accounts and sync.",
+      "detail": "Everything else for accounts is built and tested. Add two Cloudflare secrets (Workers & Pages → talaqqa → Settings → Variables and Secrets): DATABASE_URL (Neon pooled connection string) and BETTER_AUTH_SECRET (a long random string, e.g. from a password manager). Add DATABASE_URL as a GitHub Actions secret too, so migrations run on deploy.",
       "owner": "You"
     },
     {
@@ -309,7 +309,7 @@
         {
           "title": "Connect Neon and run db/0001_init.sql",
           "status": "To do",
-          "notes": "Pooled connection string as a Cloudflare + GitHub secret. Migrations run from CI, never by hand."
+          "notes": "Migrations + runner ready (scripts/migrate.sh; runs on production deploy once DATABASE_URL exists). Waiting on the Neon project."
         },
         {
           "title": "Sync script: course files → Postgres",
@@ -333,13 +333,13 @@
         },
         {
           "title": "API with Hono",
-          "status": "To do",
-          "notes": "On Cloudflare Pages Functions (same domain as the site). Zod-validated inputs, consistent errors, paginated lists."
+          "status": "Doing",
+          "notes": "Built: /api/health, /api/me/items (paginated, Zod-validated, last-write-wins), /api/me/export, DELETE /api/me. Same-origin + JSON checks on writes; user always from the session. Off until DATABASE_URL is set."
         },
         {
           "title": "Accounts with Better Auth",
-          "status": "To do",
-          "notes": "Sign up / sign in; guest browsing unchanged. httpOnly secure cookies, rate-limited auth routes, CSRF protection."
+          "status": "Doing",
+          "notes": "Email + password, Google when keys are set, httpOnly secure cookies, DB-backed rate limits (5 sign-in tries/min). Tested with Better Auth in memory; goes live with Neon."
         },
         {
           "title": "Sync progress, watchlist, playlists, notes",
@@ -353,8 +353,8 @@
         },
         {
           "title": "Account deletion and data export",
-          "status": "To do",
-          "notes": "Required by NDPA/GDPR; deletes all per-user rows."
+          "status": "Doing",
+          "notes": "API done (export + delete cascade). Needs the sign-in UI."
         },
         {
           "title": "Public playlists",
@@ -363,8 +363,8 @@
         },
         {
           "title": "Tests for auth, permissions and sync",
-          "status": "To do",
-          "notes": "Every API route checks the signed-in user owns the data (no IDOR)."
+          "status": "Doing",
+          "notes": "15 API tests incl. real Postgres in CI: auth required, CSRF, validation, last-write-wins, no cross-user access, pagination, export, deletion, rate limit."
         }
       ]
     },
@@ -507,6 +507,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-01",
+      "text": "Accounts and sync API built and tested without waiting for the database: Hono + Better Auth on Cloudflare, last-write-wins sync of learner data, export and deletion, CSRF and ownership checks, rate limits; migrations with a runner; CI runs API tests on real Postgres. Turns on when DATABASE_URL is set."
+    },
     {
       "date": "2026-11-01",
       "text": "Filled the Advanced level: 7 more courses (32 total, 703 videos, all playable). 18 candidates rejected and blocked (other languages, re-uploads, vlogs, recitation-only, unknown channels)."
