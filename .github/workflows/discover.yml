@@ -45,7 +45,8 @@ jobs:
             gh workflow run deploy.yml --ref main
           fi
           if [ -n "$drafts" ]; then
-            branch="discovery/review-$(date +%Y-%m-%d)"
+            # Run number keeps a second run on the same day from clashing with an earlier branch.
+            branch="discovery/review-$(date +%Y-%m-%d)-${{ github.run_number }}"
             git checkout -b "$branch"
             git add $drafts
             git commit -m "content: discovery drafts for review"
