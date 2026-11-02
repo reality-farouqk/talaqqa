@@ -1,0 +1,41 @@
+# Found by the discovery engine (score 68/100). Every video was confirmed public and embeddable on 2026-11-02.
+title: "40 Hadith Nawawi | Comprehensive Course"
+summary: "40 Hadith of Imam Nawawi, Primarily Explained by Sheikh Saalih al-Fawzaan Every Saturday after 'Asr prayer, eastern time."
+track: islam
+subject: hadith
+level: beginner
+language: en
+status: draft
+verified_at: 2026-11-02
+source:
+  name: "Germantown Masjid"
+  url: "https://www.youtube.com/channel/UCi_uV3avNkUrY12RWBVZ0Ug"
+  playlist_url: "https://www.youtube.com/playlist?list=PLcNmEBnwyvx4it-p1F9xGUOz0j2SJpGa4"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: actions-are-by-intentions-40-hadith-comprehensive-course
+        title: "Actions are by Intentions | 40 Hadith | Comprehensive Course"
+        youtube_id: "aldBD8Z6b8c"
+      - slug: actions-are-by-intentions-part-2-40-hadith-comprehensive-cou
+        title: "Actions are by Intentions Part 2 | 40 Hadith | Comprehensive Course"
+        youtube_id: "BZyNBhTUyfc"
+      - slug: lesson-3-explanation-of-40-hadith-comprehensive-course
+        title: "Lesson 3 | Explanation of 40 Hadith | Comprehensive Course"
+        youtube_id: "DnLS3I9GYtM"
+      - slug: lesson-4-explanation-of-40-hadith-comprehensive-course
+        title: "Lesson 4 | Explanation of 40 Hadith | Comprehensive Course"
+        youtube_id: "Gu4bBTqHX_I"
+      - slug: lesson-5-explanation-of-40-hadith-comprehensive-course
+        title: "Lesson 5 | Explanation of 40 Hadith | Comprehensive Course"
+        youtube_id: "UYPxuhs1s6A"
+      - slug: lesson-6-explanation-of-40-hadith-comprehensive-course
+        title: "Lesson 6 | Explanation of 40 Hadith | Comprehensive Course"
+        youtube_id: "Q5XrrhIgdlo"
+      - slug: lesson-7-explanation-of-40-hadith-comprehensive-course
+        title: "Lesson 7 | Explanation of 40 Hadith | Comprehensive Course"
+        youtube_id: "Rnxoxfcd0ZE"
+      - slug: lesson-8-explanation-of-40-hadith-comprehensive-course
+        title: "Lesson 8 | Explanation of 40 Hadith | Comprehensive Course"
+        youtube_id: "5o2nyvBzRdg"

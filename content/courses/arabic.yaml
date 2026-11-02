@@ -1,0 +1,65 @@
+# Found by the discovery engine (score 73/100). Every video was confirmed public and embeddable on 2026-11-02.
+title: "Arabic"
+summary: "A 15-lesson series by joko waras."
+track: arabic
+subject: balagha
+level: advanced
+language: en
+status: draft
+verified_at: 2026-11-02
+source:
+  name: "joko waras"
+  url: "https://www.youtube.com/channel/UCwS4deNOH2Ea1TMVFcn18pg"
+  playlist_url: "https://www.youtube.com/playlist?list=PLTGmvRj31f-uhw0fvefVJcJEqvo27SMdU"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: the-first-meaning-of-con03-ultimate-arabic-grammar-and-rheto
+        title: "The first meaning of ثُمَّ (CON03) - Ultimate Arabic Grammar and Rhetoric Course"
+        youtube_id: "knFkL7dRo5U"
+      - slug: the-second-meaning-of-con03-ultimate-arabic-grammar-and-rhet
+        title: "The second meaning of ثُمَّ (CON03) - Ultimate Arabic Grammar and Rhetoric Course"
+        youtube_id: "SYRI4Kw29j8"
+      - slug: ultimate-arabic-grammar-and-rhetoric-course-sample-lessons
+        title: "Ultimate Arabic Grammar and Rhetoric course - SAMPLE LESSONS"
+        youtube_id: "mPqchkfWgEI"
+      - slug: deeper-understanding-the-word-book-in-classical-arabic
+        title: "Deeper understanding the word كِتاب (Book) in Classical Arabic"
+        youtube_id: "rRON-ukTsN0"
+      - slug: translating-the-untranslatable-the-challenges-of-translating
+        title: "Translating the Untranslatable :The Challenges of Translating and Publishing Classical Arabic Texts"
+        youtube_id: "j4zq0aXvcVw"
+      - slug: the-greatness-of-the-arabic-language
+        title: "the greatness of the Arabic language عظمة اللغة العربية"
+        youtube_id: "S8l5zJ-7Hoc"
+      - slug: amy-purdy-living-beyond-limits-arabic-sub-step-forward
+        title: "Amy Purdy - Living Beyond Limits \"Arabic sub\" Step Forward"
+        youtube_id: "uj6lyxFQkmI"
+      - slug: lesson-8
+        title: "جانين شيبرد-تيدكس أروع قصص مواجهة الصعاب والتحديات على الاطلاق"
+        youtube_id: "9sBhDgwnHYY"
+      - slug: lesson-9
+        title: "الذكاء وحده لا يكفي للوصول الى مبتغاك !!! (مترجم للعربية)"
+        youtube_id: "55LwmXf5hKM"
+      - slug: flv
+        title: "اجمل ما قيل عن العرب من الغرب.flv"
+        youtube_id: "SrvkHiWPKJo"
+  - slug: part-2
+    title: "Lessons 11–15"
+    lessons:
+      - slug: lesson-11
+        title: "شهادة علماء الغرب للإسلام"
+        youtube_id: "71Ij4bwVphM"
+      - slug: was-muhammad-a-true-prophet
+        title: "هل محمد رسول من الله ؟ - مترجم  ┇ ? Was Muhammad a true prophet"
+        youtube_id: "dKoeu5fsb5o"
+      - slug: lesson-13
+        title: "شرح ألفية ابن مالك - الدرس الأول (( المقدمة و أنوع الكلام ))"
+        youtube_id: "vLp5Zo45eDA"
+      - slug: saving-mr-banks-8
+        title: "تعلم الإنجليزية عبر مشهد من فيلم (ٍSaving Mr. Banks) بطريقة التلقين السمعي (8)"
+        youtube_id: "Ygw98ILsnLo"
+      - slug: bitesize-islam-part-4-al-balagha-arabic-rhetoric
+        title: "Bitesize Islam: Part 4 - al-Balagha - Arabic Rhetoric"
+        youtube_id: "mmuTECN73qk"

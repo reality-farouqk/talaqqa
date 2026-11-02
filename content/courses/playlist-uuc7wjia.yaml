@@ -1,0 +1,44 @@
+# Found by the discovery engine (score 69/100). Every video was confirmed public and embeddable on 2026-11-02.
+title: "دروس في السيرة النبوية"
+summary: "دروس في السيرة النبوية مجموعة مقاطع نادرة للشيخ خالد الراشد تم تسجيلها قبل أكثر من 25 سنة، يتناول فيها دروساً من السيرة النبوية ..."
+track: islam
+subject: seerah
+level: beginner
+language: ar
+status: draft
+verified_at: 2026-11-02
+source:
+  name: "قناة الشيخ خالد الراشد"
+  url: "https://www.youtube.com/channel/UCzlegKGuJ7NNt-amwTC6Jhw"
+  playlist_url: "https://www.youtube.com/playlist?list=PL19uoPhu-CJcS18rP7mbw2RzxUUC7WJIa"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: lesson-1
+        title: "الشيخ خالد الراشد - دروس السيرة النبوية 1"
+        youtube_id: "dJAq63ycSQM"
+      - slug: lesson-2
+        title: "نزول الوحي - الشيخ خالد الراشد دروس السيرة النبوية  2"
+        youtube_id: "5iOws9RIuXM"
+      - slug: lesson-3
+        title: "الهجرة الى المدينة - الشيخ خالد الراشد دروس السيرة النبوية 3"
+        youtube_id: "-26G7czaRMA"
+      - slug: lesson-4
+        title: "أبو بكر وعمر رضي الله عنهما - الشيخ خالد الراشد دروس السيرة النبوية 4"
+        youtube_id: "HVAq5T2LK4Y"
+      - slug: lesson-5
+        title: "دروس وعبر غزوة أحد - الشيخ خالد الراشد دروس السيرة النبوية 5"
+        youtube_id: "dA0PWP29czg"
+      - slug: lesson-6
+        title: "صحابيات حول الرسول ﷺ - الشيخ خالد الراشد دروس السيرة النبوية 6"
+        youtube_id: "On1-gpLFYP0"
+      - slug: lesson-7
+        title: "الأحداث عقب غزوة أحد - الشيخ خالد الراشد دروس السيرة النبوية 7"
+        youtube_id: "XEN3Vx5STBE"
+      - slug: lesson-8
+        title: "الشيخ خالد الراشد دروس السيرة النبوية 8"
+        youtube_id: "JprRtZ6YuQk"
+      - slug: lesson-9
+        title: "الشيخ خالد الراشد دروس السيرة النبوية 9"
+        youtube_id: "b0yJjgR_Rfg"

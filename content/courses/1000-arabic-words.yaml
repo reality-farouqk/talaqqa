@@ -1,0 +1,101 @@
+# Found by the discovery engine (score 69/100). Every video was confirmed public and embeddable on 2026-11-02.
+title: "1000 Arabic Words"
+summary: "A 26-lesson series by EngRabic."
+track: arabic
+subject: vocabulary
+level: beginner
+language: en
+status: draft
+verified_at: 2026-11-02
+source:
+  name: "EngRabic"
+  url: "https://www.youtube.com/channel/UCDd2XR_98jqzwAFOZtBWP3Q"
+  playlist_url: "https://www.youtube.com/playlist?list=PLSOLTWlkVrOcYelDMeZVvY6kZ6Xlp9u2s"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: arabic-vocabulary-for-beginners-arabic-words-into-english-an
+        title: "Arabic Vocabulary for Beginners | Arabic Words into English and Urdu | Everyday Arabic"
+        youtube_id: "cn6VZG5WlQg"
+      - slug: arabic-vocabulary-for-beginners-part-ii-arabic-to-english-an
+        title: "Arabic Vocabulary for Beginners Part II | Arabic to English and Urdu Words | Engrabic"
+        youtube_id: "AU5tZblpLv4"
+      - slug: 35-arabic-words-arabic-vocabulary-for-beginners-arabic-engli
+        title: "35 Arabic Words | Arabic Vocabulary for Beginners | Arabic English Vocabulary | Engrabic"
+        youtube_id: "e_4-zPDjtaM"
+      - slug: 1000-arabic-words-in-english-and-urdu-part-iv-arabic-vocabul
+        title: "1000 Arabic Words in English and Urdu Part IV | Arabic Vocabulary for Beginners | 100 Arabic Words"
+        youtube_id: "-J1llGaUbhQ"
+      - slug: 1000-arabic-words-in-english-and-urdu-part-v-arabic-for-begi
+        title: "1000 Arabic Words in English and Urdu | Part V | Arabic For Beginners | Beginners Arabic Vocabulary"
+        youtube_id: "63zKZah63Os"
+      - slug: 1000-arabic-words-for-beginners-part-vi-arabic-words-for-dai
+        title: "1000 Arabic Words for Beginners Part VI | Arabic Words for Daily Life | Engrabic"
+        youtube_id: "iDHr3gYzZL0"
+      - slug: 1000-arabic-words-in-english-and-urdu-part-vii-arabic-vocabu
+        title: "1000 Arabic Words in English and Urdu Part VII | Arabic Vocabulary for Beginners | Arabic Words"
+        youtube_id: "h5jzJdNWIss"
+      - slug: 1000-arabic-words-part-8-english-urdu-translation
+        title: "1000 Arabic Words | Part 8 | English Urdu Translation"
+        youtube_id: "RDRvzIeEYJo"
+      - slug: 1000-arabic-words-part-09-english-urdu-translation
+        title: "1000 Arabic Words Part 09 | English & Urdu Translation"
+        youtube_id: "nMVXQ3s-jbU"
+      - slug: arabic-vocabulary-in-english-and-urdu-part-10-1000-arabic-vo
+        title: "Arabic Vocabulary in English and Urdu Part 10 | 1000 Arabic Vocabular Words | Arabic Vocabulary"
+        youtube_id: "pj4qN0b5cwA"
+  - slug: part-2
+    title: "Lessons 11–20"
+    lessons:
+      - slug: arabic-words-in-english-and-urdu-translation-arabic-vocabula
+        title: "Arabic Words in English and Urdu Translation | Arabic Vocabulary | Arabic Words | Learn Arabic"
+        youtube_id: "Gx7mv6IT-j0"
+      - slug: 1000-arabic-words-in-english-and-urdu-part-15-arabic-vocabul
+        title: "1000 Arabic Words in English and Urdu - Part 15 | Arabic Vocabulary | Arabic Vocabulary in English"
+        youtube_id: "PRfAsy8dDKI"
+      - slug: par-16-arabic-words-in-english-and-urdu-arabic-words-arabic
+        title: "Par 16 - Arabic Words in English and Urdu | Arabic Words | Arabic Vocabulary | Arabic Learning"
+        youtube_id: "l-4RwSCyOEY"
+      - slug: arabic-words-in-english-with-urdu-translation-part-20-arabic
+        title: "Arabic Words in English with Urdu Translation - Part 20 | Arabic Words | عربی اردو الفاظ | EngRabic"
+        youtube_id: "B0E19_N8WIU"
+      - slug: arabic-vocabulary-for-absolute-beginners-1000-arabic-words-i
+        title: "Arabic Vocabulary for Absolute Beginners | 1000 Arabic Words in English and Urdu"
+        youtube_id: "MoYRzbRcBQ8"
+      - slug: arabic-words-in-english-and-urdu-part-22-1000-arabic-words-a
+        title: "Arabic Words in English and Urdu | Part 22 - 1000 Arabic Words | Arabic Vocabulary for Beginners"
+        youtube_id: "M8LzbTK0EVc"
+      - slug: arabic-words-in-english-urdu-part-23-1000-arabic-words-arabi
+        title: "Arabic Words in English/Urdu | Part 23 - 1000 Arabic Words | Arabic Vocabulary for Beginners"
+        youtube_id: "ymI7xqmpa3U"
+      - slug: 1000-arabic-words-arabic-vocabulary-in-english-and-urdu-part
+        title: "1000 Arabic Words - Arabic Vocabulary in English and Urdu Part 24 | Arabic Words"
+        youtube_id: "PDayl4pse9Q"
+      - slug: 1000-arabic-words-arabic-vocabulary-in-english-and-urdu-part-19
+        title: "1000 Arabic Words - Arabic Vocabulary in English and Urdu Part 25 | Arabic Words"
+        youtube_id: "ZrvCHAIHWmM"
+      - slug: 1000-arabic-words-part-26-arabic-vocabulary-for-beginners-ar
+        title: "1000 Arabic Words - Part 26 | Arabic Vocabulary for Beginners | Arabic Words"
+        youtube_id: "7OBb58eRfOY"
+  - slug: part-3
+    title: "Lessons 21–26"
+    lessons:
+      - slug: 1000-arabic-words-with-english-and-urdu-meanings-class-27-ar
+        title: "1000 Arabic Words with English and Urdu Meanings Class 27 | Arabic Words | @EngRabic"
+        youtube_id: "a-RzCtLQU0A"
+      - slug: arabic-vocabulary-for-beginners-learn-arabic-through-english
+        title: "Arabic Vocabulary for Beginners | Learn Arabic Through English and Urdu"
+        youtube_id: "ylq7WVeHoI8"
+      - slug: arabic-words-in-english-arabic-vocabulary-learn-arabi-throug
+        title: "Arabic Words in English | Arabic Vocabulary | Learn Arabi through English"
+        youtube_id: "4pQjiJ-onkA"
+      - slug: important-arabic-words-you-need-to-know-arabic-vocabulary
+        title: "Important Arabic Words You Need to Know | Arabic Vocabulary"
+        youtube_id: "Y7ICGHDqVAg"
+      - slug: important-arabic-words-you-need-to-know-arabic-vocabulary-25
+        title: "Important Arabic Words You Need to Know | Arabic Vocabulary"
+        youtube_id: "T2qcbytny70"
+      - slug: 31-arabic-words-you-need-to-know-engrabic
+        title: "31 Arabic Words you need to know | عربی الفاظ | Engrabic"
+        youtube_id: "Idaatbdi1YM"

@@ -1,0 +1,62 @@
+# Found by the discovery engine (score 68/100). Every video was confirmed public and embeddable on 2026-11-02.
+title: "Basic aqeedah course lecturs by hafiz shahid"
+summary: "A 14-lesson series by HAFIZ SHAHID SALAFI."
+track: islam
+subject: aqeedah
+level: foundations
+language: en
+status: draft
+verified_at: 2026-11-02
+source:
+  name: "HAFIZ SHAHID SALAFI"
+  url: "https://www.youtube.com/channel/UCqREEjRQvBI8o_k7hQnTS8w"
+  playlist_url: "https://www.youtube.com/playlist?list=PLqcEq3d8n5nxiT3nifZUSz3KeznyoVVsc"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: basic-aqeedah-course-lecture-1-introduction-to-islamic-belie
+        title: "Basic Aqeedah Course | Lecture 1 | Introduction to Islamic Beliefs | Hafiz Shahid Salafi\""
+        youtube_id: "mAHhWWTM0YY"
+      - slug: basic-aqeedah-course-lecture-2-by-hafiz-shahid-salafii
+        title: "\"Basic Aqeedah Course – Lecture 2 | By Hafiz Shahid Salafii\""
+        youtube_id: "r9BKAh6MAik"
+      - slug: basic-aqeedah-course-lecture-8-tawheed-asmaa-wa-sifaat-part
+        title: "Basic Aqeedah Course | Lecture 8 | Tawheed Asmaa wa Sifaat Part 2 | Hafiz Shahid Salafi\""
+        youtube_id: "ERuk5H9_FR0"
+      - slug: lecture-3-basic-islamic-aqeedah-by-hafiz-shahid-salafi
+        title: "Lecture 3: Basic Islamic Aqeedah by Hafiz Shahid Salafi"
+        youtube_id: "YsNSAHuan_I"
+      - slug: basic-islamic-aqeedah-course-lecture-4-by-hafiz-shahid-salaf
+        title: "📚 Basic Islamic Aqeedah Course – Lecture 4🎙 By: Hafiz Shahid Salafi"
+        youtube_id: "zDNqTDa8Xlc"
+      - slug: basic-aqeedah-course-lecture-5-by-hafiz-shahid-salafi
+        title: "Basic Aqeedah Course | Lecture 5 | By Hafiz Shahid Salafi"
+        youtube_id: "o7neGS-iCKE"
+      - slug: basic-aqeedah-course-lecture-6-by-hafiz-shahid-salafii
+        title: "Basic Aqeedah Course | Lecture 6 | By Hafiz Shahid Salafii"
+        youtube_id: "zqJ3_MeiEu4"
+      - slug: tawheed-al-asma-wa-sifaat-informative-lecture-by-hafiz-shahi
+        title: "Tawheed Al-Asma wa Sifaat | Informative Lecture by Hafiz Shahid Salafii _lec no 7 "
+        youtube_id: "Heb6ssfhy_g"
+      - slug: basic-aqeedah-course-lecture-9-by-hafiz-shahid-salafii-shirk
+        title: "“Basic Aqeedah Course | Lecture 9 | By Hafiz Shahid Salafii”{Shirk ore is kay Aqsaam}"
+        youtube_id: "LSXSP5lNSm0"
+      - slug: tawheed-asma-wa-sifaat-lecture-no-9-by-hafiz-shahid-salafii
+        title: "Tawheed Asma wa Sifaat | Lecture No 9 | صفات ثبوتیہ اور صفات سلبیہ | By Hafiz Shahid Salafii"
+        youtube_id: "dAdKA2hVbes"
+  - slug: part-2
+    title: "Lessons 11–14"
+    lessons:
+      - slug: basic-aqeedah-course-lecture-10-by-hafiz-shahid-salafii
+        title: "“Basic Aqeedah Course – Lecture 10 |  by Hafiz Shahid Salafii”"
+        youtube_id: "xE2ypAYZUq0"
+      - slug: basic-aqeedah-course-lecture-11-by-hafiz-shahid-salafii
+        title: "Basic Aqeedah Course – Lecture 11 | By Hafiz Shahid Salafii"
+        youtube_id: "wqufXMh5uG4"
+      - slug: basic-aqeedah-course-lecture-12-when-did-shirk-begin-hafiz-s
+        title: "Basic Aqeedah Course | Lecture 12 | When Did Shirk Begin? | Hafiz Shahid Salafii\""
+        youtube_id: "TmgEe3mFYyo"
+      - slug: basic-aqeedah-course-lecture-no-13-kufr-aur-uski-aqsaam-by-h
+        title: "Basic Aqeedah Course | Lecture No. 13 | Kufr aur Uski Aqsaam | By Hafiz Shahid Salafii"
+        youtube_id: "eELyGy4LJww"

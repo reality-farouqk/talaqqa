@@ -1,0 +1,35 @@
+# Found by the discovery engine (score 80/100). Every video was confirmed public and embeddable on 2026-11-02.
+title: "Heart Disease lecture"
+summary: "A 6-lesson series by scomar."
+track: islam
+subject: tazkiyah
+level: beginner
+language: en
+status: draft
+verified_at: 2026-11-02
+source:
+  name: "scomar"
+  url: "https://www.youtube.com/channel/UCEdPrt3cXADH0hQmL1HOjDQ"
+  playlist_url: "https://www.youtube.com/playlist?list=PLLHM2H5TmpIYUBUTk7DJwXNLUCbbBQ-t2"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: most-popular-talk-of-dr-bimal-chhajer-on-heart-care-in-hindi
+        title: "Most popular talk of Dr. Bimal Chhajer on Heart Care in Hindi | Dr. Bimal Chhajer | Saaol"
+        youtube_id: "hcflN_lZKMU"
+      - slug: cause-for-diabetes-in-a-daily-lifestyle-dr-bimal-chhajer-saa
+        title: "cause for diabetes in a daily  lifestyle | Dr. Bimal Chhajer | Saaol"
+        youtube_id: "Qrwn1G2rcOk"
+      - slug: diabetes-is-very-bad-for-heart-dr-bimal-chhajer-saaol
+        title: "Diabetes is very bad for heart | Dr. Bimal Chhajer | Saaol"
+        youtube_id: "qUak3ZYs2ks"
+      - slug: about-knee-pain-exercises-dr-bimal-chhajer-saaol
+        title: "About Knee Pain Exercises | Dr. Bimal Chhajer | Saaol"
+        youtube_id: "LvCvJaki3ls"
+      - slug: about-blood-pressure-dr-bimal-chhajer-saaol
+        title: "About Blood Pressure | Dr. Bimal Chhajer | Saaol"
+        youtube_id: "GYOM-ToS6tU"
+      - slug: how-to-count-the-calorie-dr-bimal-chhajer-saaol
+        title: "How to count the calorie | Dr. Bimal Chhajer | Saaol"
+        youtube_id: "LqB36Kp3Bc8"

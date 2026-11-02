@@ -1,0 +1,119 @@
+# Found by the discovery engine (score 68/100). Every video was confirmed public and embeddable on 2026-11-02.
+title: "سلسلة شرح متن الآجرومية للدكتور محمد حسن عثمان"
+summary: "A 31-lesson series by مركز الصوالحة للتجويد والقراءات."
+track: arabic
+subject: grammar
+level: intermediate
+language: ar
+status: draft
+verified_at: 2026-11-02
+source:
+  name: "مركز الصوالحة للتجويد والقراءات"
+  url: "https://www.youtube.com/channel/UC2UEVOsusGcLSvTTuoPq0Rw"
+  playlist_url: "https://www.youtube.com/playlist?list=PL1A0-NVvXt9FUaiKBs0XTU43Cy-vaf8a4"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: lesson-1
+        title: "سلسلة شرح الآجرومية (1) الأسم"
+        youtube_id: "TenkitHQP-s"
+      - slug: lesson-2
+        title: "سلسلة شرح الآجرومية (2) الكلام والفعل والحرف"
+        youtube_id: "0IxSmt3v7os"
+      - slug: lesson-3
+        title: "سلسلة شرح الآجرومية (3) باب علامات الرفع"
+        youtube_id: "JVImLghL5vg"
+      - slug: lesson-4
+        title: "سلسلة شرح الآجرومية (4) باب علامات النصب"
+        youtube_id: "OGmWlLf2zR8"
+      - slug: lesson-5
+        title: "سلسلة شرح الآجرومية (5) باب علامات الخفض"
+        youtube_id: "uZJbp9yAxZo"
+      - slug: lesson-6
+        title: "سلسلة شرح الآجرومية (6) باب علامات الجزم"
+        youtube_id: "YQ5Xna2H84U"
+      - slug: lesson-7
+        title: "سلسلة شرح الآجرومية (7)  باب الأفعال"
+        youtube_id: "NC2Csh8XA3I"
+      - slug: lesson-8
+        title: "سلسلة شرح الآجرومية (8) باب النواصب"
+        youtube_id: "bZE1EBaj9TU"
+      - slug: lesson-9
+        title: "سلسلة شرح الآجرومية (9) باب الجوازم"
+        youtube_id: "Bfgs3S2OMo0"
+      - slug: lesson-10
+        title: "سلسلة شرح الآجرومية (10) باب الفاعل"
+        youtube_id: "AEHEin01uvY"
+  - slug: part-2
+    title: "Lessons 11–20"
+    lessons:
+      - slug: lesson-11
+        title: "سلسلة شرح الآجرومية (11) باب المفعول الذي لم يسم فاعله"
+        youtube_id: "Pr0Ou7m77pg"
+      - slug: lesson-12
+        title: "سلسلة شرح الآجرومية (12) باب المبتدأ والخبر"
+        youtube_id: "959j3mWvIKw"
+      - slug: lesson-13
+        title: "سلسلة شرح الآجرومية 13 بَابُ كَانَ وَأَخَوَاتِهَا"
+        youtube_id: "iqOTOBIK9E8"
+      - slug: lesson-14
+        title: "سلسلة شرح الآجرومية 14 بَابَ إِنَّ وَأَخَوَاتِهَا"
+        youtube_id: "IZmvaFjIPcE"
+      - slug: lesson-15
+        title: "سلسلة شرح الآجرومية (15) بَابُ ظَنَّ وَأَخَوَاتِهَا"
+        youtube_id: "xyw-CozgGCc"
+      - slug: lesson-16
+        title: "سلسلة شرح الآجرومية (16) بَابُ النَّعْتُ"
+        youtube_id: "WIghziw4l44"
+      - slug: lesson-17
+        title: "سلسلة شرح الآجرومية (17) باب المعرفة والنكرة"
+        youtube_id: "KqiejIy-pM4"
+      - slug: lesson-18
+        title: "سلسلة شرح الآجرومية (18) باب العطف"
+        youtube_id: "7gwT4m86xB4"
+      - slug: lesson-19
+        title: "سلسلة شرح الآجرومية (19) باب التوكيد"
+        youtube_id: "VOY7q04ICEA"
+      - slug: lesson-20
+        title: "سلسلة شرح الآجرومية (20) بَابُ البدل"
+        youtube_id: "7KX_rxYY56k"
+  - slug: part-3
+    title: "Lessons 21–30"
+    lessons:
+      - slug: lesson-21
+        title: "سلسلة شرح الآجرومية (21) بَابُ المفعول به"
+        youtube_id: "zInmK_ulARs"
+      - slug: lesson-22
+        title: "سلسلة شرح الآجرومية (22) بَابُ المصدر"
+        youtube_id: "Amo01pG6EIc"
+      - slug: lesson-23
+        title: "سلسلة شرح الآجرومية (23) بَابُ الظرف"
+        youtube_id: "CX7chskRYnI"
+      - slug: lesson-24
+        title: "سلسلة شرح الآجرومية (24) بَابُ الحال"
+        youtube_id: "YiNKfI1sXAo"
+      - slug: lesson-25
+        title: "سلسلة شرح الآجرومية (25) بَابُ التميز"
+        youtube_id: "-HF28zayKkY"
+      - slug: lesson-26
+        title: "سلسلة شرح الآجرومية (26) باب الاستثناء"
+        youtube_id: "a29k0jm1QJc"
+      - slug: lesson-27
+        title: "سلسلة شرح الآجرومية (27) باب لا"
+        youtube_id: "KfG-dEzdauU"
+      - slug: lesson-28
+        title: "سلسلة شرح الآجرومية (28) باب المنادى"
+        youtube_id: "JFoAbeq6PLU"
+      - slug: lesson-29
+        title: "سلسلة شرح الآجرومية (29) باب المفعول معه"
+        youtube_id: "e0F47eAB36k"
+      - slug: lesson-30
+        title: "سلسلة شرح الآجرومية (30) باب المفعول له"
+        youtube_id: "xC_bRsNa7Xw"
+  - slug: part-4
+    title: "Lessons 31–31"
+    lessons:
+      - slug: lesson-31
+        title: "سلسلة شرح الآجرومية (31) باب مخفوضات الأسماء"
+        youtube_id: "0m1o5nVCbMw"

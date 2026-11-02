@@ -1,0 +1,41 @@
+# Found by the discovery engine (score 69/100). Every video was confirmed public and embeddable on 2026-11-02.
+title: "The Fiqh of Worship for Youth [Level 2]: Rules for Fasting and Zakat"
+summary: "The pathway to Allah involves understanding and applying the five pillars, the essential elements of our faith. This is the second ..."
+track: islam
+subject: fiqh
+level: intermediate
+language: en
+status: draft
+verified_at: 2026-11-02
+source:
+  name: "SeekersGuidance"
+  url: "https://www.youtube.com/channel/UCbPVEsJhn5My75IfMWXv1_Q"
+  playlist_url: "https://www.youtube.com/playlist?list=PL4mTEQpP9b5EMLR93kGR0Fivb8LiC9rXt"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: the-fiqh-of-worship-for-youth-01-virtues-of-fasting-imam-yam
+        title: "The Fiqh of Worship for Youth -01- Virtues of Fasting | Imam Yama Niazi"
+        youtube_id: "5TH5E2NSems"
+      - slug: the-fiqh-of-worship-for-youth-02-virtues-of-fasting-imam-yam
+        title: "The Fiqh of Worship for Youth -02- Virtues of Fasting | Imam Yama Niazi"
+        youtube_id: "-U-wYe2DZY0"
+      - slug: the-fiqh-of-worship-for-youth-03-types-of-fasting-imam-yama
+        title: "The Fiqh of Worship for Youth -03- Types of Fasting | Imam Yama Niazi"
+        youtube_id: "LJ9bcOyh2LY"
+      - slug: the-fiqh-of-worship-for-youth-04-times-and-intentions-imam-y
+        title: "The Fiqh of Worship for Youth -04- Times and Intentions |  Imam Yam Niazi"
+        youtube_id: "1jjKSjGtEEI"
+      - slug: the-fiqh-of-worship-for-youth-05-the-nullifiers-of-fasting-i
+        title: "The Fiqh of Worship for Youth -05- The Nullifiers of Fasting | Imam Yama Niazi"
+        youtube_id: "yfYZXQmoKP0"
+      - slug: the-fiqh-of-worship-for-youth-06-spiritual-retreat-imam-yama
+        title: "The Fiqh of Worship for Youth -06- Spiritual Retreat | Imam Yama Niazi"
+        youtube_id: "8r5ZCrMfWZg"
+      - slug: the-fiqh-of-worship-for-youth-07-virtues-of-zakat-imam-yama
+        title: "The Fiqh of Worship for Youth -07-  Virtues of Zakat | Imam Yama Niazi"
+        youtube_id: "H97PcYHPem4"
+      - slug: the-fiqh-of-worship-for-youth-08-recipients-of-zakat-imam-ya
+        title: "The Fiqh of Worship for Youth -08- Recipients of Zakat | Imam Yama Niazi"
+        youtube_id: "KtpW9qA6TZ8"

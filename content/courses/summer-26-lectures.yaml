@@ -1,0 +1,122 @@
+# Found by the discovery engine (score 84/100). Every video was confirmed public and embeddable on 2026-11-02.
+title: "Summer'26 Lectures"
+summary: "A collection of relatively short lectures on Islam, Imaan, Pillars and Salah, Prayers/Dua and some stories of the Prophets from the ..."
+track: islam
+subject: aqeedah
+level: foundations
+language: en
+status: draft
+verified_at: 2026-11-02
+source:
+  name: "KS KA"
+  url: "https://www.youtube.com/channel/UC8XFgjFq9tj7IwrK-1R2QXA"
+  playlist_url: "https://www.youtube.com/playlist?list=PLG8myuIk9ExIwrMgzBJB-9BTETB-irBcQ"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: why-should-we-study-islamic-knowledge
+        title: "Why Should We Study Islamic Knowledge?"
+        youtube_id: "9nGhFp7djTg"
+      - slug: this-simple-key-will-transform-your-heart-and-iman-forever-b
+        title: "This Simple Key Will Transform Your Heart and Iman Forever 🔓❤️| Bilal Assad"
+        youtube_id: "smyzXGQpL3A"
+      - slug: definition-of-tawheed-islamic-monotheism-yasir-qadhi-februar
+        title: "Definition of Tawheed (Islamic Monotheism) - Yasir Qadhi | February 2009"
+        youtube_id: "ixBQ3mNpgpA"
+      - slug: the-prophets-advice-on-having-a-clean-heart-live-reminder-by
+        title: "The Prophets Advice On Having a Clean Heart | Live Reminder by Dr. Omar Suleiman"
+        youtube_id: "ot4_UPwjt8E"
+      - slug: reflections-on-the-story-of-adam-shaykh-dr-yasir-qadhi
+        title: "Reflections on the Story of Adam - Shaykh Dr. Yasir Qadhi"
+        youtube_id: "mMOTs3YW8cw"
+      - slug: back-to-basics-the-5-pillars-of-islam-for-re-new-muslims-fea
+        title: "'Back to Basics' - The 5 Pillars of Islam for Re-New Muslims feat. Shaykh Abdullah Oduro"
+        youtube_id: "3KkbqYkzvpk"
+      - slug: jesus-and-judgment-day-khutbah-by-nouman-ali-khan
+        title: "Jesus and Judgment Day - Khutbah by Nouman Ali Khan"
+        youtube_id: "I291SB2sJH8"
+      - slug: the-power-of-salah-on-the-mind-body-and-soul-surah-al-ma-ari
+        title: "The Power of Salah on the Mind, Body and Soul | Surah Al-Ma'arij | Nouman Ali Khan"
+        youtube_id: "btQ_WoUT5IE"
+      - slug: how-to-protect-yourself-from-today-s-addictions-nouman-ali-k
+        title: "How To Protect Yourself From Today's Addictions | Nouman Ali Khan"
+        youtube_id: "uZdXnuqFpkA"
+      - slug: tips-to-structure-your-day-i-islamic-talks-2020-i-nouman-ali
+        title: "TIPS TO STRUCTURE YOUR DAY I ISLAMIC TALKS 2020 I NOUMAN ALI KHAN NEW I HOW DO YOU SPEND YOUR DAY"
+        youtube_id: "B8kBsXo8F3U"
+  - slug: part-2
+    title: "Lessons 11–20"
+    lessons:
+      - slug: ym-intensive-lessons-from-the-story-of-musa-as-by-nouman-ali
+        title: "YM  Intensive: Lessons from the Story of Musa (as) by  Nouman Ali Khan"
+        youtube_id: "aUyJ59KDITc"
+      - slug: this-is-how-allah-test-your-imaan-faith-dr-yasir-qadhi
+        title: "This is how Allah test your imaan (faith) || Dr Yasir Qadhi"
+        youtube_id: "3BYF--Wo-sw"
+      - slug: allah-doesn-t-need-you-to-pray-nouman-ali-khan
+        title: "Allah Doesn't Need You to Pray - Nouman Ali Khan"
+        youtube_id: "aIa4AyCZZFw"
+      - slug: pray-even-if-you-don-t-feel-like-it-nouman-ali-khan
+        title: "Pray, Even If You Don’t Feel Like It | Nouman Ali Khan"
+        youtube_id: "Dbby-78Re_g"
+      - slug: how-to-train-yourself-to-be-confident-i-islamic-talks-2021-i
+        title: "HOW TO TRAIN YOURSELF TO BE CONFIDENT I ISLAMIC TALKS 2021 I NOUMAN ALI KHAN NEW"
+        youtube_id: "r0ovqckrf2Q"
+      - slug: the-story-of-prophet-nuh-as-sheikh-belal-assad-light-upon-li
+        title: "The Story of Prophet Nuh (AS) | Sheikh Belal Assad | Light Upon Light"
+        youtube_id: "otk1ePR03jE"
+      - slug: overcoming-negative-thoughts-and-feelings-story-night-clip-n
+        title: "Overcoming Negative Thoughts and Feelings - Story Night Clip - Nouman Ali Khan"
+        youtube_id: "ckECewQB2Mo"
+      - slug: must-listen-before-ramadan-essential-advice-nouman-ali-khan
+        title: "MUST LISTEN Before Ramadan! Essential Advice || Nouman Ali Khan"
+        youtube_id: "wxSUOiR8qcw"
+      - slug: new-the-importance-of-charity-and-zakat-during-ramadan-reviv
+        title: "NEW | The Importance of Charity and Zakat during Ramadan - Reviving the Spirit Ep13 | Mufti Menk"
+        youtube_id: "ADrI5zUAZh0"
+      - slug: beware-a-jealous-heart-khutbah-by-nouman-ali-khan
+        title: "Beware a Jealous Heart - Khutbah by Nouman Ali Khan"
+        youtube_id: "vWFF9vsx5QQ"
+  - slug: part-3
+    title: "Lessons 21–30"
+    lessons:
+      - slug: hajj-the-journey-that-transforms-you-mufti-menk-omar-suleima
+        title: "Hajj: The Journey That Transforms You | Mufti Menk & Omar Suleiman"
+        youtube_id: "O6iO4VnVcKw"
+      - slug: accepted-duas-on-the-day-of-arafah-daily-reminder-by-dr-omar
+        title: "Accepted Duas on the Day of Arafah || Daily Reminder By Dr. Omar Suleiman"
+        youtube_id: "eNyWarMxA6E"
+      - slug: four-lessons-from-surah-kahf-yqgems-shaykh-dr-yasir-qadhi
+        title: "Four Lessons from Surah Kahf | YQGems | Shaykh Dr. Yasir Qadhi"
+        youtube_id: "iOP1o1kApzk"
+      - slug: why-is-giving-charity-more-important-than-you-think-dr-omar
+        title: "Why Is Giving Charity More Important Than You Think? Dr. Omar Suleiman"
+        youtube_id: "x486igjpNpA"
+      - slug: why-you-re-feeling-ungrateful-nouman-ali-khan-a-deeper-look
+        title: "Why You're Feeling Ungrateful - Nouman Ali Khan - A Deeper Look Series - Surah Al Asr"
+        youtube_id: "-qT923kDJzY"
+      - slug: 8-wealth-boosting-habits-in-islam-belal-assaad
+        title: "8 Wealth-Boosting Habits In Islam | Belal Assaad"
+        youtube_id: "Axa0wMVkEPk"
+      - slug: ep-9-an-enemy-within-road-to-return
+        title: "Ep. 9: An Enemy Within | Road to Return"
+        youtube_id: "QsvLTLvRMKE"
+      - slug: allah-has-not-left-you-a-deeper-look-series-surah-al-duhaa-n
+        title: "Allah has not Left You - A Deeper Look Series - Surah Al Duhaa - Nouman Ali Khan"
+        youtube_id: "eOoCfnN3k5M"
+      - slug: are-hardships-my-fault-or-a-test-from-allah-khutbah-highligh
+        title: "Are Hardships My Fault, or a Test from Allah? | Khutbah Highlights | Nouman Ali Khan"
+        youtube_id: "4HgaGCmKaDQ"
+      - slug: the-power-of-dua-your-direct-line-to-allah-belal-assaad
+        title: "The Power of Dua: Your Direct Line to Allah | Belal Assaad"
+        youtube_id: "bRPm9huTl1c"
+  - slug: part-4
+    title: "Lessons 31–32"
+    lessons:
+      - slug: how-allah-motivated-the-prophet-khutbah-by-nouman-ali-khan-j
+        title: "How Allah Motivated the Prophet ﷺ | Khutbah by Nouman Ali Khan | Jakarta, Indonesia"
+        youtube_id: "JljmAufjRyA"
+      - slug: the-hidden-feelings-allah-understands-deeply-belal-assaad
+        title: "The Hidden Feelings Allah Understands Deeply | Belal Assaad"
+        youtube_id: "icm3hy_2MEw"

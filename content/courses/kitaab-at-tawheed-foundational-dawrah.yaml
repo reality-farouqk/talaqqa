@@ -1,0 +1,59 @@
+# Found by the discovery engine (score 76/100). Every video was confirmed public and embeddable on 2026-11-02.
+title: "Kitaab at-Tawheed (Foundational Dawrah)"
+summary: "These lessons are a part of Shaykh Muhammad Hisham's Foundational Dawrah, taken from this playlist: ..."
+track: islam
+subject: aqeedah
+level: intermediate
+language: en
+status: draft
+verified_at: 2026-11-02
+source:
+  name: "Garden of Ilm"
+  url: "https://www.youtube.com/channel/UC_ING8slQbpvxRHYp99stJQ"
+  playlist_url: "https://www.youtube.com/playlist?list=PLv6TZluNhDk5bFeQr0Y16L_uYc2lhPW_b"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: l1-the-book-of-tawheed-shaykh-muhammad-hisham-s-foundational
+        title: "L1 | The Book of Tawheed | Shaykh Muhammad Hisham's Foundational Dawrah Day 7 Session 3"
+        youtube_id: "eif8E6ISzco"
+      - slug: l2-the-book-of-tawheed-shaykh-muhammad-hisham-s-foundational
+        title: "L2 | The Book of Tawheed | Shaykh Muhammad Hisham's Foundational Dawrah Day 7 Session 4"
+        youtube_id: "l1Wmi11FHzQ"
+      - slug: l3-the-book-of-tawheed-shaykh-muhammad-hisham-s-foundational
+        title: "L3 | The Book of Tawheed | Shaykh Muhammad Hisham's Foundational Dawrah Day 8 Session 4"
+        youtube_id: "qe4yuMLsRZA"
+      - slug: l4-the-book-of-tawheed-shaykh-muhammad-hisham-s-foundational
+        title: "L4 | The Book of Tawheed | Shaykh Muhammad Hisham's Foundational Dawrah Day 8 Session 5"
+        youtube_id: "pM8OoD1Bsk8"
+      - slug: l5-the-book-of-tawheed-shaykh-muhammad-hisham-s-foundational
+        title: "L5 | The Book of Tawheed | Shaykh Muhammad Hisham's Foundational Dawrah Day 9 Session 3"
+        youtube_id: "FDu4rmMBDyA"
+      - slug: l6-the-book-of-tawheed-shaykh-muhammad-hisham-s-foundational
+        title: "L6 | The Book of Tawheed | Shaykh Muhammad Hisham's Foundational Dawrah Day 9 Session 4"
+        youtube_id: "b49ng5HkczI"
+      - slug: l7-the-book-of-tawheed-shaykh-muhammad-hisham-s-foundational
+        title: "L7 | The Book of Tawheed | Shaykh Muhammad Hisham's Foundational Dawrah Day 10 Session 3"
+        youtube_id: "NQo2YZbzo0s"
+      - slug: l8-the-book-of-tawheed-shaykh-muhammad-hisham-s-foundational
+        title: "L8 | The Book of Tawheed | Shaykh Muhammad Hisham's Foundational Dawrah Day 11 Session 3"
+        youtube_id: "vxQt6K8hPrE"
+      - slug: l9-the-book-of-tawheed-shaykh-muhammad-hisham-s-foundational
+        title: "L9 | The Book of Tawheed | Shaykh Muhammad Hisham's Foundational Dawrah Day 11 Session 4"
+        youtube_id: "jfyekayDhM0"
+      - slug: l10-the-book-of-tawheed-shaykh-muhammad-hisham-s-foundationa
+        title: "L10 | The Book of Tawheed | Shaykh Muhammad Hisham's Foundational Dawrah Day 12 Session 2"
+        youtube_id: "4VISpSC6q_I"
+  - slug: part-2
+    title: "Lessons 11–13"
+    lessons:
+      - slug: l11-the-book-of-tawheed-shaykh-muhammad-hisham-s-foundationa
+        title: "L11 | The Book of Tawheed | Shaykh Muhammad Hisham's Foundational Dawrah Day 12 Session 3"
+        youtube_id: "yfVpYF6Jivk"
+      - slug: l12-the-book-of-tawheed-shaykh-muhammad-hisham-s-foundationa
+        title: "L12 | The Book of Tawheed | Shaykh Muhammad Hisham's Foundational Dawrah Day 12 Session 4"
+        youtube_id: "vIx57nTSrXM"
+      - slug: l13-the-book-of-tawheed-shaykh-muhammad-hisham-s-foundationa
+        title: "L13 | The Book of Tawheed | Shaykh Muhammad Hisham's Foundational Dawrah Day 13 Session 2"
+        youtube_id: "2MttIXM9UqY"

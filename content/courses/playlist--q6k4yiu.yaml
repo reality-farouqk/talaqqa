@@ -1,0 +1,35 @@
+# Found by the discovery engine (score 70/100). Every video was confirmed public and embeddable on 2026-11-02.
+title: "شرح الأصول الثلاثة - الشيخ صالح السندي"
+summary: "A 6-lesson series by Mohammad Raafe."
+track: islam
+subject: aqeedah
+level: beginner
+language: ar
+status: draft
+verified_at: 2026-11-02
+source:
+  name: "Mohammad Raafe"
+  url: "https://www.youtube.com/channel/UCWPfZ6rf7Bd3nU4VgkGSZAQ"
+  playlist_url: "https://www.youtube.com/playlist?list=PLWXAgkcGRoKT7OmatgYfEdyNs-q6k4yIu"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: lesson-1
+        title: "شرح وتأملات في الأصول الثلاثةلفضلية الشيخ الدكتور : صالح بن عبدالعزيز سندي المجلس الأول"
+        youtube_id: "cJ74lJT0MSA"
+      - slug: lesson-2
+        title: "شرح وتأملات في الأصول الثلاثةلفضلية الشيخ الدكتور : صالح بن عبدالعزيز سندي المجلس الثاني"
+        youtube_id: "n0tKkk6rBOE"
+      - slug: lesson-3
+        title: "شرح وتأملات في الأصول الثلاثةلفضلية الشيخ الدكتور : صالح بن عبدالعزيز سندي المجلس الثالث"
+        youtube_id: "ZNevALZW1vQ"
+      - slug: lesson-4
+        title: "المجلس"
+        youtube_id: "DFKfqR8iAMQ"
+      - slug: lesson-5
+        title: "٧ يونيو، ٢٠٢٢"
+        youtube_id: "hmDlbGurNAM"
+      - slug: lesson-6
+        title: "شرح وتأملات في الأصول الثلاثةلفضلية الشيخ الدكتور : صالح بن عبدالعزيز سندي المجلس السادس"
+        youtube_id: "pjFst8J5hTo"

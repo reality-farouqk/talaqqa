@@ -1,0 +1,41 @@
+# Found by the discovery engine (score 70/100). Every video was confirmed public and embeddable on 2026-11-02.
+title: "Heart Failure Lecture Series"
+summary: "A 8-lesson series by Libyan Cardiac Society."
+track: islam
+subject: tazkiyah
+level: beginner
+language: en
+status: draft
+verified_at: 2026-11-02
+source:
+  name: "Libyan Cardiac Society"
+  url: "https://www.youtube.com/channel/UC-tR0CobGBTODDqZRIfkCzQ"
+  playlist_url: "https://www.youtube.com/playlist?list=PL_LIBRHQtRnDbcul60gfsPn-wubBPC6p-"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: iron-deficiency-an-emerging-therapeutic-target-in-heart-fail
+        title: "Iron Deficiency: An Emerging Therapeutic Target in Heart Failure?"
+        youtube_id: "-Fe8-jCDHow"
+      - slug: pulmonary-hypertension-in-heart-disease
+        title: "Pulmonary Hypertension in Heart Disease"
+        youtube_id: "udp_8MofbNs"
+      - slug: sglt2-inhibitors-cardiovascular-outcome
+        title: "SGLT2 Inhibitors & Cardiovascular Outcome"
+        youtube_id: "glnP3ZM6ngw"
+      - slug: challenges-in-the-diagnosis-of-heart-failure-with-preserved
+        title: "Challenges in The Diagnosis of Heart Failure with Preserved Ejection Fraction."
+        youtube_id: "6SyMxC6RQ6w"
+      - slug: inpatient-management-of-heart-failure-clinical-vignettes
+        title: "Inpatient Management of Heart Failure: Clinical Vignettes"
+        youtube_id: "PPZi7tnCb2s"
+      - slug: heart-failure-with-preserved-ejection-fraction
+        title: "Heart Failure with Preserved Ejection Fraction"
+        youtube_id: "yZiJPq09JXs"
+      - slug: management-of-chronic-heart-failure-with-reduced-ejection-fr
+        title: "Management of Chronic Heart Failure with Reduced Ejection Fraction"
+        youtube_id: "7V9wwq0x0Js"
+      - slug: evaluation-and-management-of-acute-heart-failure
+        title: "Evaluation and Management of Acute Heart Failure"
+        youtube_id: "u-K61iId_kY"

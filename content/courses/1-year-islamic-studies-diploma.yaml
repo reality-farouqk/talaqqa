@@ -1,0 +1,38 @@
+# Found by the discovery engine (score 69/100). Every video was confirmed public and embeddable on 2026-11-02.
+title: "1-Year Islamic Studies Diploma"
+summary: "Apply here: https://islamanswers.co.uk/diploma-course For students who are able to read and understand Arabic. The course will ..."
+track: islam
+subject: hadith
+level: advanced
+language: en
+status: draft
+verified_at: 2026-11-02
+source:
+  name: "Islam Answers"
+  url: "https://www.youtube.com/channel/UCjIaexrkP3itG7XOKcAFFJA"
+  playlist_url: "https://www.youtube.com/playlist?list=PLKiUr5r8ig1_6NAw-mak2mbE6n8KjojtK"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: 1-year-islamic-studies-diploma-starts-sep-2025-islam-answers
+        title: "1-Year Islamic Studies Diploma | Starts Sep 2025 | Islam Answers"
+        youtube_id: "_HLJktk329k"
+      - slug: why-you-should-study-aqeedah-tahawiyyah-shaykh-noorud-deen-r
+        title: "Why You Should Study Aqeedah Tahawiyyah | Shaykh Noorud-deen Rashid"
+        youtube_id: "nknqUn2_SIg"
+      - slug: why-maraqi-al-saadat-is-a-favorite-among-hanafi-scholars-sha
+        title: "Why Maraqi al-Saadat is a FAVORITE Among Hanafi Scholars | Shaykh Noorud-deen Rashid"
+        youtube_id: "aX4cHut5rxI"
+      - slug: learning-the-basics-of-hadith-science-using-al-bayquniyyah-s
+        title: "Learning the Basics of Hadith Science Using al-Bayquniyyah | Shaykh Noorud-deen Rashid"
+        youtube_id: "iuTmEIClRpg"
+      - slug: purification-of-the-soul-uyub-al-nafs-shaykh-noorud-deen-ras
+        title: "Purification of the Soul (Uyub al-Nafs) | Shaykh Noorud-deen Rashid"
+        youtube_id: "lhKnTGTo_ak"
+      - slug: what-makes-al-ajurumiyyah-a-must-for-arabic-grammar-shaykh-n
+        title: "What Makes Al-Ajurumiyyah a Must for Arabic Grammar? | Shaykh Noorud-deen Rashid"
+        youtube_id: "YIf0UwUJov4"
+      - slug: what-makes-seerah-the-most-uplifting-subject-shaykh-noorud-d
+        title: "What Makes Seerah the Most Uplifting Subject? | Shaykh Noorud-deen Rashid"
+        youtube_id: "3htwmVnGxlc"
