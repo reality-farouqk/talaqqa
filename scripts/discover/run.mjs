@@ -108,7 +108,7 @@ for (const p of playlists) {
     const labels = classify(p.title, p.prior);
     const videos = await videoDetails(await playlistVideoIds(p.id));
     const usable = orderLessons(videos.filter((v) => v.embeddable && v.public));
-    const mismatch = labels && contentMismatch({ title: p.title, description: p.description, track: labels.track, lang: p.lang ?? 'en', videoLangs: usable.map((v) => v.lang) });
+    const mismatch = labels && contentMismatch({ title: p.title, description: p.description, track: labels.track, lang: p.lang ?? 'en', videoLangs: usable.map((v) => v.lang), videoTitles: usable.map((v) => v.title) });
     // Skip the comment calls (quota) when the playlist is already ruled out.
     const comments = usable.length >= 3 && !mismatch ? await sampleComments(usable) : [];
     const scored = mismatch ? { score: 0, reason: mismatch } : scorePlaylist(videos, comments);

@@ -1,0 +1,66 @@
+# Found by the discovery engine (score 71/100). Every video was confirmed public and embeddable on 2026-11-02.
+title: "Mothers of the Believers"
+summary: "Shaykh Dr. Yasir Qadhi on the wives of the Prophet ﷺ, from Khadijah onwards, in 15 lectures at Memphis Islamic Center."
+track: islam
+subject: seerah
+level: intermediate
+order: 3
+language: en
+status: published
+verified_at: 2026-11-02
+source:
+  name: "Memphis Islamic Center (MIC)"
+  url: "https://www.youtube.com/channel/UC-V496kekrz5-ihBeHvWCGA"
+  playlist_url: "https://www.youtube.com/playlist?list=PLYOnU0Yk8VGbOh28v_Cx1Lx0MgpIhM-TY"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: mothers-of-the-believers-pt-1-definition-blessings-rights-of
+        title: "Mothers of the Believers pt.1 | Definition, Blessings & Rights of Ahl-al-Bayt | Sh. Dr. Yasir Qadhi"
+        youtube_id: "deF-t_4RknY"
+      - slug: mothers-of-the-believers-pt-2-definition-blessings-of-the-mo
+        title: "Mothers of the Believers pt.2 | Definition & Blessings of the Mothers | Sh. Dr. Yasir Qadhi"
+        youtube_id: "8vGSrSlg3kM"
+      - slug: mothers-of-the-believers-pt-3-khadija-bint-khuwaylid-pt-1-sh
+        title: "Mothers of the Believers pt.3 | Khadija bint Khuwaylid (pt.1)| Sh. Dr. Yasir Qadhi"
+        youtube_id: "zZZcZZGnS6M"
+      - slug: mothers-of-the-believers-pt-4-khadija-bint-khuwaylid-pt-2-sh
+        title: "Mothers of the Believers pt.4 | Khadija bint Khuwaylid (pt.2)| Sh. Dr. Yasir Qadhi"
+        youtube_id: "iRdYlrIwPT8"
+      - slug: mothers-of-the-believers-pt-5-khadija-bint-khuwaylid-pt-3-sh
+        title: "Mothers of the Believers pt.5 | Khadija bint Khuwaylid (pt.3)| Sh. Dr. Yasir Qadhi"
+        youtube_id: "DXXL3HkX7N8"
+      - slug: mothers-of-the-believers-pt-6-sawda-bint-zam-a-sh-dr-yasir-q
+        title: "Mothers of the Believers pt.6 | Sawda Bint Zam'a | Sh. Dr. Yasir Qadhi"
+        youtube_id: "OcPOZd1edec"
+      - slug: mothers-of-the-believers-pt-7-aisha-bint-abu-bakr-pt-1-sh-dr
+        title: "Mothers of the Believers pt.7 | Aisha Bint Abu Bakr pt.1 | Sh. Dr. Yasir Qadhi"
+        youtube_id: "cKk4Dx9b2W0"
+      - slug: mothers-of-the-believers-pt-8-aisha-bint-abu-bakr-pt-2-sh-dr
+        title: "Mothers of the Believers pt.8 | Aisha Bint Abu Bakr pt.2 | Sh. Dr. Yasir Qadhi"
+        youtube_id: "TxaspD7WlIk"
+      - slug: mothers-of-the-believers-pt-9-aisha-bint-abu-bakr-pt-3-sh-dr
+        title: "Mothers of the Believers pt.9 | Aisha Bint Abu Bakr pt.3 | Sh. Dr. Yasir Qadhi"
+        youtube_id: "JyUotUojCMQ"
+      - slug: mothers-of-the-believers-pt-10-hafsa-bint-umar-sh-dr-yasir-q
+        title: "Mothers of the Believers pt.10 | Hafsa Bint Umar  | Sh. Dr. Yasir Qadhi"
+        youtube_id: "hMdI9Mm8Ihc"
+  - slug: part-2
+    title: "Lessons 11–15"
+    lessons:
+      - slug: mothers-of-the-believers-pt-11-zaynab-b-khuzayma-umm-salama
+        title: "Mothers of the Believers pt.11 | Zaynab b. Khuzayma & Umm Salama  | Sh. Dr. Yasir Qadhi"
+        youtube_id: "saSEfLwLuO8"
+      - slug: mothers-of-the-believers-pt-12-zaynab-bint-jahsh-sh-dr-yasir
+        title: "Mothers of the Believers pt.12 | Zaynab bint Jahsh | Sh. Dr. Yasir Qadhi"
+        youtube_id: "XuguiukqJCQ"
+      - slug: mothers-of-the-believers-pt-13-juwayriya-bint-al-harith-umm
+        title: "Mothers of the Believers pt.13 | Juwayriya bint al-Harith & Umm Habiba (Ramla) | Sh. Dr. Yasir Qadhi"
+        youtube_id: "G8MujXvh4r4"
+      - slug: mothers-of-the-believers-pt-14-safiyya-bint-huyay-sh-dr-yasi
+        title: "Mothers of the Believers pt.14 | Safiyya bint Huyay | Sh. Dr. Yasir Qadhi"
+        youtube_id: "TfGG9cfSzOI"
+      - slug: mothers-of-the-believers-pt-15-finale-maymuna-bint-al-harith
+        title: "Mothers of the Believers pt.15 | Finale | Maymuna Bint Al-Harith & Others | Sh. Dr. Yasir Qadhi"
+        youtube_id: "Vff4F4wJpP8"

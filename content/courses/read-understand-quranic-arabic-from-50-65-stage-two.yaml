@@ -1,0 +1,57 @@
+# Found by the discovery engine (score 75/100). Every video was confirmed public and embeddable on 2026-11-02.
+title: "Read & Understand Quranic Arabic: 50% to 65% (Stage Two)"
+summary: "Stage two of Arabic 101: the next most frequent Quranic words, taking you from 50% to 65% of the Quran's vocabulary."
+track: arabic
+subject: quranic-arabic
+level: intermediate
+order: 1
+language: en
+status: published
+verified_at: 2026-11-02
+source:
+  name: "Arabic 101"
+  url: "https://www.youtube.com/channel/UCEcQu_9GNDiGU_vqjVZXj3Q"
+  playlist_url: "https://www.youtube.com/playlist?list=PL6TlMIZ5ylgrtqN60yWKuS6xvPDUx6cNZ"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: understand-65-of-quran-vocab-fast-with-this-list-how-to-unde
+        title: "UNDERSTAND 65% of Quran Vocab Fast with THIS list - How to understand Quran Series - Arabic 101"
+        youtube_id: "4SEHQFpofu0"
+      - slug: understand-65-of-quran-vocab-fast-with-this-list-how-to-unde-2
+        title: "UNDERSTAND 65% of Quran Vocab Fast with THIS list - How to understand Quran Series - Lesson 2"
+        youtube_id: "3LX-vs0T77E"
+      - slug: understand-65-of-quran-vocab-fast-with-this-list-how-to-unde-3
+        title: "UNDERSTAND 65% of Quran Vocab Fast with THIS list - How to understand Quran Series - Lesson 3"
+        youtube_id: "5uahA3sXD28"
+      - slug: understand-65-of-quran-vocab-fast-with-this-list-how-to-unde-4
+        title: "UNDERSTAND 65% of Quran Vocab Fast with THIS list - How to understand Quran Series - Lesson 4"
+        youtube_id: "v948auzMxsw"
+      - slug: understand-65-of-quran-vocab-fast-with-this-list-how-to-unde-5
+        title: "UNDERSTAND 65% of Quran Vocab Fast with THIS list - How to understand Quran Series - Lesson 5"
+        youtube_id: "OygoKhmyEoU"
+      - slug: understand-65-of-quran-vocab-fast-with-this-list-how-to-unde-6
+        title: "UNDERSTAND 65% of Quran Vocab Fast with THIS list - How to understand Quran Series - Lesson 6"
+        youtube_id: "GUSUhvwGb9E"
+      - slug: understand-65-of-quran-vocab-fast-with-this-list-how-to-unde-7
+        title: "UNDERSTAND 65% of Quran Vocab Fast with THIS list - How to understand Quran Series - Lesson 7"
+        youtube_id: "1N0okemY6JQ"
+      - slug: understand-65-of-quran-vocab-fast-with-this-list-how-to-unde-8
+        title: "UNDERSTAND 65% of Quran Vocab Fast with THIS list - How to understand Quran Series - Lesson 8"
+        youtube_id: "elvrdcrS7BE"
+      - slug: understand-65-of-quran-vocab-fast-with-this-list-how-to-unde-9
+        title: "UNDERSTAND 65% of Quran Vocab Fast with THIS list - How to understand Quran Series - Lesson 9"
+        youtube_id: "CYpicok4lJk"
+      - slug: understand-65-of-quran-vocab-fast-with-this-list-how-to-unde-10
+        title: "UNDERSTAND 65% of Quran Vocab Fast with THIS list - How to understand Quran Series - Lesson 10"
+        youtube_id: "Emwi2HerJ0Q"
+  - slug: part-2
+    title: "Lessons 11–12"
+    lessons:
+      - slug: understand-65-of-quran-vocab-fast-with-this-list-how-to-unde-11
+        title: "UNDERSTAND 65% of Quran Vocab Fast with THIS list - How to understand Quran Series - Lesson 11"
+        youtube_id: "6ScxNDGVxVs"
+      - slug: how-to-understand-compound-words-in-the-quran-arabic101
+        title: "How to understand COMPOUND WORDS in the Quran | Arabic101"
+        youtube_id: "7_GFuAhVbVg"

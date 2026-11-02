@@ -1,0 +1,72 @@
+# Found by the discovery engine (score 73/100). Every video was confirmed public and embeddable on 2026-11-02.
+title: "Understand 85% of Quranic Vocabulary (Stage Three)"
+summary: "Stage three of Arabic 101: a frequency list that builds your Quranic vocabulary to 85%."
+track: arabic
+subject: quranic-arabic
+level: intermediate
+order: 2
+language: en
+status: published
+verified_at: 2026-11-02
+source:
+  name: "Arabic 101"
+  url: "https://www.youtube.com/channel/UCEcQu_9GNDiGU_vqjVZXj3Q"
+  playlist_url: "https://www.youtube.com/playlist?list=PL6TlMIZ5ylgr0FQHVC3yzL6TM9lOXHXc7"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: understand-85-of-the-quran-with-this-frequency-list-lesson-1
+        title: "Understand 85% of the Quran with THIS frequency list - Lesson 1 | Arabic101"
+        youtube_id: "rI4q5GAkqO0"
+      - slug: understand-85-of-the-quran-with-this-frequency-list-lesson-2
+        title: "Understand 85% of the Quran with THIS frequency list - Lesson 2 | Arabic101"
+        youtube_id: "_Obu0tY3Lso"
+      - slug: understand-85-of-the-quran-with-this-frequency-list-lesson-3
+        title: "Understand 85% of the Quran with THIS frequency list - Lesson 3 | Arabic101"
+        youtube_id: "rTamaWAmECU"
+      - slug: understand-85-of-the-quran-with-this-frequency-list-lesson-4
+        title: "Understand 85% of the Quran with THIS frequency list - Lesson 4 | Arabic101"
+        youtube_id: "xS-LVgVgxUI"
+      - slug: understand-85-of-the-quran-with-this-frequency-list-lesson-5
+        title: "Understand 85% of the Quran with THIS frequency list - Lesson 5 | Arabic101"
+        youtube_id: "rIVLoRCAChM"
+      - slug: understand-85-of-the-quran-with-this-frequency-list-lesson-6
+        title: "Understand 85% of the Quran with THIS frequency list - Lesson 6 | Arabic101"
+        youtube_id: "Hz2_2Ejl9D4"
+      - slug: understand-85-of-the-quran-with-this-frequency-list-lesson-7
+        title: "Understand 85% of the Quran with THIS frequency list - Lesson 7 | Arabic101"
+        youtube_id: "01ef8k2kkYY"
+      - slug: understand-85-of-the-quran-with-this-frequency-list-lesson-8
+        title: "Understand 85% of the Quran with THIS frequency list - Lesson 8 | Arabic101"
+        youtube_id: "XgjdBbhKZVg"
+      - slug: understand-85-of-the-quran-with-this-frequency-list-lesson-9
+        title: "Understand 85% of the Quran with THIS frequency list - Lesson 9 | Arabic101"
+        youtube_id: "pjwV5j8StTg"
+      - slug: understand-85-of-the-quran-with-this-frequency-list-lesson-1-10
+        title: "Understand 85% of the Quran with THIS frequency list - Lesson 10 | Arabic101"
+        youtube_id: "TW62wfvIbCs"
+  - slug: part-2
+    title: "Lessons 11–17"
+    lessons:
+      - slug: understand-85-of-the-quran-with-this-frequency-list-lesson-1-11
+        title: "Understand 85% of the Quran with THIS frequency list - Lesson 11 | Arabic101"
+        youtube_id: "r2WL02VsCP8"
+      - slug: understand-85-of-the-quran-with-this-frequency-list-lesson-1-12
+        title: "Understand 85% of the Quran with THIS frequency list - Lesson 12 | Arabic101"
+        youtube_id: "tNEFjtxh5Co"
+      - slug: understand-85-of-the-quran-with-this-frequency-list-lesson-1-13
+        title: "Understand 85% of the Quran with THIS frequency list - Lesson 13 | Arabic101"
+        youtube_id: "XLdIGglLxMQ"
+      - slug: understand-85-of-the-quran-with-this-frequency-list-lesson-1-14
+        title: "Understand 85% of the Quran with THIS frequency list - Lesson 14 | Arabic101"
+        youtube_id: "pOaIL_0FIig"
+      - slug: understand-85-of-the-quran-with-this-frequency-list-lesson-1-15
+        title: "Understand 85% of the Quran with THIS frequency list - Lesson 15 | Arabic101"
+        youtube_id: "0RRPAGpIQgQ"
+      - slug: understand-85-of-the-quran-with-this-frequency-list-lesson-1-16
+        title: "Understand 85% of the Quran with THIS frequency list - Lesson 16 | Arabic101"
+        youtube_id: "sTOP4p7A_-o"
+      - slug: understand-85-of-the-quran-with-this-frequency-list-lesson-1-17
+        title: "Understand 85% of the Quran with THIS frequency list - Lesson 17 | Arabic101"
+        youtube_id: "JBAaFiVoyjE"
