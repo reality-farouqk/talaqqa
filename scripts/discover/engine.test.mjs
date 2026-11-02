@@ -69,6 +69,11 @@ test('language and dialect filter', async () => {
   assert.equal(contentMismatch({ title: 'Madinah Arabic Book 1', track: 'arabic', lang: 'en', videoLangs: ['en', undefined] }), null);
   assert.equal(contentMismatch({ title: 'Imam Al-Nawawi 40 Hadith', track: 'islam', lang: 'en', videoLangs: ['ar', 'ar', 'en'] }), null);
   assert.equal(contentMismatch({ title: 'Noorani Qaida', track: 'arabic', lang: 'en', videoLangs: ['ml', 'ml'] }), 'audio language is not en');
+  // Found by a tazkiyah seed ("diseases of the heart") but medical; a real series names its field somewhere.
+  assert.equal(contentMismatch({ title: 'Heart Failure Lecture Series', track: 'islam', lang: 'en', videoLangs: ['en'], videoTitles: ['Acute heart failure management'] }), 'not about Arabic or Islam');
+  assert.equal(contentMismatch({ title: 'Diseases of the Heart', track: 'islam', lang: 'en', videoLangs: ['en'], videoTitles: ['Envy and how to cure it - Shaykh Hamza'] }), null);
+  assert.equal(contentMismatch({ title: 'Mothers of the Believers - series', track: 'islam', lang: 'en', videoLangs: ['en'] }), null);
+  assert.equal(contentMismatch({ title: 'دروس في السيرة النبوية', track: 'islam', lang: 'ar', videoLangs: ['ar'] }), null);
   assert.equal(decodeEntities('Sarf &amp; Nahw &quot;1&quot;'), 'Sarf & Nahw "1"');
 });
 

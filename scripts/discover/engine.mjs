@@ -28,8 +28,12 @@ const SUBJECT_WORDS = [
 const OTHER_LANGUAGE = /\b(urdu|hindi|bangla|bengali|indonesia|bahasa|ustadz|melayu|malay|t[üu]rk[çc]e|turkish|fran[çc]ais|swahili|hausa|somali|pashto|persian|farsi)\b|اردو/i;
 const DIALECT = /\b(saudi|egyptian|levantine|moroccan|gulf|khaleeji|darija|dialect|ammiyy?a)\b/i;
 
+// Seed queries like "diseases of the heart" also find medical lectures; a real series names its field somewhere.
+const ON_TOPIC = /\b(allah|islam\w*|muslims?|qur'?an\w*|sunnah|hadith|prophets?|messenger|sahaba|seerah|sirah|fiqh|aq[ie]+dah|tawh?eed|tafs[ei]e?r|tajw[ie]e?d|salah|ramadan|arabic|nahw|sarf|balagh?a|imaan|iman|deen|shaykh|sheikh|ustadh|mufti|imam|qaida|noorani|nawawi|madinah|believers|ummah|jannah|du'?a|companions|pbuh|ahl[- ]al[- ]bayt)\b|ﷺ|[\u0600-\u06FF]{3,}/i;
+
 /** Why a playlist is outside what we teach, or null if it fits. `lang` is the language we searched in. */
-export function contentMismatch({ title, description = '', track, lang, videoLangs }) {
+export function contentMismatch({ title, description = '', track, lang, videoLangs, videoTitles = [] }) {
+  if (!ON_TOPIC.test([title, description, ...videoTitles].join(' '))) return 'not about Arabic or Islam';
   if (track === 'arabic' && DIALECT.test(title)) return 'spoken dialect, not Fusha';
   if (lang === 'en' && OTHER_LANGUAGE.test(`${title} ${description}`)) return 'not in English';
   // English lectures are often tagged Arabic because they quote the Quran, so allow 'ar' for English searches.
