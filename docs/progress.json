@@ -4,7 +4,7 @@
   "repo": "https://github.com/reality-farouqk/talaqqa",
   "currentPhase": 1,
   "liveUrl": "https://talaqqa.pages.dev",
-  "updated": "2026-11-01",
+  "updated": "2026-11-02",
   "blockers": [
     {
       "title": "Neon database connection",
@@ -28,7 +28,7 @@
     },
     {
       "title": "Content gaps",
-      "detail": "Advanced level now has courses in both paths (Tahawiyyah x2, Risalah of Ibn Abi Zayd, Tafsir of Al-Baqarah, advanced tajweed, Qatr al-Nada). Thinnest areas now: advanced Hadith and Usul. Name teachers you want prioritised.",
+      "detail": "40 courses now. Thinnest areas: advanced Hadith and Usul al-Fiqh, and Arabic taught in Arabic. Name teachers you want prioritised.",
       "owner": "You"
     }
   ],
@@ -507,6 +507,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-02",
+      "text": "8 courses from the first weekly discovery run (40 courses, 891 videos, all playable): Meeting Muhammad ﷺ (Yaqeen), Aqeedah Semester 1 (Zad Academy), Fiqh of Fasting and Zakat (SeekersGuidance), Stories of the Prophets and Mothers of the Believers (Yasir Qadhi), al-Fawzan's 40 Hadith explanation, and Quranic Arabic Stages Two and Three. 18 finds blocked. The engine now skips playlists that never mention Arabic or Islam (it had found two medical lecture series)."
+    },
     {
       "date": "2026-11-01",
       "text": "Accounts and sync API merged and deployed to production (switched off until the database is connected). The deploy's player check now ignores YouTube's own errors behind its bot check for CI runners; real visitors are unaffected."
