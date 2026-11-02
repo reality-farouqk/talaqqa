@@ -52,10 +52,10 @@ test('course YAML has the fields the schema needs and safe slugs', () => {
   const yaml = toCourseYaml({
     playlist: { id: 'PLabc', title: 'Learn "Nahw": Part 1', description: '' },
     channel: { id: 'UCxyz', title: 'Some Channel' },
-    videos: [{ id: 'aaaaaaaaaaa', title: 'Lesson 1' }, { id: 'bbbbbbbbbbb', title: 'Lesson 1' }, { id: 'ccccccccccc', title: 'الدرس' }],
+    videos: [{ id: 'aaaaaaaaaaa', title: 'Lesson 1' }, { id: 'bbbbbbbbbbb', title: 'Lesson 1' }, { id: 'ccccccccccc', title: 'الدرس' }, { id: 'ddddddddddd', title: 'الدرس 101' }],
     labels: { track: 'arabic', subject: 'grammar', level: 'beginner' }, language: 'en', score: 80, status: 'draft', today: '2026-10-29'
   });
-  for (const field of ['track: arabic', 'status: draft', 'verified_at: 2026-10-29', 'title: "Learn \\"Nahw\\": Part 1"', 'slug: lesson-1-2', 'slug: lesson-3', 'playlist_url:']) {
+  for (const field of ['track: arabic', 'status: draft', 'verified_at: 2026-10-29', 'title: "Learn \\"Nahw\\": Part 1"', 'slug: "lesson-1-2"', 'slug: "lesson-3"', 'slug: "lesson-101"', 'playlist_url:']) {
     assert.ok(yaml.includes(field), `missing ${field}`);
   }
   assert.equal(slugify('ab'), '');
