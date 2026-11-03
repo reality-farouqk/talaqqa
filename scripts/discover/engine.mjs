@@ -132,7 +132,9 @@ const q = (s) => JSON.stringify(s); // JSON strings are valid YAML scalars
 export function toCourseYaml({ playlist, channel, videos, labels, language, score, status, today }) {
   const used = new Set();
   const lessons = videos.map((v, i) => {
-    let slug = slugify(v.title) || `lesson-${i + 1}`;
+    // Titles like "2" or Arabic-only titles slugify to digits or nothing; give them a readable name.
+    let slug = slugify(v.title);
+    if (!/[a-z]/.test(slug)) slug = `lesson-${slug || i + 1}`;
     if (used.has(slug)) slug = `${slug}-${i + 1}`;
     used.add(slug);
     return { slug, title: v.title, id: v.id };
@@ -162,7 +164,7 @@ export function toCourseYaml({ playlist, channel, videos, labels, language, scor
       `  - slug: ${m.slug}`,
       `    title: ${q(m.title)}`,
       '    lessons:',
-      ...m.lessons.flatMap((l) => [`      - slug: ${l.slug}`, `        title: ${q(l.title)}`, `        youtube_id: ${q(l.id)}`])
+      ...m.lessons.flatMap((l) => [`      - slug: ${q(l.slug)}`, `        title: ${q(l.title)}`, `        youtube_id: ${q(l.id)}`])
     ]),
     ''
   ].join('\n');

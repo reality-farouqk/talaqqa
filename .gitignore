@@ -2,5 +2,8 @@
 node_modules/
 dist/
 .env
+.env.local
+.dev.vars
 discovery-summary.json
 metadata-report.md
+.neon
