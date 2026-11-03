@@ -4,7 +4,7 @@
   "repo": "https://github.com/reality-farouqk/talaqqa",
   "currentPhase": 1,
   "liveUrl": "https://talaqqa.pages.dev",
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "blockers": [
     {
       "title": "Neon database connection",
@@ -307,9 +307,39 @@
       ],
       "tasks": [
         {
+          "title": "Accounts with Better Auth",
+          "status": "Doing",
+          "notes": "Email + password, Google when keys are set, httpOnly secure cookies, DB-backed rate limits. Account page and header icon built; tested end to end on Postgres. Goes live with Neon."
+        },
+        {
+          "title": "Sync progress, watchlist, playlists, notes",
+          "status": "Doing",
+          "notes": "Built and tested end to end on a real Postgres (two browsers): sign-up imports guest progress, both devices converge, removals sync, offline changes queue and send when back online, sign-out clears the device, account deletion removes everything. Live once Neon is connected."
+        },
+        {
+          "title": "Import device data on first sign-in",
+          "status": "Doing",
+          "notes": "Built: the first sync after sign-in uploads everything on the device, then merges the account's data. Tested end to end."
+        },
+        {
+          "title": "Account deletion and data export",
+          "status": "Doing",
+          "notes": "Built: Account page has Download my data (JSON) and Delete account (removes user, sessions and items). Tested end to end."
+        },
+        {
+          "title": "Tests for auth, permissions and sync",
+          "status": "Doing",
+          "notes": "30 unit tests (sync logic, API contract on Postgres, Better Auth) + a 19-check two-browser end-to-end run."
+        },
+        {
           "title": "Connect Neon and run db/0001_init.sql",
           "status": "To do",
-          "notes": "Migrations + runner ready (scripts/migrate.sh; runs on production deploy once DATABASE_URL exists). Waiting on the Neon project."
+          "notes": "Neon project linked (neon.ts, Postgres only). neon deploy is blocked here: this environment's network policy denies api.neon.tech."
+        },
+        {
+          "title": "API with Hono",
+          "status": "Doing",
+          "notes": "Built: /api/health, /api/me/items (paginated, Zod-validated, last-write-wins), /api/me/export, DELETE /api/me. Same-origin + JSON checks on writes; user always from the session. Off until DATABASE_URL is set. Merged and deployed to production (PR #7); answers \"accounts_unavailable\" until the database is connected."
         },
         {
           "title": "Sync script: course files → Postgres",
@@ -332,39 +362,9 @@
           "notes": "Duration badges on thumbnails, lesson length + upload date, course and section totals, VideoObject uploadDate + duration, Course courseWorkload."
         },
         {
-          "title": "API with Hono",
-          "status": "Doing",
-          "notes": "Built: /api/health, /api/me/items (paginated, Zod-validated, last-write-wins), /api/me/export, DELETE /api/me. Same-origin + JSON checks on writes; user always from the session. Off until DATABASE_URL is set. Merged and deployed to production (PR #7); answers \"accounts_unavailable\" until the database is connected."
-        },
-        {
-          "title": "Accounts with Better Auth",
-          "status": "Doing",
-          "notes": "Email + password, Google when keys are set, httpOnly secure cookies, DB-backed rate limits (5 sign-in tries/min). Tested with Better Auth in memory; goes live with Neon. Deployed; switched off until Neon is connected."
-        },
-        {
-          "title": "Sync progress, watchlist, playlists, notes",
-          "status": "To do",
-          "notes": "Local-first: device storage stays the source while offline; a queue syncs when back online (last write wins per item)."
-        },
-        {
-          "title": "Import device data on first sign-in",
-          "status": "To do",
-          "notes": "Merges what is already on the device into the new account."
-        },
-        {
-          "title": "Account deletion and data export",
-          "status": "Doing",
-          "notes": "API done (export + delete cascade). Needs the sign-in UI."
-        },
-        {
           "title": "Public playlists",
           "status": "To do",
           "notes": "Share link for playlists marked public (needs accounts)."
-        },
-        {
-          "title": "Tests for auth, permissions and sync",
-          "status": "Doing",
-          "notes": "15 API tests incl. real Postgres in CI: auth required, CSRF, validation, last-write-wins, no cross-user access, pagination, export, deletion, rate limit."
         }
       ]
     },
@@ -507,6 +507,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-03",
+      "text": "Sign-in and progress sync built (priority): Account page (email + password, Google when configured), sync of progress, watchlist, playlists, notes and study days across devices with an offline queue and guest-progress import, export and delete account. Tested end to end against a real Postgres; switches on in production when Neon is connected."
+    },
     {
       "date": "2026-11-02",
       "text": "8 courses from the first weekly discovery run (40 courses, 891 videos, all playable): Meeting Muhammad ﷺ (Yaqeen), Aqeedah Semester 1 (Zad Academy), Fiqh of Fasting and Zakat (SeekersGuidance), Stories of the Prophets and Mothers of the Believers (Yasir Qadhi), al-Fawzan's 40 Hadith explanation, and Quranic Arabic Stages Two and Three. 18 finds blocked. The engine now skips playlists that never mention Arabic or Islam (it had found two medical lecture series)."

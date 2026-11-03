@@ -14,7 +14,7 @@ const headerAuth: AuthPort = {
   handler: async () => new Response(null, { status: 404 }),
   userId: async (req) => req.headers.get('x-test-user')
 };
-const appWith = (store: Store) => createApp(() => ({ store, auth: headerAuth, origin: ORIGIN }));
+const appWith = (store: Store) => createApp(() => ({ store, auth: headerAuth, origin: ORIGIN, google: false }));
 const post = (body: unknown, user = 'u1', headers: Record<string, string> = {}) => ({
   method: 'POST', body: JSON.stringify(body),
   headers: { 'content-type': 'application/json', origin: ORIGIN, 'x-test-user': user, ...headers }
@@ -115,7 +115,7 @@ describe('Better Auth wiring (in-memory database)', () => {
   const auth = makeAuth({ BETTER_AUTH_SECRET: 'test-secret-at-least-32-characters-long', SITE_URL: 'http://localhost' }, memoryAdapter(db));
   const store = memoryStore();
   const deps: Deps = {
-    store, origin: 'http://localhost',
+    store, origin: 'http://localhost', google: false,
     auth: { handler: (r) => auth.handler(r), userId: async (r) => (await auth.api.getSession({ headers: r.headers }))?.user.id ?? null }
   };
   const app = createApp(() => deps);
@@ -143,7 +143,7 @@ describe('Better Auth wiring (in-memory database)', () => {
 describe('without a database', () => {
   const app = createApp(() => null);
   test('the API reports accounts unavailable', async () => {
-    assert.deepEqual(await (await app.request('/api/health')).json(), { ok: true, accounts: false });
+    assert.deepEqual(await (await app.request('/api/health')).json(), { ok: true, accounts: false, google: false });
     assert.equal((await app.request('/api/me/items')).status, 503);
     assert.equal((await app.request('/api/auth/get-session')).status, 503);
   });

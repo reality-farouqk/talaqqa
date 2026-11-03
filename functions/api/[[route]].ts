@@ -13,6 +13,7 @@ const app = createApp((raw) => {
   return {
     store: sqlStore((text, params) => sql.query(text, params) as Promise<Record<string, unknown>[]>),
     origin: new URL(env.SITE_URL ?? 'https://talaqqa.pages.dev').origin,
+    google: Boolean(env.GOOGLE_CLIENT_ID && env.GOOGLE_CLIENT_SECRET),
     auth: {
       handler: (req) => auth.handler(req),
       userId: async (req) => (await auth.api.getSession({ headers: req.headers }))?.user.id ?? null

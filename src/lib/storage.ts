@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-// Everything a learner saves lives here, on their device only. One versioned
-// key keeps it easy to import into an account later (Phase 2).
+// Everything a learner saves lives here, on their device. Signed-in learners also
+// sync it to their account (src/lib/sync.ts); the device stays the source while offline.
 export interface LastLesson { course: string; lesson: string; at: number; }
 export interface Settings { autoplay: boolean; autoNext: boolean; speed: number; }
 export interface Playlist { id: string; title: string; visibility: 'private' | 'public'; items: string[]; updatedAt: number; } // items: "course/lesson"
@@ -20,7 +20,7 @@ export interface State {
 }
 
 const KEY = 'talaqqa:v1';
-const EVENT = 'talaqqa:change';
+export const CHANGE_EVENT = 'talaqqa:change';
 const DEFAULT_SETTINGS: Settings = { autoplay: true, autoNext: true, speed: 1 };
 const empty = (): State => ({ v: 1, watchlist: [], savedLessons: [], playlists: [], notes: {}, studyDays: [], done: [], lastByCourse: {}, settings: DEFAULT_SETTINGS, positions: {} });
 
@@ -50,7 +50,7 @@ export function read(): State {
 
 function write(s: State) {
   try { localStorage.setItem(KEY, JSON.stringify(s)); } catch {}
-  window.dispatchEvent(new Event(EVENT));
+  window.dispatchEvent(new Event(CHANGE_EVENT));
 }
 
 export function update(fn: (s: State) => State) { write(fn(read())); }
@@ -113,9 +113,9 @@ export function useStore(): State | null {
     const sync = () => setState(read());
     sync();
     const onStorage = (e: StorageEvent) => { if (e.key === KEY) sync(); };
-    window.addEventListener(EVENT, sync);
+    window.addEventListener(CHANGE_EVENT, sync);
     window.addEventListener('storage', onStorage);
-    return () => { window.removeEventListener(EVENT, sync); window.removeEventListener('storage', onStorage); };
+    return () => { window.removeEventListener(CHANGE_EVENT, sync); window.removeEventListener('storage', onStorage); };
   }, []);
   return state;
 }

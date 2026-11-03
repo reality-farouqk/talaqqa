@@ -6,7 +6,7 @@ export interface AuthPort {
   handler(request: Request): Promise<Response>;
   userId(request: Request): Promise<string | null>;
 }
-export interface Deps { store: Store; auth: AuthPort; origin: string; }
+export interface Deps { store: Store; auth: AuthPort; origin: string; google: boolean; }
 
 const PAGE = 500;
 const START: Cursor = { at: 0, kind: '', key: '' };
@@ -28,7 +28,10 @@ export function createApp(getDeps: (env: unknown) => Deps | null) {
     return c.json({ error: 'server_error' }, 500);
   });
 
-  app.get('/health', (c) => c.json({ ok: true, accounts: getDeps(c.env) !== null }));
+  app.get('/health', (c) => {
+    const deps = getDeps(c.env);
+    return c.json({ ok: true, accounts: deps !== null, google: deps?.google ?? false });
+  });
 
   const withDeps: MiddlewareHandler<AppEnv> = async (c, next) => {
     const deps = getDeps(c.env);

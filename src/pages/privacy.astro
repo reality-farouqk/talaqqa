@@ -2,13 +2,17 @@
 import Base from '../layouts/Base.astro';
 import { SITE } from '../config';
 ---
-<Base title="Privacy" description={`How ${SITE.name} handles your data: your progress stays on your device.`} breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Privacy', href: '/privacy/' }]}>
+<Base title="Privacy" description={`How ${SITE.name} handles your data: on your device, and in your account only if you create one.`} breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Privacy', href: '/privacy/' }]}>
   <div class="prose">
     <h1>Privacy</h1>
-    <p class="lede">Short version: your watchlist and progress stay on your device. We don't have accounts, and we don't collect personal data.</p>
+    <p class="lede">Short version: you can learn without an account, and then your progress stays on your device. If you create an account, we keep your progress so it follows you to other devices. Nothing else.</p>
     <h2>What is stored on your device</h2>
-    <p>Your watchlist, completed lessons and the last lesson you opened are saved in your browser's local storage, so the site can show your progress. This data never leaves your device. You can clear it from <a href="/watchlist/">My courses</a> or by clearing your browser data.</p>
+    <p>Your saved courses and lessons, completed lessons, playback positions, notes, playlists, study days and the last lesson you opened are saved in your browser's local storage, so the site can show your progress. Without an account this data never leaves your device. You can clear it from <a href="/watchlist/">My courses</a> or by clearing your browser data.</p>
     <p>If you install the app, your browser also keeps copies of pages you've visited so they open offline. Videos are never stored.</p>
+    <h2>If you create an account</h2>
+    <p>We store your email address, your name (if you give one), a hash of your password (never the password itself), and the learning data listed above, so it syncs between your devices. If you sign in with Google, we receive your name and email from Google. We also keep your sessions (with the browser and IP address they came from, to keep your account secure) and short-lived records of sign-in attempts to stop password guessing.</p>
+    <p>Accounts are stored in a Postgres database hosted by <a href="https://neon.com/privacy-policy" rel="noopener">Neon</a>, and served by Cloudflare. We don't sell or share your data and don't use it for anything else.</p>
+    <p>On your <a href="/account/">account page</a> you can download everything we hold about your learning, or delete your account. Deleting removes your account and its data straight away. Signing out clears the data on that device.</p>
     <h2>YouTube</h2>
     <p>Lessons use YouTube's privacy-enhanced player (youtube-nocookie.com), and the player loads only when you press play. Lesson thumbnails are loaded from YouTube's image servers. Once a video plays, YouTube's own <a href="https://policies.google.com/privacy" rel="noopener">privacy policy</a> applies.</p>
     <h2>Analytics</h2>
@@ -17,6 +21,6 @@ import { SITE } from '../config';
     <p>If something breaks on a page, your browser sends us a short technical error report (the error message and the page address, without any query string) so we can fix it. We don't store your IP address, and the reports are not linked to you.</p>
     <h2>Questions</h2>
     <p>Ask on our <a href="/report/">contact page</a>.</p>
-    <p class="meta">Last updated: 1 November 2026.</p>
+    <p class="meta">Last updated: 3 November 2026.</p>
   </div>
 </Base>
