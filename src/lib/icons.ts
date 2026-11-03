@@ -9,6 +9,7 @@ export const ICONS = {
   plus: 'M12 5v14M5 12h14',
   notes: 'M5 4h14v16H5zM9 9h6M9 13h6M9 17h3',
   share: 'M12 3v13M7 8l5-5 5 5M5 14v6h14v-6',
-  play: 'M7 4v16l13-8z'
+  play: 'M7 4v16l13-8z',
+  user: 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0'
 } as const;
 export type IconName = keyof typeof ICONS;

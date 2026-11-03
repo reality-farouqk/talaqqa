@@ -11,7 +11,7 @@ const site = process.env.SITE_URL || 'http://localhost:4321';
 const demoCourses = readdirSync('./content/courses')
   .filter((f) => f.endsWith('.yaml') && /^(demo:\s*true|status:\s*draft)\b/m.test(readFileSync(`./content/courses/${f}`, 'utf8')))
   .map((f) => f.replace(/\.yaml$/, ''));
-const hiddenFromSitemap = ['/watchlist/', '/offline/', '/404/', '/playlists/', '/search/', '/review/'];
+const hiddenFromSitemap = ['/watchlist/', '/offline/', '/404/', '/playlists/', '/search/', '/review/', '/account/'];
 
 export default defineConfig({
   site,
@@ -58,8 +58,9 @@ export default defineConfig({
             options: { cacheName: 'images', expiration: { maxEntries: 120, maxAgeSeconds: 60 * 60 * 24 * 30 } }
           },
           // Pages: fresh when online, the saved copy when offline, else the offline page.
+          // /api/ (sign-in callbacks, data export) is never cached.
           {
-            urlPattern: ({ request, sameOrigin }) => sameOrigin && request.mode === 'navigate',
+            urlPattern: ({ request, sameOrigin, url }) => sameOrigin && request.mode === 'navigate' && !url.pathname.startsWith('/api/'),
             handler: 'NetworkFirst',
             options: {
               cacheName: 'pages',

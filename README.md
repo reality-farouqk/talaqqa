@@ -13,7 +13,7 @@ A free, open-source video library for learning Arabic and Islam, from the founda
 - **PWA**: installable, offline shell, visited pages work offline, video never cached.
 - **SEO**: static pages, sitemap, canonical URLs, Open Graph, Course / VideoObject / Breadcrumb / CollectionPage JSON-LD.
 
-The catalog starts with 25 courses chosen from the discovery engine's first runs. Progress, playlists, notes and the watchlist are stored on the device for now. Accounts and sync arrive in Phase 2 (`db/0001_init.sql` already has the tables).
+The catalog has 40 courses chosen from the discovery engine's runs. Progress, playlists, notes and the watchlist are stored on the device; learners who sign in (`/account/`) also sync them to their account.
 
 ## Run it
 
@@ -33,7 +33,8 @@ Copy `.env.example` to `.env` for local settings. Production builds use `SITE_UR
 | Site and app | Astro + React islands (Vite under the hood) | Static, SEO-friendly pages; React only where the page is interactive. One app, one build. |
 | Content | YAML files in `content/courses/`, validated by Zod (`src/content.config.ts`) | Anyone can propose a course with a pull request; a bad file fails the build. |
 | Curriculum | `src/lib/taxonomy.ts` | Tracks, levels and subjects in one place. |
-| Device data | `src/lib/storage.ts` | One versioned localStorage key, ready to import into an account. |
+| Device data | `src/lib/storage.ts` | One versioned localStorage key; the source of truth while offline. |
+| Sync | `src/lib/sync.ts`, `src/lib/sync-core.ts` | Signed-in only: pushes what differs from the last confirmed snapshot (the offline outbox), pulls other devices' changes. |
 | Client index | `/catalog.json` | One cached file for search, playlists and Continue Watching. |
 | API (Phase 2) | Hono on Cloudflare Pages Functions (`src/api/`, `functions/api/`) | Accounts (Better Auth) and sync of learner data; off until `DATABASE_URL` is set. |
 | Database (Phase 2) | Neon Postgres, `db/*.sql` + `scripts/migrate.sh` | Catalog mirror, accounts, learner data. |

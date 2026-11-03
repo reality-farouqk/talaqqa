@@ -83,6 +83,7 @@ const nav = [
       <nav aria-label="Main" class="top-nav">
         {nav.map((n) => <a href={n.href} aria-current={(section ? section === n.href : path.startsWith(n.href)) ? 'page' : undefined}>{n.label}</a>)}
       </nav>
+      <a class="top-account" href="/account/" aria-label="Account" aria-current={path.startsWith('/account/') ? 'page' : undefined}><Icon name="user" /></a>
     </header>
     <OfflineBanner client:idle />
     <main id="main">
@@ -114,6 +115,10 @@ const nav = [
       <p>Videos belong to their creators and play from YouTube.</p>
     </footer>
     <script is:inline src="/registerSW.js"></script>
+    <script>
+      import { startSync } from '../lib/sync';
+      startSync();
+    </script>
     <script is:inline>
       // Report up to 5 JavaScript errors per page to /api/errors (no personal data; query strings removed).
       (() => {
@@ -159,10 +164,12 @@ const nav = [
   .skip:focus { inset-block-start: 1rem; }
   .demo-ribbon { background: var(--gold-soft); color: var(--ink); text-align: center; font-size: .85rem; padding: .4rem 1rem; }
   .offline-banner { background: var(--ink); color: var(--paper); text-align: center; font-size: .9rem; padding: .5rem 1rem; }
-  .top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; padding-block: .75rem; border-block-end: 1px solid var(--line); }
+  .top { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; padding-block: .75rem; border-block-end: 1px solid var(--line); }
   .brand { font: 600 1.4rem var(--serif); text-decoration: none; color: var(--ink); }
-  .top-nav { display: flex; gap: .25rem; flex-wrap: wrap; }
-  .top-search { display: none; color: var(--ink); min-width: 44px; min-height: 44px; place-items: center; border-radius: 50%; }
+  .top-nav { display: flex; gap: .25rem; flex-wrap: wrap; margin-inline-start: auto; }
+  .top-search { display: none; color: var(--ink); min-width: 44px; min-height: 44px; place-items: center; border-radius: 50%; margin-inline-start: auto; }
+  .top-account { display: grid; color: var(--ink); min-width: 44px; min-height: 44px; place-items: center; border-radius: 50%; }
+  .top-account[aria-current] { color: var(--teal); }
   .tabbar { display: none; }
   .icon { flex: none; }
   @media (max-width: 48rem) {
