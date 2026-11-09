@@ -1,0 +1,47 @@
+# Found by the discovery engine (score 67/100). Every video was confirmed public and embeddable on 2026-11-09.
+title: "Arabic Reading Course For Absolute Beginners"
+summary: "This Series of Lessons are for Absolute beginners to help them to Start Reading and Writing Arabic. and also helpful to learn ..."
+track: arabic
+subject: reading
+level: foundations
+language: en
+status: draft
+verified_at: 2026-11-09
+source:
+  name: "Language Animated"
+  url: "https://www.youtube.com/channel/UCxV-7kTyopbgBGhbLfoj90g"
+  playlist_url: "https://www.youtube.com/playlist?list=PLZP44vWcKKfZAwrHKoiBeJnOmFJOiIGTh"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: "learn-arabic-reading-and-writing-lesson-1-the-arabic-alphabe"
+        title: "Learn Arabic Reading and Writing Lesson 1 - The Arabic Alphabets"
+        youtube_id: "VpZ5prqnDZI"
+      - slug: "learn-arabic-reading-and-writing-lesson-2-arabic-short-vowel"
+        title: "Learn Arabic Reading and Writing Lesson 2 - Arabic Short Vowels"
+        youtube_id: "xzpBmQjI86E"
+      - slug: "learn-arabic-reading-and-writing-lesson-3-working-with-fatha"
+        title: "Learn Arabic Reading and Writing Lesson 3 - Working with Fathah (First single Vowel)"
+        youtube_id: "he3OiyWte0E"
+      - slug: "learn-arabic-reading-and-writing-lesson-4-working-with-kasra"
+        title: "Learn Arabic Reading and Writing Lesson 4   Working with (Kasrah) Short Vowel Mark"
+        youtube_id: "egmZqsKf2A0"
+      - slug: "learn-arabic-reading-and-writing-lesson-5-working-with-damma"
+        title: "Learn Arabic Reading and Writing Lesson 5 - Working with (Dammah) Arabic Short Vowel"
+        youtube_id: "6OWkUh_yLfQ"
+      - slug: "learn-arabic-reading-and-writing-lesson-6-fathatain-the-arab"
+        title: "Learn Arabic Reading and Writing Lesson 6 - Fathatain (The Arabic Double Short Vowel)"
+        youtube_id: "AqJNMKDfrJw"
+      - slug: "learn-arabic-reading-and-writing-lesson-7-kasratain-the-arab"
+        title: "Learn Arabic Reading and Writing Lesson 7 - Kasratain (The Arabic Double Short Vowel)"
+        youtube_id: "iL-b7y0Rx0g"
+      - slug: "learn-arabic-reading-and-writing-lesson-8-dammatain-the-arab"
+        title: "Learn Arabic Reading and Writing Lesson 8 - Dammatain (The Arabic Double Short Vowel)"
+        youtube_id: "cfJagPXTqRw"
+      - slug: "learn-arabic-reading-and-writing-lesson-11-waw-al-madd-the-a"
+        title: "Learn Arabic Reading and Writing Lesson 11 - WAW AL-MADD (The Arabic Long Vowel)"
+        youtube_id: "xgq_lz1W1E4"
+      - slug: "learn-arabic-reading-and-writing-lesson-12-sukuun-and-shadda"
+        title: "Learn Arabic Reading and Writing Lesson 12 - Sukuun and Shaddah"
+        youtube_id: "IJMPy4JNzgM"

@@ -1,0 +1,41 @@
+# Found by the discovery engine (score 67/100). Every video was confirmed public and embeddable on 2026-11-09.
+title: "Arabic from Zero to Hero | Noor Al-Bayan Reading Course for Beginners"
+summary: "Learn Arabic Reading with Noor Al-Bayan – Complete Beginner Course** Welcome to the **Noor Al-Bayan Arabic Reading ..."
+track: arabic
+subject: reading
+level: foundations
+language: en
+status: draft
+verified_at: 2026-11-09
+source:
+  name: "Arabic from zero To Hero"
+  url: "https://www.youtube.com/channel/UC97yAMr3o6I48PDXL6PphtQ"
+  playlist_url: "https://www.youtube.com/playlist?list=PLPicv5diSeYs"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: "read-arabic-from-day-one-noor-al-bayan-lesson-1-first-7-arab"
+        title: "Read Arabic from Day One! | Noor Al-Bayan Lesson 1 | First 7 Arabic Letters"
+        youtube_id: "vxqozP1QVmU"
+      - slug: "master-arabic-reading-step-by-step-with-nour-al-bayan-part-2"
+        title: "\"Master Arabic Reading: Step-by-Step with Nour Al-Bayan! (Part 2)\""
+        youtube_id: "zk6n_yWRnIg"
+      - slug: "learn-arabic-reading-fast-ep-3-with-naive-arabic-speaker"
+        title: "Learn Arabic  Reading Fast! (Ep. 3)with naive Arabic speaker"
+        youtube_id: "3KC9nphvtRA"
+      - slug: "learn-arabic-reading-for-beginners-noor-al-bayan-lesson-4"
+        title: "Learn Arabic Reading for Beginners | Noor Al-Bayan | Lesson 4"
+        youtube_id: "t5umNvfwDLY"
+      - slug: "noor-al-bayan-arabic-reading-course-lesson-5"
+        title: "Noor Al-Bayan | Arabic Reading Course | Lesson 5"
+        youtube_id: "bjCkrvQITcQ"
+      - slug: "master-arabic-vowels-harakat-lesson-6-noor-al-bayan-for-begi"
+        title: "Master Arabic Vowels (Harakat) | Lesson 6 | Noor Al-Bayan for Beginners"
+        youtube_id: "4CoM5llSRf8"
+      - slug: "lesson-7-arabic-long-vowels-madd-learn-to-read-arabic-for-be"
+        title: "Lesson 7 | Arabic Long Vowels (Madd) | Learn to Read Arabic for Beginners"
+        youtube_id: "GIDUmoCUgrE"
+      - slug: "lesson-8-shaddah-tanween-explained-learn-arabic-reading-for"
+        title: "Lesson 8 | Shaddah & Tanween Explained | Learn Arabic Reading for Beginners"
+        youtube_id: "Zw9hBtYUKbg"
