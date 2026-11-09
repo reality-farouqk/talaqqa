@@ -1,0 +1,68 @@
+# Found by the discovery engine (score 67/100). Every video was confirmed public and embeddable on 2026-11-09.
+title: "Madina  Arabic book 1"
+summary: "Arabic language learning course Madina Book1 Arabic for beginners arabic course madinah islamic university book 1."
+track: arabic
+subject: grammar
+level: beginner
+language: en
+status: draft
+verified_at: 2026-11-09
+source:
+  name: "My Arabic Journey With Mohammed"
+  url: "https://www.youtube.com/channel/UCvO8RESLktGZyuYApN02FQQ"
+  playlist_url: "https://www.youtube.com/playlist?list=PLIeeJFcacjwyI7mEq9Hp7eSfTfW19VOlb"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: "madina-arabic-book1-lesson-1-arabic-course-madinah-islamic-u"
+        title: "(هَذَا) Madina Arabic book1 - lesson 1 - arabic course madinah islamic university book 1"
+        youtube_id: "jTiUZOc6q5A"
+      - slug: "master-madina-book-1-vocabulary-with-this-test"
+        title: "Master Madina book 1 vocabulary with this test"
+        youtube_id: "xVvzKgta088"
+      - slug: "madinah-arabic-book1-lesson-2"
+        title: "Madinah Arabic Book1-lesson 2 - ذلك"
+        youtube_id: "dYH3_dOqWik"
+      - slug: "lesson-three-part-1-madinah-arabic-book-1-for-beginners"
+        title: "Lesson three part 1-Madinah Arabic book 1  for beginners"
+        youtube_id: "hNm7sCLgfk0"
+      - slug: "madinah-arabic-book-i-lesson-three-part-two-sun-letters-and"
+        title: "Madinah Arabic Book I (lesson three-part two)sun letters and moon letters"
+        youtube_id: "TQoNe00XE14"
+      - slug: "madinah-arabic-book-1-lesson-4part-1"
+        title: "Madinah Arabic book 1 - lesson 4part 1"
+        youtube_id: "I_gN__mvf5s"
+      - slug: "learn-arabic-for-beginners-madinah-arabic-book-1-lesson-4-pa"
+        title: "learn Arabic for beginners Madinah Arabic book 1 lesson 4 - part 2"
+        youtube_id: "RVk7FltSZMA"
+      - slug: "madinah-arabic-book-1-lesson5-part-1"
+        title: "Madinah Arabic book 1 lesson5 - part 1"
+        youtube_id: "pOM82bW0Nwk"
+      - slug: "madinah-arabic-book-1-lesson5-part-2"
+        title: "Madinah Arabic book 1 lesson5 - part 2"
+        youtube_id: "NI7enTct4C4"
+      - slug: "arabic-for-beginners-madinah-arabic-book-1-lesson6"
+        title: "Arabic for beginners- Madinah Arabic book 1 -  lesson6"
+        youtube_id: "kxqqC7toErw"
+  - slug: part-2
+    title: "Lessons 11–16"
+    lessons:
+      - slug: "madinah-arabic-book-1-arabic-for-beginners-lesson-7"
+        title: "Madinah Arabic book 1  - Arabic for beginners-   lesson 7"
+        youtube_id: "dE--0l78xrE"
+      - slug: "madinah-arabic-book-1-arabic-for-beginners-lesson-8"
+        title: "Madinah Arabic book 1 - Arabic for beginners-  lesson 8"
+        youtube_id: "r0S7js3KtAk"
+      - slug: "madinah-arabic-book-1-arabic-for-beginners-lesson-9-part1"
+        title: "Madinah Arabic book 1 Arabic for beginners -  lesson 9  part1"
+        youtube_id: "1kyUbPXqkiE"
+      - slug: "madinah-arabic-book-1-arabic-for-beginners-lesson-9-part2"
+        title: "Madinah Arabic book 1 - Arabic for beginners   -  lesson 9  part2"
+        youtube_id: "E8s4zZBsnss"
+      - slug: "madinah-arabic-book-1-lesson-10-part1"
+        title: "Madinah Arabic book 1 -  lesson 10  part1"
+        youtube_id: "NYVa1BzBHGI"
+      - slug: "madinah-arabic-book-1-lesson-10-part-2"
+        title: "Madinah Arabic Book 1 -  Lesson 10  Part 2"
+        youtube_id: "Hl7w5UGr1sg"

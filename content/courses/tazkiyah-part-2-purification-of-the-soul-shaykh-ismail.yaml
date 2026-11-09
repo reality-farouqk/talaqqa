@@ -1,0 +1,32 @@
+# Found by the discovery engine (score 68/100). Every video was confirmed public and embeddable on 2026-11-09.
+title: "Tazkiyah Part 2 | Purification of the Soul | Shaykh Ismail"
+summary: "Tazkiyah Part 2 | Purification of the Soul | Shaykh Ismail."
+track: islam
+subject: tazkiyah
+level: beginner
+language: en
+status: draft
+verified_at: 2026-11-09
+source:
+  name: "ICPC Paterson"
+  url: "https://www.youtube.com/channel/UCGHC9dZ55Hj7eED8QyDzs-Q"
+  playlist_url: "https://www.youtube.com/playlist?list=PLa9Ll8_QShdpgd5VGSR3LxbDK3hloZPXU"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: "tazkiyah-part-2-instilling-good-character-hope-fear-sh-ismai"
+        title: "Tazkiyah Part 2 | Instilling Good Character | Hope & Fear | Sh. Ismail Hamdi | 5/26/2025"
+        youtube_id: "U1KYY1Ohz14"
+      - slug: "tazkiyah-part-2-instilling-good-character-patience-continued"
+        title: "Tazkiyah Part 2 | Instilling Good Character | Patience Continued | Sh. Ismail Hamdi | 5/19/2025"
+        youtube_id: "CoLveGoe1S4"
+      - slug: "tazkiyah-part-2-instilling-good-character-patience-sh-ismail"
+        title: "Tazkiyah Part 2 | Instilling Good Character | Patience | Sh. Ismail Hamdi | 5/12/2025"
+        youtube_id: "IuoCoRipuCE"
+      - slug: "tazkiyah-part-2-instilling-good-character-repentance-continu"
+        title: "Tazkiyah Part 2 | Instilling Good Character | Repentance Continued | Shaykh Ismail | 4/28/2025"
+        youtube_id: "nt9dxPwJbr4"
+      - slug: "tazkiyah-part-2-instilling-good-character-repentance-shaykh"
+        title: "Tazkiyah Part 2 | Instilling Good Character | Repentance | Shaykh Ismail | 4/21/2025"
+        youtube_id: "uiCAYKnIh4U"

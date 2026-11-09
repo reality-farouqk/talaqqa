@@ -1,0 +1,41 @@
+# Found by the discovery engine (score 68/100). Every video was confirmed public and embeddable on 2026-11-09.
+title: "Purification of the Heart for Youth: Diseases of the Heart and Their Cure"
+summary: "Isn't it strange that we purify our bodies but often neglect our hearts? The heart is in greater need of purification. If the heart is ..."
+track: islam
+subject: tazkiyah
+level: beginner
+language: en
+status: draft
+verified_at: 2026-11-09
+source:
+  name: "SeekersGuidance"
+  url: "https://www.youtube.com/channel/UCbPVEsJhn5My75IfMWXv1_Q"
+  playlist_url: "https://www.youtube.com/playlist?list=PL4mTEQpP9b5FoVFf14FS6QTnrGGyPbFYY"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: "01-virtues-of-having-a-sound-heart-purification-of-the-heart"
+        title: "01 - Virtues of Having a Sound Heart - Purification of the Heart for Youth - Imam Yama Niazi"
+        youtube_id: "Z6XgCmG8Qxs"
+      - slug: "02-envy-arrogance-and-ostentation-purification-of-the-heart"
+        title: "02 - Envy, Arrogance and Ostentation - Purification of the Heart for Youth - Imam Yama Niazi"
+        youtube_id: "BfTWKfUxVXQ"
+      - slug: "03-hatred-false-hopes-and-anger-purification-of-the-heart-fo"
+        title: "03 - Hatred, False Hopes and Anger - Purification of the Heart for Youth - Imam Yama Niazi"
+        youtube_id: "L4uCdo-0uDM"
+      - slug: "04-displeasure-with-destiny-desire-of-wealth-purification-of"
+        title: "04 - Displeasure with Destiny & Desire of Wealth - Purification of the Heart for Youth - Imam Yama"
+        youtube_id: "mebqPJ3D8WE"
+      - slug: "05-miserliness-rancor-and-blameworthy-modesty-purification-o"
+        title: "05 - Miserliness, Rancor and Blameworthy Modesty - Purification of the Heart for Youth - Yama Niazi"
+        youtube_id: "xjehuKm2ILs"
+      - slug: "06-boasting-mocking-and-relying-on-other-than-allah-purifica"
+        title: "06 - Boasting, Mocking and Relying on Other than Allah - Purification of the Heart for Youth"
+        youtube_id: "bHGfo1_p1Uk"
+      - slug: "07-comprehensive-treatment-of-the-heart-purification-of-the"
+        title: "07 - Comprehensive Treatment of the Heart - Purification of the Heart for Youth - Imam Yama Niazi"
+        youtube_id: "uhPRXfRcEhY"
+      - slug: "08-the-root-of-all-diseases-of-the-heart-purification-of-the"
+        title: "08 - The Root of All Diseases of the Heart - Purification of the Heart for Youth - Imam Yama Niazi"
+        youtube_id: "SGbvHpEVid0"

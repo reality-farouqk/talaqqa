@@ -1,0 +1,47 @@
+# Found by the discovery engine (score 72/100). Every video was confirmed public and embeddable on 2026-11-09.
+title: "Arabic vocabulary for beginners"
+summary: "A 10-lesson series by ZAFARYAB QASMI."
+track: arabic
+subject: vocabulary
+level: beginner
+language: en
+status: draft
+verified_at: 2026-11-09
+source:
+  name: "ZAFARYAB QASMI"
+  url: "https://www.youtube.com/channel/UCU5uSHVYD7t6vEgUwGTtEHA"
+  playlist_url: "https://www.youtube.com/playlist?list=PLdDgEPqfvd7bf64RTvZ6U-YSG4mw0jvhQ"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: "arabic-vocabulary-for-beginners-arabic-vocabulary-with-engli"
+        title: "Arabic vocabulary for beginners | Arabic vocabulary with English  المفردات العربية"
+        youtube_id: "De8cK4onQ2A"
+      - slug: "daily-arabic-conversation-arabic-conversation-with-english-s"
+        title: "Daily Arabic conversation | Arabic conversation with English subtitles"
+        youtube_id: "5tDaYrusXL8"
+      - slug: "arabic-vocabulary-for-beginners-arabic-grammar-class-5"
+        title: "Arabic Vocabulary for beginners | Arabic grammar class 5"
+        youtube_id: "jfMwaiYAtcQ"
+      - slug: "daily-arabic-conversation-arabic-conversation-with-english-s-4"
+        title: "Daily Arabic conversation | Arabic conversation with English subtitles"
+        youtube_id: "TQnPpIhMJMw"
+      - slug: "basic-arabic-communication-basic-arabic-arabic-speaking-part"
+        title: "Basic Arabic communication  | basic Arabic | Arabic speaking part 1"
+        youtube_id: "veDFs3Vdkdc"
+      - slug: "arabic-vocabulary-for-beginners-arabic-word-meaning"
+        title: "Arabic vocabulary for beginners | Arabic word meaning"
+        youtube_id: "5Uk281tbVgc"
+      - slug: "arabic-past-tense-arabic-tenses-in-english-tense-in-arabic"
+        title: "Arabic past tense | Arabic Tenses in English | Tense in Arabic"
+        youtube_id: "O0k8jMzFhgo"
+      - slug: "100-arabic-verbs-in-english-arabic-vocabulary-in-english"
+        title: "100 Arabic verbs in English | Arabic vocabulary in English"
+        youtube_id: "Q9XeHBdyHiQ"
+      - slug: "surah-fatiha-with-english-and-urdu-translation"
+        title: "Surah Fatiha with English and Urdu Translation"
+        youtube_id: "AdfQwOEXC2s"
+      - slug: "surah-baqrah-with-english-and-urdu-translation-tarjuma"
+        title: "Surah baqrah with english and urdu translation | Tarjuma"
+        youtube_id: "cSvWXel5VwA"
