@@ -1,0 +1,53 @@
+# Found by the discovery engine (score 66/100). Every video was confirmed public and embeddable on 2026-11-16.
+title: "Fiqh"
+summary: "A 11-lesson series by Roots OfKnowledge."
+track: islam
+subject: fiqh
+level: intermediate
+language: en
+status: draft
+verified_at: 2026-11-16
+source:
+  name: "Roots OfKnowledge"
+  url: "https://www.youtube.com/channel/UCofJSNqSsllUUjMJvdR8aFQ"
+  playlist_url: "https://www.youtube.com/playlist?list=PLA21B74DFD2F9B013"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: "istikahara-made-easy"
+        title: "Istikahara made easy"
+        youtube_id: "8j1EcM1_vbw"
+      - slug: "moon-phases-part1"
+        title: "Moon phases part1"
+        youtube_id: "4bhOJhVjMsg"
+      - slug: "fasting-times-of-the-day"
+        title: "Fasting Times Of The Day"
+        youtube_id: "EuMtpMby6Vs"
+      - slug: "zakaah-part1-who-has-to-give-it"
+        title: "Zakaah  (part1) : Who has to give it?"
+        youtube_id: "Rhy23jAkcHo"
+      - slug: "zakaah-part2-what-s-the-threshold-nisab"
+        title: "Zakaah (part2) : What's The Threshold (nisab)?"
+        youtube_id: "XSD9LegjDNw"
+      - slug: "zakaah-part-3-the-passing-of-a-year"
+        title: "Zakaah (part 3): 'The Passing Of A Year'"
+        youtube_id: "yASk9V1qJv8"
+      - slug: "eid-and-the-sacrificing-qurbani-of-an-animal"
+        title: "Eid and the Sacrificing (Qurbani) of an Animal"
+        youtube_id: "5L5fB8TEBWM"
+      - slug: "zakah-to-family-part-4"
+        title: "zakah to family part 4"
+        youtube_id: "EV7i2r8hAQI"
+      - slug: "zakat-crash-course"
+        title: "Zakat Crash Course"
+        youtube_id: "X_5yNHImq7U"
+      - slug: "crash-course-how-purity-in-islam-works"
+        title: "Crash Course: How Purity in Islam Works"
+        youtube_id: "bKUo7Lxxeic"
+  - slug: part-2
+    title: "Lessons 11–11"
+    lessons:
+      - slug: "a-clarification-of-imam-abu-hanifa-on-the-6-fasts-of-shawwal"
+        title: "A clarification of Imam Abu Hanifa on the 6 fasts of Shawwal"
+        youtube_id: "1RkJVcVM14E"
