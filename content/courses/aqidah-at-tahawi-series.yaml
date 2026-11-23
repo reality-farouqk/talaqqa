@@ -1,0 +1,59 @@
+# Found by the discovery engine (score 70/100). Every video was confirmed public and embeddable on 2026-11-23.
+title: "Aqidah At-Tahawi Series"
+summary: "A 13-lesson series by Asrar Rashid - Official."
+track: islam
+subject: aqeedah
+level: advanced
+language: en
+status: draft
+verified_at: 2026-11-23
+source:
+  name: "Asrar Rashid - Official"
+  url: "https://www.youtube.com/channel/UCymCj7bJb8bc1IXPtr7zvQA"
+  playlist_url: "https://www.youtube.com/playlist?list=PLs_GdH5GqQXz-NJXp5rzWhDFbtjacN_CN"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: "aqidah-at-tahawi-part-1-introduction-to-the-text-asrar-rashi"
+        title: "Aqidah At Tahawi - [Part 1] | Introduction To The Text | Asrar Rashid (Official)"
+        youtube_id: "_3sgoxK6dcU"
+      - slug: "aqidah-at-tahawi-part-2-belief-of-the-people-upon-the-prophe"
+        title: "Aqidah At Tahawi - [Part 2] Belief Of The People Upon The Prophetic Way | Asrar Rashid (Official)"
+        youtube_id: "zuY0YPLNqKQ"
+      - slug: "aqidah-at-tahawi-part-3-usul-ud-deen-as-followed-by-imam-abu"
+        title: "Aqidah At Tahawi - [Part 3] | Usul Ud Deen As Followed By Imam Abu Hanifa And His Companions"
+        youtube_id: "Wu6FSu_MHb4"
+      - slug: "aqidah-at-tahawi-part-4-the-divine-attributes-of-allah-asrar"
+        title: "Aqidah At-Tahawi - [Part 4] | The Divine Attributes Of Allah | Asrar Rashid (Official)"
+        youtube_id: "rTeAGgIumWs"
+      - slug: "aqidah-at-tahawi-part-5-divine-will-ibn-taymiyyah-difference"
+        title: "Aqidah At-Tahawi - [Part 5] | Divine Will | Ibn Taymiyyah | Differences Between Asharis & Salafis"
+        youtube_id: "_gwXtNrJmHk"
+      - slug: "aqidah-at-tahawi-part-6-allah-is-living-christian-beliefs-ab"
+        title: "Aqidah At-Tahawi - [Part 6] | Allah is Living | Christian Beliefs about Jesus | Divine Power"
+        youtube_id: "an7_SWKatos"
+      - slug: "aqidah-at-tahawi-part-7-eternal-names-attributes-asrar-rashi"
+        title: "Aqidah At-Tahawi - [Part 7] | Eternal Names & Attributes | Asrar Rashid (Official)"
+        youtube_id: "orf_irlKYcQ"
+      - slug: "aqidah-at-tahawi-part-8-differences-between-asharis-maturidi"
+        title: "Aqidah At-Tahawi - [Part 8] Differences Between Asharis & Maturidis | Asrar Rashid (Official)"
+        youtube_id: "qLmV3Rs3kJ0"
+      - slug: "aqidah-at-tahawi-part-9-the-mu-tazilah-the-jabariyyah-free-w"
+        title: "Aqidah At-Tahawi - [Part 9] The Mu'tazilah & The Jabariyyah | Free Will Vs Divine Will"
+        youtube_id: "-EKnN3zIEnA"
+      - slug: "aqidah-at-tahawi-part-10-divine-protection-justice-understan"
+        title: "Aqidah At-Tahawi - [Part 10] Divine Protection & Justice | Understanding Divine Decree"
+        youtube_id: "8wXHmU6tG4Y"
+  - slug: part-2
+    title: "Lessons 11–13"
+    lessons:
+      - slug: "aqidah-at-tahawi-part-11-the-prophets-titles-lineage-seal-of"
+        title: "Aqidah At-Tahawi - [Part 11] The Prophets Titles & Lineage ﷺ | Seal Of The Prophets"
+        youtube_id: "LpcuqISApr8"
+      - slug: "al-aqidah-al-tahawiyyah-the-creed-of-ahlus-sunnah-wal-jama-a"
+        title: "Al Aqidah Al Tahawiyyah | The Creed Of Ahlus Sunnah Wal Jama'ah | Asrar Rashid"
+        youtube_id: "pbwuZdqbg0M"
+      - slug: "al-aqidah-al-tahawiyyah-part-2-the-creed-of-ahlus-sunnah-wal"
+        title: "Al Aqīdah Al Tahawiyyah | Part 2 | The Creed Of Ahlus Sunnah Wal Jama'ah | Asrar Rashid"
+        youtube_id: "Ra8ZbOCcCJo"

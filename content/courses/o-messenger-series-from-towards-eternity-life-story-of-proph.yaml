@@ -1,0 +1,56 @@
+# Found by the discovery engine (score 82/100). Every video was confirmed public and embeddable on 2026-11-23.
+title: "O Messenger series from Towards Eternity. Life story of Prophet Muhammad (Sm.)"
+summary: "A 12-lesson series by Towards Islam ."
+track: islam
+subject: seerah
+level: beginner
+language: en
+status: draft
+verified_at: 2026-11-23
+source:
+  name: "Towards Islam "
+  url: "https://www.youtube.com/channel/UC03jt4toAYNKM3P9GbRCWxg"
+  playlist_url: "https://www.youtube.com/playlist?list=PL2tbnrf0UR3GzBKUt06eBNx7TAKya9qWY"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: "the-world-s-first-ai-visualized-sirah-series-official-traile"
+        title: "The World's First AI-Visualized Sirah Series - Official Trailer - O MESSENGER"
+        youtube_id: "sQMC7fkjmOA"
+      - slug: "life-of-prophet-muhammad-the-world-s-first-ai-visualized-sir"
+        title: "Life of Prophet Muhammad - The World’s First AI-Visualized Sirah Series! - O Messenger | Ep. 1"
+        youtube_id: "DW-00ckCAPI"
+      - slug: "the-hardest-days-of-islam-ai-visualized-o-messenger-ep-2"
+        title: "The Hardest Days of Islam - AI Visualized - O Messenger | Ep. 2"
+        youtube_id: "Qnzam5KcopM"
+      - slug: "hamza-and-umar-ra-become-muslims-ai-visualized-o-messenger-e"
+        title: "Hamza and Umar (ra) Become Muslims! - AI Visualized - O Messenger | Ep. 3"
+        youtube_id: "dAZPkwAo0lE"
+      - slug: "no-food-no-mercy-to-prophet-s-family-ai-visualized-o-messeng"
+        title: "No Food, No Mercy to Prophet’s Family! - AI Visualized - O Messenger | Ep. 4"
+        youtube_id: "jx9syOUU1Ms"
+      - slug: "a-spider-web-saved-prophet-muhammad-s-life-o-messenger-ep-5"
+        title: "A Spider Web Saved Prophet Muhammad’s Life! - O Messenger | Ep. 5"
+        youtube_id: "eOYW4vKaKpc"
+      - slug: "battle-of-badr-last-words-of-abu-jahl-ai-visualized-o-messen"
+        title: "Battle of Badr: Last Words of Abu Jahl - AI Visualized - O Messenger | Ep. 6"
+        youtube_id: "zNpV3UqwyDU"
+      - slug: "i-k-lled-muhammad-uhud-was-shaken-by-a-cry-ai-visualized-o-m"
+        title: "“I K*lled Muhammad!” Uhud was Shaken by a Cry - AI Visualized - O Messenger | Ep. 7"
+        youtube_id: "CPWL76pGaBI"
+      - slug: "battle-of-the-trench-jews-of-madina-betrayed-the-prophet-ai"
+        title: "Battle of the Trench: Jews of Madina Betrayed the Prophet! - AI Visualized - O Messenger | Ep. 8"
+        youtube_id: "QbV9WR28GCg"
+      - slug: "epic-conquest-of-khaybar-visualized-by-ai-ali-s-heroic-fight"
+        title: "Epic Conquest of Khaybar Visualized by AI - Ali's Heroic Fight! - O Messenger | Ep. 9"
+        youtube_id: "ebeAyx_E7pc"
+  - slug: part-2
+    title: "Lessons 11–12"
+    lessons:
+      - slug: "10-000-strong-muslim-army-enters-mecca-after-21-years-ai-vis"
+        title: "10,000-Strong Muslim Army Enters Mecca! After 21 Years! - AI Visualized - O Messenger | Ep. 10"
+        youtube_id: "uSUxDtp-U0Q"
+      - slug: "the-prophet-s-farewell-to-the-world-his-final-words-to-you-f"
+        title: "The Prophet’s Farewell to the World! His Final Words to You! | Final Episode - O Messenger"
+        youtube_id: "pR65Sfhp-AY"
