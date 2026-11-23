@@ -1,0 +1,47 @@
+# Found by the discovery engine (score 68/100). Every video was confirmed public and embeddable on 2026-11-23.
+title: "The Life of Prophet Muhammad | Lecture Series"
+summary: "A 10-lesson series by Hussain Makke."
+track: islam
+subject: seerah
+level: beginner
+language: en
+status: draft
+verified_at: 2026-11-23
+source:
+  name: "Hussain Makke"
+  url: "https://www.youtube.com/channel/UCnxD62Ip-gzgEBLbwoqwJNA"
+  playlist_url: "https://www.youtube.com/playlist?list=PLYCFkN8Z2vosAb4bLoqmouigF2N2ap2jk"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: "life-of-prophet-muhammad-1-the-divine-plan-the-history-of-qu"
+        title: "Life of Prophet Muhammad | 1 |  The Divine Plan & the History of Quraysh"
+        youtube_id: "Wo26IirX878"
+      - slug: "life-of-prophet-muhammad-2-prophet-muhammad-s-youth"
+        title: "Life of Prophet Muhammad | 2 | Prophet Muhammad's Youth"
+        youtube_id: "HmJzgkgSyIo"
+      - slug: "life-of-prophet-muhammad-3-prophethood-the-israa-miraaj"
+        title: "Life of Prophet Muhammad | 3 | Prophethood & the Israa & Miraaj"
+        youtube_id: "30RxULb_dLw"
+      - slug: "life-of-prophet-muhammad-4-the-muslims-are-exiled"
+        title: "Life of Prophet Muhammad | 4 | The Muslims are Exiled"
+        youtube_id: "jA38CfakL4M"
+      - slug: "life-of-prophet-muhammad-5-hijra-to-medina"
+        title: "Life of Prophet Muhammad | 5 | Hijra to Medina"
+        youtube_id: "QFw-43WSLLU"
+      - slug: "life-of-prophet-muhammad-6-badr-and-uhud"
+        title: "Life of Prophet Muhammad | 6 | Badr and Uhud"
+        youtube_id: "OOzmZPZmnck"
+      - slug: "the-life-of-prophet-muhammad-7-the-battle-of-the-trench"
+        title: "The Life of Prophet Muhammad | 7 | The Battle of the Trench"
+        youtube_id: "4_wTXrYkwO4"
+      - slug: "life-of-prophet-muhammad-8-the-treaty-of-hudaybiyya"
+        title: "Life of Prophet Muhammad | 8 | The Treaty of Hudaybiyya"
+        youtube_id: "jG3kLPJXrY8"
+      - slug: "life-of-prophet-muhammad-9-conquest-of-mecca"
+        title: "Life of Prophet Muhammad | 9 | Conquest of Mecca"
+        youtube_id: "qKdPh-MBSrk"
+      - slug: "life-of-prophet-muhammad-10-farewell"
+        title: "Life of Prophet Muhammad | 10 | Farewell"
+        youtube_id: "ZdCdIVRmjWY"

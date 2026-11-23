@@ -1,0 +1,47 @@
+# Found by the discovery engine (score 76/100). Every video was confirmed public and embeddable on 2026-11-23.
+title: "The Six Articles of Faith in Islam"
+summary: "A 10-lesson series by The Sincere Seeker."
+track: islam
+subject: aqeedah
+level: foundations
+language: en
+status: draft
+verified_at: 2026-11-23
+source:
+  name: "The Sincere Seeker"
+  url: "https://www.youtube.com/channel/UCkIssAHOI9AACnzDO_UatOg"
+  playlist_url: "https://www.youtube.com/playlist?list=PLx_QOTD_5ZxaqiMmaPuNvJvcTp0xKnc0z"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: "what-are-the-6-articles-of-faith-in-islam-what-every-muslim"
+        title: "What Are the 6 Articles of Faith in Islam? | What Every Muslim Must Believe"
+        youtube_id: "foNaMDvYLPo"
+      - slug: "the-oneness-of-allah-in-islam-tawheed-and-true-monotheism-ex"
+        title: "The Oneness of Allah in Islam: Tawheed and True Monotheism Explained"
+        youtube_id: "eKnIJqe8gc8"
+      - slug: "angels-in-islam-who-they-are-their-roles-why-they-matter"
+        title: "Angels in Islam | Who They Are, Their Roles & Why They Matter"
+        youtube_id: "MHe9QIiLGGU"
+      - slug: "do-muslims-believe-in-the-bible-and-torah-god-s-books-in-isl"
+        title: "Do Muslims Believe in the Bible and Torah? | God’s Books in Islam Explained"
+        youtube_id: "0-UX6Q-5jhI"
+      - slug: "who-are-the-prophets-in-islam-prophets-messengers-of-allah-e"
+        title: "Who Are the Prophets in Islam? | Prophets & Messengers of Allah Explained"
+        youtube_id: "fYFr1cTtNuk"
+      - slug: "the-day-of-judgment-in-islam-explained-qiyamah"
+        title: "The Day of Judgment in Islam Explained (Qiyamah)"
+        youtube_id: "LaoMe_akPe8"
+      - slug: "what-is-al-qadr-does-allah-control-everything-or-do-you-have"
+        title: "What is Al-Qadr? | Does Allah Control Everything or Do You Have Free Will?"
+        youtube_id: "Jj3AQTErpGk"
+      - slug: "how-to-become-muslim-step-by-step-guide-on-taking-shahada"
+        title: "How to Become Muslim: Step-by-Step Guide on Taking Shahada"
+        youtube_id: "pRKs_jJ_qVc"
+      - slug: "what-are-the-six-articles-of-faith-in-islam-core-muslim-beli"
+        title: "What Are the Six Articles of Faith in Islam? | Core Muslim Beliefs Explained"
+        youtube_id: "BvUUEvnjtjM"
+      - slug: "what-is-islam-a-beginner-s-guide-to-the-basics-of-islam"
+        title: "What is Islam? A Beginner's Guide to the Basics of Islam"
+        youtube_id: "76vanFKw664"

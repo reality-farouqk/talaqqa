@@ -1,0 +1,71 @@
+# Found by the discovery engine (score 77/100). Every video was confirmed public and embeddable on 2026-11-23.
+title: "[ENG] 🗂️ Tazkiyah"
+summary: "A 17-lesson series by Taalib al-'ilm | Saved Playlists."
+track: islam
+subject: tazkiyah
+level: beginner
+language: en
+status: draft
+verified_at: 2026-11-23
+source:
+  name: "Taalib al-'ilm | Saved Playlists"
+  url: "https://www.youtube.com/channel/UCir13uHYjOpA19DQ09Pzgyw"
+  playlist_url: "https://www.youtube.com/playlist?list=PL9yoH6BhAHRRQBzjhjJikweLi134TIUaT"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: "purification-of-the-soul-ustadh-tim-humble"
+        title: "Purification of the Soul | Ustadh Tim Humble"
+        youtube_id: "GA-sRW5piy0"
+      - slug: "importance-of-the-purification-of-the-soul-shaykh-muhammad-a"
+        title: "Importance Of The Purification Of The Soul || Shaykh Muhammad Al-Malki || Sitting With The Scholars"
+        youtube_id: "UnXNJ6gUM58"
+      - slug: "brand-new-series-1-what-kind-of-soul-do-you-have-ustadh-muha"
+        title: "Brand New Series || #1 What Kind of Soul Do You Have? || Ustadh Muhammad Tim Humble #AMAU #Tazkiyah"
+        youtube_id: "pGXFqVkKi0U"
+      - slug: "2-what-is-your-soul-ustadh-muhammad-tim-humble-amau"
+        title: "#2: What is Your Soul? || Ustadh Muhammad Tim Humble || AMAU"
+        youtube_id: "k3xjw21vraY"
+      - slug: "3-when-will-you-change-ustadh-muhammad-tim-humble-amau"
+        title: "#3: When Will You Change? || Ustadh Muhammad Tim Humble || AMAU"
+        youtube_id: "HJnqKlpU3AM"
+      - slug: "4-do-you-know-allah-ustadh-muhammad-tim-humble-amau"
+        title: "#4: Do You Know Allah? || Ustadh Muhammad Tim Humble || AMAU"
+        youtube_id: "RXhhSnU0Sos"
+      - slug: "5-are-you-struggling-to-repent-from-sins-ustadh-muhammad-tim"
+        title: "#5 Are You Struggling To Repent From Sins? || Ustadh Muhammad Tim Humble #amau"
+        youtube_id: "EqGqCnMUqXs"
+      - slug: "6-are-you-a-zaahid-ustadh-muhammad-tim-humble-amau"
+        title: "#6 Are You A Zaahid? || Ustadh Muhammad Tim Humble #amau"
+        youtube_id: "V9i_PadJ52g"
+      - slug: "purification-of-the-soul-introduction-to-ustadh-muhammad-tim"
+        title: "Purification Of The Soul (introduction to) | Ustadh Muhammad Tim Humble | Endelus Klub Knjige"
+        youtube_id: "91HPcQgJHxw"
+      - slug: "purification-of-soul-by-dr-abdul-hameed-zafar"
+        title: "Purification of Soul By Dr Abdul Hameed Zafar"
+        youtube_id: "lSXUikzW6w8"
+  - slug: part-2
+    title: "Lessons 11–17"
+    lessons:
+      - slug: "an-introduction-to-purifying-the-soul-tazkiyyat-an-nafs-muha"
+        title: "\"An Introduction to Purifying the Soul - Tazkiyyat an-Nafs\" | Muhammad Tim Humble | FNR"
+        youtube_id: "H_2Atk5j3m4"
+      - slug: "actions-of-the-heart-class-1"
+        title: "Actions of the Heart - Class 1"
+        youtube_id: "w2_Bx6bhSdY"
+      - slug: "actions-of-the-heart-class-2"
+        title: "Actions of the Heart - Class 2"
+        youtube_id: "kL0RzVVe0II"
+      - slug: "actions-of-the-heart-class-3"
+        title: "Actions of the Heart - Class 3"
+        youtube_id: "SuuKxBlzYWk"
+      - slug: "actions-of-the-heart-class-4"
+        title: "Actions of the Heart - Class 4"
+        youtube_id: "qENoSILljFE"
+      - slug: "pride-arrogance-muhammad-tim-humble"
+        title: "Pride & Arrogance - Muhammad Tim Humble"
+        youtube_id: "eMlNPBwWPuw"
+      - slug: "patience-and-gratitude-muhammad-tim-humble-fnr-kalemah"
+        title: "Patience and Gratitude - Muhammad Tim Humble - FNR Kalemah"
+        youtube_id: "lbii8s4jD3c"
