@@ -1,0 +1,35 @@
+# Found by the discovery engine (score 80/100). Every video was confirmed public and embeddable on 2026-11-09.
+title: "Purifying the Soul"
+summary: "A 6-lesson series by Adrian."
+track: islam
+subject: tazkiyah
+level: beginner
+language: en
+status: draft
+verified_at: 2026-11-09
+source:
+  name: "Adrian"
+  url: "https://www.youtube.com/channel/UC6ee8JmKvVPH9BGH1PDoDeg"
+  playlist_url: "https://www.youtube.com/playlist?list=PLeNDiAH5eOmDkNYEmzzR8wEQO7kVXbm6z"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: "brand-new-series-1-what-kind-of-soul-do-you-have-ustadh-muha"
+        title: "Brand New Series || #1 What Kind of Soul Do You Have? || Ustadh Muhammad Tim Humble #AMAU #Tazkiyah"
+        youtube_id: "pGXFqVkKi0U"
+      - slug: "2-what-is-your-soul-ustadh-muhammad-tim-humble-amau"
+        title: "#2: What is Your Soul? || Ustadh Muhammad Tim Humble || AMAU"
+        youtube_id: "k3xjw21vraY"
+      - slug: "3-when-will-you-change-ustadh-muhammad-tim-humble-amau"
+        title: "#3: When Will You Change? || Ustadh Muhammad Tim Humble || AMAU"
+        youtube_id: "HJnqKlpU3AM"
+      - slug: "4-do-you-know-allah-ustadh-muhammad-tim-humble-amau"
+        title: "#4: Do You Know Allah? || Ustadh Muhammad Tim Humble || AMAU"
+        youtube_id: "RXhhSnU0Sos"
+      - slug: "5-are-you-struggling-to-repent-from-sins-ustadh-muhammad-tim"
+        title: "#5 Are You Struggling To Repent From Sins? || Ustadh Muhammad Tim Humble #amau"
+        youtube_id: "EqGqCnMUqXs"
+      - slug: "6-are-you-a-zaahid-ustadh-muhammad-tim-humble-amau"
+        title: "#6 Are You A Zaahid? || Ustadh Muhammad Tim Humble #amau"
+        youtube_id: "V9i_PadJ52g"

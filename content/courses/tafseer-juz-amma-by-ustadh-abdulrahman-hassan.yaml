@@ -1,0 +1,53 @@
+# Found by the discovery engine (score 67/100). Every video was confirmed public and embeddable on 2026-11-09.
+title: "Tafseer Juz Amma by Ustadh AbdulRahman Hassan"
+summary: "A 11-lesson series by KALEMAH."
+track: islam
+subject: quran
+level: intermediate
+language: en
+status: draft
+verified_at: 2026-11-09
+source:
+  name: "KALEMAH"
+  url: "https://www.youtube.com/channel/UCCs8F45glsrbYZK5OAxE-Ow"
+  playlist_url: "https://www.youtube.com/playlist?list=PLo8-JRSO3j93afD_L5jVfXZzGyfrlBQAW"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: "tafseer-juz-amma-by-ustadh-abdulrahman-hassan-lecture-1"
+        title: "Tafseer Juz Amma by Ustadh Abdulrahman Hassan (Lecture 1)"
+        youtube_id: "OmyPnMjkh7Y"
+      - slug: "tafseer-juz-amma-by-ustadh-abdulrahman-hassan-lecture-2"
+        title: "Tafseer Juz Amma by Ustadh Abdulrahman Hassan (Lecture 2)"
+        youtube_id: "eY4KyEIqFx8"
+      - slug: "tafseer-juz-amma-by-ustadh-abdulrahman-hassan-lecture-3"
+        title: "Tafseer Juz Amma by Ustadh Abdulrahman Hassan (Lecture 3)"
+        youtube_id: "9Ro2uLTelso"
+      - slug: "tafseer-juz-amma-by-ustadh-abdulrahman-hassan-lecture-4"
+        title: "Tafseer Juz Amma by Ustadh Abdulrahman Hassan (Lecture 4)"
+        youtube_id: "U6FaDalSD-M"
+      - slug: "tafseer-juz-amma-by-ustadh-abdulrahman-hassan-lecture-5"
+        title: "Tafseer Juz Amma by Ustadh Abdulrahman Hassan (Lecture 5)"
+        youtube_id: "p0_PIOjnc6M"
+      - slug: "tafseer-juz-amma-by-ustadh-abdulrahman-hassan-lecture-6"
+        title: "Tafseer Juz Amma by Ustadh Abdulrahman Hassan (Lecture 6)"
+        youtube_id: "YJYFBALZrjw"
+      - slug: "tafseer-juz-amma-by-ustadh-abdulrahman-hassan-lecture-7"
+        title: "Tafseer Juz Amma by Ustadh Abdulrahman Hassan (Lecture 7)"
+        youtube_id: "Q8Joe8nxcmE"
+      - slug: "tafsir-surah-ad-duha-by-ustadh-abdulrahman-hassan"
+        title: "Tafsir Sūrah Ad Duha by Ustadh AbdulRahman Hassan"
+        youtube_id: "Ukitp-HIDdw"
+      - slug: "tafsir-surah-al-layl-ustadh-abdulrahman-hassan"
+        title: "Tafsir Surah Al Layl - Ustadh AbdulRahman Hassan"
+        youtube_id: "waKf7VGH6Zw"
+      - slug: "friday-night-reflection-tafsir-surah-ash-shams-by-ustadh-abd"
+        title: "Friday Night Reflection - Tafsir Surah Ash Shams by Ustadh AbdulRahman Hassan"
+        youtube_id: "ODlFku_U5Dc"
+  - slug: part-2
+    title: "Lessons 11–11"
+    lessons:
+      - slug: "tafsir-at-tin-by-ustadh-abdulrahman-hassan"
+        title: "Tafsir At- Tin by Ustadh AbdulRahman Hassan"
+        youtube_id: "_V1SuHzgt3c"

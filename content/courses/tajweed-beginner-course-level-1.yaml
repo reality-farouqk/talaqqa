@@ -1,0 +1,41 @@
+# Found by the discovery engine (score 67/100). Every video was confirmed public and embeddable on 2026-11-09.
+title: "Tajweed BEGINNER Course (Level-1)"
+summary: "A 8-lesson series by Uloom Academy UK."
+track: islam
+subject: quran
+level: beginner
+language: en
+status: draft
+verified_at: 2026-11-09
+source:
+  name: "Uloom Academy UK"
+  url: "https://www.youtube.com/channel/UCSv3pFnug40LJD6D7_jO_9A"
+  playlist_url: "https://www.youtube.com/playlist?list=PLT1h3k9QUgAURNzieWUWxTqj7YktXPmKw"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: "tajweed-beginners-level-1-lesson-1"
+        title: "Tajweed BEGINNERS (Level 1) Lesson - 1"
+        youtube_id: "RIX0OEXgXNY"
+      - slug: "tajweed-beginners-level-1-lesson-2"
+        title: "Tajweed BEGINNERS (Level 1) Lesson - 2"
+        youtube_id: "OJ5sWnTNjTI"
+      - slug: "tajweed-beginners-level-1-lesson-3"
+        title: "Tajweed BEGINNERS (Level 1) Lesson - 3"
+        youtube_id: "adeoeOHCh1k"
+      - slug: "tajweed-beginners-level-1-lesson-4"
+        title: "Tajweed BEGINNERS (Level 1) Lesson - 4"
+        youtube_id: "s6ZL7Q4xN-A"
+      - slug: "tajweed-beginners-level-1-lesson-5"
+        title: "Tajweed BEGINNERS (Level 1) Lesson - 5"
+        youtube_id: "6bcQ5omrGiw"
+      - slug: "tajweed-beginners-level-1-lesson-6"
+        title: "Tajweed BEGINNERS (Level 1) Lesson - 6"
+        youtube_id: "Qw56UkIoCEk"
+      - slug: "tajweed-beginners-level-1-lesson-7"
+        title: "Tajweed BEGINNERS (Level 1) Lesson - 7"
+        youtube_id: "Krpfq5a__H8"
+      - slug: "tajweed-beginners-level-1-final-lesson"
+        title: "Tajweed BEGINNERS (Level 1) - Final Lesson"
+        youtube_id: "pepVaAaUBko"
