@@ -1,0 +1,59 @@
+# Found by the discovery engine (score 66/100). Every video was confirmed public and embeddable on 2026-11-16.
+title: "Tazkiyah 101 - Purification of the soul - Imam Hassan Raza"
+summary: "Crash Course on the Greatest Purifiers of the Heart - Imam Hassan Raza."
+track: islam
+subject: tazkiyah
+level: beginner
+language: en
+status: draft
+verified_at: 2026-11-16
+source:
+  name: "WAHY INSTITUTE"
+  url: "https://www.youtube.com/channel/UC_YSHUl8aVe3s6Z_9QGsKJA"
+  playlist_url: "https://www.youtube.com/playlist?list=PL6qzEglvHszcHwtItx4fK5bIiU8_HLsRc"
+modules:
+  - slug: part-1
+    title: "Lessons 1–10"
+    lessons:
+      - slug: "tazkiyah-101-crash-course-on-purification-of-the-soul-imam-h"
+        title: "Tazkiyah 101 - Crash Course on Purification of the Soul - Imam Hassan Raza"
+        youtube_id: "bhIlC4k2mTg"
+      - slug: "tazkiyah-101-what-is-tazkiyah-imam-hassan-raza"
+        title: "Tazkiyah 101 - What is Tazkiyah? Imam Hassan Raza"
+        youtube_id: "x0s91MZ62tY"
+      - slug: "tazkiyah-101-why-tazkiyah-imam-hassan-raza"
+        title: "Tazkiyah 101 - Why Tazkiyah? Imam Hassan Raza"
+        youtube_id: "NP23Dfcsm5w"
+      - slug: "tazkiyah-101-first-greatest-purifier-salah-imam-hassan-raza"
+        title: "Tazkiyah 101 - First Greatest Purifier - Salah - Imam Hassan Raza"
+        youtube_id: "UbVdsVCwEHM"
+      - slug: "tazkiyah-101-installing-the-salah-program-in-my-life-imam-ha"
+        title: "Tazkiyah 101 - Installing the Salah Program in my life - Imam Hassan Raza"
+        youtube_id: "9VqoAt92epU"
+      - slug: "tazkiyah-101-second-greatest-purifier-quran-imam-hassan-raza"
+        title: "Tazkiyah 101 - Second Greatest Purifier - Quran - Imam Hassan Raza"
+        youtube_id: "chuS6-39Y4E"
+      - slug: "tazkiyah-101-installing-the-quran-program-in-my-life-imam-ha"
+        title: "Tazkiyah 101 - Installing the Quran program in my life - Imam Hassan Raza"
+        youtube_id: "WptfNq67au4"
+      - slug: "tazkiyah-101-third-greatest-purifier-azhkar-imam-hassan-raza"
+        title: "Tazkiyah 101 - Third Greatest Purifier - Azhkar - Imam Hassan Raza"
+        youtube_id: "D1R25is08PE"
+      - slug: "tazkiyah-101-installing-the-azhkar-program-in-my-life-imam-h"
+        title: "Tazkiyah 101 - Installing the Azhkar program in my life - Imam Hassan Raza"
+        youtube_id: "CT8UNUJ10Ho"
+      - slug: "tazkiyah-101-fourth-greatest-purifier-seeking-islamic-knowle"
+        title: "Tazkiyah 101 - Fourth Greatest Purifier - Seeking Islamic Knowledge - Imam Hassan Raza"
+        youtube_id: "-Vfm-Pbk7U4"
+  - slug: part-2
+    title: "Lessons 11–13"
+    lessons:
+      - slug: "tazkiyah-101-installing-seeking-knowledge-program-in-my-life"
+        title: "Tazkiyah 101 - Installing Seeking Knowledge program in my life - Imam Hassan Raza"
+        youtube_id: "VpwbOajgXGk"
+      - slug: "tazkiyah-101-fifth-greatest-purifier-tahajjud-imam-hassan-ra"
+        title: "Tazkiyah 101 - Fifth Greatest Purifier - Tahajjud - Imam Hassan Raza"
+        youtube_id: "VnvjWUyVXnA"
+      - slug: "tazkiyah-101-concluding-remarks-imam-hassan-raza"
+        title: "Tazkiyah 101 - Concluding Remarks - Imam Hassan Raza"
+        youtube_id: "sOzb1Kuoqu0"

@@ -1,0 +1,32 @@
+# Found by the discovery engine (score 66/100). Every video was confirmed public and embeddable on 2026-11-16.
+title: "Al-Ajrumiyyah | Comprehensive Course"
+summary: "Arabic Grammer course going through the famous \"Al-Ajrumiyyah\" Every Sunday after Isha prayer, eastern time. (Check masjid ..."
+track: arabic
+subject: grammar
+level: intermediate
+language: en
+status: draft
+verified_at: 2026-11-16
+source:
+  name: "Germantown Masjid"
+  url: "https://www.youtube.com/channel/UCi_uV3avNkUrY12RWBVZ0Ug"
+  playlist_url: "https://www.youtube.com/playlist?list=PLcNmEBnwyvx45_saWcz9WiHbrIfjuKk6l"
+modules:
+  - slug: part-1
+    title: "Lessons"
+    lessons:
+      - slug: "lesson-1-explanation-of-al-ajrumiyyah-comprehensive-course"
+        title: "Lesson 1 | Explanation of Al-Ajrumiyyah | Comprehensive Course"
+        youtube_id: "MhtNft78WBA"
+      - slug: "lesson-2-explanation-of-al-ajrumiyyah-comprehensive-course"
+        title: "Lesson 2 | Explanation of Al-Ajrumiyyah | Comprehensive Course"
+        youtube_id: "NmYIBquOhsQ"
+      - slug: "lesson-3-explanation-of-al-ajrumiyyah-comprehensive-course"
+        title: "Lesson 3 | Explanation of Al-Ajrumiyyah | Comprehensive Course"
+        youtube_id: "6zukklb_J9w"
+      - slug: "lesson-4-explanation-of-al-ajrumiyyah-comprehensive-course"
+        title: "Lesson 4 | Explanation of Al-Ajrumiyyah | Comprehensive Course"
+        youtube_id: "JPt_9-r6q1M"
+      - slug: "lesson-5-explanation-of-al-ajrumiyyah-comprehensive-course"
+        title: "Lesson 5 | Explanation of Al-Ajrumiyyah | Comprehensive Course"
+        youtube_id: "ux0DR_v8jK4"
